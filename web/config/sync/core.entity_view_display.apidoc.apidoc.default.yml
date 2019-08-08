@@ -1,0 +1,28 @@
+uuid: df51b7ca-f9f0-49cd-afa0-ec51589a1617
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.apidoc.apidoc.field_categories
+    - field.field.apidoc.apidoc.field_image
+  module:
+    - apigee_api_catalog
+_core:
+  default_config_hash: MEYSBnXfsABrrEKZRvVQdIfzFET0rvUoL9tLCMY0EOQ
+id: apidoc.apidoc.default
+targetEntityType: apidoc
+bundle: apidoc
+mode: default
+content:
+  spec:
+    label: hidden
+    type: apigee_api_catalog_smartdocs
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  description: true
+  field_categories: true
+  field_image: true
+  name: true

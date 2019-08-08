@@ -1,0 +1,33 @@
+definitions:
+  contact__site_page:
+    enabled: true
+    menu_name: footer
+    parent: ''
+    weight: 0
+    expanded: false
+  forum__index:
+    enabled: false
+    menu_name: tools
+    parent: ''
+    expanded: false
+    weight: 0
+  apigee_edge__apps:
+    menu_name: account
+    parent: ''
+    weight: -30
+    expanded: false
+    enabled: false
+  apigee_devportal_kickstart__forum:
+    weight: -46
+    menu_name: main
+    parent: ''
+    expanded: false
+    enabled: false
+  user__page:
+    enabled: false
+    menu_name: account
+    parent: ''
+    expanded: false
+    weight: -10
+_core:
+  default_config_hash: o4bYR9ZupWb3AsOIizTUG4g-nu1mdJqA59UB7QT-ifQ

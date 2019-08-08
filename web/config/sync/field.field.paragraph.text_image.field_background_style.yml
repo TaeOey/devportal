@@ -1,0 +1,23 @@
+uuid: 3a55f379-4ff7-4444-8c42-715136788f4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_style
+    - paragraphs.paragraphs_type.text_image
+  module:
+    - options
+_core:
+  default_config_hash: bnpuN09bnuLmXqo8MKzorDrKLp2908vzQtgj03t5AOc
+id: paragraph.text_image.field_background_style
+field_name: field_background_style
+entity_type: paragraph
+bundle: text_image
+label: 'Background style'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

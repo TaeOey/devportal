@@ -1,0 +1,32 @@
+uuid: 72c14fe5-1cfd-4274-a855-5575efd6dc0b
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: clXAUIuYTrOFEq7b4fksP5NTnJfLvbMwbCJiDxgEaso
+id: paragraph.field_background_style
+field_name: field_background_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: light
+      label: Light
+    -
+      value: lighter
+      label: Lighter
+    -
+      value: dark
+      label: Dark
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

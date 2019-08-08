@@ -1,0 +1,11 @@
+uuid: 63b7b322-ac3a-4d1d-b57a-624e18d5581c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: S1dJAIclDNLS0S8CjqLgQcZNSrOA66et46ED62t1kjU
+id: card_group
+label: 'Card group'
+icon_uuid: null
+description: '<em>Card group</em> contains a title, button(s), and one or more <em>Card</em> items, which display as columns.'
+behavior_plugins: {  }
