@@ -1,0 +1,22 @@
+uuid: 6e7ab0e7-2ea7-4251-b825-fcffab75f1b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - apigee_kickstart
+_core:
+  default_config_hash: ROw7BmAnWPkbI-V_nQ07Eu4IGyYA3b47SYTbNmPZpQU
+id: apigee_kickstart_messages
+theme: apigee_kickstart
+region: content
+weight: 1
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  provider: system
+  label_display: '0'
+visibility: {  }

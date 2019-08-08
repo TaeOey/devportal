@@ -1,0 +1,20 @@
+uuid: 57290af5-232f-4a5b-b450-e3a8c0d68cdd
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: 90Gj21isqzeQbJ-x2d8MTbMt5ZVCBgKM5qbGF7jyFww
+name: FAQ
+type: faq
+description: 'Use <em>FAQs</em> to create questions and answers for the Frequently Asked Questions section.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

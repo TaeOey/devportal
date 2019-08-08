@@ -1,0 +1,10 @@
+uuid: 7dfb3fad-8a1c-45e3-b017-102955bbb00c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: G6ivxtvJyEtyH9gvFhTGwJ9VzwEMZzswFOgk8357gfg
+name: Collections
+vid: api_category
+description: 'Collections for API Docs.'
+weight: 0

@@ -1,0 +1,27 @@
+uuid: 8a98fd87-baa6-4e8e-b7f4-03448b68ee08
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - apigee_kickstart
+_core:
+  default_config_hash: xSpz-XHmNr285sEeqvZ_G1_C5bWeY9yjgaDdyjCc7cU
+id: apigee_kickstart_main_menu
+theme: apigee_kickstart
+region: navbar_left
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
