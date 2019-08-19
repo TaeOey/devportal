@@ -1,0 +1,27 @@
+uuid: 155fe985-60e2-4747-9fb8-7659123addfc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - emoney_apigee_kickstart
+_core:
+  default_config_hash: Q4F0HKnwTkYwRtNTZtnl87LwCzaWruT9CCISd9pNGCc
+id: emoney_apigee_kickstart_breadcrumbs
+theme: emoney_apigee_kickstart
+region: breadcrumbs
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/article/*\r\n/blog/*'
+    negate: true
+    context_mapping: {  }

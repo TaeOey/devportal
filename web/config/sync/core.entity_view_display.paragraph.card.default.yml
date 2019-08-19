@@ -7,9 +7,11 @@ dependencies:
     - field.field.paragraph.card.field_link
     - field.field.paragraph.card.field_text
     - field.field.paragraph.card.field_title
+    - image.style.thumbnail
     - paragraphs.paragraphs_type.card
   module:
     - link
+    - media
     - text
 _core:
   default_config_hash: 5MsvtJZR3qB-T9xGBlBTUCKXOP5gi_7u3DfJzXxmYdQ
@@ -22,10 +24,10 @@ content:
     weight: 0
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      image_style: thumbnail
+      image_link: ''
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    type: media_thumbnail
     region: content
   field_link:
     weight: 3

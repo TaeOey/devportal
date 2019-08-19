@@ -1,0 +1,20 @@
+uuid: d68aa361-33c8-478b-a08a-8ff4d0177cd6
+langcode: en
+status: true
+dependencies:
+  theme:
+    - emoney_apigee_kickstart
+_core:
+  default_config_hash: hwdHa18yjGOYn7Aag8iof5QKhzg6RPA4VCDEAmiVqP8
+id: emoney_apigee_kickstart_actions
+theme: emoney_apigee_kickstart
+region: tasks
+weight: 1
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }
