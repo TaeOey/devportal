@@ -1,0 +1,8 @@
+emoney-global-style:
+   version: 1.0
+   css:
+    theme:
+      assets/css/emoney_style_sheet.css : {}
+   js:
+     #js/your_js.js : {}
+
