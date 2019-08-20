@@ -1,0 +1,22 @@
+uuid: d20e93ce-211c-440d-9627-1aaf2c978597
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - emoney_apigee_kickstart
+_core:
+  default_config_hash: U8J1Fny7jZb_gGP7JvUh2rlRnlzgUK0QzforRHFrM_c
+id: emoney_apigee_kickstart_help
+theme: emoney_apigee_kickstart
+region: content
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

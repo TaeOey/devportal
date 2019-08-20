@@ -1,4 +1,4 @@
 admin: seven
-default: apigee_kickstart
+default: emoney_apigee_kickstart
 _core:
   default_config_hash: fOjer9hADYYnbCJVZMFZIIM1azTFWyg84ZkFDHfAbUg
