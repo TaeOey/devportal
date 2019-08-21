@@ -3,3 +3,8 @@ CODE_OF_CONDUCT.md
 CONTRIBUTING.md
 LICENSE.txt
 README.md
+node_modules/
+local/
+web/config/temp/
+web/config/local/
+npm-deg.*
