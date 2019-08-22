@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Template for field_callouts on a 'Callout group' Paragraph.
+ */
+#}
+<div class="row">
+  {% if items[0] %}
+    <div class="col-md-6 left">
+      {{- items[0].content -}}
+    </div>
+  {% endif %}
+  {% if items[1] %}
+    <div class="col-md-6 right">
+      {{- items[1].content -}}
+    </div>
+  {% endif %}
+</div>

@@ -148,11 +148,10 @@ function emoney_apigee_kickstart_preprocess_menu_local_task(array &$variables) {
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function emoney_apigee_kickstart_theme_suggestions_paragraph_alter(&$suggestions, $variables) {
-  $paragraph = $variables['elements']['#paragraph'];
+  // $paragraph = $variables['elements']['#paragraph'];
   //$parent = $paragraph->getParentEntity();
   //if ($parent) {
     //$suggestions[] = 'paragraph__' . $parent->bundle() . '__' .  $paragraph->bundle();
-   //$suggestions[] = 'paragraph__' . $parent->bundle() . '__babo__' .  $paragraph->bundle();
   //}
-  $suggestions[] = 'paragraph__'  . 'emoney__' .  $paragraph->bundle();
+  //$suggestions[] = 'paragraph__'  . 'emoney__' .  $paragraph->bundle();
 }

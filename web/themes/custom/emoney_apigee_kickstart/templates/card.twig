@@ -48,13 +48,17 @@
   {% if url %}
     <a href="{{ url }}">
   {% endif %}
-    
+  <div class="emoney-card">
+    {% if image %}
+        <div class="card-image">
+            {{ image }}
+        </div>
+    {% endif %}
     {% if title %}
         <div class="card-title">
             {{ title }}
         </div>
     {% endif %}
-
     {% if body %}
       <div class="card-body">
         {% block body %}      
@@ -62,7 +66,7 @@
         {% endblock %}
       </div>
     {% endif %}
-
+  </div>
     {% if footer %}
       <div class="card-footer">
         {{ footer }}
