@@ -3,3 +3,84 @@
 .navbar {
     /*background-color: red;*/
 }
+/* Home Page */
+.emoney-card {
+    margin: auto;
+    width: 80%;
+}
+.emoney-card .card-image img {
+    margin: auto;
+    display: block;
+    padding-top: 10%;
+    padding-bottom: 10%
+}
+.emoney-card .card-title h3 {
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 23px;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+.emoney-card .card-body p {
+    color: #6D6E71;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+}
+.path-frontpage .paragraph.text-image {
+    background: aliceblue;
+}
+.path-frontpage .paragraph.text-image img {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.path-frontpage .paragraph.text-image .buttons--text-image .btn-primary {
+    background-color: transparent;
+    border: #00AAE7 1px solid;
+    color: #00AAE7;
+    width: 165px;
+    height: 49px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 16px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+.path-frontpage .paragraph.callout-group {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.path-frontpage .paragraph.callout-group .container {
+    max-width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.path-frontpage .paragraph.callout-group .container .col-md-6.left {
+    background-color: #1A6887;
+}
+.path-frontpage .paragraph.callout-group .container .col-md-6.right {
+    background-color: #B5C534;
+}
+.path-frontpage .paragraph.callout-group .container .col-md-6.left h3,
+.path-frontpage .paragraph.callout-group .container .col-md-6.right h3
+{
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 24px;
+    margin: 0 0 16px 0;
+}
+.path-frontpage .paragraph.callout-group .container .col-md-6.left .btn-primary,
+.path-frontpage .paragraph.callout-group .container .col-md-6.right .btn-primary
+{
+    background-color: transparent;
+    border: #fff 1px solid;
+    color: #fff;
+}
+.path-frontpage .paragraph.callout-group .container .callout {
+    padding: 5rem;
+}
+/* End of Home Page */
