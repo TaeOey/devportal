@@ -34,6 +34,9 @@ module:
   file: 0
   file_link: 0
   filter: 0
+  flexslider: 0
+  flexslider_fields: 0
+  flexslider_views: 0
   fontawesome: 0
   help: 0
   history: 0
@@ -42,6 +45,7 @@ module:
   layout_builder: 0
   layout_discovery: 0
   legal: 0
+  libraries: 0
   link: 0
   media: 0
   media_library: 0

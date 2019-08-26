@@ -23,7 +23,8 @@
     "drush/drush": "~8",
     "drupal/devel": "^1.2",
     "drupal/legal": "^1.0@RC",
-    "drupal/email_registration": "^1.0@RC"
+    "drupal/email_registration": "^1.0@RC",
+    "drupal/flexslider": "^2.0@beta"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
