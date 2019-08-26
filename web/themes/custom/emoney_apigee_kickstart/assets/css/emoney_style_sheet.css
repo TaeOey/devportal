@@ -1,8 +1,96 @@
 /* Add css rules with specific selectors */
 
-.navbar {
-    /*background-color: red;*/
+/* Global overrides */
+body.user-logged-in .dialog-off-canvas-main-canvas {
+  margin-top: 27px;
 }
+
+body .dialog-off-canvas-main-canvas .page {
+  padding-top: 102px
+}
+
+/* Header */
+.user-logged-in .navbar {
+  top: 80px;
+}
+
+.navbar {
+  background: #1A2856;
+  border-bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 32px 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.navbar .navbar-brand:after {
+  border-left: #fff 2px solid;
+  color: #fff;
+  content: "developer";
+  display: block;
+  font-size: 16px;
+  line-height: 32px;
+  margin: 0 0 0 12px;
+  max-width: 100%;
+  padding: 0 0 0 12px;
+}
+
+.navbar .navbar-brand img {
+  height: 32px;
+  max-width: 100%;
+  margin: 0 !important;
+}
+
+.navbar .navbar-collapse {
+  justify-content: flex-end;
+}
+
+.navbar .navbar-collapse .mr-auto {
+  margin: initial !important;
+}
+
+.navbar .navbar-collapse .mr-auto .nav-item .nav-link {
+  color: #FFFFFF;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  padding: .5rem 11px;
+}
+
+.navbar .navbar-collapse .mr-auto .nav-item .nav-link.is-active {
+  font-weight: bold;
+}
+
+.navbar .navbar-collapse .mr-auto .nav-item .nav-link.is-active:after {
+  display: none;
+}
+
+.navbar .navbar-collapse .search-block-form .form-inline .form-search {
+  background-color: transparent;
+  border: none;
+  border-bottom: #fff 1px solid;
+  border-radius: 0;
+  box-shadow: none;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  margin: 0 0 0 11px;
+  padding: 3px 0;
+}
+
+.navbar .navbar-collapse .search-block-form .form-inline .form-search-button {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #fff;
+  border-bottom: #fff 1px solid;
+  height: 25px;
+  outline: none;
+}
+
 /* Home Page */
 .emoney-card {
     margin: auto;
