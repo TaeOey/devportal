@@ -1,0 +1,14 @@
+uuid: 3f7fc50d-a841-4f8b-a971-236ce460a080
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.internal_developer
+  module:
+    - user
+id: user_remove_role_action.internal_developer
+label: 'Remove the Internal Developer role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: internal_developer
