@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "707c47b28cec79751560cd5ac7591ea8",
+    "content-hash": "282a868ccbf0f527f8b3a3098676e23e",
     "packages": [
         {
             "name": "apigee/apigee-client-php",
@@ -3132,6 +3132,57 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/key",
                 "issues": "http://drupal.org/project/key"
+            }
+        },
+        {
+            "name": "drupal/legal",
+            "version": "1.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/legal.git",
+                "reference": "8.x-1.0-rc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/legal-8.x-1.0-rc1.zip",
+                "reference": "8.x-1.0-rc1",
+                "shasum": "3ac33d4c6b1565e85ecb76238ce3191843aca020"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-rc1",
+                    "datestamp": "1537045980",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Castelo",
+                    "homepage": "https://www.drupal.org/user/3555"
+                },
+                {
+                    "name": "vegantriathlete",
+                    "homepage": "https://www.drupal.org/user/491720"
+                }
+            ],
+            "description": "Display Terms and Conditions statement on the registration page.",
+            "homepage": "https://www.drupal.org/project/legal",
+            "support": {
+                "source": "https://git.drupalcode.org/project/legal"
             }
         },
         {
@@ -7568,7 +7619,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "drupal/legal": 5
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
