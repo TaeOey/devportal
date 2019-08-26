@@ -22,7 +22,8 @@
     "php": "^7.1",
     "drush/drush": "~8",
     "drupal/devel": "^1.2",
-    "drupal/legal": "^1.0@RC"
+    "drupal/legal": "^1.0@RC",
+    "drupal/email_registration": "^1.0@RC"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
