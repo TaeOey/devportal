@@ -28,42 +28,23 @@ settings:
       callout: callout
     target_bundles_drag_drop:
       blockquote:
-        weight: 14
         enabled: false
       button:
-        weight: 15
         enabled: false
       button_group:
-        weight: 16
         enabled: false
       callout:
         enabled: true
-        weight: 17
       callout_group:
-        weight: 18
-        enabled: false
-      callout_home:
-        weight: 19
         enabled: false
       card:
-        weight: 20
         enabled: false
       card_group:
-        weight: 21
-        enabled: false
-      cta:
-        weight: 22
         enabled: false
       hero:
-        weight: 23
-        enabled: false
-      text:
-        weight: 24
         enabled: false
       text_image:
-        weight: 25
         enabled: false
       title_bar:
-        weight: 26
         enabled: false
 field_type: entity_reference_revisions

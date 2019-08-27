@@ -1,13 +1,13 @@
-uuid: d783cb6e-0144-4a7a-b485-6cbd64194ce3
+uuid: 11f86ad0-82d4-4a0b-85cf-6216c6de513a
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: zW8dEKuN_hbYbIx-q05dK7KEUuXcAjFV4-9MKe9EOiw
-id: default
-label: Default
+  default_config_hash: xzLXjkTZoEEN95DHQh6byoNyvxOOdezXIz4B8HuSl00
+id: flexslider_default_basic_carousel
+label: 'Basic Carousel'
 options:
-  animation: fade
+  animation: slide
   animationSpeed: 600
   direction: horizontal
   slideshow: true
@@ -15,13 +15,13 @@ options:
   smoothHeight: false
   reverse: false
   slideshowSpeed: 7000
-  animationLoop: true
+  animationLoop: false
   randomize: false
   startAt: 0
-  itemWidth: 0
-  itemMargin: 0
-  minItems: 0
-  maxItems: 0
+  itemWidth: 210
+  itemMargin: 5
+  minItems: 2
+  maxItems: 2
   move: 0
   directionNav: true
   controlNav: '1'
@@ -40,10 +40,10 @@ options:
   initDelay: 0
   useCSS: true
   video: false
-  pausePlay: false
+  pausePlay: true
   pauseText: Pause
   playText: Play
   pauseOnAction: true
-  pauseOnHover: false
+  pauseOnHover: true
   controlsContainer: .flex-control-nav-container
   manualControls: ''

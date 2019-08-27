@@ -3,14 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.callout.field_buttons
     - field.field.paragraph.callout.field_icon
     - field.field.paragraph.callout.field_link
     - field.field.paragraph.callout.field_text
     - field.field.paragraph.callout.field_title
     - paragraphs.paragraphs_type.callout
   module:
-    - paragraphs
+    - fontawesome
+    - link
+    - text
 _core:
   default_config_hash: W3iJAp4dUK-Wx1ZL5Pd95GK9NQq84AxCoA61fyYDEB4
 id: paragraph.callout.default
@@ -18,27 +19,30 @@ targetEntityType: paragraph
 bundle: callout
 mode: default
 content:
-  field_buttons:
-    weight: 1
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: button
-      features:
-        duplicate: duplicate
-        collapse_edit_all: collapse_edit_all
-        add_above: '0'
+  field_icon:
+    weight: 0
+    settings: {  }
     third_party_settings: {  }
-    type: paragraphs
+    type: fontawesome_icon_widget
+    region: content
+  field_link:
+    weight: 3
+    settings:
+      placeholder_url: 'https://google.com'
+      placeholder_title: 'Read more'
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_text:
+    weight: 2
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
     region: content
   field_title:
-    weight: 0
+    weight: 1
     settings:
       size: 40
       placeholder: ''
@@ -47,8 +51,5 @@ content:
     region: content
 hidden:
   created: true
-  field_icon: true
-  field_link: true
-  field_text: true
   status: true
   uid: true

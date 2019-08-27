@@ -1,27 +1,27 @@
-uuid: d783cb6e-0144-4a7a-b485-6cbd64194ce3
+uuid: f1d33eca-2645-4bb2-9bba-721728eda51e
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: zW8dEKuN_hbYbIx-q05dK7KEUuXcAjFV4-9MKe9EOiw
-id: default
-label: Default
+  default_config_hash: mvZbfKqr-YM3s3aw0YQLUkIi5D9zrpWlg6g4hQ5P0Z4
+id: flexslider_carousel_with_min_and_max_ranges
+label: 'FlexSlider carousel with min and max ranges'
 options:
-  animation: fade
+  animation: slide
   animationSpeed: 600
   direction: horizontal
-  slideshow: true
+  slideshow: false
   easing: swing
   smoothHeight: false
   reverse: false
   slideshowSpeed: 7000
-  animationLoop: true
+  animationLoop: false
   randomize: false
   startAt: 0
-  itemWidth: 0
-  itemMargin: 0
-  minItems: 0
-  maxItems: 0
+  itemWidth: 210
+  itemMargin: 5
+  minItems: 2
+  maxItems: 4
   move: 0
   directionNav: true
   controlNav: '1'
