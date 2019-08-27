@@ -1,0 +1,38 @@
+uuid: 4517c471-9f5e-4c7a-8267-82aefb2e0b59
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.hero_slider
+  module:
+    - apigee_kickstart_enhancement
+    - system
+    - views
+  theme:
+    - emoney_apigee_kickstart
+id: views_block__hero_slider_block_1
+theme: emoney_apigee_kickstart
+region: header
+weight: -6
+provider: null
+plugin: 'views_block:hero_slider-block_1'
+settings:
+  id: 'views_block:hero_slider-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  block_type:
+    id: block_type
+    uuid: 4517c471-9f5e-4c7a-8267-82aefb2e0b59
+    bundles: {  }
+    is_adjacent: 0
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

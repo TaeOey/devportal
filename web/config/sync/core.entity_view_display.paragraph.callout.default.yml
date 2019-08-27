@@ -3,15 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.callout.field_buttons
     - field.field.paragraph.callout.field_icon
     - field.field.paragraph.callout.field_link
     - field.field.paragraph.callout.field_text
     - field.field.paragraph.callout.field_title
     - paragraphs.paragraphs_type.callout
   module:
-    - fontawesome
-    - link
-    - text
+    - entity_reference_revisions
 _core:
   default_config_hash: FKAXYMAJp5NWkRdEbXbZD4khmlqvXkogoanGQzOXP98
 id: paragraph.callout.default
@@ -19,39 +18,24 @@ targetEntityType: paragraph
 bundle: callout
 mode: default
 content:
-  field_icon:
-    weight: 0
-    label: hidden
+  field_buttons:
+    weight: 1
+    label: above
     settings:
-      layers: false
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: fontawesome_icon_formatter
-    region: content
-  field_link:
-    weight: 3
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
-  field_text:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
+    type: entity_reference_revisions_entity_view
     region: content
   field_title:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-hidden: {  }
+hidden:
+  field_icon: true
+  field_link: true
+  field_text: true

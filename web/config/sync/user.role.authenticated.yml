@@ -21,6 +21,7 @@ permissions:
   - 'skip comment approval'
   - 'update own developer_app'
   - 'use text format basic_html'
+  - 'view Terms and Conditions'
   - 'view media'
   - 'view own developer_app'
   - 'view published apidoc entities'

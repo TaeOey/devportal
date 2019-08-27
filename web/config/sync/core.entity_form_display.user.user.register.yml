@@ -1,9 +1,11 @@
 uuid: c87670ad-ff1f-4a15-b2ea-b453ceea22a5
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_form_mode.user.register
+    - field.field.user.user.field_company_name
+    - field.field.user.user.field_company_role
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -52,5 +54,7 @@ content:
     region: content
 hidden:
   contact: true
+  field_company_name: true
+  field_company_role: true
   language: true
   path: true

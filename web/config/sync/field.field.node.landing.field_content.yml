@@ -34,31 +34,46 @@ settings:
       callout_group: callout_group
       card_group: card_group
       cta: cta
-      text_image: text_image
       text: text
+      text_image: text_image
     target_bundles_drag_drop:
       blockquote:
         enabled: true
+        weight: 13
+      callout_home:
+        enabled: true
+        weight: 14
       button:
+        weight: 14
         enabled: false
       button_group:
+        weight: 15
         enabled: false
       callout:
+        weight: 16
         enabled: false
       callout_group:
         enabled: true
+        weight: 17
       card:
+        weight: 18
         enabled: false
       card_group:
         enabled: true
-      hero:
-        enabled: false
+        weight: 19
       cta:
         enabled: true
-      text_image:
-        enabled: true
+        weight: 20
+      hero:
+        weight: 21
+        enabled: false
       text:
         enabled: true
+        weight: 22
+      text_image:
+        enabled: true
+        weight: 23
       title_bar:
+        weight: 24
         enabled: false
 field_type: entity_reference_revisions

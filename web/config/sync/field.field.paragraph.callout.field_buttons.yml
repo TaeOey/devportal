@@ -1,23 +1,21 @@
-uuid: 5c97b7c4-ffd2-40d2-b048-84918e8d094b
+uuid: 786ff436-f124-4dae-ad36-463780aa636c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_callouts
+    - field.storage.paragraph.field_buttons
+    - paragraphs.paragraphs_type.button
     - paragraphs.paragraphs_type.callout
-    - paragraphs.paragraphs_type.callout_group
   module:
     - entity_reference_revisions
-_core:
-  default_config_hash: xfPcX4yui8b1vLhDp4PhXRik_H7rlAjS2dZi-eTpOxc
-id: paragraph.callout_group.field_callouts
-field_name: field_callouts
+id: paragraph.callout.field_buttons
+field_name: field_buttons
 entity_type: paragraph
-bundle: callout_group
-label: 'Callout items'
+bundle: callout
+label: Buttons
 description: ''
-required: true
-translatable: false
+required: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -25,20 +23,20 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      callout: callout
+      button: button
     target_bundles_drag_drop:
       blockquote:
         weight: 14
         enabled: false
       button:
+        enabled: true
         weight: 15
-        enabled: false
       button_group:
         weight: 16
         enabled: false
       callout:
-        enabled: true
         weight: 17
+        enabled: false
       callout_group:
         weight: 18
         enabled: false

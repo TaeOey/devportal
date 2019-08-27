@@ -184,14 +184,14 @@ display:
       path: faq
       menu:
         type: normal
-        title: Support
+        title: FAQs
         description: ''
         expanded: false
         parent: ''
-        weight: 4
+        weight: -45
         context: '0'
         menu_name: main
-        enabled: true
+        enabled: false
     cache_metadata:
       max-age: -1
       contexts:
