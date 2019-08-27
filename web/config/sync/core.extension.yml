@@ -26,6 +26,7 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  email_registration: 0
   entity: 0
   entity_reference_revisions: 0
   field: 0
@@ -34,7 +35,6 @@ module:
   file_link: 0
   filter: 0
   flexslider: 0
-  flexslider_example: 0
   flexslider_fields: 0
   flexslider_views: 0
   fontawesome: 0
@@ -44,6 +44,7 @@ module:
   key: 0
   layout_builder: 0
   layout_discovery: 0
+  legal: 0
   libraries: 0
   link: 0
   media: 0

@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - apigee_kickstart_enhancement
     - system
   theme:
     - emoney_apigee_kickstart
@@ -17,17 +16,10 @@ provider: null
 plugin: system_branding_block
 settings:
   id: system_branding_block
-  label: 'eMoney Developer'
+  label: 'Site branding'
   provider: system
   label_display: '0'
   use_site_logo: true
   use_site_name: false
   use_site_slogan: false
-visibility:
-  block_type:
-    id: block_type
-    uuid: 0ac6d264-5127-4d83-8f1e-0d10cd00f99f
-    bundles: {  }
-    is_adjacent: 0
-    negate: false
-    context_mapping: {  }
+visibility: {  }

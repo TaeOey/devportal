@@ -17,31 +17,16 @@ targetEntityType: paragraph
 bundle: callout_group
 mode: default
 content:
-  field_buttons:
-    weight: 2
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
-    region: content
   field_callouts:
     type: entity_reference_revisions_entity_view
-    weight: 1
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
-  field_title:
     weight: 0
     label: hidden
     settings:
-      link_to_entity: false
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: string
     region: content
 hidden:
   field_background_style: true
+  field_buttons: true
+  field_title: true
