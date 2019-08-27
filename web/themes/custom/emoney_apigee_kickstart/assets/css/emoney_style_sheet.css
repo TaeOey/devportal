@@ -51,6 +51,11 @@ body .dialog-off-canvas-main-canvas .page {
   margin: initial !important;
 }
 
+.navbar .navbar-collapse .mr-auto .nav-item.active::after,
+.navbar .navbar-collapse .mr-auto .nav-item.active .nav-link::after {
+  display: none;
+}
+
 .navbar .navbar-collapse .mr-auto .nav-item .nav-link {
   color: #FFFFFF;
   font-family: Arial, sans-serif;
@@ -61,10 +66,6 @@ body .dialog-off-canvas-main-canvas .page {
 
 .navbar .navbar-collapse .mr-auto .nav-item .nav-link.is-active {
   font-weight: bold;
-}
-
-.navbar .navbar-collapse .mr-auto .nav-item .nav-link.is-active:after {
-  display: none;
 }
 
 .navbar .navbar-collapse .search-block-form .form-inline .form-search {
