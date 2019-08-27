@@ -1,18 +1,18 @@
-uuid: d783cb6e-0144-4a7a-b485-6cbd64194ce3
+uuid: 7b023bf4-7851-4471-9e0a-70872ec34ec3
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: zW8dEKuN_hbYbIx-q05dK7KEUuXcAjFV4-9MKe9EOiw
-id: default
-label: Default
+  default_config_hash: 41_zyQJVzsnOnWNp9ln-47sAnTuDcy0IyAhWVQf2ykw
+id: flexslider_default_slider_thumbnail_controlnav
+label: 'slider w/thumbnail controlnav pattern'
 options:
-  animation: fade
+  animation: slide
   animationSpeed: 600
   direction: horizontal
   slideshow: true
   easing: swing
-  smoothHeight: false
+  smoothHeight: true
   reverse: false
   slideshowSpeed: 7000
   animationLoop: true
@@ -24,7 +24,7 @@ options:
   maxItems: 0
   move: 0
   directionNav: true
-  controlNav: '1'
+  controlNav: thumbnails
   thumbCaptions: false
   thumbCaptionsBoth: false
   keyboard: true
@@ -44,6 +44,6 @@ options:
   pauseText: Pause
   playText: Play
   pauseOnAction: true
-  pauseOnHover: false
+  pauseOnHover: true
   controlsContainer: .flex-control-nav-container
   manualControls: ''

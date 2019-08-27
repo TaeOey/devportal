@@ -1,21 +1,21 @@
-uuid: d783cb6e-0144-4a7a-b485-6cbd64194ce3
+uuid: df4fa495-3a3e-49f3-979e-a5c1f226bfd9
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: zW8dEKuN_hbYbIx-q05dK7KEUuXcAjFV4-9MKe9EOiw
-id: default
-label: Default
+  default_config_hash: A6CONM9YTt_bx5vN6HYW5OyU4qxIFXrqpRjicVZG-M4
+id: flexslider_default_slider_w_thumbnail_slider
+label: 'Slider w/thumbnail slider'
 options:
-  animation: fade
+  animation: slide
   animationSpeed: 600
   direction: horizontal
-  slideshow: true
+  slideshow: false
   easing: swing
   smoothHeight: false
   reverse: false
   slideshowSpeed: 7000
-  animationLoop: true
+  animationLoop: false
   randomize: false
   startAt: 0
   itemWidth: 0
@@ -24,7 +24,7 @@ options:
   maxItems: 0
   move: 0
   directionNav: true
-  controlNav: '1'
+  controlNav: '0'
   thumbCaptions: false
   thumbCaptionsBoth: false
   keyboard: true
@@ -35,7 +35,7 @@ options:
   nextText: Next
   namespace: flex-
   selector: '.slides > li'
-  sync: ''
+  sync: '#flexslider-2'
   asNavFor: ''
   initDelay: 0
   useCSS: true

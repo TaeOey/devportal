@@ -1,9 +1,0 @@
-uuid: 5552c299-cf14-44cf-8ac5-8c93a26b19f5
-langcode: en
-status: true
-dependencies: {  }
-id: internal_developer
-label: 'Internal Developer'
-weight: 5
-is_admin: null
-permissions: {  }

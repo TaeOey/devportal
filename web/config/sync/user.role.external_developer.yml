@@ -1,9 +1,0 @@
-uuid: ffd66bb6-1a6a-4960-af6e-20f995708184
-langcode: en
-status: true
-dependencies: {  }
-id: external_developer
-label: 'External Developer'
-weight: 4
-is_admin: null
-permissions: {  }

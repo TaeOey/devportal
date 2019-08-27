@@ -1,4 +1,4 @@
-uuid: 834a7fde-23db-434e-9dfa-0f3c1873fdc4
+uuid: cc984bec-75bb-44f6-882a-fd84a10f276c
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,10 @@ dependencies:
     - file
     - image
     - node
-id: node.field_hero_image
-field_name: field_hero_image
+_core:
+  default_config_hash: KX4JGuQgRa69g5z50ja5tsHV4foPN-B6BgTSTLLqeGo
+id: node.field_flexslider_example_image
+field_name: field_flexslider_example_image
 entity_type: node
 type: image
 settings:
@@ -23,7 +25,7 @@ settings:
   display_default: false
 module: image
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

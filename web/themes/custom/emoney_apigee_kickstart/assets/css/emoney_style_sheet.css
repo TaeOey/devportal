@@ -52,7 +52,7 @@ body .dialog-off-canvas-main-canvas .page {
 }
 
 .navbar .navbar-collapse .mr-auto .nav-item.active::after,
-.navbar .navbar-collapse .mr-auto .nav-item.active .nav-link::after {
+.navbar .navbar-collapse .mr-auto .nav-item .nav-link::after {
   display: none;
 }
 

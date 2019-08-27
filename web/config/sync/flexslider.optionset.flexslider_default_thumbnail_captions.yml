@@ -1,11 +1,11 @@
-uuid: d783cb6e-0144-4a7a-b485-6cbd64194ce3
+uuid: 4bb711b4-e03b-44b8-9fd7-8bfaa8168619
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: zW8dEKuN_hbYbIx-q05dK7KEUuXcAjFV4-9MKe9EOiw
-id: default
-label: Default
+  default_config_hash: yU6ih5O4dFQEt-LLhR7OHKb_bKJKfvabnlWAldPKJcM
+id: flexslider_default_thumbnail_captions
+label: 'FlexSlider Default Thumbnail Captions'
 options:
   animation: fade
   animationSpeed: 600
@@ -24,8 +24,8 @@ options:
   maxItems: 0
   move: 0
   directionNav: true
-  controlNav: '1'
-  thumbCaptions: false
+  controlNav: thumbnails
+  thumbCaptions: true
   thumbCaptionsBoth: false
   keyboard: true
   multipleKeyboard: false
