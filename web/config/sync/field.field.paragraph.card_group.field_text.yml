@@ -1,0 +1,21 @@
+uuid: 2b93eb67-78f2-4392-af9f-0ec7e0aef1ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.card_group
+  module:
+    - text
+id: paragraph.card_group.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: card_group
+label: 'Card Group Subtitle'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
