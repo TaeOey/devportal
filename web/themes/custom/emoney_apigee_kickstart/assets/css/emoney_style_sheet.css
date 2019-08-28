@@ -200,6 +200,43 @@ body .dialog-off-canvas-main-canvas .page {
 }
 /* End of Home Page */
 
+/* Footer */
+.footer{
+  background-color: #333333;
+  flex: 1;
+}
+.footer ul{
+padding: 0;
+}
+.footer li{
+  list-style-type: none;
+  display: inline;
+  font-size: 14px;
+  font-family: "Lato","Arial",sans-serif;
+}
+.footer p{
+color: #cccccc;
+  font-family: "Roboto",sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 28px;
+  margin-bottom: 0rem
+}
+footer img{
+height: 36px;
+}
+.footer .quick-links-right {
+text-align: right;
+}
+.footer .quick-links-right li{
+padding-left: 24px; 
+}
+.footer .quick-links-left li{
+padding-right: 24px; 
+text-align: left;
+}
+/* End of Footer */
+
 /************* Media Queries *************************/
 /* Desktop Only */
 @media (min-width: 992px) {
