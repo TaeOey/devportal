@@ -1,5 +1,5 @@
 name: eMoney Main Module
-decription: Custimizing drupal behavior to match eMoney requirements.
+description: Custimizing drupal behavior to match eMoney requirements.
 package: Custom
 
 type: module
