@@ -5,7 +5,7 @@ dependencies: {  }
 id: contact_us
 label: 'Contact Us'
 recipients:
-  - bfurtak@emoneyadvisor.com
+  - devnull@emoneyadvisor.com
 reply: ''
 weight: 0
 message: ''
