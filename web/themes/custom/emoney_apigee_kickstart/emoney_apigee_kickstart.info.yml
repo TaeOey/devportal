@@ -5,6 +5,7 @@ package: Other
 core: 8.x
 libraries:
   - emoney_apigee_kickstart/emoney-global-style
+  - emoney_apigee_kickstart/emoney-global-script
  
 base theme: apigee_kickstart
 
