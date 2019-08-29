@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e9ab0585c900afbc8bda0dc4a4431fd",
+    "content-hash": "7c05e040cd7dc60d6f844e00311604f2",
     "packages": [
         {
             "name": "apigee/apigee-client-php",
@@ -3809,6 +3809,62 @@
             "homepage": "https://www.drupal.org/project/token",
             "support": {
                 "source": "https://git.drupalcode.org/project/token"
+            }
+        },
+        {
+            "name": "drupal/viewfield",
+            "version": "3.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/viewfield.git",
+                "reference": "8.x-3.0-beta3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/viewfield-8.x-3.0-beta3.zip",
+                "reference": "8.x-3.0-beta3",
+                "shasum": "82fca470e3563c58fc37d1204354b2555ff32485"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.0-beta3",
+                    "datestamp": "1565627287",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "jerdavis",
+                    "homepage": "https://www.drupal.org/user/228997"
+                },
+                {
+                    "name": "keithm",
+                    "homepage": "https://www.drupal.org/user/691250"
+                },
+                {
+                    "name": "sun",
+                    "homepage": "https://www.drupal.org/user/54136"
+                }
+            ],
+            "description": "Defines an entity reference field type to display a view.",
+            "homepage": "http://drupal.org/project/viewfield",
+            "support": {
+                "source": "https://git.drupalcode.org/project/viewfield",
+                "issues": "https://www.drupal.org/project/issues/viewfield"
             }
         },
         {
@@ -7819,7 +7875,8 @@
     "stability-flags": {
         "drupal/legal": 5,
         "drupal/email_registration": 5,
-        "drupal/flexslider": 10
+        "drupal/flexslider": 10,
+        "drupal/viewfield": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,

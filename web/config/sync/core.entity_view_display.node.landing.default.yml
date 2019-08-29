@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.node.landing.field_content
     - field.field.node.landing.field_header
+    - field.field.node.landing.field_view_field
     - node.type.landing
   module:
     - entity_reference_revisions
     - user
+    - viewfield
 _core:
   default_config_hash: 300n-3gJZEQYCNvDvP-v0F4egeZdpzWcxO6Q_wt6t_Y
 id: node.landing.default
@@ -33,6 +35,16 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
+    region: content
+  field_view_field:
+    weight: 2
+    label: hidden
+    settings:
+      view_title: hidden
+      empty_view_title: hidden
+      always_build_output: 0
+    third_party_settings: {  }
+    type: viewfield_default
     region: content
 hidden:
   links: true

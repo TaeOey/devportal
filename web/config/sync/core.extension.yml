@@ -66,6 +66,7 @@ module:
   toolbar: 0
   tour: 0
   user: 0
+  viewfield: 0
   views_ui: 0
   forum: 1
   menu_link_content: 1

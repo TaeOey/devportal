@@ -1,0 +1,27 @@
+uuid: ccc1aac4-d28a-4f29-8750-2677c13bc4a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_view_field
+    - node.type.landing
+  module:
+    - viewfield
+id: node.landing.field_view_field
+field_name: field_view_field
+entity_type: node
+bundle: landing
+label: 'View Field'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  force_default: 0
+  allowed_views: {  }
+  allowed_display_types:
+    block: block
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: viewfield
