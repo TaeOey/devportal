@@ -8,7 +8,52 @@ dependencies:
     - node.type.landing
   module:
     - entity_reference_revisions
+    - layout_builder
     - user
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
+          e5db2adc-9b7a-400a-8ae5-b14d0e0846d3:
+            uuid: e5db2adc-9b7a-400a-8ae5-b14d0e0846d3
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:landing:field_header'
+              formatter:
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+                type: entity_reference_revisions_entity_view
+            additional: {  }
+            weight: 0
+          c6c96e18-19c9-4652-9926-0011a0f03815:
+            uuid: c6c96e18-19c9-4652-9926-0011a0f03815
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:landing:field_content'
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
 _core:
   default_config_hash: 300n-3gJZEQYCNvDvP-v0F4egeZdpzWcxO6Q_wt6t_Y
 id: node.landing.default
