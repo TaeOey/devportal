@@ -9,7 +9,7 @@ body .dialog-off-canvas-main-canvas .page {
   padding-top: 102px
 }
 
-/* Header */
+/* Main Header */
 .user-logged-in .navbar {
   top: 80px;
 }
@@ -89,6 +89,48 @@ body .dialog-off-canvas-main-canvas .page {
   border-bottom: #fff 1px solid;
   height: 25px;
   outline: none;
+}
+
+/* Page Header */
+.page__header {
+  background-color: #1A2856;
+  background-image: url('/sites/all/themes/custom/apigee_responsive_emoney/img/background_getting_started.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 136px 0 56px 0;
+  position: relative;
+}
+
+.page__header::after {
+    background-color: #1A2856;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: .8;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.page__header .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page__header .container .page__title  {
+      color: #fff;
+      font-size: 48px;
+      font-weight: bold;
+      line-break: 56px;
+      margin: 8px 0 16px 0;
+}
+
+.page__header .container .page__headline {
+  color: #fff;
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0;
 }
 
 /* Home Page */
@@ -172,3 +214,38 @@ body .dialog-off-canvas-main-canvas .page {
     padding: 5rem;
 }
 /* End of Home Page */
+
+/* Support page */
+.path-support .page {
+  padding-top: 0 !important;
+}
+
+.path-support .details {
+  border-top: none;
+  border-bottom: #1A6887 1px solid;
+  padding-bottom: 1px !important;
+  padding-top: 25px !important;
+}
+
+.path-support .details__summary .details__title {
+  display: inline-block;
+}
+
+.path-support .details__summary .details__icon {
+  color: #1A6887;
+  margin-left: 7px;
+  position: initial;
+}
+
+.path-support .details__summary .details__title span {
+	color: #1A6887;
+	font-family: Arial;
+	font-size: 24px;
+	font-weight: bold;
+  line-height: 24px;
+}
+
+.path-support .details__content {
+  padding-top: 5px !important;
+  padding-bottom: 20px;
+}
