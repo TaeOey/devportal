@@ -5,12 +5,10 @@ dependencies:
   config:
     - field.field.node.landing.field_content
     - field.field.node.landing.field_header
-    - field.field.node.landing.field_view_field
     - node.type.landing
   module:
     - paragraphs
     - path
-    - viewfield
 _core:
   default_config_hash: OtedXuiMBXcKc-qp6sza-iaaoK1VhOSbKmxHoBzhwcg
 id: node.landing.default
@@ -60,12 +58,6 @@ content:
         duplicate: duplicate
         collapse_edit_all: collapse_edit_all
     third_party_settings: {  }
-  field_view_field:
-    weight: 26
-    settings: {  }
-    third_party_settings: {  }
-    type: viewfield_select
-    region: content
   path:
     type: path
     weight: 6
