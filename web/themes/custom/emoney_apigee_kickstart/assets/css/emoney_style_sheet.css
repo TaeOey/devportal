@@ -252,7 +252,7 @@ body .dialog-off-canvas-main-canvas .page {
 /* Desktop Only */
 @media (min-width: 992px) {
   .card-group-2 .container {
-    max-width: 56%;
+    max-width: 50%;
   }
 }
 /* End of Desktop Only */
