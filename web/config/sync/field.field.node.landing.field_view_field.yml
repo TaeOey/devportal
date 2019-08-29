@@ -1,4 +1,4 @@
-uuid: ccc1aac4-d28a-4f29-8750-2677c13bc4a6
+uuid: 75bc7431-5b02-4f3c-ba3d-6f2df8410555
 langcode: en
 status: true
 dependencies:
@@ -19,9 +19,34 @@ default_value: {  }
 default_value_callback: ''
 settings:
   force_default: 0
-  allowed_views: {  }
+  allowed_views:
+    apigee_api_catalog: 0
+    api_collection: 0
+    blog: 0
+    comment: 0
+    content: 0
+    block_content: 0
+    files: 0
+    faq: 0
+    frontpage: 0
+    hero_slider: 0
+    legal_terms: 0
+    legal_users: 0
+    media: 0
+    media_library: 0
+    user_admin_people: 0
+    comments_recent: 0
+    content_recent: 0
+    taxonomy_term: 0
+    watchdog: 0
+    who_s_new: 0
+    who_s_online: 0
   allowed_display_types:
     block: block
+    embed: embed
+    feed: feed
+    default: default
+    page: page
   handler: 'default:view'
   handler_settings: {  }
 field_type: viewfield

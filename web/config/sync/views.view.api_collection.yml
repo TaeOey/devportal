@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - system.menu.main
     - taxonomy.vocabulary.api_category
   module:
     - taxonomy
@@ -57,7 +58,7 @@ display:
         options:
           grouping: {  }
           columns: 2
-          automatic_width: true
+          automatic_width: false
           alignment: horizontal
           col_class_default: true
           col_class_custom: col-md-6
@@ -251,10 +252,20 @@ display:
     display_plugin: page
     id: page_1
     display_title: Page
-    position: 1
+    position: 2
     display_options:
       display_extenders: {  }
+      display_description: ''
       path: collections
+      menu:
+        type: normal
+        title: APIs
+        description: ''
+        expanded: false
+        parent: ''
+        weight: -48
+        context: '0'
+        menu_name: main
     cache_metadata:
       max-age: -1
       contexts:
