@@ -44,7 +44,6 @@
 {% else %}
   <div class="{{ classes|join(' ')|trim }}">
 {% endif %}
-
   {% if url %}
     <a href="{{ url }}">
   {% endif %}
@@ -67,12 +66,13 @@
       </div>
     {% endif %}
   </div>
-    {% if footer %}
-      <div class="card-footer">
-        {{ footer }}
-      </div>
-    {% endif %}
-
+{#
+  {% if footer %}
+    <div class="card-footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+#}
   {% if url %}
     </a>
   {% endif %}
