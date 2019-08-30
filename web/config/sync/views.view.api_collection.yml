@@ -1,18 +1,17 @@
-uuid: 646212fe-110e-4db9-87d2-ccd99b5ffde3
+uuid: df641802-da7d-4d68-b634-486b435c768e
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.main
-    - taxonomy.vocabulary.api_category
+    - taxonomy.vocabulary.collections
   module:
     - taxonomy
     - text
     - user
 id: api_collection
-label: 'API Collections'
+label: 'Api Collection'
 module: views
-description: 'View of api collections'
+description: ''
 tag: ''
 base_table: taxonomy_term_field_data
 base_field: tid
@@ -58,7 +57,7 @@ display:
         options:
           grouping: {  }
           columns: 2
-          automatic_width: false
+          automatic_width: true
           alignment: horizontal
           col_class_default: true
           col_class_custom: col-md-6
@@ -66,11 +65,6 @@ display:
           row_class_custom: ''
       row:
         type: fields
-        options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
       fields:
         name:
           id: name
@@ -108,7 +102,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h1
+          element_type: h2
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -193,7 +187,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: OVERVIEW
+          text: Overview
           output_url_as_text: false
           absolute: false
           entity_type: taxonomy_term
@@ -215,12 +209,12 @@ display:
           table: taxonomy_term_field_data
           field: vid
           value:
-            api_category: api_category
+            collections: collections
           entity_type: taxonomy_term
           entity_field: vid
           plugin_id: bundle
       sorts: {  }
-      title: 'API Collections'
+      title: 'Api Collection'
       header: {  }
       footer: {  }
       empty: {  }
@@ -238,7 +232,7 @@ display:
     display_plugin: block
     id: block_1
     display_title: Block
-    position: 2
+    position: 1
     display_options:
       display_extenders: {  }
     cache_metadata:
