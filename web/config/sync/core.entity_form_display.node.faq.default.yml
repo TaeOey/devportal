@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.faq.field_answer
+    - field.field.node.faq.field_weight
     - node.type.faq
   module:
     - path
@@ -22,6 +23,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_weight:
+    weight: 26
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
     region: content
   path:
     type: path

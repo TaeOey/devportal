@@ -1,0 +1,25 @@
+uuid: b12215a4-926c-4c76-886c-ecb55af5c506
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.faq
+id: node.faq.field_weight
+field_name: field_weight
+entity_type: node
+bundle: faq
+label: Weight
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
