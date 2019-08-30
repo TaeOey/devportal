@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.apidoc.field_categories
-    - taxonomy.vocabulary.api_category
   module:
     - apigee_api_catalog
 _core:
@@ -22,8 +21,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      api_category: api_category
+    target_bundles: {  }
     sort:
       field: name
       direction: asc

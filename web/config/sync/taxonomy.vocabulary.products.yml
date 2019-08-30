@@ -1,0 +1,8 @@
+uuid: d6cd0585-3ebc-41eb-90d7-228caf82851b
+langcode: en
+status: true
+dependencies: {  }
+name: Products
+vid: products
+description: ''
+weight: 0
