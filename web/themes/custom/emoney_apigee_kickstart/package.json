@@ -1,0 +1,21 @@
+{
+  "name": "emoney_apigee_kickstart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rerun-script",
+    "css": "node sass.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "watches": {
+    "css": [ "sass/*.scss" ]
+  },
+  "devDependencies": {
+    "node-sass": "4.12.0",
+    "rerun-script": "^0.6.0"
+  }
+}
