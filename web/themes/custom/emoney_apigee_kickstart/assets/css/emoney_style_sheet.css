@@ -354,3 +354,16 @@ body .dialog-off-canvas-main-canvas .page {
   }
 }
 /* End of Mobile Only */
+
+/* Error page */
+.error-page {
+  margin-top: 100px;
+}
+
+.error-header {
+  color: #333333;
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 82px;
+}
+/* End of Error Page */
