@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "watches": {
-    "css": [ "sass/*.scss" ]
+    "css": [ "sass/**/*.scss" ]
   },
   "devDependencies": {
     "node-sass": "4.12.0",

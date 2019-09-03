@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import './colors';
+
+// font stack
+$Arial: 'Arial', sans-serif;
+$Lato: 'Lato', 'Arial', sans-serif;
+$Roboto: 'Roboto', sans-serif;
+
+// font weights
+$normal: 400;
+$bold: 700;
+$extraBold: 900;
+
+
+// typografy
+%title {
+  color: $grey;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+%arrow-down {
+  content: "\f107";
+  font: {
+    family: "Font Awesome 5 Free";
+    size: 15px;
+    weight: bold;
+  }
+}
+
+%arrow-up {
+  content: "\f106";
+  font: {
+    family: "Font Awesome 5 Free";
+    size: 15px;
+    weight: bold;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}

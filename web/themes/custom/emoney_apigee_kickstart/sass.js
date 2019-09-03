@@ -18,4 +18,7 @@ sass.render({
         console.log(filename + ' compiled with success!');
       });
   }
+  else{
+    console.log(error);
+  }
 });

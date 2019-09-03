@@ -1,0 +1,19 @@
+@import '../typography';
+
+.view-api-collection {
+  background-color: #f9f9f9;
+
+  .view-content {
+    .card {
+      height: 505px;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: 0 0 8px 3px rgba(0,0,0,0.02);
+      margin: 0 0 23px 0;
+      overflow: hidden;
+      padding: 30px;
+      position: relative;
+
+    }
+  }
+}
