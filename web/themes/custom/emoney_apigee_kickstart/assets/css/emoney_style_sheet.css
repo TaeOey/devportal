@@ -1,18 +1,3 @@
-/* Add css rules with specific selectors */
-
-/* Global overrides */
-html,
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-body.user-logged-in .dialog-off-canvas-main-canvas {
-  margin-top: 27px;
-}
-
-body .dialog-off-canvas-main-canvas .page {
-  padding-top: 102px
-}
-
 /* Main Header */
 .user-logged-in .navbar {
   top: 80px;
@@ -103,7 +88,6 @@ body .dialog-off-canvas-main-canvas .page {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 136px 0 56px 0;
   position: relative;
 }
 
@@ -139,6 +123,39 @@ body .dialog-off-canvas-main-canvas .page {
 }
 
 /* Home Page */
+.path-frontpage .page .navbar {
+  background-color: transparent;
+}
+
+.path-frontpage .page .page__header {
+  height: 600px;
+  overflow: hidden;
+}
+
+.path-frontpage .page .page__header .flexslider .slides .flex-active-slide .views-field-field-hero-image {
+  position: relative;
+}
+
+.path-frontpage .page .page__header .flexslider .slides .flex-active-slide .views-field-field-hero-image {
+  z-index: 0;
+}
+
+.path-frontpage .page .page__header .flexslider .slides .flex-active-slide .hero-text {
+  z-index: 2;
+}
+
+.path-frontpage .page .page__header .flexslider .slides .flex-active-slide::after {
+  background-color: #1A2856;
+  content: "";
+  height: 600px;
+  left: 0;
+  opacity: .8;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
 .path-frontpage .flexslider {
   border-left-width: 0px;
   border-right-width: 0px;
