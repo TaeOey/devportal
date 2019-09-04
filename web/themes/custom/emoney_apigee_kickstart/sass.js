@@ -18,4 +18,7 @@ sass.render({
         console.log(filename + ' compiled with success!', '\x1b[32m', '[ok]', '\t\t\x1b[0m');
       });
   }
+  else{
+    console.log(error);
+  }
 });
