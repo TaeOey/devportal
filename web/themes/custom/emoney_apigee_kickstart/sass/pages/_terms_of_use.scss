@@ -2,10 +2,15 @@ article[about=\/terms-use]{
 
     .row {
         justify-content: center !important;
-        font-size: 12pt;
     }
     h1 {
-        font-size: 22pt;
+        font-size: 28px;
+        font-family: "Arial",sans-serif;
     }
 
+    p {
+        font-family: "Arial",sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+    }
 }
