@@ -7,8 +7,11 @@
     }
 
     .page__header {
-      height: 600px;
-      overflow: hidden;
+      background-color: transparent;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
 
       .flexslider {
         border-left-width: 0px;
@@ -29,7 +32,6 @@
         .slides {
           .flex-active-slide {
             &:after {
-              background-color: $blue_theme;
               content: "";
               height: 600px;
               left: 0;
@@ -43,6 +45,10 @@
             .views-field-field-hero-image {
               position: relative;
               z-index: 0;
+              background-color: $blue_theme;
+                img {
+                  opacity: 0.5;
+                }
             }
 
             .hero-text {
@@ -50,7 +56,7 @@
             }
           }
         }
-
+        
         .hero-text {
           position: absolute;
           top: 25%;
@@ -70,7 +76,7 @@
           }
 
           .views-field-field-link a {
-            background-color: $blue_light;
+            background-color: #00AAE7; //to do: $blue-shine
             border: none;
             border-radius: 0;
             box-shadow: none;
@@ -89,7 +95,7 @@
       }
     }
   }
-
+  
   .flex-direction-nav {
     .flex-nav-prev,
     .flex-nav-next {
