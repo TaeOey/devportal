@@ -4,15 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rerun-script",
+    "build:css:cr": "node sass.js && drush cr",
     "css": "node sass.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "rerun-script"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "watches": {
-    "css": [ "sass/**/*.scss" ]
+    "build:css:cr": [ "sass/**/*.scss", "templates/**/*.twig" ]
   },
   "devDependencies": {
     "node-sass": "4.12.0",
