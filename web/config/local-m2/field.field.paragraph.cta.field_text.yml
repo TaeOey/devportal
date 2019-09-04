@@ -1,0 +1,23 @@
+uuid: 50311bc7-c2e9-4620-95e6-195ce3776a06
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.cta
+  module:
+    - text
+_core:
+  default_config_hash: XXE_huQ6rxsrLB6cxTKGIYVCB3AR5DBeCVGL1-uoOKA
+id: paragraph.cta.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: cta
+label: 'CTA text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

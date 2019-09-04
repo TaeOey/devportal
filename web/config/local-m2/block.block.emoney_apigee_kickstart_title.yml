@@ -1,0 +1,35 @@
+uuid: c9e626a8-38e1-4ec3-8643-1c98437c0106
+langcode: en
+status: true
+dependencies:
+  module:
+    - apigee_kickstart_enhancement
+    - system
+  theme:
+    - emoney_apigee_kickstart
+_core:
+  default_config_hash: oGuYc5TiGbB3SKhkrCLE18lDkFN1TCvKGAjPQfEvSLI
+id: emoney_apigee_kickstart_title
+theme: emoney_apigee_kickstart
+region: header
+weight: -7
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/article/*\r\n/apis\r\n/blog\r\n/contact\r\n/faq\r\n/forum\r\n/forum/*\r\n/search\r\n/search/*\r\n/user/*/plans\r\n/user/*/monetization/product-bundle/*/plan/*\r\n<front>"
+    negate: true
+    context_mapping: {  }
+  block_type:
+    id: block_type
+    uuid: c9e626a8-38e1-4ec3-8643-1c98437c0106
+    bundles: {  }
+    is_adjacent: 0
+    negate: false
+    context_mapping: {  }

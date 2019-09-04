@@ -1,0 +1,67 @@
+uuid: 786ff436-f124-4dae-ad36-463780aa636c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_buttons
+    - paragraphs.paragraphs_type.button
+    - paragraphs.paragraphs_type.callout
+  module:
+    - entity_reference_revisions
+id: paragraph.callout.field_buttons
+field_name: field_buttons
+entity_type: paragraph
+bundle: callout
+label: Buttons
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      button: button
+    target_bundles_drag_drop:
+      blockquote:
+        weight: 14
+        enabled: false
+      button:
+        enabled: true
+        weight: 15
+      button_group:
+        weight: 16
+        enabled: false
+      callout:
+        weight: 17
+        enabled: false
+      callout_group:
+        weight: 18
+        enabled: false
+      callout_home:
+        weight: 19
+        enabled: false
+      card:
+        weight: 20
+        enabled: false
+      card_group:
+        weight: 21
+        enabled: false
+      cta:
+        weight: 22
+        enabled: false
+      hero:
+        weight: 23
+        enabled: false
+      text:
+        weight: 24
+        enabled: false
+      text_image:
+        weight: 25
+        enabled: false
+      title_bar:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

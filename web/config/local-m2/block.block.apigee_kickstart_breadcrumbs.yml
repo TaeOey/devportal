@@ -1,0 +1,27 @@
+uuid: fafead1c-d9ef-4e57-9a21-9f13f900bffc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - apigee_kickstart
+_core:
+  default_config_hash: Q4F0HKnwTkYwRtNTZtnl87LwCzaWruT9CCISd9pNGCc
+id: apigee_kickstart_breadcrumbs
+theme: apigee_kickstart
+region: breadcrumbs
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/article/*\r\n/blog/*'
+    negate: true
+    context_mapping: {  }
