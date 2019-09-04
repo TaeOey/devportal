@@ -1,0 +1,33 @@
+uuid: 0b58f463-11f2-4f37-8de1-f96ebaecae6b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a228fc21-9679-4aff-a7e6-8611ae0437c1'
+  module:
+    - apigee_kickstart_enhancement
+    - block_content
+  theme:
+    - emoney_apigee_kickstart
+id: copyright_2
+theme: emoney_apigee_kickstart
+region: copyright
+weight: 0
+provider: null
+plugin: 'block_content:a228fc21-9679-4aff-a7e6-8611ae0437c1'
+settings:
+  id: 'block_content:a228fc21-9679-4aff-a7e6-8611ae0437c1'
+  label: Copyright
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  block_type:
+    id: block_type
+    uuid: 0b58f463-11f2-4f37-8de1-f96ebaecae6b
+    bundles: {  }
+    is_adjacent: 0
+    negate: false
+    context_mapping: {  }

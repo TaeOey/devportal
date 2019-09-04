@@ -12,15 +12,16 @@ label: Term
 type: 'canonical_entities:taxonomy_term'
 pattern: '[term:vocabulary:machine-name]/[term:parents:join-path]/[term:name]'
 selection_criteria:
-  ef1c0dc4-2786-40f7-bad3-464abb76fbe5:
+  8a53b9b6-93b4-4a4e-bc98-4f39035033c1:
     id: 'entity_bundle:taxonomy_term'
     bundles:
-      category: category
+      collections: collections
+      products: products
       tags: tags
     negate: false
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: ef1c0dc4-2786-40f7-bad3-464abb76fbe5
+    uuid: 8a53b9b6-93b4-4a4e-bc98-4f39035033c1
 selection_logic: and
 weight: 0
 relationships: {  }

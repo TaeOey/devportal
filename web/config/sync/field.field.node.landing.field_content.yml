@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_content
     - node.type.landing
+    - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.blockquote
     - paragraphs.paragraphs_type.callout_group
     - paragraphs.paragraphs_type.card_group
@@ -31,6 +32,7 @@ settings:
     negate: 0
     target_bundles:
       blockquote: blockquote
+      accordion: accordion
       callout_group: callout_group
       card_group: card_group
       cta: cta
@@ -40,7 +42,7 @@ settings:
       blockquote:
         enabled: true
         weight: 13
-      callout_home:
+      accordion:
         enabled: true
         weight: 14
       button:
