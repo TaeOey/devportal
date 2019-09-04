@@ -15,7 +15,7 @@ sass.render({
       result.css,
       function(err) {
         if (err) throw err;
-        console.log(filename + ' compiled with success!');
+        console.log(filename + ' compiled with success!', '\x1b[32m', '[ok]', '\t\t\x1b[0m');
       });
   }
 });
