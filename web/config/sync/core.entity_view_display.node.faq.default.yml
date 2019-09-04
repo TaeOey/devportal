@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.faq.field_answer
-    - field.field.node.faq.field_weight
     - node.type.faq
   module:
     - text
@@ -24,5 +23,4 @@ content:
     type: text_default
     region: content
 hidden:
-  field_weight: true
   links: true

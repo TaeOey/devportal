@@ -5,6 +5,5 @@ dependencies: {  }
 id: internal_developer
 label: 'Internal Developer'
 weight: 5
-is_admin: false
-permissions:
-  - 'access toolbar'
+is_admin: null
+permissions: {  }
