@@ -37,33 +37,33 @@
 
     .mr-auto {
       margin: initial !important;
+    }
 
-      .nav-item {
-        &.active {
-          &:after {
-            display: none;
-          }
-
-          .nav-link {
-            &:after {
-              display: none;
-            }
-          }
+    .nav-item {
+      &.active {
+        &:after {
+          display: none;
         }
 
         .nav-link {
-          color: $white;
-          font-family: $Arial;
-          font-size: 16px;
-          line-height: 18px;
-          padding: .5rem 11px;
+          &:after {
+            display: none;
+          }
+        }
+      }
 
-          &.is-active {
-            font-weight: $bold;
+      .nav-link {
+        color: $white;
+        font-family: $Arial;
+        font-size: 16px;
+        line-height: 18px;
+        padding: .5rem 11px;
 
-            &:after {
-              display: none;
-            }
+        &.is-active {
+          font-weight: $bold;
+
+          &:after {
+            display: none;
           }
         }
       }
