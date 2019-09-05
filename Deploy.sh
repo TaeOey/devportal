@@ -10,7 +10,7 @@ CURRENT_DATETIME=`date +%Y%m%d-%H%M%S`
 BACKUP_DIRECTORY=/var/www/backups
 DRUPAL_BACKUP="sites-all.tar.gz"
 ROLLBACK_SCRIPT="Rollback.sh"
-DB_BACKUP="dpdb.sql"
+DB_BACKUP="devportal-backup-{CURRENT_DATETIME}.sql"
 DB_IP="#{DrupalDbHost}"
 DB_PORT=#{DrupalDbPort}
 DB_NAME="#{DrupalDbName}"
@@ -36,9 +36,9 @@ echo "Create drupal directories backup in ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP}"
 sudo tar czfP  ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP} -C ${EMONEY_DEVPORTAL_PROJECT_DIRECTORY} ${DRUPAL_DIR_LIST}
 
 #Copy rollback script - not done yet
-echo "Create rollback script ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}"
-sudo cp ${ROLLBACK_SCRIPT} ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}
-sudo cp drush.zip ${BACKUP_DIRECTORY}/drush.zip
+#echo "Create rollback script ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}"
+#sudo cp ${ROLLBACK_SCRIPT} ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}
+#sudo cp drush.zip ${BACKUP_DIRECTORY}/drush.zip
 
 #Update codebase to actual version (this I need help with to figure out
 echo "Updating codebase"
