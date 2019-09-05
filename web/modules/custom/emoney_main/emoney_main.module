@@ -15,4 +15,10 @@ function emoney_main_theme_suggestions_page_alter(array &$suggestions, array $va
     }
 }
 
-?>
+/**
+ * Implements hook_menu_links_discovered_alter().
+ */
+function emoney_main_menu_links_discovered_alter(&$links) {
+  $links['user.logout']['class'] = 'Drupal\emoney_main\Plugin\Menu\EmoneyLoginLogoutMenuLink';
+}
+

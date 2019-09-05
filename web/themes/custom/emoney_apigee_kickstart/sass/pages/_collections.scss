@@ -1,0 +1,111 @@
+@import "../typography";
+
+.view-api-collection {
+  background-color: #f9f9f9;
+
+  .view-content {
+    .card {
+      height: 505px;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.02);
+      margin: 0 0 23px 0;
+      overflow: hidden;
+      padding: 30px;
+      position: relative;
+      border: none;
+
+      &:after {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 64.02%, #ffffff 100%);
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 152px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+
+      &__title {
+        align-items: center;
+        display: flex;
+
+        &__icon {
+          align-items: center;
+          display: flex;
+          height: 65px;
+          margin: 0 0 13px 0;
+          width: 77px;
+
+          img {
+            max-height: 62px;
+            max-width: 59px;
+          }
+        }
+
+        &__text {
+          color: #333333;
+          font-size: 24px;
+          font-weight: $bold;
+          line-height: 32px;
+        }
+      }
+
+      &__footer {
+        bottom: 0;
+        left: 0;
+        padding: 25px 32px;
+        position: absolute;
+        z-index: 1;
+
+        .btn {
+          background-color: transparent;
+          border: none;
+          color: #00aae7;
+          font-size: 16px;
+          padding: 0;
+          text-transform: uppercase;
+
+          &:hover {
+            box-shadow: none;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    h2 {
+      color: #333333;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+
+    p {
+      color: #6d6e71;
+      font-size: 16px;
+      line-height: 24px;
+      margin: 0 0 10px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 17px 0;
+      padding-left: 24px;
+
+      li {
+        color: #6d6e71;
+        font-size: 16px;
+        line-height: 30px;
+
+        &:before {
+          color: #00aae7;
+          content: "\2022";
+          display: inline-block;
+          width: 1em;
+          margin-left: -1em;
+        }
+      }
+    }
+  }
+}

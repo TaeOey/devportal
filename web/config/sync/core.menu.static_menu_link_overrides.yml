@@ -1,10 +1,10 @@
 definitions:
   contact__site_page:
-    enabled: true
+    weight: -50
     menu_name: footer
     parent: ''
+    enabled: true
     expanded: false
-    weight: 0
   forum__index:
     enabled: false
     menu_name: tools

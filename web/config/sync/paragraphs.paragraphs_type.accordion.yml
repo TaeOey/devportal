@@ -1,0 +1,9 @@
+uuid: 3455e0ca-3619-47d9-9642-dcadeeb6493e
+langcode: en
+status: true
+dependencies: {  }
+id: accordion
+label: Accordion
+icon_uuid: null
+description: 'An Accordion paragraph contains a heading and text. It is designed to be used to capture content displayed within a page that needs accordion styling.'
+behavior_plugins: {  }
