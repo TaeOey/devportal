@@ -101,15 +101,15 @@ third_party_settings:
         layout_id: layout_onecol
         layout_settings: {  }
         components:
-          866258bf-fa04-4a66-838a-fe56918d0b79:
-            uuid: 866258bf-fa04-4a66-838a-fe56918d0b79
+          05c496a8-23c3-4ebf-b850-8c4894283854:
+            uuid: 05c496a8-23c3-4ebf-b850-8c4894283854
             region: content
             configuration:
-              id: 'views_block:api_collection-block_1'
-              label: 'More Apis'
+              id: 'views_block:api_collection-block_2'
+              label: 'More APIs'
               provider: views
               label_display: visible
-              views_label: 'More Apis'
+              views_label: 'More APIs'
               items_per_page: none
               context_mapping: {  }
             additional: {  }
