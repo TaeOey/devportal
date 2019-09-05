@@ -8,7 +8,71 @@ dependencies:
     - taxonomy.vocabulary.collections
   module:
     - image
+    - layout_builder
+    - layout_discovery
     - text
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
+          fded8fb3-adb2-464d-a107-9ff7a837ec8b:
+            uuid: fded8fb3-adb2-464d-a107-9ff7a837ec8b
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:taxonomy_term:collections:description'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 2
+          3e812880-86c6-4842-ba2c-0ec17db372f7:
+            uuid: 3e812880-86c6-4842-ba2c-0ec17db372f7
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:collections:field_icon'
+              label: Icon
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: image
+                settings:
+                  image_style: 1_1_80x80
+                  image_link: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          cb78c325-5bc8-4936-adbb-ce3281cd26ab:
+            uuid: cb78c325-5bc8-4936-adbb-ce3281cd26ab
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:collections:name'
+              label: Name
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
 id: taxonomy_term.collections.default
 targetEntityType: taxonomy_term
 bundle: collections
