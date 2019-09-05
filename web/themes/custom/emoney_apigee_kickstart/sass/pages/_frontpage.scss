@@ -12,6 +12,7 @@
       background-repeat: no-repeat;
       background-size: cover;
       position: relative;
+      min-height: unset;
 
       .flexslider {
         border-left-width: 0px;
@@ -25,10 +26,11 @@
             .flex-prev,
             .flex-next {
               height: 70px;
+              padding-top: 15px;
             }
           }
         }
-
+        
         .slides {
           .flex-active-slide {
             &:after {
@@ -97,6 +99,7 @@
   }
   
   .flex-direction-nav {
+    font-size: 0px;
     .flex-nav-prev,
     .flex-nav-next {
       a {
