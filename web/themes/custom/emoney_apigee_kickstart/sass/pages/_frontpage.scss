@@ -5,7 +5,9 @@
     .navbar {
       background-color: transparent;
     }
-
+    .main {
+      .block { margin-bottom: 0rem;} 
+    }
     .page__header {
       background-color: transparent;
       background-position: center;
@@ -190,70 +192,70 @@
       }
     }
 
-    .paragraph {
-      &.text-image {
-        background: aliceblue;
+    
+  }
+  .paragraph {
+    &.text-image {
+      background: aliceblue;
 
-        img {
-          padding-top: 50px;
-          padding-bottom: 50px;
+      img {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .buttons--text-image {
+        .btn-primary {
+          background-color: transparent;
+          border: $blue_light 1px solid;
+          color: $blue_light;
+          width: 165px;
+          height: 49px;
+          font-size: 14px;
+          font-weight: bold;
+          line-height: 16px;
+          padding: 16px 0;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  .callout-group {
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    .container {
+      max-width: 100%;
+      padding-right: 0px;
+      padding-left: 0px;
+
+      .col-md-6 {
+        &.left {
+          background-color: #1A6887; /*$blue_theme*/
         }
 
-        .buttons--text-image {
+        &.right {
+          background-color: #B5C534; /*$green;*/
+        }
+
+        &.left,
+        &.right {
+          color: $white;
+          font-size: 22px;
+          font-weight: bold;
+          line-height: 24px;
+          margin: 0 0 0 0;
+
           .btn-primary {
             background-color: transparent;
-            border: $blue_light 1px solid;
-            color: $blue_light;
-            width: 165px;
-            height: 49px;
-            font-size: 14px;
-            font-weight: bold;
-            line-height: 16px;
-            padding: 16px 0;
-            text-align: center;
-            text-transform: uppercase;
+            border: $white 1px solid;
+            color: $white;
           }
         }
       }
 
-      .callout-group {
-        padding-top: 0px;
-        padding-bottom: 0px;
-
-        .container {
-          max-width: 100%;
-          padding-right: 0px;
-          padding-left: 0px;
-
-          .col-md-6 {
-            &.left {
-              background-color: $blue_theme;
-            }
-
-            &.right {
-              background-color: $green;
-            }
-
-            &.left,
-            &.right {
-              color: $white;
-              font-size: 22px;
-              font-weight: bold;
-              line-height: 24px;
-              margin: 0 0 16px 0;
-
-              .btn-primary {
-                background-color: transparent;
-                border: $white 1px solid;
-                color: $white;
-              }
-            }
-          }
-
-          .callout {
-            padding: 5rem;
-          }
-        }
+      .callout {
+        padding: 5rem;
       }
     }
   }
