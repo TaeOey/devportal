@@ -6,11 +6,13 @@ dependencies:
     - field.field.taxonomy_term.collections.field_icon
     - image.style.1_1_80x80
     - taxonomy.vocabulary.collections
+    - views.view.api_collection
   module:
     - image
     - layout_builder
     - layout_discovery
     - text
+    - views
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -72,6 +74,24 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 1
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
+          866258bf-fa04-4a66-838a-fe56918d0b79:
+            uuid: 866258bf-fa04-4a66-838a-fe56918d0b79
+            region: content
+            configuration:
+              id: 'views_block:api_collection-block_1'
+              label: 'More Apis'
+              provider: views
+              label_display: visible
+              views_label: 'More Apis'
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
 id: taxonomy_term.collections.default
 targetEntityType: taxonomy_term
