@@ -7,7 +7,10 @@ dependencies:
     - image.style.1_1_80x80
     - taxonomy.vocabulary.collections
     - views.view.api_collection
+  content:
+    - 'block_content:cta:387b2ce0-f28d-4e34-a828-dbb93552291c'
   module:
+    - block_content
     - image
     - layout_builder
     - layout_discovery
@@ -74,6 +77,25 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 1
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
+          87e4496e-c174-487a-87a1-359e9c1d8048:
+            uuid: 87e4496e-c174-487a-87a1-359e9c1d8048
+            region: content
+            configuration:
+              id: 'block_content:387b2ce0-f28d-4e34-a828-dbb93552291c'
+              label: 'Collection Page Call to Action'
+              provider: block_content
+              label_display: '0'
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
       -
         layout_id: layout_onecol
