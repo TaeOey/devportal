@@ -1,0 +1,28 @@
+uuid: fe8084b9-164c-4130-b4b0-79dfc8e7b065
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.use_case.body
+    - node.type.use_case
+  module:
+    - text
+    - user
+id: node.use_case.default
+targetEntityType: node
+bundle: use_case
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

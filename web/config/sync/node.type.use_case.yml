@@ -1,0 +1,17 @@
+uuid: 8ce566d9-9828-4f50-ab2b-1411388a5976
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Use Case'
+type: use_case
+description: 'Used to create use case content type'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
