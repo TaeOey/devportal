@@ -1,0 +1,22 @@
+uuid: d1ac83f2-e2e4-4c01-a290-deaaba1de8d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.use_case.field_content
+    - node.type.use_case
+  module:
+    - user
+id: node.use_case.teaser
+targetEntityType: node
+bundle: use_case
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_content: true
