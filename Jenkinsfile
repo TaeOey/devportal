@@ -40,7 +40,7 @@ pipeline {
                 //    bat ""
                 //    bat "composer create-project drupal-composer/drupal-project:8.x-dev --stability dev --no-interaction"
                 //    }
-                dir("${WORKSPACE}\\${env._ARTIFACTS_DIR}\\themes\\custom\\emoney_apigee_kickstart") {
+                dir("${WORKSPACE}\\${env._ARTIFACTS_DIR}\\web\\themes\\custom\\emoney_apigee_kickstart") {
                     bat "npm install"
                     bat "npm run css"
                     }
