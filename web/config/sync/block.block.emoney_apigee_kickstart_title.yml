@@ -23,7 +23,7 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/article/*\r\n/apis\r\n/blog\r\n/contact\r\n/faq\r\n/forum\r\n/forum/*\r\n/search\r\n/search/*\r\n/user/*/plans\r\n/user/*/monetization/product-bundle/*/plan/*\r\n<front>\r\n/getting-started\r\n/use-cases\r\n/products\r\n/collections"
+    pages: "/article/*\r\n/blog\r\n/faq\r\n/forum\r\n/forum/*\r\n/user/*/plans\r\n/user/*/monetization/product-bundle/*/plan/*\r\n<front>"
     negate: true
     context_mapping: {  }
   block_type:
