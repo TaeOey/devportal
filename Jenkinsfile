@@ -17,7 +17,7 @@ pipeline {
     }
     options { timeout(time: 2, unit: 'HOURS') }
     parameters {
-        booleanParam(name: '_IS_PUBLISH', defaultValue: false, description: "Publish package")
+        booleanParam(name: '_IS_PUBLISH', defaultValue: true, description: "Publish package")
         booleanParam(name: '_IS_DEPLOY', defaultValue: false, description: "Deploy to DEV")
     }
     stages {
@@ -49,7 +49,7 @@ pipeline {
 
                 dir("${WORKSPACE}\\web\\themes\\custom\\emoney_apigee_kickstart\\node_modules") {deleteDir()}
                 dir("${WORKSPACE}\\.git") {deleteDir()}
-                
+
                 zip zipFile: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip", dir: "${WORKSPACE}"
             }
         }
