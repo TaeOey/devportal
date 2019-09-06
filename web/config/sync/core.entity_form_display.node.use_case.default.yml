@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.use_case.field_collections
     - field.field.node.use_case.field_content
     - field.field.node.use_case.field_header
+    - field.field.node.use_case.field_products
     - node.type.use_case
   module:
     - paragraphs
@@ -14,6 +16,15 @@ targetEntityType: node
 bundle: use_case
 mode: default
 content:
+  field_collections:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_content:
     weight: 2
     settings:
@@ -50,9 +61,18 @@ content:
     third_party_settings: {  }
     type: paragraphs
     region: content
+  field_products:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   path:
     type: path
-    weight: 3
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -60,7 +80,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 6
     region: content
     third_party_settings: {  }
   title:
