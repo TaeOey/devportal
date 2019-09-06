@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:css:cr": "node sass.js && drush cr",
+    "build:cr": "node sass.js && drush cr",
     "css": "node sass.js",
     "dev": "rerun-script"
   },
@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "watches": {
-    "build:css:cr": [ "sass/**/*.scss", "templates/**/*.twig" ]
+    "build:cr": [ "sass/**/*.scss", "templates/**/*.twig", "assets/js/*.js" ]
   },
   "devDependencies": {
     "node-sass": "4.12.0",
