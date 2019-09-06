@@ -7,6 +7,7 @@ dependencies:
     - image.style.1_1_80x80
     - taxonomy.vocabulary.collections
     - views.view.api_collection
+    - views.view.key_use_cases
   content:
     - 'block_content:cta:387b2ce0-f28d-4e34-a828-dbb93552291c'
   module:
@@ -77,6 +78,24 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 1
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
+          281842bc-4240-4865-9181-966093fa1a5e:
+            uuid: 281842bc-4240-4865-9181-966093fa1a5e
+            region: content
+            configuration:
+              id: 'views_block:key_use_cases-block_1'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
       -
         layout_id: layout_onecol
