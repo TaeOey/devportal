@@ -10,9 +10,9 @@ CURRENT_DATETIME=`date +%Y%m%d-%H%M%S`
 BACKUP_DIRECTORY=/var/www/backups
 DRUPAL_BACKUP="sites-all.tar.gz"
 ROLLBACK_SCRIPT="Rollback.sh"
-DB_BACKUP="devportal-backup-{CURRENT_DATETIME}.sql"
+DB_BACKUP="devportal-backup.sql"
 DB_IP="#{DrupalDbHost}"
-DB_PORT=#{DrupalDbPort}
+DB_PORT="#{DrupalDbPort}"
 DB_NAME="#{DrupalDbName}"
 DB_USER="#{DrupalUser}"
 DB_PASSWORD="#{DrupalPassword}"
@@ -28,7 +28,7 @@ fi
 echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
 echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
 sudo cd ${APIGEE_DRUPAL_WEB_DOCROOT}
-sudo drush sql-dump > ${BACKUP_DIRECTORY}/${DB_BACKUP}
+sudo drush sql-dump > ${BACKUP_DIRECTORY}/${CURRENT_DATETIME}${DB_BACKUP}
 
 
 #Backup Drupal data - not necessary??

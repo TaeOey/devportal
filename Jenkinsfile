@@ -3,7 +3,7 @@
 pipeline {
     agent {
         node {
-            label 'appdev-emoney'
+            label 'composer-4_10_0 && php-7_3_9'
             //customWorkspace "workspace\\apigee-devportal-${env.BRANCH_NAME.replaceAll(~/[\^<>:"\/\\|?*]/, "-").take(20)}"
         }
     }
@@ -38,7 +38,7 @@ pipeline {
                 // composer install (run) - if no composer we need to install it
                 //dir("${WORKSPACE}\\${env._ARTIFACTS_DIR}"){
                 //    bat ""
-                //    bat "composer create-project drupal-composer/drupal-project:8.x-dev --stability dev --no-interaction"
+                bat "composer install"
                 //    }
                 dir("${WORKSPACE}\\web\\themes\\custom\\emoney_apigee_kickstart") {
                     bat "npm install"
