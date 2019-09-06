@@ -98,3 +98,11 @@
     }
   }
 }
+
+.path-support,
+.path-faq {
+  .navbar {
+    background-color: $blue_theme;
+    position: initial;
+  }
+}
