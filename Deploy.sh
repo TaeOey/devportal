@@ -2,7 +2,7 @@
 
 #Declare variables
 CWD=`pwd`
-APIGEE_DRUPAL_SOURCE_ROOT=/var/www/devportal
+APIGEE_DRUPAL_SOURCE_ROOT=/var/www/devportal/"#Octopus.version"
 APIGEE_DRUPAL_WEB_DOCROOT=/var/www/devportal/web
 EMONEY_DEVPORTAL_PROJECT_DIRECTORY=/opt/apigee/data/apigee-drupal-devportal/sites/all
 PACKAGE_ID=`basename $(pwd)`
@@ -41,8 +41,10 @@ sudo tar czfP  ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP} -C ${EMONEY_DEVPORTAL_PROJEC
 #sudo cp drush.zip ${BACKUP_DIRECTORY}/drush.zip
 
 echo "Fixing Permission On ${APIGEE_DRUPAL_SOURCE_ROOT}"
-sudo chown -R nginx:nginx ${APIGEE_DRUPAL_SOURCE_ROOT}
-sudo chmod -R 644 ${APIGEE_DRUPAL_SOURCE_ROOT}
+sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} -type d -exec chmod 755 {} \;
+sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} f -exec chmod 644 {} \;
+sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/files -type d -exec chmod 775 {} \;
+
 
 #Update codebase to actual version (this I need help with to figure out
 echo "Updating codebase"
