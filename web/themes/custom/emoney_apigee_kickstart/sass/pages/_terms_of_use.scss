@@ -1,19 +1,14 @@
-article[about=\/legal]{
+.path-legal{
 
     .row {
         justify-content: center !important;
-    }
-    h1 {
-        font-size: 34px;
-        font-family: "Arial",sans-serif;
-        text-align: center;
+
+        h1 {
+            font-size: 34px;
+            text-align: center;
+        }
     }
 
-    p {
-        font-family: "Arial",sans-serif;
-        font-size: 16px;
-        line-height: 24px;
-    }
     #sublist{
         list-style-type: lower-alpha;
     }
