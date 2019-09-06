@@ -3,22 +3,34 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.use_case.body
+    - field.field.node.use_case.field_content
+    - field.field.node.use_case.field_header
     - node.type.use_case
   module:
-    - text
+    - entity_reference_revisions
     - user
 id: node.use_case.default
 targetEntityType: node
 bundle: use_case
 mode: default
 content:
-  body:
-    label: hidden
-    type: text_default
-    weight: 101
-    settings: {  }
+  field_content:
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_header:
+    weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
     region: content
   links:
     weight: 100

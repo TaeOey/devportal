@@ -1,0 +1,77 @@
+uuid: bafee3b1-cf72-4cde-87e3-0cccf55eb797
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.use_case
+    - paragraphs.paragraphs_type.button
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.card_group
+    - paragraphs.paragraphs_type.cta
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.text_image
+  module:
+    - entity_reference_revisions
+id: node.use_case.field_content
+field_name: field_content
+entity_type: node
+bundle: use_case
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      button: button
+      card: card
+      card_group: card_group
+      cta: cta
+      text: text
+      text_image: text_image
+    target_bundles_drag_drop:
+      accordion:
+        weight: 14
+        enabled: false
+      blockquote:
+        weight: 15
+        enabled: false
+      button:
+        enabled: true
+        weight: 16
+      button_group:
+        weight: 17
+        enabled: false
+      callout:
+        weight: 18
+        enabled: false
+      callout_group:
+        weight: 19
+        enabled: false
+      card:
+        enabled: true
+        weight: 20
+      card_group:
+        enabled: true
+        weight: 21
+      cta:
+        enabled: true
+        weight: 22
+      hero:
+        weight: 23
+        enabled: false
+      text:
+        enabled: true
+        weight: 24
+      text_image:
+        enabled: true
+        weight: 25
+      title_bar:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

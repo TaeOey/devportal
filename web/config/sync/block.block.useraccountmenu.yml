@@ -1,0 +1,41 @@
+uuid: e5cfce59-2db2-40c8-a1e8-0ea4c8fc2680
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - apigee_kickstart_enhancement
+    - system
+    - user
+  theme:
+    - emoney_apigee_kickstart
+id: useraccountmenu
+theme: emoney_apigee_kickstart
+region: footer
+weight: -8
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  block_type:
+    id: block_type
+    uuid: e5cfce59-2db2-40c8-a1e8-0ea4c8fc2680
+    bundles: {  }
+    is_adjacent: 0
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
