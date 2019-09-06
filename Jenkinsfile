@@ -4,7 +4,7 @@ pipeline {
     agent {
         node {
             label 'appdev-emoney'
-            customWorkspace "workspace\\apigee-devportal-${env.BRANCH_NAME.replaceAll(~/[\^<>:"\/\\|?*]/, "-").take(20)}"
+            //customWorkspace "workspace\\apigee-devportal-${env.BRANCH_NAME.replaceAll(~/[\^<>:"\/\\|?*]/, "-").take(20)}"
         }
     }
     environment {
@@ -45,7 +45,7 @@ pipeline {
                     bat "npm run css"
                     }
                 // bat "xcopy drush.zip _artifacts" -- we need to create this I suppose
-                // bat "xcopy Deploy.sh _artifacts" -- need to test this as well
+                bat "xcopy Deploy.sh _artifacts" //-- need to test this as well
                 // bat "xcopy Rollback.sh _artifacts" - this not ready yet
 
                 dir("${WORKSPACE}\\${env._ARTIFACTS_DIR}\\themes\\custom\\emoney_apigee_kickstart\\node_modules") {deleteDir()}
@@ -64,18 +64,18 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
-            when {
-                expression { return params._IS_DEPLOY }
-            }
-            steps {
-                echo "Deploying to ${env._DEPLOY_TO}"
-                withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctoApiKey')]) {
-                    bat "octo create-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --package \"Deploy Devportal\":${PACKAGE_VERSION} --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey}"
-                    bat "octo deploy-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --deployto \"${env._DEPLOY_TO}\" --channel Default --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey} --deploymenttimeout 00:10:00 --waitfordeployment --variable=UploadContent:false"
-                }
-            }
-        }
+        // stage('Deploy') {
+        //     when {
+        //         expression { return params._IS_DEPLOY }
+        //     }
+        //     steps {
+        //         echo "Deploying to ${env._DEPLOY_TO}"
+        //         withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctoApiKey')]) {
+        //             bat "octo create-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --package \"Deploy Devportal\":${PACKAGE_VERSION} --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey}"
+        //             bat "octo deploy-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --deployto \"${env._DEPLOY_TO}\" --channel Default --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey} --deploymenttimeout 00:10:00 --waitfordeployment --variable=UploadContent:false"
+        //         }
+        //     }
+        // }
     }
 
     post {
