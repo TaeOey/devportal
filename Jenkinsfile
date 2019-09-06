@@ -36,9 +36,10 @@ pipeline {
                 //  - see ticket for further instructions amdp-13
                 echo "cd to root of source code"
                 // composer install (run) - if no composer we need to install it
-                dir("${WORKSPACE}\\${env._ARTIFACTS_DIR}"){
-                    bat "composer create-project drupal-composer/drupal-project:8.x-dev --stability dev --no-interaction"
-                    }
+                //dir("${WORKSPACE}\\${env._ARTIFACTS_DIR}"){
+                //    bat ""
+                //    bat "composer create-project drupal-composer/drupal-project:8.x-dev --stability dev --no-interaction"
+                //    }
                 dir("${WORKSPACE}\\${env._ARTIFACTS_DIR}\\themes\\custom\\emoney_apigee_kickstart") {
                     bat "npm install"
                     bat "npm run css"
