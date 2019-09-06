@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent { 
+    agent {
         node {
             label 'appdev-emoney'
             customWorkspace "workspace\\apigee-devportal-${env.BRANCH_NAME.replaceAll(~/[\^<>:"\/\\|?*]/, "-").take(20)}"
@@ -31,18 +31,24 @@ pipeline {
             steps {
                 echo "Building project from ${env.BRANCH_NAME}"
                 echo "Create package ${env._PACKAGE_NAME}.${env._SEM_VERSION}.${env.BUILD_NUMBER}-${env.BRANCH_NAME}"
+
                 bat "mkdir ${env._ARTIFACTS_DIR}"
-                bat "xcopy drush.zip _artifacts"
-                bat "xcopy Deploy.sh _artifacts"
-                bat "xcopy Rollback.sh _artifacts"
-                bat "xcopy /E /I modules ${env._ARTIFACTS_DIR}\\modules"
-                bat "xcopy /E /I themes ${env._ARTIFACTS_DIR}\\themes"
-                bat "xcopy /E /I content ${env._ARTIFACTS_DIR}\\content"
-                dir("${WORKSPACE}\\${env._ARTIFACTS_DIR}\\themes\\custom\\apigee_responsive_emoney") {
-                    bat "npm install"
-                    bat "npm run styles"
+                ##  - see ticket for further instructions amdp-13
+                echo "cd to root of source code"
+                dir("${WORKSPACE}\\${env._ARTIFACTS_DIR}"){
+                    bat "composer create-project drupal-composer/drupal-project:8.x-dev --stability dev --no-interaction"
                     }
-                dir("${WORKSPACE}\\${env._ARTIFACTS_DIR}\\themes\\custom\\apigee_responsive_emoney\\node_modules") {deleteDir()}
+                ## composer install (run) - if no composer we need to install it
+                
+                dir("${WORKSPACE}\\${env._ARTIFACTS_DIR}\\themes\\custom\\emoney_apigee_kickstart") {
+                    bat "npm install"
+                    bat "npm run css"
+                    }
+                ## bat "xcopy drush.zip _artifacts" -- we need to create this I suppose
+                ## bat "xcopy Deploy.sh _artifacts" -- need to test this as well
+                ## bat "xcopy Rollback.sh _artifacts" - this not ready yet
+
+                dir("${WORKSPACE}\\${env._ARTIFACTS_DIR}\\themes\\custom\\emoney_apigee_kickstart\\node_modules") {deleteDir()}
 
                 zip zipFile: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip", dir: "${env._ARTIFACTS_DIR}"
             }
