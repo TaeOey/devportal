@@ -99,9 +99,9 @@ pipeline {
 				echo 'Failure'
 			}
 		}
-		cleanup {
-			cleanWorkspace()
-		}
+		// cleanup {
+		// 	cleanWorkspace()
+		// }
 	}
 }
 
