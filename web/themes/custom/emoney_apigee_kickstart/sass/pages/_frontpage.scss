@@ -1,4 +1,4 @@
-@import '../colors.scss';
+// @import '../colors.scss';
 
 .path-frontpage {
   .page {
@@ -60,7 +60,7 @@
             }
           }
         }
-        
+
         .hero-text {
           position: absolute;
           top: 25%;
@@ -99,7 +99,7 @@
       }
     }
   }
-  
+
   .flex-direction-nav {
     font-size: 0px;
     .flex-nav-prev,
@@ -173,7 +173,7 @@
 
     .card-title {
       h3 {
-        color: $grey-dark;
+        color: $gray-dark;
         font-size: 20px;
         font-weight: bold;
         line-height: 23px;
