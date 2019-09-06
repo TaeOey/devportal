@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - apigee_kickstart_enhancement
     - system
   theme:
     - emoney_apigee_kickstart
@@ -22,6 +23,13 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/article/*\r\n/blog/*'
-    negate: true
+    pages: "/collections/*\r\n/products/*"
+    negate: false
+    context_mapping: {  }
+  block_type:
+    id: block_type
+    uuid: 155fe985-60e2-4747-9fb8-7659123addfc
+    bundles: {  }
+    is_adjacent: 0
+    negate: false
     context_mapping: {  }
