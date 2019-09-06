@@ -10,7 +10,7 @@ CURRENT_DATETIME=`date +%Y%m%d-%H%M%S`
 BACKUP_DIRECTORY=/var/www/backups
 DRUPAL_BACKUP="sites-all.tar.gz"
 ROLLBACK_SCRIPT="Rollback.sh"
-DB_BACKUP="devportal-backup.sql"
+DB_BACKUP="devportal-backup-${CURRENT_DATETIME}.sql"
 DB_IP="#{DrupalDbHost}"
 DB_PORT="#{DrupalDbPort}"
 DB_NAME="#{DrupalDbName}"
@@ -28,7 +28,7 @@ fi
 echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
 echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
 sudo cd ${APIGEE_DRUPAL_WEB_DOCROOT}
-sudo drush sql-dump > ${BACKUP_DIRECTORY}/${CURRENT_DATETIME}${DB_BACKUP}
+sudo drush sql-dump > ${BACKUP_DIRECTORY}/${DB_BACKUP}
 
 
 #Backup Drupal data - not necessary??
@@ -40,16 +40,20 @@ sudo tar czfP  ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP} -C ${EMONEY_DEVPORTAL_PROJEC
 #sudo cp ${ROLLBACK_SCRIPT} ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}
 #sudo cp drush.zip ${BACKUP_DIRECTORY}/drush.zip
 
+echo "Fixing Permission On ${APIGEE_DRUPAL_SOURCE_ROOT}"
+sudo chown -R nginx:nginx ${APIGEE_DRUPAL_SOURCE_ROOT}
+sudo chmod -R 644 ${APIGEE_DRUPAL_SOURCE_ROOT}
+
 #Update codebase to actual version (this I need help with to figure out
 echo "Updating codebase"
 for item in ${DRUPAL_DIR_LIST}; do
     echo "Deploying ${item}"
-    sudo rsync -av --delete ${item}/ ${EMONEY_DEVPORTAL_PROJECT_DIRECTORY}/${item}
-    sudo chown -R apigee.apigee ${EMONEY_DEVPORTAL_PROJECT_DIRECTORY}/${item}
-    if [ "${TWO_DP_SETUP}" == "true" ]; then
-        echo "Deploying ${item} to second DP on ${SECOND_DP_IP}"
-        sudo rsync -av --delete ${EMONEY_DEVPORTAL_PROJECT_DIRECTORY}/${item}/ root@${SECOND_DP_IP}:${EMONEY_DEVPORTAL_PROJECT_DIRECTORY}/${item}
-    fi
+    sudo rsync -av --delete ${item}/ ${APIGEE_DRUPAL_SOURCE_ROOT}/${item}
+    
+    # if [ "${TWO_DP_SETUP}" == "true" ]; then
+    #     echo "Deploying ${item} to second DP on ${SECOND_DP_IP}"
+    #     sudo rsync -av --delete ${EMONEY_DEVPORTAL_PROJECT_DIRECTORY}/${item}/ root@${SECOND_DP_IP}:${EMONEY_DEVPORTAL_PROJECT_DIRECTORY}/${item}
+    # fi
 done
 
 #Initialize updates:
