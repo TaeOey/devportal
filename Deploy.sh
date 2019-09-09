@@ -48,7 +48,7 @@ echo "Creating and Fixing Permission On ${APIGEE_DRUPAL_SOURCE_ROOT}"
 
 sudo mkdir ${APIGEE_DRUPAL_SOURCE_ROOT}
 
-rsync -vr * ${APIGEE_DRUPAL_SOURCE_ROOT}
+sudo rsync -vr * ${APIGEE_DRUPAL_SOURCE_ROOT}
 
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} -type d -exec chmod 755 {} \;
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} f -exec chmod 644 {} \;
