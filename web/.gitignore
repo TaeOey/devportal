@@ -46,3 +46,5 @@ README.txt
 robots.txt
 update.php
 web.config
+# Libraries should have been ignored, but flexslider has not been added to composer so adding these additional ignore
+libraries/swagger-ui

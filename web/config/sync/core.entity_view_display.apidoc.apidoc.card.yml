@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.apidoc.card
-    - field.field.apidoc.apidoc.field_categories
+    - field.field.apidoc.apidoc.field_collections
     - field.field.apidoc.apidoc.field_image
   module:
     - apigee_api_catalog
@@ -41,5 +41,5 @@ content:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
-  field_categories: true
+  field_collections: true
   spec: true
