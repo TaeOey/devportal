@@ -16,7 +16,7 @@ DB_PORT="#{DrupalDbPort}"
 DB_NAME="#{DrupalDbName}"
 DB_USER="#{DrupalUser}"
 DB_PASSWORD="#{DrupalPassword}"
-DB_PREFIX="#{DrupalPrefix}"
+#DB_PREFIX="#{DrupalPrefix}"
 DB_DRIVER="#{DrupalDriver}"
 
 
