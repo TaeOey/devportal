@@ -3,7 +3,7 @@
 #Declare variables
 CWD=`pwd`
 APIGEE_DRUPAL_SOURCE_ROOT=/var/www/devportal/"#{Octopus.Release.Number}"
-APIGEE_DRUPAL_WEB_DOCROOT=/var/www/devportal/web
+APIGEE_DRUPAL_WEB_DOCROOT=/var/www/devportal/"#{Octopus.Release.Number}"/web
 EMONEY_DEVPORTAL_PROJECT_DIRECTORY=/opt/apigee/data/apigee-drupal-devportal/sites/all
 PACKAGE_ID=`basename $(pwd)`
 CURRENT_DATETIME=`date +%Y%m%d-%H%M%S`
@@ -36,15 +36,16 @@ sudo drush sql-dump > ${BACKUP_DIRECTORY}/${DB_BACKUP}
 
 
 #Backup Drupal data - not necessary??
-echo "Create drupal directories backup in ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP}"
-sudo tar czfP  ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP} -C ${EMONEY_DEVPORTAL_PROJECT_DIRECTORY} ${DRUPAL_DIR_LIST}
+# echo "Create drupal directories backup in ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP}"
+# sudo tar czfP  ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP} -C ${APIGEE_DRUPAL_SOURCE_ROOT} ${DRUPAL_DIR_LIST}
 
 #Copy rollback script - not done yet
 #echo "Create rollback script ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}"
 #sudo cp ${ROLLBACK_SCRIPT} ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}
 #sudo cp drush.zip ${BACKUP_DIRECTORY}/drush.zip
 
-echo "Fixing Permission On ${APIGEE_DRUPAL_SOURCE_ROOT}"
+echo "Creating and Fixing Permission On ${APIGEE_DRUPAL_SOURCE_ROOT}"
+sudo mkdir ${APIGEE_DRUPAL_SOURCE_ROOT}
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} -type d -exec chmod 755 {} \;
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} f -exec chmod 644 {} \;
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/files -type d -exec chmod 775 {} \;
@@ -76,3 +77,5 @@ sudo drush cim -y
 #Clear caches:
 sudo cd ${APIGEE_DRUPAL_WEB_DOCROOT}
 sudo drush cr
+
+#Move Symlink
