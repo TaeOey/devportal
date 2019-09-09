@@ -223,9 +223,8 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: ''
+          row_class: card
           default_row_class: false
-          uses_fields: false
       row:
         type: fields
         options:
