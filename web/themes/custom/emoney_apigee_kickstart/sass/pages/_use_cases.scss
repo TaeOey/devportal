@@ -1,6 +1,6 @@
 @import "./../typography";
 
-.use-cases-page {
+.use-cases-node {
   .view-view-use-cases {
     background-color: #f9f9f9;
 
@@ -116,7 +116,7 @@
   }
 
   .cta {
-    background-color: #1a6887;
+    background-color: #b5c534;
     color: white;
     text-align: center;
 
@@ -136,6 +136,10 @@
 
     &__text {
       flex-basis: auto;
+    }
+
+    &__buttons {
+      justify-content: center !important;
     }
   }
 }
