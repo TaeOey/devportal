@@ -3,7 +3,7 @@
 #Declare variables
 CWD=`pwd`
 APIGEE_DRUPAL_SOURCE_ROOT=/var/www/devportal/"#{Octopus.Release.Number}"
-APIGEE_DRUPAL_WEB_DOCROOT=/var/www/devportal/"#{Octopus.Release.Number}"/web
+APIGEE_DRUPAL_WEB_DOCROOT=/var/www/devportal/web
 EMONEY_DEVPORTAL_PROJECT_DIRECTORY=/opt/apigee/data/apigee-drupal-devportal/sites/all
 PACKAGE_ID=`basename $(pwd)`
 CURRENT_DATETIME=`date +%Y%m%d-%H%M%S`
@@ -19,7 +19,6 @@ DB_PASSWORD="#{DrupalPassword}"
 #DB_PREFIX="#{DrupalPrefix}"
 DB_DRIVER="#{DrupalDriver}"
 
-
 #TWO_DP_SETUP="#{TwoDevPortalSetup}"
 #SECOND_DP_IP="#{SecondDevPortalIP}"
 
@@ -27,6 +26,14 @@ DB_DRIVER="#{DrupalDriver}"
 if [ ! -d "${BACKUP_DIRECTORY}" ]; then
     sudo mkdir -p ${BACKUP_DIRECTORY}
 fi
+
+#Install drush
+unzip -o drush.zip
+chmod 755 drush
+mv drush drush.phar
+ln -s ${CWD}/drush.phar ${CWD}/drush
+echo "test drush version"
+${CWD}/drush version
 
 #Backup Drupal database
 echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
