@@ -3,7 +3,7 @@
 #Declare variables
 CWD=`pwd`
 APIGEE_DRUPAL_SOURCE_ROOT=/var/www/devportal/"#{Octopus.Release.Number}"
-APIGEE_DRUPAL_WEB_DOCROOT=/var/www/devportal/"#{Octopus.Release.Number}"/web
+APIGEE_DRUPAL_WEB_DOCROOT=/var/www/devportal/web
 EMONEY_DEVPORTAL_PROJECT_DIRECTORY=/opt/apigee/data/apigee-drupal-devportal/sites/all
 PACKAGE_ID=`basename $(pwd)`
 CURRENT_DATETIME=`date +%Y%m%d-%H%M%S`
@@ -31,7 +31,7 @@ fi
 #Backup Drupal database
 echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
 echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
-sudo cd ${APIGEE_DRUPAL_WEB_DOCROOT}
+#sudo cd ${APIGEE_DRUPAL_WEB_DOCROOT}
 sudo drush sql-dump > ${BACKUP_DIRECTORY}/${DB_BACKUP}
 
 
@@ -45,17 +45,20 @@ sudo drush sql-dump > ${BACKUP_DIRECTORY}/${DB_BACKUP}
 #sudo cp drush.zip ${BACKUP_DIRECTORY}/drush.zip
 
 echo "Creating and Fixing Permission On ${APIGEE_DRUPAL_SOURCE_ROOT}"
+pwd
+ls -a
 sudo mkdir ${APIGEE_DRUPAL_SOURCE_ROOT}
-sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} -type d -exec chmod 755 {} \;
-sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} f -exec chmod 644 {} \;
-sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/files -type d -exec chmod 775 {} \;
+sudo tar
+# sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} -type d -exec chmod 755 {} \;
+# sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} f -exec chmod 644 {} \;
+# sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/files -type d -exec chmod 775 {} \;
 
 
 #Update codebase to actual version (this I need help with to figure out
 echo "Updating codebase"
 for item in ${DRUPAL_DIR_LIST}; do
     echo "Deploying ${item}"
-    sudo rsync -av --delete ${item}/ ${APIGEE_DRUPAL_SOURCE_ROOT}/${item}
+    sudo rsync -av --delete ${item}/ ${APIGEE_DRUPAL_WEB_DOCROOT}/${item}
     
     # if [ "${TWO_DP_SETUP}" == "true" ]; then
     #     echo "Deploying ${item} to second DP on ${SECOND_DP_IP}"
