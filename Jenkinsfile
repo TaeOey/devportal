@@ -64,18 +64,18 @@ pipeline {
                 }
             }
         }
-        // stage('Deploy') {
-        //     when {
-        //         expression { return params._IS_DEPLOY }
-        //     }
-        //     steps {
-        //         echo "Deploying to ${env._DEPLOY_TO}"
-        //         withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctoApiKey')]) {
-        //             bat "octo create-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --package \"Deploy Devportal\":${PACKAGE_VERSION} --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey}"
-        //             bat "octo deploy-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --deployto \"${env._DEPLOY_TO}\" --channel Default --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey} --deploymenttimeout 00:10:00 --waitfordeployment --variable=UploadContent:false"
-        //         }
-        //     }
-        // }
+        stage('Deploy') {
+            when {
+                expression { return params._IS_DEPLOY }
+            }
+            steps {
+                echo "Deploying to ${env._DEPLOY_TO}"
+                withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctoApiKey')]) {
+                    bat "octo create-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --package \"Deploy Devportal\":${PACKAGE_VERSION} --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey}"
+                    bat "octo deploy-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --deployto \"${env._DEPLOY_TO}\" --channel Default --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey} --deploymenttimeout 00:10:00 --waitfordeployment --variable=UploadContent:false"
+                }
+            }
+        }
     }
 
     post {

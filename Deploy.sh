@@ -16,8 +16,12 @@ DB_PORT="#{DrupalDbPort}"
 DB_NAME="#{DrupalDbName}"
 DB_USER="#{DrupalUser}"
 DB_PASSWORD="#{DrupalPassword}"
-TWO_DP_SETUP="#{TwoDevPortalSetup}"
-SECOND_DP_IP="#{SecondDevPortalIP}"
+DB_PREFIX="#{DrupalPrefix}"
+DB_DRIVER="#{DrupalDriver}"
+
+
+#TWO_DP_SETUP="#{TwoDevPortalSetup}"
+#SECOND_DP_IP="#{SecondDevPortalIP}"
 
 #Check if backup directory exists
 if [ ! -d "${BACKUP_DIRECTORY}" ]; then
