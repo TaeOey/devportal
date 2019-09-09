@@ -2,7 +2,7 @@
 
 #Declare variables
 CWD=`pwd`
-APIGEE_DRUPAL_SOURCE_ROOT=/var/www/devportal/"#{Octopus.Release.Package.PackageId}"
+APIGEE_DRUPAL_SOURCE_ROOT=/var/www/devportal/"#{Octopus.Action[Deploy Devportal].Package.PackageId}"
 APIGEE_DRUPAL_WEB_DOCROOT=/var/www/devportal/web
 EMONEY_DEVPORTAL_PROJECT_DIRECTORY=/opt/apigee/data/apigee-drupal-devportal/sites/all
 PACKAGE_ID=`basename $(pwd)`
