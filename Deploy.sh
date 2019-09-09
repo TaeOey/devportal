@@ -71,6 +71,7 @@ sudo ln -sfvn ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE} ${APIGEE_DRUPAL_SOURCE_ROOT}
 
 #Initialize updates:
 echo "Initializing updates"
+sudo ${CWD}/drush cc drush
 sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} drush updb -y
 
 #Actualize configuration layer:
