@@ -5,6 +5,8 @@ CWD=`pwd`
 APIGEE_DRUPAL_SOURCE_ROOT=/var/www/devportal
 APIGEE_DRUPAL_WEB_DOCROOT=/var/www/devportal/web
 APIGEE_DRUPAL_SOURCE_ROOT_RELEASE=/var/www/"#{Octopus.Release.Number}"
+WEB_FILES_ROOT=/var/www/devportal/web/sites/default/files
+WEB_FILES_STORAGE=/var/www/files
 #EMONEY_DEVPORTAL_PROJECT_DIRECTORY=/opt/apigee/data/apigee-drupal-devportal/sites/all
 PACKAGE_ID=`basename $(pwd)`
 CURRENT_DATETIME=`date +%Y%m%d-%H%M%S`
@@ -68,6 +70,9 @@ sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} sql-dump > ${BACKUP_DIRECT
 #Fix symlink
 echo "symlink ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE} to ${APIGEE_DRUPAL_SOURCE_ROOT}"
 sudo ln -sfvn ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE} ${APIGEE_DRUPAL_SOURCE_ROOT}
+
+echo "symlink ${WEB_FILES_STORAGE} to ${WEB_FILES_ROOT}"
+sudo ln -sfvn ${WEB_FILES_STORAGE} ${WEB_FILES_ROOT} 
 
 #Initialize updates:
 echo "Initializing updates"
