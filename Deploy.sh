@@ -67,8 +67,8 @@ sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/ -type d -exec chmod 77
 
 #Initialize updates:
 echo "Initializing updates"
-chmod ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin -R 777
-sudo (cd ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin ; drush -v)
+sudo chmod -R 777 ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin
+sudo (cd ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin && drush -v)
 #sudo ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin/drush updb -y
 
 
