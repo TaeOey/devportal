@@ -36,11 +36,6 @@ ln -s ${CWD}/drush.phar ${CWD}/drush
 echo "test drush version"
 ${CWD}/drush version
 
-#Backup Drupal database
-echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
-echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
-sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} sql-dump > ${BACKUP_DIRECTORY}/${DB_BACKUP}
-
 #Backup Drupal data - not necessary??
 # echo "Create drupal directories backup in ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP}"
 # sudo tar czfP  ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP} -C ${APIGEE_DRUPAL_SOURCE_ROOT} ${DRUPAL_DIR_LIST}
@@ -63,6 +58,10 @@ sudo find ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE} -type f -exec chmod 644 {} \;
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/web/sites/default/ -type d -exec chmod 775 {} \;
 #sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/files -type d -exec chmod 775 {} \;
 
+#Backup Drupal database
+echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
+echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
+sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} sql-dump > ${BACKUP_DIRECTORY}/${DB_BACKUP}
 #Fix symlink
 sudo ln -sf ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE} ${APIGEE_DRUPAL_SOURCE_ROOT}
 
