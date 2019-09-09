@@ -32,7 +32,7 @@ fi
 echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
 echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
 #sudo cd ${APIGEE_DRUPAL_WEB_DOCROOT}
-#sudo drush sql-dump > ${BACKUP_DIRECTORY}/${DB_BACKUP}
+sudo /var/www/devportal/vendor/bin/drush sql-dump > ${BACKUP_DIRECTORY}/${DB_BACKUP}
 
 
 #Backup Drupal data - not necessary??
@@ -68,7 +68,7 @@ sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin -type d -exec chmod -R 777 {} 
 #Initialize updates:
 echo "Initializing updates"
 #sudo chmod -R 777 ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin
-sudo ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin/drush version
+sudo /var/www/devportal/vendor/bin/drush version
 #sudo && ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin/drush -v
 #sudo && ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin/drush sql-dump > ${BACKUP_DIRECTORY}/${DB_BACKUP}
 #sudo && ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin/drush updb -y
