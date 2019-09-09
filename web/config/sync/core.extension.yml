@@ -60,6 +60,7 @@ module:
   responsive_image: 0
   search: 0
   shortcut: 0
+  swagger_ui_formatter: 0
   system: 0
   taxonomy: 0
   text: 0
@@ -67,6 +68,7 @@ module:
   toolbar: 0
   tour: 0
   user: 0
+  views_infinite_scroll: 0
   views_ui: 0
   forum: 1
   menu_link_content: 1

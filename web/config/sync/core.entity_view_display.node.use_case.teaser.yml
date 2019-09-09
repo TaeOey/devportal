@@ -4,22 +4,38 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.use_case.field_collections
     - field.field.node.use_case.field_content
+    - field.field.node.use_case.field_header
+    - field.field.node.use_case.field_products
     - node.type.use_case
   module:
+    - entity_reference_revisions
     - user
 id: node.use_case.teaser
 targetEntityType: node
 bundle: use_case
 mode: teaser
 content:
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
+  field_content:
+    type: entity_reference_revisions_entity_view
+    weight: 1
     region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_header:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
 hidden:
   field_collections: true
-  field_content: true
-  field_header: true
   field_products: true
+  links: true
