@@ -7,6 +7,7 @@
 
 {% set classes = [
   'page',
+  'page-error',
 ]|merge(classes|default([])) %}
 
 {% set main_container = main_container ?? true %}
@@ -44,6 +45,17 @@
       {% endif %}
     {% endblock %}
   {% endembed %}
+
+  {% if page.header|render %}
+    <header class="page__header">
+      {# If field_header has a value, it should replace the title block.#}
+      {% if node.field_header.value %}
+        {{ page.header|without('apigee_kickstart_title') }}
+      {% else %}
+        {{ page.header }}
+      {% endif %}
+    </header>
+  {% endif %}
 
   <main{{ main_attributes.addClass(main_classes) }} role="main">
     <a id="main-content" tabindex="-1"></a>

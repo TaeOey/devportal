@@ -1,0 +1,14 @@
+uuid: c74e0515-efed-4901-8c8a-50e3307fa106
+langcode: en
+status: true
+dependencies:
+  module:
+    - apigee_api_catalog
+id: api_spec_page
+label: 'API Spec Page'
+type: 'canonical_entities:apidoc'
+pattern: 'api/[apidoc:name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

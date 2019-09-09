@@ -1,10 +1,10 @@
 definitions:
   contact__site_page:
-    enabled: false
+    weight: -50
     menu_name: footer
     parent: ''
+    enabled: true
     expanded: false
-    weight: 0
   forum__index:
     enabled: false
     menu_name: tools
@@ -18,7 +18,7 @@ definitions:
     expanded: false
     enabled: false
   apigee_devportal_kickstart__forum:
-    weight: -46
+    weight: -44
     menu_name: main
     parent: ''
     expanded: false

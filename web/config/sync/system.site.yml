@@ -1,11 +1,11 @@
 uuid: 22eaa445-6a29-4797-9145-f06500103b5c
 name: 'eMoney Developer Portal'
-mail: eismail@emoneyadvisor.com
+mail: info@emoneyadvisor.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node/2
+  front: /node/13
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.landing.field_content
     - field.field.node.landing.field_header
+    - field.field.node.landing.layout_builder__layout
     - node.type.landing
   module:
     - paragraphs
@@ -16,12 +17,6 @@ targetEntityType: node
 bundle: landing
 mode: default
 content:
-  created:
-    type: datetime_timestamp
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_content:
     type: paragraphs
     weight: 2
@@ -60,7 +55,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -68,15 +63,8 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
-    region: content
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
     weight: 5
     region: content
-    settings:
-      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -86,14 +74,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 3
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    region: content
-    third_party_settings: {  }
 hidden:
+  created: true
+  layout_builder__layout: true
   promote: true
+  sticky: true
+  uid: true

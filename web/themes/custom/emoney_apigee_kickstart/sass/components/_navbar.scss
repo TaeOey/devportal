@@ -1,0 +1,110 @@
+.user-logged-in .navbar {
+  top: 80px;
+}
+
+.navbar {
+  background: transparent;
+  border-bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 32px 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  .navbar-brand {
+    &:after {
+      border-left: $white 2px solid;
+      color: $white;
+      content: "developer";
+      display: block;
+      font-size: 16px;
+      line-height: 32px;
+      margin: 0 0 0 12px;
+      max-width: 100%;
+      padding: 0 0 0 12px;
+    }
+
+    img {
+      height: 32px;
+      max-width: 100%;
+      margin: 0 !important;
+    }
+  }
+
+  .navbar-collapse {
+    justify-content: flex-end;
+
+    .nav-item {
+      &.active {
+        &:after {
+          display: none;
+        }
+
+        .nav-link {
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      .nav-link {
+        color: $white;
+        font-family: $Arial;
+        font-size: 16px;
+        line-height: 18px;
+        padding: .5rem 11px;
+
+        &.is-active {
+          font-weight: $bold;
+
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .mr-auto {
+      margin: initial !important;
+    }
+
+    .block--emoney-apigee-kickstart-menu-account {
+      .nav {
+        .nav-item {
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .search-block-form {
+      .form-inline {
+        .form-search {
+          background-color: transparent;
+          border: none;
+          border-bottom: $white 1px solid;
+          border-radius: 0;
+          box-shadow: none;
+          color: $white;
+          font-family: $Arial;
+          font-size: 16px;
+          line-height: 18px;
+          margin: 0 0 0 11px;
+          padding: 3px 0;
+        }
+
+        .form-search-button {
+          background: transparent;
+          border: none;
+          box-shadow: none;
+          color: $white;
+          border-bottom: $white 1px solid;
+          height: 25px;
+          outline: none;
+        }
+      }
+    }
+  }
+}

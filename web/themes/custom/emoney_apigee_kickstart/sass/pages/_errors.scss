@@ -1,0 +1,24 @@
+.page-error {
+  .page__header {
+    min-height: 150px;
+
+    .page__title {
+      display: none;
+    }
+  }
+
+  .error-page {
+    margin-top: 50px;
+  }
+
+  .error-header {
+    color: $gray_dark;
+    font-size: 72px;
+    font-weight: bold;
+    line-height: 82px;
+  }
+
+  .error-message {
+    margin-bottom: 30px;
+  }
+}
