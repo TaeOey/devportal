@@ -32,6 +32,7 @@ fi
 echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
 echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
 #sudo cd ${APIGEE_DRUPAL_WEB_DOCROOT}
+sudo chmod -R 777 /var/www/devportal/vendor/bin
 sudo /var/www/devportal/vendor/bin/drush sql-dump > ${BACKUP_DIRECTORY}/${DB_BACKUP}
 
 
@@ -53,7 +54,7 @@ sudo rsync -r * ${APIGEE_DRUPAL_SOURCE_ROOT}
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} -type d -exec chmod 755 {} \;
 #sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} f -exec chmod 644 {} \;
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/ -type d -exec chmod 775 {} \;
-sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin -type d -exec chmod -R 777 {} \;
+#sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin -type d -exec chmod -R 777 {} \;
 #sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/files -type d -exec chmod 775 {} \;
 
 
