@@ -17,6 +17,15 @@ targetEntityType: node
 bundle: use_case
 mode: teaser
 content:
+  field_content:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
   field_header:
     type: entity_reference_revisions_entity_view
     weight: 0
@@ -28,6 +37,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_collections: true
-  field_content: true
   field_products: true
   links: true
