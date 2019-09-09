@@ -28,6 +28,8 @@ content:
 hidden:
   display_name: true
   email: true
+  field_company_name: true
+  field_company_role: true
   member_for: true
   roles: true
   timezone: true
