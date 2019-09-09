@@ -45,10 +45,13 @@ sudo drush sql-dump > ${BACKUP_DIRECTORY}/${DB_BACKUP}
 #sudo cp drush.zip ${BACKUP_DIRECTORY}/drush.zip
 
 echo "Creating and Fixing Permission On ${APIGEE_DRUPAL_SOURCE_ROOT}"
-pwd
 ls -a
 sudo mkdir ${APIGEE_DRUPAL_SOURCE_ROOT}
-sudo tar
+for item in ${DRUPAL_DIR_LIST}; do
+    echo "Deploying ${item}"
+    sudo rsync -av --delete ${item}/ ${APIGEE_DRUPAL_SOURCE_ROOT}/${item}
+done
+
 # sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} -type d -exec chmod 755 {} \;
 # sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} f -exec chmod 644 {} \;
 # sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/files -type d -exec chmod 775 {} \;
