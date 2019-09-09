@@ -53,7 +53,7 @@ sudo rsync -r * ${APIGEE_DRUPAL_SOURCE_ROOT}
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} -type d -exec chmod 755 {} \;
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} f -exec chmod 644 {} \;
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/ -type d -exec chmod 775 {} \;
-sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin chmod -R 777 {} \;
+#sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin chmod -R 777 {} \;
 #sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/files -type d -exec chmod 775 {} \;
 
 
@@ -67,10 +67,8 @@ sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin chmod -R 777 {} \;
 
 #Initialize updates:
 echo "Initializing updates"
-cd ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin/
-pwd
-sudo drush -v
-sudo drush sql-dump > ${BACKUP_DIRECTORY}/${DB_BACKUP}
+chmod ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin -R 777
+sudo $(${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin ; drush -v)
 #sudo ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin/drush updb -y
 
 
