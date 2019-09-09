@@ -24,7 +24,8 @@
     "drupal/devel": "^1.2",
     "drupal/legal": "^1.0@RC",
     "drupal/email_registration": "^1.0@RC",
-    "drupal/flexslider": "^2.0@beta"
+    "drupal/flexslider": "^2.0@beta",
+    "drupal/views_infinite_scroll": "^1.6"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
