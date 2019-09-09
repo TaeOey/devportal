@@ -99,9 +99,9 @@ pipeline {
 				echo 'Failure'
 			}
 		}
-		// cleanup {
-		// 	cleanWorkspace()
-		// }
+		cleanup {
+		 	cleanWorkspace()
+        }
 	}
 }
 
@@ -110,7 +110,7 @@ def isMasterBranch() {
 }
 
 def isDevelopBranch() {
-    return params.BranchName == '4.18.01-dev'
+    return params.BranchName == 'develop'
 }
 
 def getPackageLabel() {
