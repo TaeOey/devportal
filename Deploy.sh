@@ -55,7 +55,9 @@ echo "Creating and Fixing Permission On ${APIGEE_DRUPAL_SOURCE_ROOT}"
 sudo mkdir ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
 
 sudo rsync -r * ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
+sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/web/sites/default/settings.php
 
+sudo chown nginx:nginx -R ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE} -type d -exec chmod 755 {} \;
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE} -type f -exec chmod 644 {} \;
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/web/sites/default/ -type d -exec chmod 775 {} \;
@@ -73,6 +75,7 @@ echo "Actualize configuration layer"
 sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} drush cim -y
 
 #Clear caches:
+echo "Clear caches"
 sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} drush cr
 
 #Delete old versions
