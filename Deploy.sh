@@ -56,6 +56,7 @@ sudo chown nginx:nginx -R ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE} -type d -exec chmod 755 {} \;
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE} -type f -exec chmod 644 {} \;
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/web/sites/default/ -type d -exec chmod 775 {} \;
+sudo find ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/bin/drush.launcher -type f -exec chmod 777 {} \;
 #sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/files -type d -exec chmod 775 {} \;
 
 #Backup Drupal database
