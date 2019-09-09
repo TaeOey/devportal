@@ -102,12 +102,7 @@
 
   {% if page.header|render %}
     <header class="page__header">
-      {# If field_header has a value, it should replace the title block.#}
-      {% if node.field_header.value %}
-        {{ page.header|without('apigee_kickstart_title') }}
-      {% else %}
-        {{ page.header }}
-      {% endif %}
+        {{ page.header|without('page__title') }}
     </header>
   {% endif %}
 
