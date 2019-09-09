@@ -55,7 +55,15 @@ pipeline {
         }
         stage('Publish') {
             when {
-                anyOf { expression { return params._IS_PUBLISH }; expression { return params._IS_DEPLOY } }
+                anyOf { 
+                    expression { 
+                        return params._IS_PUBLISH 
+                        }; 
+                    expression { 
+                        return params._IS_DEPLOY 
+                        }
+                    branch 'develop'
+                }
             }
             steps {
                 echo "===== Publish package to repository"
@@ -64,9 +72,13 @@ pipeline {
                 }
             }
         }
+        
         stage('Deploy') {
             when {
-                expression { return params._IS_DEPLOY }
+                anyOf {
+                    branch 'develop'
+                    expression { return params._IS_DEPLOY }
+                }
             }
             steps {
                 echo "Deploying to ${env._DEPLOY_TO}"

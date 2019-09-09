@@ -3,7 +3,7 @@
 #Declare variables
 CWD=`pwd`
 APIGEE_DRUPAL_SOURCE_ROOT=/var/www/devportal/"#{Octopus.Release.Number}"
-APIGEE_DRUPAL_WEB_DOCROOT=/var/www/devportal/web
+APIGEE_DRUPAL_WEB_DOCROOT=/var/www/devportal/"#{Octopus.Release.Number}"/web
 EMONEY_DEVPORTAL_PROJECT_DIRECTORY=/opt/apigee/data/apigee-drupal-devportal/sites/all
 PACKAGE_ID=`basename $(pwd)`
 CURRENT_DATETIME=`date +%Y%m%d-%H%M%S`
@@ -48,24 +48,21 @@ echo "Creating and Fixing Permission On ${APIGEE_DRUPAL_SOURCE_ROOT}"
 
 sudo mkdir ${APIGEE_DRUPAL_SOURCE_ROOT}
 
-sudo rsync -vr * ${APIGEE_DRUPAL_SOURCE_ROOT}
+sudo rsync -r * ${APIGEE_DRUPAL_SOURCE_ROOT}
 
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} -type d -exec chmod 755 {} \;
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT} f -exec chmod 644 {} \;
-sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/files -type d -exec chmod 775 {} \;
+sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/ -type d -exec chmod 775 {} \;
+#sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/files -type d -exec chmod 775 {} \;
 
 
 #Update codebase to actual version (this I need help with to figure out
-echo "Updating codebase"
-for item in ${DRUPAL_DIR_LIST}; do
-    echo "Deploying ${item}"
-    sudo rsync -av --delete ${item}/ ${APIGEE_DRUPAL_WEB_DOCROOT}/${item}
+# echo "Updating codebase"
+# for item in ${DRUPAL_DIR_LIST}; do
+#     echo "Deploying ${item}"
+#     sudo rsync -av --delete ${item}/ ${APIGEE_DRUPAL_WEB_DOCROOT}/${item}
     
-    # if [ "${TWO_DP_SETUP}" == "true" ]; then
-    #     echo "Deploying ${item} to second DP on ${SECOND_DP_IP}"
-    #     sudo rsync -av --delete ${EMONEY_DEVPORTAL_PROJECT_DIRECTORY}/${item}/ root@${SECOND_DP_IP}:${EMONEY_DEVPORTAL_PROJECT_DIRECTORY}/${item}
-    # fi
-done
+# done
 
 #Initialize updates:
 echo "Initializing updates"
