@@ -68,8 +68,11 @@ sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin -type d -exec chmod -R 777 {} 
 #Initialize updates:
 echo "Initializing updates"
 #sudo chmod -R 777 ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin
-sudo && ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin/drush -v
-#sudo ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin/drush updb -y
+sudo cd ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin
+sudo drush -v
+#sudo && ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin/drush -v
+#sudo && ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin/drush sql-dump > ${BACKUP_DIRECTORY}/${DB_BACKUP}
+#sudo && ${APIGEE_DRUPAL_SOURCE_ROOT}/vendor/bin/drush updb -y
 
 
 #Actualize configuration layer:
