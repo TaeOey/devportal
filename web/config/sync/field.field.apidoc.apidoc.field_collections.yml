@@ -1,19 +1,18 @@
-uuid: 8a7cfe95-8039-4d09-b89d-d643a722ebc6
+uuid: f49406db-4298-4e33-8bfa-bba9f912cd33
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.apidoc.field_categories
+    - field.storage.apidoc.field_collections
+    - taxonomy.vocabulary.collections
   module:
     - apigee_api_catalog
-_core:
-  default_config_hash: uzArjFJhjUsLkTJXy-3GT0PW6slBUVdsTjQsCUJiXa4
-id: apidoc.apidoc.field_categories
-field_name: field_categories
+id: apidoc.apidoc.field_collections
+field_name: field_collections
 entity_type: apidoc
 bundle: apidoc
 label: Collections
-description: 'The API Docs collections.'
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -21,10 +20,11 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles: {  }
+    target_bundles:
+      collections: collections
     sort:
       field: name
       direction: asc
-    auto_create: true
+    auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

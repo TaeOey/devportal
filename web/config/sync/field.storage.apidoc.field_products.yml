@@ -1,0 +1,20 @@
+uuid: 4dae0db7-9775-4042-a385-8d2f9a19339e
+langcode: en
+status: true
+dependencies:
+  module:
+    - apigee_api_catalog
+    - taxonomy
+id: apidoc.field_products
+field_name: field_products
+entity_type: apidoc
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
