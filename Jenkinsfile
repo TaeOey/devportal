@@ -17,7 +17,7 @@ pipeline {
     }
     options { timeout(time: 2, unit: 'HOURS') }
     parameters {
-        booleanParam(name: '_IS_PUBLISH', defaultValue: true, description: "Publish package")
+        booleanParam(name: '_IS_PUBLISH', defaultValue: false, description: "Publish package")
         booleanParam(name: '_IS_DEPLOY', defaultValue: false, description: "Deploy to DEV")
     }
     stages {
