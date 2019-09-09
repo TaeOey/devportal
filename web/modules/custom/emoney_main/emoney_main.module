@@ -16,6 +16,18 @@ function emoney_main_theme_suggestions_page_alter(array &$suggestions, array $va
 }
 
 /**
+ * Implements hook_theme_suggestions_page_alter()
+ */
+function emoney_main_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+    $path = \Drupal::service('path.current')->getPath();
+    $alias = \Drupal::service('path.alias_manager')->getAliasByPath($path);
+
+    if ($alias == '/apis' || $alias == '/collections') {
+        $suggestions[] = 'node__apis';
+    }
+}
+
+/**
  * Implements hook_menu_links_discovered_alter().
  */
 function emoney_main_menu_links_discovered_alter(&$links) {
