@@ -57,6 +57,7 @@
 
             .hero-text {
               z-index: 2;
+              width: 600px;
             }
           }
         }
@@ -119,7 +120,7 @@
 
     &.card-group--default {
       &.py-7 {
-        padding-bottom: 1.5rem !important; /* to override py-7 !important */
+        /*padding-bottom: 1.5rem !important;*/ /* to override py-7 !important */
       }
     }
   }
@@ -167,11 +168,13 @@
         margin: auto;
         display: block;
         padding-top: 10%;
-        padding-bottom: 10%
+        padding-bottom: 4%;
+        width: 75px;
       }
     }
 
     .card-title {
+      margin-bottom: 0.25rem;
       h3 {
         color: $gray-dark;
         font-size: 20px;
@@ -184,6 +187,8 @@
     }
 
     .card-body {
+      padding-top: 0rem;
+      padding-bottom: 1rem;
       p {
         color: $gray;
         font-size: 16px;
@@ -191,16 +196,33 @@
         text-align: center;
       }
     }
-
-    
+    .card-group-2 {
+      .card-group__buttons {
+        margin-bottom: 2rem;
+      }
+    }
   }
   .paragraph {
     &.text-image {
-      background: aliceblue;
+      background: #F9F9F9;
+      margin-top: 1rem;
+      .text-image__text {
+        h2 {
+          font-family: Lato;
+          font-size: 32px;
+          font-weight: 700;
+          line-height: 40px;
+        }
+        .text-image__field-text {
+          font-size: 22px;
+          line-height: 32px;
+          color: #707070;
+        }
 
+      }
       img {
-        padding-top: 50px;
-        padding-bottom: 50px;
+        padding-top: 3rem;
+        height: 580px;
       }
 
       .buttons--text-image {
