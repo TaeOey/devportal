@@ -32,7 +32,8 @@
     "drupal/views_infinite_scroll": "^1.6",
     "oomphinc/composer-installers-extender": "^1.1",
     "bower-asset/swagger-ui": "^3.23",
-    "drupal/swagger_ui_formatter": "^2.4"
+    "drupal/swagger_ui_formatter": "^2.4",
+    "drupal/smtp": "^1.0@beta"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
