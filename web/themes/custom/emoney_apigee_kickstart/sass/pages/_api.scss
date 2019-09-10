@@ -121,8 +121,8 @@
               }
 
               &-post {
-                // background-color: $res_get_dark;
-                // border-color: $res_get_dark;
+                background-color: $res_post_dark;
+                border-color: $res_post_dark;
 
                 .opblock-summary-method {
                   background-color: $res_post;
@@ -130,11 +130,20 @@
               }
 
               &-put {
-                // background-color: $res_get_dark;
-                // border-color: $res_get_dark;
+                background-color: $res_put_dark;
+                border-color: $res_put_dark;
 
                 .opblock-summary-method {
                   background-color: $res_put;
+                }
+              }
+
+              &-delete {
+                background-color: $res_delete_dark;
+                border-color: $res_delete_dark;
+
+                .opblock-summary-method {
+                  background-color: $res_delete;
                 }
               }
 
