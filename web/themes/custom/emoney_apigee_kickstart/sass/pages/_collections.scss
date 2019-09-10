@@ -1,7 +1,19 @@
 @import "../typography";
 
-.view-api-collection {
+.api-node {
   background-color: #f9f9f9;
+
+  h2 {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 40px;
+    margin: 0 0 16px 0;
+  }
+
+  .text__field-text {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
 
   .view-content {
     .card {
@@ -48,6 +60,7 @@
           font-size: 24px;
           font-weight: $bold;
           line-height: 32px;
+          text-transform: uppercase;
         }
       }
 
@@ -58,7 +71,7 @@
         position: absolute;
         z-index: 1;
 
-        .btn {
+        a {
           background-color: transparent;
           border: none;
           color: #00aae7;
@@ -106,6 +119,34 @@
           margin-left: -1em;
         }
       }
+    }
+  }
+
+  .block--cta {
+    margin-bottom: 0px;
+  }
+
+  .cta {
+    background-color: #1a6887;
+    color: white;
+    text-align: center;
+
+    .btn {
+      background-color: transparent;
+      border: #fff 1px solid;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    &__title {
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 24px;
+      margin: 0 0 16px 0;
+    }
+
+    &__text {
+      flex-basis: auto;
     }
   }
 }
