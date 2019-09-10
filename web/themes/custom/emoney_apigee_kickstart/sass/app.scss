@@ -6,8 +6,8 @@
 
 // Components
 @import 'components/navbar';
+@import 'components/footer';
 @import 'components/page-header';
-@import 'components/page-footer';
 
 
 // Pages
@@ -17,13 +17,16 @@
 @import 'pages/errors';
 @import 'pages/collections';
 @import "pages/terms_of_use";
-
+@import 'pages/use_cases';
 
 /************* Media Queries *************************/
 /* Desktop Only */
 @media (min-width: 992px) {
   .card-group-2 .container {
-    max-width: 50%;
+    max-width: 56%;
+  }
+  .path-frontpage .text-image {
+    height: 630px;
   }
 }
 /* End of Desktop Only */
