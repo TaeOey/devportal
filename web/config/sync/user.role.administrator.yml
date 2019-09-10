@@ -65,6 +65,7 @@ permissions:
   - 'administer permissions'
   - 'administer responsive images'
   - 'administer site configuration'
+  - 'administer smtp module'
   - 'administer software updates'
   - 'administer taxonomy'
   - 'administer taxonomy_term display'

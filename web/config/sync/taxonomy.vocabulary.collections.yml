@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: Collections
 vid: collections
-description: ''
+description: 'List of Collections to tag APIs, Use Cases'
 weight: 0
