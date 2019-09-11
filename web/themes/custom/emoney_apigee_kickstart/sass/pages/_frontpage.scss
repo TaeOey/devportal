@@ -158,7 +158,16 @@
       padding-bottom: 0.2rem;
     }
   }
-
+  .card-group__buttons {
+    a.btn.btn-primary {
+      background-color: #00AAE7;
+      border-color: #00AAE7;
+      font-family: Arial;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+  
   .emoney-card {
     margin: auto;
     width: 80%;
@@ -197,12 +206,13 @@
         text-align: center;
       }
     }
-    .card-group-2 {
+    /*.card-group-2 {
       .card-group__buttons {
         margin-bottom: 2rem;
       }
-    }
+    }*/
   }
+
   .paragraph {
     &.text-image {
       background: #F9F9F9;
