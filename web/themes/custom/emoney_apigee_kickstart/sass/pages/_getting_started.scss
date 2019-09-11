@@ -2,7 +2,7 @@ article[about=\/getting-started] {
 
   h2 {
     color: $gray_dark;
-    font-family: $Arial;
+    font-family: $Lato;
     font-size: 32px;
     font-weight: $bold;
     line-height: 40px;
@@ -20,8 +20,14 @@ article[about=\/getting-started] {
 
   .accordion {
     &--expanded {
-      .accordion__text {
-        display: block;
+      .accordion {
+        &__text {
+          display: block;
+        }
+
+        &__title {
+          margin-bottom: 0;
+        }
       }
     }
 
@@ -34,6 +40,7 @@ article[about=\/getting-started] {
       font-size: 24px;
       font-weight: $bold;
       line-height: 32px;
+      margin-bottom: 15px;
       padding: 8px 16px;
 
       svg {
