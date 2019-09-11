@@ -119,8 +119,8 @@
     }
 
     &.card-group--default {
-      &.py-7 {
-        /*padding-bottom: 1.5rem !important;*/ /* to override py-7 !important */
+      &.py-7:not(.card-group-2) {
+        padding-bottom: 27px !important; /* to override py-7 !important */
       }
     }
   }
@@ -158,7 +158,16 @@
       padding-bottom: 0.2rem;
     }
   }
-
+  .card-group__buttons {
+    a.btn.btn-primary {
+      background-color: #00AAE7;
+      border-color: #00AAE7;
+      font-family: Arial;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+  
   .emoney-card {
     margin: auto;
     width: 80%;
@@ -197,19 +206,20 @@
         text-align: center;
       }
     }
-    .card-group-2 {
+    /*.card-group-2 {
       .card-group__buttons {
         margin-bottom: 2rem;
       }
-    }
+    }*/
   }
+
   .paragraph {
     &.text-image {
       background: #F9F9F9;
       margin-top: 1rem;
 
       .container-fluid.px-0 {
-        padding-top: 120px;
+        padding-top: 70px;
       }
 
       .text-image__text {
@@ -227,7 +237,7 @@
 
       }
       img {
-        height: 500px;
+        height: 460px;
         float: right;
         width: auto;
       }
@@ -255,7 +265,10 @@
 
     .container {
       max-width: 100%;
-
+      height: 234px;
+      .row {
+        height: 100%;
+      }
       .col-md-6 {
         &.left {
           background-color: #1A6887; /*$blue_theme*/
@@ -268,22 +281,36 @@
         &.left,
         &.right {
           color: $white;
-          font-size: 22px;
+          font-size: 14px;
+          font-family: Arial;
           font-weight: bold;
           line-height: 24px;
           margin: 0 0 0 0;
+
 
           .btn-primary {
             background-color: transparent;
             border: $white 1px solid;
             color: $white;
+            padding-left: 40px;
+            padding-right: 40px;
+            font-size: 14px;
+            font-weight: bold;
           }
+        }
+        .callout__title {
+          font-weight: bold;
+          font-size: 22px;
+          margin-bottom: 15px;
+        }
+        .callout {
+          padding-top: 62px;
         }
       }
 
-      .callout {
+      /*.callout {
         padding: 5rem;
-      }
+      }*/
     }
   }
 }
