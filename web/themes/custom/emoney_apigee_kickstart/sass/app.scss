@@ -8,6 +8,7 @@
 @import 'components/navbar';
 @import 'components/footer';
 @import 'components/page-header';
+@import 'components/paragrap--cta';
 @import 'components/breadcrumbs';
 
 
@@ -28,7 +29,7 @@
     max-width: 56%;
   }
   .path-frontpage .text-image {
-    height: 630px;
+    height: 720px;
   }
 }
 /* End of Desktop Only */

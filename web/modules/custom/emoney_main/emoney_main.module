@@ -30,9 +30,19 @@ function emoney_main_theme_suggestions_node_alter(array &$suggestions, array $va
 }
 
 /**
- * Implements hook_menu_links_discovered_alter().
+ * Implements hook_menu_links_discovered_alter()
  */
 function emoney_main_menu_links_discovered_alter(&$links) {
   $links['user.logout']['class'] = 'Drupal\emoney_main\Plugin\Menu\EmoneyLoginLogoutMenuLink';
 }
 
+/**
+ * Implements hook_user_presave()
+ */
+function emoney_main_user_presave(\Drupal\user\UserInterface $user) {
+    $current_user_id = \Drupal::currentUser()->id();
+
+    if ($user->isNew() && $current_user_id == 0) {
+        $user->addRole('external_developer');
+    }
+}

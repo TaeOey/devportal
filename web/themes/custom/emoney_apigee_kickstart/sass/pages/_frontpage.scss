@@ -64,7 +64,7 @@
 
         .hero-text {
           position: absolute;
-          top: 25%;
+          top: 33%;
           left: 15%;
 
           .views-field-title {
@@ -164,6 +164,7 @@
     width: 80%;
 
     .card-image {
+      height: 125px;
       img {
         margin: auto;
         display: block;
@@ -206,6 +207,11 @@
     &.text-image {
       background: #F9F9F9;
       margin-top: 1rem;
+
+      .container-fluid.px-0 {
+        padding-top: 120px;
+      }
+
       .text-image__text {
         h2 {
           font-family: Lato;
@@ -221,8 +227,9 @@
 
       }
       img {
-        padding-top: 3rem;
-        height: 580px;
+        height: 500px;
+        float: right;
+        width: auto;
       }
 
       .buttons--text-image {
