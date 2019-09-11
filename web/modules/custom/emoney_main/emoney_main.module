@@ -40,7 +40,9 @@ function emoney_main_menu_links_discovered_alter(&$links) {
  * Implements hook_user_presave()
  */
 function emoney_main_user_presave(\Drupal\user\UserInterface $user) {
-    if ($user->isNew()) {
+    $current_user_id = \Drupal::currentUser()->id();
+
+    if ($user->isNew() && $current_user_id == 0) {
         $user->addRole('external_developer');
     }
 }
