@@ -1,12 +1,13 @@
 uuid: 73fd3829-f590-4d6d-871e-db1f27364d6d
 langcode: en
-status: false
+status: true
 dependencies:
   content:
     - 'block_content:cta:286eec4d-536b-4709-97b1-ec7fc893a0ba'
   module:
     - apigee_kickstart_enhancement
     - block_content
+    - system
   theme:
     - emoney_apigee_kickstart
 id: collectionofallemoneyapis
@@ -29,5 +30,10 @@ visibility:
     uuid: 73fd3829-f590-4d6d-871e-db1f27364d6d
     bundles: {  }
     is_adjacent: 0
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /faq
     negate: false
     context_mapping: {  }
