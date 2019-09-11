@@ -119,8 +119,8 @@
     }
 
     &.card-group--default {
-      &.py-7 {
-        /*padding-bottom: 1.5rem !important;*/ /* to override py-7 !important */
+      &.py-7:not(.card-group-2) {
+        padding-bottom: 27px !important; /* to override py-7 !important */
       }
     }
   }
