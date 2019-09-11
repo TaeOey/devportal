@@ -265,7 +265,10 @@
 
     .container {
       max-width: 100%;
-
+      height: 234px;
+      .row {
+        height: 100%;
+      }
       .col-md-6 {
         &.left {
           background-color: #1A6887; /*$blue_theme*/
@@ -278,22 +281,36 @@
         &.left,
         &.right {
           color: $white;
-          font-size: 22px;
+          font-size: 14px;
+          font-family: Arial;
           font-weight: bold;
           line-height: 24px;
           margin: 0 0 0 0;
+
 
           .btn-primary {
             background-color: transparent;
             border: $white 1px solid;
             color: $white;
+            padding-left: 40px;
+            padding-right: 40px;
+            font-size: 14px;
+            font-weight: bold;
           }
+        }
+        .callout__title {
+          font-weight: bold;
+          font-size: 20px;
+          margin-bottom: 15px;
+        }
+        .callout {
+          padding-top: 62px;
         }
       }
 
-      .callout {
+      /*.callout {
         padding: 5rem;
-      }
+      }*/
     }
   }
 }
