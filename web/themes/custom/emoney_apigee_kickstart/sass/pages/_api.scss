@@ -112,8 +112,8 @@
               padding: 12px 16px;
 
               &-get {
-                background-color: $res_get_dark;
-                border-color: $res_get_dark;
+                background-color: $res_get_bg;
+                border-color: $res_get_bg;
 
                 .opblock-summary-method {
                   background-color: $res_get;
@@ -121,8 +121,8 @@
               }
 
               &-post {
-                background-color: $res_post_dark;
-                border-color: $res_post_dark;
+                background-color: $res_post_bg;
+                border-color: $res_post_bg;
 
                 .opblock-summary-method {
                   background-color: $res_post;
@@ -130,8 +130,8 @@
               }
 
               &-put {
-                background-color: $res_put_dark;
-                border-color: $res_put_dark;
+                background-color: $res_put_bg;
+                border-color: $res_put_bg;
 
                 .opblock-summary-method {
                   background-color: $res_put;
@@ -139,8 +139,8 @@
               }
 
               &-delete {
-                background-color: $res_delete_dark;
-                border-color: $res_delete_dark;
+                background-color: $res_delete_bg;
+                border-color: $res_delete_bg;
 
                 .opblock-summary-method {
                   background-color: $res_delete;
@@ -152,14 +152,14 @@
               }
 
               &-path {
-                color: $white;
+                color: $gray_dark;
                 font-family: $Arial;
                 font-weight: $bold;
                 line-height: 16px;
               }
 
               &-description {
-                color: $white;
+                color: $gray_dark;
                 line-height: 24px;
               }
             }
