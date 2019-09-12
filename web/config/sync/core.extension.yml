@@ -20,10 +20,12 @@ module:
   components: 0
   config: 0
   contact: 0
+  content_moderation: 0
   contextual: 0
   ctools: 0
   datetime: 0
   dblog: 0
+  diff: 0
   dynamic_page_cache: 0
   editor: 0
   email_registration: 0
@@ -64,6 +66,7 @@ module:
   path: 0
   quickedit: 0
   rdf: 0
+  redirect: 0
   responsive_image: 0
   search: 0
   shortcut: 0
@@ -74,10 +77,10 @@ module:
   text: 0
   token: 0
   toolbar: 0
-  tour: 0
   user: 0
   views_infinite_scroll: 0
   views_ui: 0
+  workflows: 0
   forum: 1
   menu_link_content: 1
   pathauto: 1
