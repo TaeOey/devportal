@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Template for the page title block.
+ */
+#}
+{% embed '@radix/block/block.twig' with {
+  html_tag: 'div',
+  utility_classes: []
+} %}
+  {% block content %}
+    <div class="container">
+      <div class="row">
+        {{ content }}
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}
