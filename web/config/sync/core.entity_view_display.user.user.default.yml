@@ -72,4 +72,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_last_password_reset: true
+  field_password_expiration: true

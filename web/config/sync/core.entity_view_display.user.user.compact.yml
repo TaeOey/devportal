@@ -30,6 +30,8 @@ hidden:
   email: true
   field_company_name: true
   field_company_role: true
+  field_last_password_reset: true
+  field_password_expiration: true
   member_for: true
   roles: true
   timezone: true

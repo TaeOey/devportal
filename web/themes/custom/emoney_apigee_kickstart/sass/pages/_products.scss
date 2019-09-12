@@ -189,19 +189,19 @@ article[about=\/products] {
             width: 40px;
 
             &--get {
-              background-color: $res_get_dark;
+              background-color: $res_get_bg;
             }
 
             &--post {
-              background-color: $res_post_dark;
+              background-color: $res_post_bg;
             }
 
             &--put {
-              background-color: $res_put_dark;
+              background-color: $res_put_bg;
             }
 
             &--delete {
-              background-color: $res_delete_dark;
+              background-color: $res_delete_bg;
             }
           }
         }

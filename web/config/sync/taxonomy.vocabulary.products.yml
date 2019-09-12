@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: Products
 vid: products
-description: ''
+description: 'List of Products to tag APIs, Use Cases'
 weight: 0

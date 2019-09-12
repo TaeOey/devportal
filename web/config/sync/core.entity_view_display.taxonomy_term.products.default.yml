@@ -34,7 +34,7 @@ content:
     region: content
   field_icon:
     weight: 1
-    label: above
+    label: hidden
     settings:
       image_style: 1_1_80x80
       image_link: ''
