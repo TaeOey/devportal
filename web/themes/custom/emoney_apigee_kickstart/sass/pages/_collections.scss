@@ -17,8 +17,8 @@
         }
 
         .text__field-text {
-          padding-left: 60px;
-          padding-right: 60px;
+          padding-left: 108px;
+          padding-right: 108px;
         }
 
         .view-content {
@@ -142,13 +142,15 @@
             border: #fff 1px solid;
             color: #fff;
             text-transform: uppercase;
+            font-family: Arial;
           }
 
           &__title {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: bold;
             line-height: 24px;
             margin: 0 0 16px 0;
+            color: #fff;
           }
 
           &__text {
