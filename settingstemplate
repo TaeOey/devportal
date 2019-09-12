@@ -799,6 +799,7 @@ $databases['default']['default'] = array (
 );
 # SMTP Mail Server Credentials
 $config['smtp.settings']['smtp_host'] = '10.99.88.93';
+
 # Trusted host setting
 $settings['trusted_host_patterns'] = [
   '^apigee-devportal-d8\.emadev\.emoneyadvisor\.com$',
