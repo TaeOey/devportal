@@ -34,7 +34,9 @@
     "bower-asset/swagger-ui": "^3.23",
     "drupal/swagger_ui_formatter": "^2.4",
     "drupal/smtp": "^1.0@beta",
-    "drupal/password_policy": "^3.0@alpha"
+    "drupal/password_policy": "^3.0@alpha",
+    "drupal/diff": "^1.0@RC",
+    "drupal/redirect": "^1.4"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
