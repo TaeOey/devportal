@@ -33,7 +33,8 @@
     "oomphinc/composer-installers-extender": "^1.1",
     "bower-asset/swagger-ui": "^3.23",
     "drupal/swagger_ui_formatter": "^2.4",
-    "drupal/smtp": "^1.0@beta"
+    "drupal/smtp": "^1.0@beta",
+    "drupal/password_policy": "^3.0@alpha"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
