@@ -65,3 +65,11 @@ function emoney_main_form_user_register_form_alter(&$form, \Drupal\Core\Form\For
         '#markup' => t('<h2>Get Started With eMoney Developer</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget nisl quis mi facilisis efficitur. Nunc tincidunt tristique turpis congue feugiat.</p>')
     );
 }
+
+/**
+ * Implements hook_form_id_alter()
+ */
+function emoney_main_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    $form['name']['#description'] = t('');
+    $form['pass']['#description'] = t('');
+}
