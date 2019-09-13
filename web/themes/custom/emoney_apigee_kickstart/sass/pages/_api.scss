@@ -314,4 +314,12 @@
       padding: 0;
     }
   }
+
+  #swagger-ui-spec-0 {
+    > .swagger-ui {
+      > .wrapper {
+          display: none;
+      }
+    }
+  }
 }
