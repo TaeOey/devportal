@@ -797,6 +797,10 @@ $databases['default']['default'] = array (
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
+
+# Public files to allow https
+$settings['file_public_base_url'] = 'https://apigee-devportal-d8.emadev.emoneyadvisor.com/sites/default/files';
+
 # SMTP Mail Server Credentials
 $config['smtp.settings']['smtp_host'] = '10.99.88.93';
 
