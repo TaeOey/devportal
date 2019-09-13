@@ -1,7 +1,5 @@
 <?php
 
-use function GuzzleHttp\json_encode;
-
 /**
  * Implements hook_theme_suggestions_page_alter()
  */
