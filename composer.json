@@ -25,7 +25,7 @@
     "drupal/commerce": "^2.13",
     "php": "^7.1",
     "drush/drush": "~8",
-    "drupal/devel": "^1.2",
+    "drupal/devel": "^2.1",
     "drupal/legal": "^1.0@RC",
     "drupal/email_registration": "^1.0@RC",
     "drupal/flexslider": "^2.0@beta",
@@ -36,7 +36,8 @@
     "drupal/smtp": "^1.0@beta",
     "drupal/password_policy": "^3.0@alpha",
     "drupal/diff": "^1.0@RC",
-    "drupal/redirect": "^1.4"
+    "drupal/redirect": "^1.4",
+    "drupal/cancel_button": "^1.1"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
