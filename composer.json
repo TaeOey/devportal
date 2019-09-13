@@ -55,18 +55,36 @@
   },
   "extra": {
     "installer-paths": {
-      "web/core": ["type:drupal-core"],
+      "web/core": [
+        "type:drupal-core"
+      ],
       "web/libraries/{$name}": [
         "type:drupal-library",
         "type:bower-asset",
         "type:npm-asset"
       ],
-      "web/libraries/swagger_ui": ["bower-asset/swagger-ui"],
-      "web/modules/contrib/{$name}": ["type:drupal-module"],
-      "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-      "web/themes/contrib/{$name}": ["type:drupal-theme"]
+      "web/libraries/swagger_ui": [
+        "bower-asset/swagger-ui"
+      ],
+      "web/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "web/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "web/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ]
     },
-    "installer-types": ["bower-asset", "npm-asset"],
+    "installer-types": [
+      "bower-asset",
+      "npm-asset"
+    ],
+    "patches": {
+      "drupal/password_policy": {
+        "2867320 - Password policy history module wrong behavior": "https://www.drupal.org/files/issues/2867320-4-password-recycle.patch"
+      }
+    },
     "enable-patching": true
   }
 }
