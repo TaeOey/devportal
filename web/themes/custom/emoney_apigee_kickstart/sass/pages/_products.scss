@@ -33,6 +33,8 @@ article[about=\/products] {
             .col-md-6 {
               &:last-of-type {
                 .card {
+                  padding: 25px;
+
                   * {
                     opacity: .65;
                   }
