@@ -2,12 +2,12 @@
 
 pipeline {
     agent {
-        node {
-            //label 'composer-4_10_0 && php-7_3_9'
-            label 'docker'
+        // node {
+        //     //label 'composer-4_10_0 && php-7_3_9'
+        //     label 'docker'
             
-            //customWorkspace "workspace\\apigee-devportal-${env.BRANCH_NAME.replaceAll(~/[\^<>:"\/\\|?*]/, "-").take(20)}"
-        }
+        //     //customWorkspace "workspace\\apigee-devportal-${env.BRANCH_NAME.replaceAll(~/[\^<>:"\/\\|?*]/, "-").take(20)}"
+        // }
         dockerfile{
                     filename 'dockerfile'
         }
