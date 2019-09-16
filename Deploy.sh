@@ -90,3 +90,9 @@ sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cr
 
 #Delete old versions
 sudo rm -rf $APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD
+
+#Delete old database backups
+CURRENT_DATETIME='*'
+sudo ls -t ${BACKUP_DIRECTORY}/${DB_BACKUP}
+echo '------------------------------------------------'
+sudo ls -t ${BACKUP_DIRECTORY}/${DB_BACKUP} | tail -n +4
