@@ -5,10 +5,11 @@ pipeline {
         node {
             //label 'composer-4_10_0 && php-7_3_9'
             label 'docker'
-            dockerfile{
-                    filename 'dockerfile'
-                }
+            
             //customWorkspace "workspace\\apigee-devportal-${env.BRANCH_NAME.replaceAll(~/[\^<>:"\/\\|?*]/, "-").take(20)}"
+        }
+        dockerfile{
+                    filename 'dockerfile'
         }
     }
     environment {
