@@ -1,0 +1,82 @@
+body {
+    .btn {
+      background-color: #f9f9f9;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      color: #333;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 16px;
+      padding: 16px 26px;
+      text-align: center;
+      text-transform: uppercase;
+  
+      &-primary {
+        background-color: #00AAE7;
+        color: #fff;
+  
+        &:hover {
+          background-color: #00AAE7;
+          color: #fff;
+        }
+  
+        &-outline {
+          background-color: transparent;
+          border: #00AAE7 1px solid;
+          color: #00AAE7;
+          padding: 15px 24px;
+  
+          &:hover,
+          &:focus {
+            background-color: transparent;
+            border: #00AAE7 1px solid;
+            box-shadow: none;
+            color: #00AAE7;
+          }
+        }
+      }
+  
+      &-secondary {
+        background-color: #FFFFFF;
+        color: #00AAE7;
+  
+        &:hover {
+          background-color: #FFFFFF;
+          color: #00AAE7;
+        }
+  
+        &--outline {
+          background-color: transparent;
+          border: #FFFFFF 1px solid;
+          color: #FFFFFF;
+          padding: 15px 24px;
+  
+          &:hover {
+            background-color: transparent;
+            box-shadow: none;
+            border: #FFFFFF 1px solid;
+            color: #FFFFFF;
+          }
+        }
+      }
+  
+      &-link {
+        background-color: transparent;
+        color: #00AAE7;
+        font-family: $Lato;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 0;
+  
+        &:hover,
+        &:focus {
+          background-color: transparent;
+          border: none;
+          box-shadow: none;
+          color: #00AAE7;
+        }
+      }
+    }
+  }
+  
