@@ -3,7 +3,11 @@
 pipeline {
     agent {
         node {
-            label 'composer-4_10_0 && php-7_3_9'
+            //label 'composer-4_10_0 && php-7_3_9'
+            label 'docker'
+            dockerfile{
+                    filename 'dockerfile'
+                }
             //customWorkspace "workspace\\apigee-devportal-${env.BRANCH_NAME.replaceAll(~/[\^<>:"\/\\|?*]/, "-").take(20)}"
         }
     }
@@ -29,30 +33,30 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo "Building project from ${env.BRANCH_NAME}"
-                echo "Create package ${env._PACKAGE_NAME}.${env._SEM_VERSION}.${env.BUILD_NUMBER}-${env.BRANCH_NAME}"
+                    echo "Building project from ${env.BRANCH_NAME}"
+                    echo "Create package ${env._PACKAGE_NAME}.${env._SEM_VERSION}.${env.BUILD_NUMBER}-${env.BRANCH_NAME}"
 
-                //bat "mkdir ${env._ARTIFACTS_DIR}"
-                //  - see ticket for further instructions amdp-13
-                echo "cd to root of source code"
-                // composer install (run) - if no composer we need to install it
-                dir("${WORKSPACE}"){
-                bat "composer install -v"
-                    }
-                dir("${WORKSPACE}\\web\\themes\\custom\\emoney_apigee_kickstart") {
-                    bat "npm install"
-                    bat "npm run css"
-                    }
-                //bat "xcopy drush.zip _artifacts" //-- we need to create this I suppose
-                //bat "xcopy Deploy.sh _artifacts" //-- need to test this as well
-                // bat "xcopy Rollback.sh _artifacts" - this not ready yet
+                    //bat "mkdir ${env._ARTIFACTS_DIR}"
+                    //  - see ticket for further instructions amdp-13
+                    echo "cd to root of source code"
+                    // composer install (run) - if no composer we need to install it
+                    dir("${WORKSPACE}"){
+                    bat "composer install -v"
+                        }
+                    dir("${WORKSPACE}\\web\\themes\\custom\\emoney_apigee_kickstart") {
+                        bat "npm install"
+                        bat "npm run css"
+                        }
+                    //bat "xcopy drush.zip _artifacts" //-- we need to create this I suppose
+                    //bat "xcopy Deploy.sh _artifacts" //-- need to test this as well
+                    // bat "xcopy Rollback.sh _artifacts" - this not ready yet
 
-                dir("${WORKSPACE}\\web\\themes\\custom\\emoney_apigee_kickstart\\node_modules") {deleteDir()}
-                dir("${WORKSPACE}\\.git") {deleteDir()}
+                    dir("${WORKSPACE}\\web\\themes\\custom\\emoney_apigee_kickstart\\node_modules") {deleteDir()}
+                    dir("${WORKSPACE}\\.git") {deleteDir()}
 
-                zip zipFile: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip", dir: "${WORKSPACE}"
+                    zip zipFile: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip", dir: "${WORKSPACE}"
+                }
             }
-        }
         stage('Publish') {
             when {
                 anyOf { 
