@@ -37,7 +37,7 @@ pipeline {
                 echo "cd to root of source code"
                 // composer install (run) - if no composer we need to install it
                 dir("${WORKSPACE}"){
-                bat "composer install"
+                bat "composer install -v"
                     }
                 dir("${WORKSPACE}\\web\\themes\\custom\\emoney_apigee_kickstart") {
                     bat "npm install"
