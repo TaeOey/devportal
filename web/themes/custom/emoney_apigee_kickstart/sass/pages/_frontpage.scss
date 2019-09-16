@@ -231,7 +231,12 @@
       margin-top: 1rem;
 
       .container-fluid.px-0 {
+<<<<<<< HEAD
         padding-top: 70px;
+=======
+        padding-top: 97px;
+        padding-bottom: 105px;
+>>>>>>> 186b138267c71e73f9f0d8d5705c650dcbc374db
       }
 
       .text-image__text {
@@ -304,11 +309,20 @@
             background-color: transparent;
             border: $white 1px solid;
             color: $white;
+<<<<<<< HEAD
             padding-left: 40px;
             padding-right: 40px;
             font-size: 14px;
             font-weight: bold;
             font-family: Arial;
+=======
+            font-size: 14px;
+            font-weight: $bold;
+            letter-spacing: initial;
+            line-height: 16px;
+            padding: 16px 0;
+            width: 165px;
+>>>>>>> 186b138267c71e73f9f0d8d5705c650dcbc374db
           }
         }
         .callout__title {
