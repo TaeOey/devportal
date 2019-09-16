@@ -1,5 +1,4 @@
 FROM drupal:8-fpm-alpine
-MAINTAINER William Hearn <sylus1984@gmail.com>
 
 # Install remainder of packages.
 RUN apk --update add --no-cache \
