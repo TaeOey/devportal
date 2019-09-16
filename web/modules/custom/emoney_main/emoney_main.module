@@ -60,7 +60,7 @@ function emoney_main_form_user_register_form_alter(&$form, \Drupal\Core\Form\For
         '#type' => 'item',
         '#title' => t(''),
         '#weight' => -99,
-        '#markup' => t('<h2>Get Started With eMoney Developer</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget nisl quis mi facilisis efficitur. Nunc tincidunt tristique turpis congue feugiat.</p>')
+        '#markup' => t('<h2>Get Started With eMoney Developer</h2><p>Already have an account? <a href="/user/login">Sign In</a></p>')
     );
 }
 
