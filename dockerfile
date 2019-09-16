@@ -12,7 +12,7 @@ RUN apk --update add --no-cache \
 
 COPY conf/ssmtp.conf /etc/ssmtp/ssmtp.conf
 RUN echo "hostname=drupal-composer.org" >> /etc/ssmtp/ssmtp.conf
-RUN echo 'sendmail_path = "/usr/sbin/ssmtp -t"' > /usr/local/etc/php/conf.d/mail.ini
+# RUN echo 'sendmail_path = "/usr/sbin/ssmtp -t"' > /usr/local/etc/php/conf.d/mail.ini
 
 COPY php.ini /usr/local/etc/php/php.ini
 
