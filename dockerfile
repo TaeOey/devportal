@@ -1,27 +1,58 @@
-FROM drupal:8-fpm-alpine
+FROM php:7.3.6-fpm
 
-# Install remainder of packages.
-RUN apk --update add --no-cache \
-  bash \
-  git \
-  gzip \
-  mysql-client \
-  patch \
-  ssmtp \
-  zlib-dev
+RUN apt-get update && apt-get install -y --fix-missing \
+    mysql-client \
+    imagemagick \
+    graphviz \
+    git \
+    libpng-dev \
+    libjpeg62-turbo-dev \
+    libmcrypt-dev \
+    libxml2-dev \
+    libxslt1-dev \
+    wget \
+    linux-libc-dev \
+    libyaml-dev \
+    zlib1g-dev \
+    libicu-dev \
+    libpq-dev \
+    libssl-dev && \
+    rm -r /var/lib/apt/lists/*
 
-# COPY conf/ssmtp.conf /etc/ssmtp/ssmtp.conf
-# RUN echo "hostname=drupal-composer.org" >> /etc/ssmtp/ssmtp.conf
-# RUN echo 'sendmail_path = "/usr/sbin/ssmtp -t"' > /usr/local/etc/php/conf.d/mail.ini
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN apt-get update && apt-get install -y --fix-missing \
+    nodejs
 
-# COPY php.ini /usr/local/etc/php/php.ini
+RUN docker-php-ext-configure gd --with-jpeg-dir=/usr/include/
+RUN docker-php-ext-install \
+    mysqli \
+    pdo_mysql \
+    gd \
+    mbstring \
+    xsl \
+    opcache \
+    calendar \
+    intl \
+    exif \
+    ftp \
+    bcmath \
+    xml \
+    json
 
-# Install extensions
-RUN apk --update add --no-cache icu icu-libs && \
-    apk add --no-cache --virtual .build-deps icu-dev && \
-    docker-php-ext-configure zip \
-    --with-zlib-dir=/usr && \
-    docker-php-ext-install zip && \
-    docker-php-ext-install bcmath && \
-    docker-php-ext-install intl && \
-    apk del .build-deps
+RUN cd /user/sbin
+RUN wget https://download.octopusdeploy.com/octopus-tools/6.13.1/OctopusTools.6.13.1.debian.8-x64.tar.gz
+RUN tar -xzf OctopusTools.6.13.1.debian.8-x64.tar.gz
+RUN rm OctopusTools.6.13.1.debian.8-x64.tar.gz
+
+RUN cd /usr/src && \
+    curl -sS http://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+
+ADD xdebug.ini  /etc/php7.3/conf.d/
+
+# RUN echo "upload_max_filesize = 500M\n" \
+#          "post_max_size = 500M\n" \
+#          > /usr/local/etc/php/conf.d/maxsize.ini
+
+USER www-data
+WORKDIR /var/www/html
+VOLUME /var/www/html

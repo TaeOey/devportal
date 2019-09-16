@@ -71,9 +71,11 @@ pipeline {
                 }
             }
             steps {
-                echo "===== Publish package to repository"
-                withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctopusApiKey')]) {
-                    bat "octo push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip  --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"
+                dir("/usr/bin"){
+                    echo "===== Publish package to repository"
+                        withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctopusApiKey')]) {
+                            bat "octo.exe push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip  --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"
+                        }
                 }
             }
         }
@@ -86,10 +88,12 @@ pipeline {
                 }
             }
             steps {
-                echo "Deploying to ${env._DEPLOY_TO}"
-                withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctoApiKey')]) {
-                    bat "octo create-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --package \"Deploy Devportal\":${PACKAGE_VERSION} --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey}"
-                    bat "octo deploy-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --deployto \"${env._DEPLOY_TO}\" --channel Default --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey} --deploymenttimeout 00:10:00 --waitfordeployment --variable=UploadContent:false"
+                dir("/usr/bin"){
+                    echo "Deploying to ${env._DEPLOY_TO}"
+                    withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctoApiKey')]) {
+                        bat "octo.exe create-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --package \"Deploy Devportal\":${PACKAGE_VERSION} --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey}"
+                        bat "octo.exe deploy-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --deployto \"${env._DEPLOY_TO}\" --channel Default --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey} --deploymenttimeout 00:10:00 --waitfordeployment --variable=UploadContent:false"
+                    }
                 }
             }
         }
