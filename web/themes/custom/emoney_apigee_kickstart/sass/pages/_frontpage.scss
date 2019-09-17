@@ -1,5 +1,3 @@
-// @import '../colors.scss';
-
 .path-frontpage {
   .page {
     .navbar {
@@ -181,20 +179,6 @@
   }
 
   .emoney-card {
-    margin: auto;
-    width: 80%;
-
-    .card-image {
-      height: 125px;
-      img {
-        margin: auto;
-        display: block;
-        padding-top: 10%;
-        padding-bottom: 4%;
-        width: 75px;
-      }
-    }
-
     .card-title {
       margin-bottom: 0.25rem;
       h3 {
@@ -218,11 +202,6 @@
         text-align: center;
       }
     }
-    /*.card-group-2 {
-      .card-group__buttons {
-        margin-bottom: 2rem;
-      }
-    }*/
   }
 
   .paragraph {
@@ -322,10 +301,105 @@
           padding-top: 62px;
         }
       }
+    }
+  }
+}
 
-      /*.callout {
-        padding: 5rem;
-      }*/
+
+.paragraph {
+  &.card-group {
+    &--default {
+      &:first-of-type {
+        .card-deck {
+          .card {
+            &:first-of-type {
+              .emoney-card {
+                .card-image {
+                  img {
+                    height: 62px;
+                    width: 53px;
+                  }
+                }
+              }
+            }
+
+            &:nth-of-type(2) {
+              .emoney-card {
+                .card-image {
+                  img {
+                    height: 52px;
+                    width: 59px;
+                  }
+                }
+              }
+            }
+
+            &:last-of-type {
+              .emoney-card {
+                .card-image {
+                  img {
+                    height: 57px;
+                    width: 59px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &:nth-of-type(2) {
+        .card-deck {
+          .card {
+            &:first-of-type {
+              .emoney-card {
+                .card-image {
+                  img {
+                    height: 60px;
+                    width: 49px;
+                  }
+                }
+              }
+            }
+
+            &:last-of-type {
+              .emoney-card {
+                .card-image {
+                  img {
+                    height: 49px;
+                    width: 58px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .card-deck {
+        justify-content: center;
+        min-height: 202px;
+
+        .card {
+          max-width: 360px;
+
+          .emoney-card {
+            padding: 34px 44px;
+
+            .card-image {
+              align-items: center;
+              display: flex;
+              height: 65px ;
+              justify-content: center;
+              margin: 0 0 13px 0;
+            }
+
+            .card-body {
+              padding: 0;
+            }
+          }
+        }
+      }
     }
   }
 }
