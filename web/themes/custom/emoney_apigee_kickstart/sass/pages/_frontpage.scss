@@ -115,10 +115,26 @@
   }
   .flex-direction-nav {
     font-size: 0px;
-    .flex-nav-prev,
+    .flex-nav-prev {
+      a {
+        &:before {
+          color: $white;
+          font-family: "Font Awesome 5 Free";
+          font-size: 48px;
+          line-height: 48px;
+          content: '\f053';
+        }
+      }
+    }
     .flex-nav-next {
       a {
-        &:before { color: $white; }
+        &:before {
+          color: $white;
+          font-family: "Font Awesome 5 Free";
+          font-size: 48px;
+          line-height: 48px;
+          content: '\f054';
+        }
       }
     }
   }
