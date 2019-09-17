@@ -91,7 +91,7 @@ third_party_settings:
               items_per_page: none
               context_mapping: {  }
             additional: {  }
-            weight: 5
+            weight: 6
           c8abe1cd-6543-4c7b-99ff-60f005700710:
             uuid: c8abe1cd-6543-4c7b-99ff-60f005700710
             region: content
@@ -117,7 +117,7 @@ third_party_settings:
                 entity: layout_builder.entity
               id: 'extra_field_block:node:use_case:content_moderation_control'
             additional: {  }
-            weight: 6
+            weight: 7
           4dc31ff1-9072-4388-8a3e-9ed680c38bd8:
             uuid: 4dc31ff1-9072-4388-8a3e-9ed680c38bd8
             region: content
@@ -127,23 +127,25 @@ third_party_settings:
                 entity: layout_builder.entity
               id: 'extra_field_block:node:use_case:links'
             additional: {  }
-            weight: 7
+            weight: 8
           37750dd2-d5fe-4707-91a7-f913d6d9bf85:
             uuid: 37750dd2-d5fe-4707-91a7-f913d6d9bf85
             region: content
             configuration:
-              label_display: '0'
+              id: 'field_block:node:use_case:field_apis_u'
+              label: 'APIs Used'
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: entity_reference_entity_view
+                settings:
+                  view_mode: full
+                third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:use_case:field_apis_u'
-              formatter:
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-                type: entity_reference_label
             additional: {  }
-            weight: 8
+            weight: 5
         third_party_settings: {  }
 id: node.use_case.default
 targetEntityType: node
