@@ -1,0 +1,36 @@
+uuid: 029d0082-db54-42b8-ba8e-d6c4f9ed4634
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.api_used.field_api_description
+    - field.field.node.api_used.field_method
+    - node.type.api_used
+  module:
+    - options
+    - user
+id: node.api_used.default
+targetEntityType: node
+bundle: api_used
+mode: default
+content:
+  field_api_description:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_method:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }
