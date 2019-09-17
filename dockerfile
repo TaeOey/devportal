@@ -39,19 +39,19 @@ RUN docker-php-ext-install \
     xml \
     json
 
-RUN cd /user/sbin
-RUN wget https://download.octopusdeploy.com/octopus-tools/6.13.1/OctopusTools.6.13.1.debian.8-x64.tar.gz
-RUN tar -xzf OctopusTools.6.13.1.debian.8-x64.tar.gz
-RUN rm OctopusTools.6.13.1.debian.8-x64.tar.gz
-
 RUN cd /usr/src && \
     curl -sS http://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
-ADD xdebug.ini  /etc/php7.3/conf.d/
+# ADD xdebug.ini  /etc/php7.3/conf.d/
 
 # RUN echo "upload_max_filesize = 500M\n" \
 #          "post_max_size = 500M\n" \
 #          > /usr/local/etc/php/conf.d/maxsize.ini
+
+#ADD https://download.octopusdeploy.com/octopus-tools/6.13.1/OctopusTools.6.13.1.debian.8-x64.tar.gz /tmp/
+#RUN tar -xvf /tmp/OctopusTools.6.13.1.debian.8-x64.tar.gz
+#RUN tar -xvf /tmp/octo.tar -C /tmp/octo
+#COPY /tmp/octo /tmp
 
 USER www-data
 WORKDIR /var/www/html
