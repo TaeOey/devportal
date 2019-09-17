@@ -9,7 +9,7 @@ dependencies:
     - views.view.api_collection
     - views.view.key_use_cases
   content:
-    - 'block_content:cta:387b2ce0-f28d-4e34-a828-dbb93552291c'
+    - 'block_content:cta:555d1bf1-87fa-48f1-9f4c-63707cedb79c'
   module:
     - block_content
     - image
@@ -101,12 +101,12 @@ third_party_settings:
         layout_id: layout_onecol
         layout_settings: {  }
         components:
-          87e4496e-c174-487a-87a1-359e9c1d8048:
-            uuid: 87e4496e-c174-487a-87a1-359e9c1d8048
+          2eea45bf-b1ab-4c8e-a504-3f874c5de4ae:
+            uuid: 2eea45bf-b1ab-4c8e-a504-3f874c5de4ae
             region: content
             configuration:
-              id: 'block_content:387b2ce0-f28d-4e34-a828-dbb93552291c'
-              label: 'Collection Page Call to Action'
+              id: 'block_content:555d1bf1-87fa-48f1-9f4c-63707cedb79c'
+              label: 'Collections Page CTA'
               provider: block_content
               label_display: '0'
               status: true

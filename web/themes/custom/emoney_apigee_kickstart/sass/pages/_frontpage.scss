@@ -6,7 +6,7 @@
       background-color: transparent;
     }
     .main {
-      .block { margin-bottom: 0rem;} 
+      .block { margin-bottom: 0rem;}
     }
     .page__header {
       background-color: transparent;
@@ -32,7 +32,7 @@
             }
           }
         }
-        
+
         .slides {
           .flex-active-slide {
             &:after {
@@ -65,7 +65,7 @@
         .hero-text {
           position: absolute;
           top: 33%;
-          left: 15%;
+          left: 8%;
 
           .views-field-title {
             color: $white;
@@ -93,14 +93,26 @@
             text-align: center;
             text-transform: uppercase;
             width: 165px;
-            padding-left: 45px;
-            padding-right: 45px;
+            padding-left: 40px;
+            padding-right: 40px;
           }
         }
       }
     }
   }
-
+  .flex-control-nav {
+    &.flex-control-paging {
+      bottom: 32px;
+      z-index: 10;
+      background-color: transparent;
+      a {
+        background-color: rgba(255,255,255,0.7);
+      }
+      a.flex-active {
+        background-color:#FFFFFF;
+      }
+    }
+  }
   .flex-direction-nav {
     font-size: 0px;
     .flex-nav-prev,
@@ -167,7 +179,7 @@
       font-weight: bold;
     }
   }
-  
+
   .emoney-card {
     margin: auto;
     width: 80%;
@@ -219,7 +231,8 @@
       margin-top: 1rem;
 
       .container-fluid.px-0 {
-        padding-top: 70px;
+        padding-top: 97px;
+        padding-bottom: 105px;
       }
 
       .text-image__text {
@@ -292,10 +305,12 @@
             background-color: transparent;
             border: $white 1px solid;
             color: $white;
-            padding-left: 40px;
-            padding-right: 40px;
             font-size: 14px;
-            font-weight: bold;
+            font-weight: $bold;
+            letter-spacing: initial;
+            line-height: 16px;
+            padding: 16px 0;
+            width: 165px;
           }
         }
         .callout__title {

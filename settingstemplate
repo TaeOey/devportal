@@ -777,6 +777,16 @@ $settings['entity_update_backup'] = TRUE;
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
+# Location of configuration files
+$config_directories['sync'] = 'config/sync';
+$config['system.performance']['css']['preprocess'] = 1;
+$config['system.performance']['js']['preprocess'] = 1;
+$config['system.performance']['cache']['page']['max_age'] = 3600;
+/*
+ * The following settings should come from Octopus when deploying, so that we can
+ * change them in each environment as needed
+ */
+# Database credentials
 $databases['default']['default'] = array (
   'database' => 'emoneydevportal',
   'username' => 'drupal',
@@ -787,4 +797,14 @@ $databases['default']['default'] = array (
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
-$config_directories['sync'] = 'config/sync';
+
+# Public files to allow https
+$settings['file_public_base_url'] = 'https://apigee-devportal-d8.emadev.emoneyadvisor.com/sites/default/files';
+
+# SMTP Mail Server Credentials
+$config['smtp.settings']['smtp_host'] = '10.99.88.93';
+
+# Trusted host setting
+$settings['trusted_host_patterns'] = [
+  '^apigee-devportal-d8\.emadev\.emoneyadvisor\.com$',
+];

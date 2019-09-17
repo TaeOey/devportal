@@ -1,6 +1,7 @@
 .page__footer {
   .footer {
     background-color: $gray_dark;
+    font-family: $Lato;
     font-size: 14px;
     padding-bottom: 0rem !important;
     padding-top: 1.5rem !important;
@@ -22,6 +23,30 @@
           }
 
           padding-right: 18px;
+        }
+      }
+    }
+
+    .nav-item {
+      &.active {
+        &:after {
+          display: none;
+        }
+
+        .nav-link {
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      .nav-link {
+        &.is-active {
+          font-weight: $bold;
+
+          &:after {
+            display: none;
+          }
         }
       }
     }
