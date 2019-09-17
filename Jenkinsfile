@@ -2,15 +2,7 @@
 
 pipeline {
     agent {
-        // node {
-        //     //label 'composer-4_10_0 && php-7_3_9'
-        //     label 'docker'
-            
-        //     //customWorkspace "workspace\\apigee-devportal-${env.BRANCH_NAME.replaceAll(~/[\^<>:"\/\\|?*]/, "-").take(20)}"
-        // }
-        dockerfile{
-                    filename 'dockerfile'
-        }
+        label 'docker'
     }
     environment {
             _DEPLOY_TO = "DEV-INT"
@@ -32,7 +24,18 @@ pipeline {
                 dumpEnvironmentVariables()
             }
         }
-        stage('Build') {
+            stage ('Build1') {
+                    agent {
+                // node {
+        //     //label 'composer-4_10_0 && php-7_3_9'
+                //     label 'docker'
+            
+                //     //customWorkspace "workspace\\apigee-devportal-${env.BRANCH_NAME.replaceAll(~/[\^<>:"\/\\|?*]/, "-").take(20)}"
+                // }
+                dockerfile{
+                    filename 'dockerfile'
+                }
+            }
             steps {
                     echo "Building project from ${env.BRANCH_NAME}"
                     echo "Create package ${env._PACKAGE_NAME}.${env._SEM_VERSION}.${env.BUILD_NUMBER}-${env.BRANCH_NAME}"
@@ -44,6 +47,16 @@ pipeline {
                     dir("${WORKSPACE}"){
                     sh "composer install -v"
                         }
+
+                }
+            }
+            stage ('Build2') {
+                agent {
+                    docker {
+                        image 'node'
+                    }
+                }
+                steps {
                     dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart") {
                         sh "mkdir ./npm"
                         sh "chown -R 1000:1000 ${WORKSPACE}"
