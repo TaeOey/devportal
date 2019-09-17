@@ -362,7 +362,7 @@
 /* Desktop Only */
 
 @media (min-width: 992px) {
-  .path-frontpage .container {
+  .path-frontpage .paragraph.card-group--default:not(.card-group-2) .container {
     max-width: 1200px;
   }
   .card-group-2 .container {
