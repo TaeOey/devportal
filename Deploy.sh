@@ -93,6 +93,8 @@ sudo rm -rf $APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD
 
 #Delete old database backups
 DB_BACKUP_PATTERN=`sudo echo $DB_BACKUP | sed -E 's/[[:digit:]]{6}-[[:digit:]]{4}/*/g'`
+sudo ls -t ${BACKUP_DIRECTORY}
+echo '------------------------------------------------'
 sudo ls -t ${BACKUP_DIRECTORY}/${DB_BACKUP_PATTERN}
 echo '------------------------------------------------'
 sudo ls -t ${BACKUP_DIRECTORY}/${DB_BACKUP_PATTERN} | tail -n +4
