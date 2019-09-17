@@ -45,7 +45,7 @@ pipeline {
                     sh "composer install -v"
                         }
                     dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart") {
-                        sh sudo chown -R 1000:1000 "/.npm"
+                        sh "chown -R 1000:1000 /.npm"
                         sh "npm install"
                         sh "npm run css"
                         }
