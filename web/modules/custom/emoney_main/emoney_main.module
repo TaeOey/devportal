@@ -82,8 +82,6 @@ function emoney_main_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormSt
     $form['actions']['submit']['#value'] = t('Sign in');
     $form['actions']['#weight'] = 31;
     $form['register_text'] = create_form_text(t('<p>Dont have an account? <a href="/user/register">Register here</a></p>'), 99);
-    
-    //dpm($form);
 }
 
 function create_form_text($text, $weight) {
