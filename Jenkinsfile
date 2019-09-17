@@ -45,6 +45,7 @@ pipeline {
                     sh "composer install -v"
                         }
                     dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart") {
+                        sh "mkdir ./npm"
                         sh "chown -R 1000:1000 ${WORKSPACE}"
                         sh "npm install"
                         sh "npm run css"
