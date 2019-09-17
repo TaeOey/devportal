@@ -68,18 +68,29 @@ function emoney_main_form_user_register_form_alter(&$form, \Drupal\Core\Form\For
     $form['last_name']['widget'][0]['value']['#description'] = t('');
     $form['actions']['submit']['#value'] = t('Register');
     
-    $form['register_text'] = array(
-        '#type' => 'item',
-        '#title' => t(''),
-        '#weight' => -99,
-        '#markup' => t('<h2>Get Started With eMoney Developer</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget nisl quis mi facilisis efficitur. Nunc tincidunt tristique turpis congue feugiat.</p>')
-    );
+    $form['register_text'] = create_form_text(t('<h2>Get Started With eMoney Developer</h2><p>Already have an account? <a href="/user/login">Sign In</a></p>'), -99);
 }
 
 /**
  * Implements hook_form_id_alter()
  */
 function emoney_main_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    $form['login_text'] = create_form_text(t('<h2>Sign In</h2>'), -99);
     $form['name']['#description'] = t('');
     $form['pass']['#description'] = t('');
+    $form['forgot_text'] = create_form_text(t('<p>Forgot your password? <a href="/user/password">Reset</a></p>'), 30);
+    $form['actions']['submit']['#value'] = t('Sign in');
+    $form['actions']['#weight'] = 31;
+    $form['register_text'] = create_form_text(t('<p>Dont have an account? <a href="/user/register">Register here</a></p>'), 99);
+}
+
+function create_form_text($text, $weight) {
+   $form_text = array(
+        '#type' => 'item',
+        '#title' => t(''),
+        '#weight' => $weight,
+        '#markup' => $text
+    );
+
+    return $form_text;
 }
