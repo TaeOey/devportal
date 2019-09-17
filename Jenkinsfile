@@ -44,7 +44,7 @@ pipeline {
                     dir("${WORKSPACE}"){
                     sh "composer install -v"
                         }
-                    dir("${WORKSPACE}\\web\\themes\\custom\\emoney_apigee_kickstart") {
+                    dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart") {
                         sh "npm install"
                         sh "npm run css"
                         }
@@ -52,8 +52,8 @@ pipeline {
                     //bat "xcopy Deploy.sh _artifacts" //-- need to test this as well
                     // bat "xcopy Rollback.sh _artifacts" - this not ready yet
 
-                    dir("${WORKSPACE}\\web\\themes\\custom\\emoney_apigee_kickstart\\node_modules") {deleteDir()}
-                    dir("${WORKSPACE}\\.git") {deleteDir()}
+                    dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart//node_modules") {deleteDir()}
+                    dir("${WORKSPACE}//.git") {deleteDir()}
 
                     zip zipFile: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip", dir: "${WORKSPACE}"
                 }

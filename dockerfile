@@ -1,6 +1,7 @@
 FROM php:7.3.6-fpm
 
 RUN apt-get update && apt-get install -y --fix-missing \
+    apt-utils \
     mysql-client \
     imagemagick \
     graphviz \
@@ -16,6 +17,7 @@ RUN apt-get update && apt-get install -y --fix-missing \
     zlib1g-dev \
     libicu-dev \
     libpq-dev \
+    libzip-dev \
     libssl-dev && \
     rm -r /var/lib/apt/lists/*
 
@@ -37,7 +39,8 @@ RUN docker-php-ext-install \
     ftp \
     bcmath \
     xml \
-    json
+    json \
+    zip
 
 RUN cd /usr/src && \
     curl -sS http://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
