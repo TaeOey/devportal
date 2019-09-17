@@ -63,7 +63,6 @@ module:
   password_policy_consecutive: 0
   password_policy_history: 0
   password_policy_length: 0
-  password_policy_recycle: 0
   password_policy_username: 0
   path: 0
   quickedit: 0
