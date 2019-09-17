@@ -4,8 +4,6 @@
   background-color: #f9f9f9;
 
   .use-case--full {
-    //background-color: #f9f9f9;
-
     img {
       max-width: 440px;
       max-height: 265px;
@@ -151,6 +149,38 @@
       font-weight: bold;
       line-height: 39px;
       padding: 30px 30px;
+    }
+
+    .more-use-cases {
+      h2 {
+        text-align: center;
+      }
+    }
+
+    .api-method {
+      border-radius: 3px;
+      border: none;
+      color: #ffffff;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      padding: 3px 20px;
+    }
+
+    .method-get {
+      background-color: #6bbc5b;
+    }
+
+    .method-post {
+      background-color: #1a6887;
+    }
+
+    .method-put {
+      background-color: #9B708C;
+    }
+
+    .method-delete {
+      background-color: #a83e24;
     }
   }
 }
