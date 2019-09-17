@@ -42,11 +42,11 @@ pipeline {
                     echo "cd to root of source code"
                     // composer install (run) - if no composer we need to install it
                     dir("${WORKSPACE}"){
-                    bat "composer install -v"
+                    sh "composer install -v"
                         }
                     dir("${WORKSPACE}\\web\\themes\\custom\\emoney_apigee_kickstart") {
-                        bat "npm install"
-                        bat "npm run css"
+                        sh "npm install"
+                        sh "npm run css"
                         }
                     //bat "xcopy drush.zip _artifacts" //-- we need to create this I suppose
                     //bat "xcopy Deploy.sh _artifacts" //-- need to test this as well
@@ -74,7 +74,7 @@ pipeline {
                 dir("/usr/bin"){
                     echo "===== Publish package to repository"
                         withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctopusApiKey')]) {
-                            bat "octo.exe push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip  --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"
+                            sh "octo push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip  --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"
                         }
                 }
             }
@@ -91,8 +91,8 @@ pipeline {
                 dir("/usr/bin"){
                     echo "Deploying to ${env._DEPLOY_TO}"
                     withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctoApiKey')]) {
-                        bat "octo.exe create-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --package \"Deploy Devportal\":${PACKAGE_VERSION} --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey}"
-                        bat "octo.exe deploy-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --deployto \"${env._DEPLOY_TO}\" --channel Default --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey} --deploymenttimeout 00:10:00 --waitfordeployment --variable=UploadContent:false"
+                        sh "octo create-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --package \"Deploy Devportal\":${PACKAGE_VERSION} --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey}"
+                        sh "octo deploy-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --deployto \"${env._DEPLOY_TO}\" --channel Default --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey} --deploymenttimeout 00:10:00 --waitfordeployment --variable=UploadContent:false"
                     }
                 }
             }
@@ -165,7 +165,7 @@ def cleanWorkspace() {
 
 def dumpEnvironmentVariables() {
     echo '============================ Environment Variables ============================='
-    bat 'set > env'
+    sh 'set > env'
     for (def variable : readFile('env').split('\r?\n')) {
         echo variable
     }
