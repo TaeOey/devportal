@@ -148,7 +148,9 @@
               }
 
               &-method {
-                padding: 4px 14px;
+                font-size: 16px;
+                line-height: 16px;
+                padding: 7px 14px;
               }
 
               &-path {
@@ -194,8 +196,8 @@
 
                 .try-out {
                   .btn {
-                    border: 1px solid $blue_light;
-                    background-color: $blue_light;
+                    border: 1px solid $blue;
+                    background-color: $blue;
                     border-radius: 0;
                     color: $white;
                     font-family: $Arial;
