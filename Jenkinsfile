@@ -2,7 +2,8 @@
 
 pipeline {
     agent {
-        label 'docker'
+        //label 'docker'
+        dockerfile true
     }
     environment {
             _DEPLOY_TO = "DEV-INT"
@@ -24,12 +25,12 @@ pipeline {
                 dumpEnvironmentVariables()
             }
         }
-            stage ('Build1') {
-                agent {
-                    dockerfile{
-                        filename 'dockerfile'
-                    }
-                }
+        stage ('Build1') {
+                // agent {
+                //     dockerfile{
+                //         filename 'dockerfile'
+                //     }
+                // }
                 steps {
                         echo "Building project from ${env.BRANCH_NAME}"
                         echo "Create package ${env._PACKAGE_NAME}.${env._SEM_VERSION}.${env.BUILD_NUMBER}-${env.BRANCH_NAME}"
@@ -42,54 +43,41 @@ pipeline {
                             sh "composer install -v"
                             sh "ls -a"
                             sh "ls vendor -a"
-                            sh "ls web -a"
-                            sh "chown -R 1000:1000 ${WORKSPACE}"
-                            }
-                        dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart") {
-                            //sh "mkdir ./npm"
-                            sh "npm install"
-                            sh "npm run css"
-                            sh "ls -a"
-
-                            dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart//node_modules") {deleteDir()}
-                            dir("${WORKSPACE}//.git") {deleteDir()}
-
-                            zip zipFile: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip", dir: "${WORKSPACE}"
-                            stash name: "package", includes: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip"                        
+                            sh "ls web -a"                   
                         }
 
                     }
             }
-            // stage ('Build2') {
-            //     agent {
-            //         docker {
-            //             image 'node'
-            //             reuseNode true
-            //         }
-            //     }
-            //     steps {
-            //         echo "building npm"
-            //         sh "ls -a"
-            //         sh "ls vendor -a"
-            //         sh "ls web -a"
-            //         dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart") {
-            //             sh "pwd"
-            //             sh "mkdir ./npm"
-            //             sh "chown -R 1000:1000 ${WORKSPACE}"
-            //             sh "npm install"
-            //             sh "npm run css"
-            //             }
-            //         //bat "xcopy drush.zip _artifacts" //-- we need to create this I suppose
-            //         //bat "xcopy Deploy.sh _artifacts" //-- need to test this as well
-            //         // bat "xcopy Rollback.sh _artifacts" - this not ready yet
-
-            //         dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart//node_modules") {deleteDir()}
-            //         dir("${WORKSPACE}//.git") {deleteDir()}
-
-            //         zip zipFile: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip", dir: "${WORKSPACE}"
-            //         stash name: "package", includes: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip"
+        stage ('Build2') {
+            // agent {
+            //     docker {
+            //         image 'node'
+            //         reuseNode true
             //     }
             // }
+            steps {
+                echo "building npm"
+                sh "ls -a"
+                sh "ls vendor -a"
+                sh "ls web -a"
+                dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart") {
+                    sh "pwd"
+                    sh "mkdir ./npm"
+                    sh "chown -R 1000:1000 ${WORKSPACE}"
+                    sh "npm install"
+                    sh "npm run css"
+                    }
+                //bat "xcopy drush.zip _artifacts" //-- we need to create this I suppose
+                //bat "xcopy Deploy.sh _artifacts" //-- need to test this as well
+                // bat "xcopy Rollback.sh _artifacts" - this not ready yet
+
+                dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart//node_modules") {deleteDir()}
+                dir("${WORKSPACE}//.git") {deleteDir()}
+
+                zip zipFile: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip", dir: "${WORKSPACE}"
+                stash name: "package", includes: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip"
+            }
+        }
         stage('Publish') {
             when {
                 anyOf { 
