@@ -2,7 +2,8 @@
 
 pipeline {
     agent {
-        label 'docker'
+        //label 'docker'
+        dockerfile true
     }
     environment {
             _DEPLOY_TO = "DEV-INT"
