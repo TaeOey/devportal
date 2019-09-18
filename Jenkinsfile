@@ -14,6 +14,7 @@ pipeline {
             _PACKAGE_NAME = "ApigeeDevPortal8"
             _SEM_VERSION = "0.0.0"
             _ARTIFACTS_DIR = "_artifacts"
+            HOME = '.'
     }
     options { timeout(time: 2, unit: 'HOURS') }
     parameters {
@@ -64,8 +65,8 @@ pipeline {
                 dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart") {
                     //sh "pwd"
                     //sh "mkdir ./npm"
-                    sh "chown -R 1000:1000 ${WORKSPACE}"
-                    sh "npm install ${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart"
+                    //sh "chown -R 1000:1000 ${WORKSPACE}"
+                    sh "npm install"
                     sh "npm run css"
                     }
                 //bat "xcopy drush.zip _artifacts" //-- we need to create this I suppose
