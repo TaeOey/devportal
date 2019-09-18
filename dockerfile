@@ -42,12 +42,18 @@ RUN docker-php-ext-install \
     json \
     zip
 
-RUN cd /usr/src && \
-    curl -sS http://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+#RUN cd /usr/src && \
+#    curl -sS http://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+
+
+# Install Composer.
+RUN curl -sS https://getcomposer.org/installer | php
+RUN mv composer.phar /usr/local/bin/composer
 
 # Install Drush
 RUN composer global require drush/drush:8.0.0-rc3
 RUN ln -nsf /root/.composer/vendor/bin/drush /usr/local/bin/drush
+
 
 # ADD xdebug.ini  /etc/php7.3/conf.d/
 
