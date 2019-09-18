@@ -25,30 +25,26 @@ pipeline {
             }
         }
             stage ('Build1') {
-                    agent {
-                // node {
-        //     //label 'composer-4_10_0 && php-7_3_9'
-                //     label 'docker'
-            
-                //     //customWorkspace "workspace\\apigee-devportal-${env.BRANCH_NAME.replaceAll(~/[\^<>:"\/\\|?*]/, "-").take(20)}"
-                // }
-                dockerfile{
-                    filename 'dockerfile'
+                agent {
+                    dockerfile{
+                        filename 'dockerfile'
+                    }
                 }
-            }
-            steps {
-                    echo "Building project from ${env.BRANCH_NAME}"
-                    echo "Create package ${env._PACKAGE_NAME}.${env._SEM_VERSION}.${env.BUILD_NUMBER}-${env.BRANCH_NAME}"
+                steps {
+                        echo "Building project from ${env.BRANCH_NAME}"
+                        echo "Create package ${env._PACKAGE_NAME}.${env._SEM_VERSION}.${env.BUILD_NUMBER}-${env.BRANCH_NAME}"
 
-                    //bat "mkdir ${env._ARTIFACTS_DIR}"
-                    //  - see ticket for further instructions amdp-13
-                    echo "cd to root of source code"
-                    // composer install (run) - if no composer we need to install it
-                    dir("${WORKSPACE}"){
-                    sh "composer install -v"
-                        }
+                        //bat "mkdir ${env._ARTIFACTS_DIR}"
+                        //  - see ticket for further instructions amdp-13
+                        echo "cd to root of source code"
+                        // composer install (run) - if no composer we need to install it
+                        dir("${WORKSPACE}"){
+                            sh "pwd"
+                            sh "ls -a"
+                            sh "composer install -v"
+                            }
 
-                }
+                    }
             }
             stage ('Build2') {
                 agent {
@@ -61,7 +57,7 @@ pipeline {
                     dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart") {
                         sh "mkdir ./npm"
                         sh "chown -R 1000:1000 ${WORKSPACE}"
-                        sh "sudo npm install"
+                        sh "npm install"
                         sh "npm run css"
                         }
                     //bat "xcopy drush.zip _artifacts" //-- we need to create this I suppose
@@ -88,11 +84,11 @@ pipeline {
                 }
             }
             steps {
-                    echo "===== Publish package to repository"
-                        withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctopusApiKey')]) {
-                            unstash 'package'
-                            sh "docker run --rm -v \$(pwd):/src octopusdeploy/octo push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"
-                        }
+                echo "===== Publish package to repository"
+                    withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctopusApiKey')]) {
+                        unstash 'package'
+                        sh "docker run --rm -v \$(pwd):/src octopusdeploy/octo push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"
+                    }
             }
         }
         
