@@ -74,11 +74,11 @@ pipeline {
                 }
             }
         stage('Publish') {
-            agent {
+            /*agent {
                 docker {
                     image 'octopusdeploy/octo'
                 }
-            }
+            }*/
             when {
                 anyOf { 
                     expression { 
@@ -94,9 +94,10 @@ pipeline {
                 dir("${WORKSPACE}"){
                     echo "===== Publish package to repository"
                         withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctopusApiKey')]) {
-                            sh "ls"
+                            sh "docker run --rm -v $(pwd):/src octopusdeploy/octo push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"
+                            /*sh "ls"
                             sh "octo --version"
-                            sh "octo push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip  --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"
+                            sh "octo push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip  --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"*/
                         }
                 }
             }
