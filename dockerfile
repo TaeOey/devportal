@@ -45,6 +45,10 @@ RUN docker-php-ext-install \
 RUN cd /usr/src && \
     curl -sS http://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
+# Install Drush
+RUN composer global require drush/drush:8.0.0-rc3
+RUN ln -nsf /root/.composer/vendor/bin/drush /usr/local/bin/drush
+
 # ADD xdebug.ini  /etc/php7.3/conf.d/
 
 # RUN echo "upload_max_filesize = 500M\n" \
