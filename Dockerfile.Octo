@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2
+FROM mcr.microsoft.com/dotnet/core/sdk:2.1
 
 RUN dotnet tool install Octopus.DotNet.Cli --tool-path /var/cache/.dotnet/tools
 
