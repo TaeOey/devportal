@@ -84,6 +84,18 @@ function emoney_main_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormSt
     $form['register_text'] = create_form_text(t('<p>Dont have an account? <a href="/user/register">Register here</a></p>'), 99);
 }
 
+/**
+ * Implements hook_form_id_alter()
+ */
+function emoney_main_form_contact_message_contact_us_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['name']['#title'] = t('From');
+  $form['name']['#attributes']['placeholder'] = t('Your name');
+  $form['mail']['#title'] = t('Email Address');
+  $form['mail']['#attributes']['placeholder'] = t('Enter email');
+  $form['actions']['submit']['#value'] = t('Send');
+  unset($form['actions']['preview']);  $form['some_element']['#attributes']['placeholder'] = t('Placeholder text');
+}
+
 function create_form_text($text, $weight) {
    $form_text = array(
         '#type' => 'item',
