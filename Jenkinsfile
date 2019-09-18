@@ -34,21 +34,20 @@ pipeline {
                 //     }
                 // }
                 steps {
-                        echo "Building project from ${env.BRANCH_NAME}"
-                        echo "Create package ${env._PACKAGE_NAME}.${env._SEM_VERSION}.${env.BUILD_NUMBER}-${env.BRANCH_NAME}"
+                    echo "Building project from ${env.BRANCH_NAME}"
+                    echo "Create package ${env._PACKAGE_NAME}.${env._SEM_VERSION}.${env.BUILD_NUMBER}-${env.BRANCH_NAME}"
 
-                        //bat "mkdir ${env._ARTIFACTS_DIR}"
-                        //  - see ticket for further instructions amdp-13
-                        echo "cd to root of source code"
-                        // composer install (run) - if no composer we need to install it
-                        dir("${WORKSPACE}"){
-                            sh "composer install -v"
-                            sh "ls -a"
-                            sh "ls vendor -a"
-                            sh "ls web -a"                   
-                        }
-
+                    //bat "mkdir ${env._ARTIFACTS_DIR}"
+                    //  - see ticket for further instructions amdp-13
+                    echo "cd to root of source code"
+                    // composer install (run) - if no composer we need to install it
+                    dir("${WORKSPACE}"){
+                        sh "composer install -v"
+                        // sh "ls -a"
+                        // sh "ls vendor -a"
+                        // sh "ls web -a"                   
                     }
+                }
             }
         stage ('Build2') {
             // agent {
@@ -59,14 +58,14 @@ pipeline {
             // }
             steps {
                 echo "building npm"
-                sh "ls -a"
-                sh "ls vendor -a"
-                sh "ls web -a"
+                //sh "ls -a"
+                //sh "ls vendor -a"
+                //sh "ls web -a"
                 dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart") {
-                    sh "pwd"
-                    sh "mkdir ./npm"
-                    sh "chown -R 1000:1000 ${WORKSPACE}"
-                    sh "npm install"
+                    //sh "pwd"
+                    //sh "mkdir ./npm"
+                    // sh "chown -R 1000:1000 ${WORKSPACE}"
+                    // sh "npm install"
                     sh "npm run css"
                     }
                 //bat "xcopy drush.zip _artifacts" //-- we need to create this I suppose
