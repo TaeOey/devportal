@@ -1,14 +1,89 @@
 .user-form {
+  margin-top: 64px;
+  max-width: initial !important;
+
   label {
     color: $gray_dark;
     font-weight: $bold;
     line-height: 24px;
+
+    a {
+      color: $blue_light;
+    }
   }
 
-  .form-control {
-    border: 1px solid $gray_light;
-    border-radius: 3px;
-    background-color: $white;
-    box-shadow: inset 0 1px 1px 1px rgba(0,0,0,0.08);
+  .form {
+    &-item {
+      &-register {
+        &-text {
+          margin-bottom: 32px;
+          text-align: center;
+        }
+      }
+    }
+
+    &-wrapper,
+    &-check {
+      margin: auto;
+      max-width: 360px;
+    }
+
+    &-control {
+      border: 1px solid $gray_light;
+      border-radius: 3px;
+      background-color: $white;
+      box-shadow: inset 0 1px 1px 1px rgba(0,0,0,0.08);
+    }
+
+    &-check {
+      margin-top: 24px;
+
+      &-label {
+        color: $gray_dark;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+
+        strong {
+          font-weight: normal;
+        }
+      }
+    }
+
+    &-actions {
+      display: flex;
+      flex-flow: row-reverse;
+      justify-content: space-between;
+      margin-top: 56px;
+
+      .btn,
+      #edit-cancel {
+        font-weight: $bold !important;
+        line-height: 16px !important;
+        width: 165px;
+      }
+
+      /* override to match buttons components */
+      .btn {
+        border-radius: 0 !important;
+        padding: 16px 26px !important;
+      }
+
+      #edit-cancel {
+        border: $blue_light 1px solid;
+        color: $blue_light;
+        display: inline-block;
+        font-size: 14px;
+        padding: 15px 10px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+
+    &-required {
+      &__indicator {
+        color: $gray_dark !important;
+      }
+    }
   }
 }
