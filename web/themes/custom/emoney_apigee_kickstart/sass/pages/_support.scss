@@ -1,37 +1,75 @@
-.path-support {
-  .page {
-    padding-top: 0 !important;
-  }
+article[about=\/support] {
+  .layout {
+    &__region {
+      .block {
+        margin-bottom: 0;
 
-  .details {
-    border-top: none;
-    border-bottom: $blue_theme 1px solid;
-    padding-bottom: 1px !important;
-    padding-top: 25px !important;
-  }
+        .paragraph {
+          &.py-6 {
+            padding-top: 32px !important;
+            padding-bottom: 0 !important;
 
-  .details__summary {
-    .details__title {
-      display: inline-block;
+            &.cta {
+              padding-bottom: 32px !important;
+            }
+          }
+        }
+      }
 
-      span {
-        color: $blue_theme;
-        font-family: Arial;
-        font-size: 24px;
-        font-weight: bold;
-        line-height: 24px;
+      .view-faq {
+        margin-bottom: 73px;
+
+        .faq-question {
+          border-bottom: $blue_jeans 1px solid;
+          color: $blue_jeans;
+          cursor: pointer;
+          font-family: Arial;
+          font-size: 24px;
+          font-weight: bold;
+          line-height: 24px;
+          margin: 0;
+          padding: 12px 29px;
+
+          .details__icon {
+            color: $blue_jeans;
+            margin-left: 14px;
+            position: initial;
+          }
+        }
+
+        .faq-answer {
+          display: none;
+          padding: 7px 29px;
+
+          &--open {
+            display: block;
+          }
+        }
       }
     }
-
-    .details__icon {
-      color: $blue_theme;
-      margin-left: 7px;
-      position: initial;
-    }
   }
 
-  .details__content {
-    padding-top: 5px !important;
-    padding-bottom: 20px;
+  .paragraph {
+    &.cta {
+      h3 {
+        color: $white;
+        font-size: 22px;
+        font-weight: $bold;
+        line-height: 24px;
+        margin: 0 0 24px 0;
+      }
+
+      .btn {
+        color: $white;
+        font-family: Lato;
+        font-size: 14px;
+        font-weight: $bold;
+        line-height: 48px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        width: 166px;
+      }
+    }
   }
 }

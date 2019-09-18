@@ -1,14 +1,12 @@
-uuid: e0f6b6ab-ada6-4f4a-aa2f-2ca92b48361a
+uuid: 38e7b114-e44c-4091-bd1d-65bc22fdbb24
 langcode: en
 status: true
 dependencies:
   module:
     - apigee_api_catalog
     - taxonomy
-_core:
-  default_config_hash: 1If047_ademJ0_EwD1JHFGaGqPnwnjynDAADkJlROrs
-id: apidoc.field_categories
-field_name: field_categories
+id: apidoc.field_collections
+field_name: field_collections
 entity_type: apidoc
 type: entity_reference
 settings:

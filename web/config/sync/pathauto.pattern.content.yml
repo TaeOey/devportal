@@ -11,16 +11,17 @@ label: Content
 type: 'canonical_entities:node'
 pattern: '[node:content-type:machine-name]/[node:title]'
 selection_criteria:
-  161f7501-3436-4229-8956-d7f46a334444:
+  621450d6-6eea-4747-87c4-b02b0cd21c5d:
     id: node_type
     bundles:
       article: article
       faq: faq
       forum: forum
+      use_case: use_case
     negate: false
     context_mapping:
       node: node
-    uuid: 161f7501-3436-4229-8956-d7f46a334444
+    uuid: 621450d6-6eea-4747-87c4-b02b0cd21c5d
 selection_logic: and
 weight: -5
 relationships: {  }

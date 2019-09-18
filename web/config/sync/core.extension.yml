@@ -14,16 +14,19 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
+  cancel_button: 0
   ckeditor: 0
   color: 0
   comment: 0
   components: 0
   config: 0
   contact: 0
+  content_moderation: 0
   contextual: 0
   ctools: 0
   datetime: 0
   dblog: 0
+  diff: 0
   dynamic_page_cache: 0
   editor: 0
   email_registration: 0
@@ -54,20 +57,31 @@ module:
   node: 0
   options: 0
   page_cache: 0
+  password_policy: 0
+  password_policy_character_types: 0
+  password_policy_characters: 0
+  password_policy_consecutive: 0
+  password_policy_history: 0
+  password_policy_length: 0
+  password_policy_username: 0
   path: 0
   quickedit: 0
   rdf: 0
+  redirect: 0
   responsive_image: 0
   search: 0
   shortcut: 0
+  smtp: 0
+  swagger_ui_formatter: 0
   system: 0
   taxonomy: 0
   text: 0
   token: 0
   toolbar: 0
-  tour: 0
   user: 0
+  views_infinite_scroll: 0
   views_ui: 0
+  workflows: 0
   forum: 1
   menu_link_content: 1
   pathauto: 1

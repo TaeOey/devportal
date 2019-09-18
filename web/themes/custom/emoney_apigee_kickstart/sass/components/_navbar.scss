@@ -7,7 +7,7 @@
   border-bottom: 0;
   left: 0;
   margin: 0;
-  padding: 32px 0;
+  padding: 40px 0;
   position: absolute;
   top: 0;
   width: 100%;
@@ -16,7 +16,7 @@
     &:after {
       border-left: $white 2px solid;
       color: $white;
-      content: "developer";
+      content: "Developer";
       display: block;
       font-size: 16px;
       line-height: 32px;
@@ -34,10 +34,6 @@
 
   .navbar-collapse {
     justify-content: flex-end;
-
-    .mr-auto {
-      margin: initial !important;
-    }
 
     .nav-item {
       &.active {
@@ -69,7 +65,24 @@
       }
     }
 
+    .mr-auto {
+      margin: initial !important;
+    }
+
+    .block--emoney-apigee-kickstart-menu-account {
+      .nav {
+        .nav-item {
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+      }
+    }
+
     .search-block-form {
+      margin: 0 0 0 11px;
+      max-width: 165px;
+
       .form-inline {
         .form-search {
           background-color: transparent;
@@ -81,8 +94,8 @@
           font-family: $Arial;
           font-size: 16px;
           line-height: 18px;
-          margin: 0 0 0 11px;
           padding: 3px 0;
+          width: 139px;
         }
 
         .form-search-button {
@@ -96,5 +109,13 @@
         }
       }
     }
+  }
+}
+
+.path-support,
+.path-faq {
+  .navbar {
+    background-color: $blue_theme;
+    position: initial;
   }
 }

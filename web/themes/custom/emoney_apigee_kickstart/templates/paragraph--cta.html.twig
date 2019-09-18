@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Template for a 'Call to Action' Paragraph.
+ */
+#}
+{% embed 'paragraph.html.twig' with { classes: ['py-6'] } %}
+  {% block content %}
+    <div class="container">
+      <div class="row d-md-flex flex-column align-items-md-center justify-content-center">
+        {{ content|without('field_buttons') }}
+        {% if content.field_buttons|render %}
+            {{ content.field_buttons }}
+        {% endif %}
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}

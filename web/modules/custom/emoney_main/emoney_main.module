@@ -16,9 +16,93 @@ function emoney_main_theme_suggestions_page_alter(array &$suggestions, array $va
 }
 
 /**
- * Implements hook_menu_links_discovered_alter().
+ * Implements hook_theme_suggestions_page_alter()
+ */
+function emoney_main_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+    $path = \Drupal::service('path.current')->getPath();
+    $alias = \Drupal::service('path.alias_manager')->getAliasByPath($path);
+
+    if ($alias == '/apis' || $alias == '/collections') {
+        $suggestions[] = 'node__apis';
+    } elseif ($alias == '/use-cases') {
+        $suggestions[] = 'node__usecases';
+    }
+}
+
+/**
+ * Implements hook_theme_suggestions_views_view_unformatted_alter()
+ */
+function emoney_main_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+    $path = \Drupal::service('path.current')->getPath();
+    $alias = \Drupal::service('path.alias_manager')->getAliasByPath($path);
+
+    if (strpos($alias, '/apis') !== false || strpos($alias, '/collections') !== false) {
+        //$suggestions[] = 'views_view_unformatted__collection';
+    }
+}
+
+/**
+ * Implements hook_menu_links_discovered_alter()
  */
 function emoney_main_menu_links_discovered_alter(&$links) {
   $links['user.logout']['class'] = 'Drupal\emoney_main\Plugin\Menu\EmoneyLoginLogoutMenuLink';
 }
 
+/**
+ * Implements hook_user_presave()
+ */
+function emoney_main_user_presave(\Drupal\user\UserInterface $user) {
+    $current_user_id = \Drupal::currentUser()->id();
+
+    if ($user->isNew() && $current_user_id == 0) {
+        $user->addRole('external_developer');
+    }
+}
+
+/**
+ * Implements hook_form_id_alter()
+ */
+function emoney_main_form_user_register_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    $form['account']['mail']['#description'] = t('');
+    $form['first_name']['widget'][0]['value']['#description'] = t('');
+    $form['last_name']['widget'][0]['value']['#description'] = t('');
+    $form['actions']['submit']['#value'] = t('Register');
+
+    $form['register_text'] = create_form_text(t('<h2>Get Started With eMoney Developer</h2><p>Already have an account? <a href="/user/login">Sign In</a></p>'), -99);
+}
+
+/**
+ * Implements hook_form_id_alter()
+ */
+function emoney_main_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    $form['login_text'] = create_form_text(t('<h2>Sign In</h2>'), -99);
+    $form['name']['#description'] = t('');
+    $form['pass']['#description'] = t('');
+    $form['forgot_text'] = create_form_text(t('<p>Forgot your password? <a href="/user/password">Reset</a></p>'), 30);
+    $form['actions']['submit']['#value'] = t('Sign in');
+    $form['actions']['#weight'] = 31;
+    $form['register_text'] = create_form_text(t('<p>Dont have an account? <a href="/user/register">Register here</a></p>'), 99);
+}
+
+/**
+ * Implements hook_form_id_alter()
+ */
+function emoney_main_form_contact_message_contact_us_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['name']['#title'] = t('From');
+  $form['name']['#attributes']['placeholder'] = t('Your name');
+  $form['mail']['#title'] = t('Email Address');
+  $form['mail']['#attributes']['placeholder'] = t('Enter email');
+  $form['actions']['submit']['#value'] = t('Send');
+  unset($form['actions']['preview']);  $form['some_element']['#attributes']['placeholder'] = t('Placeholder text');
+}
+
+function create_form_text($text, $weight) {
+   $form_text = array(
+        '#type' => 'item',
+        '#title' => t(''),
+        '#weight' => $weight,
+        '#markup' => $text
+    );
+
+    return $form_text;
+}

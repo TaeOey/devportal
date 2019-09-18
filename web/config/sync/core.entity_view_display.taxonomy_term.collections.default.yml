@@ -1,13 +1,11 @@
-uuid: c6d61b39-e27d-4146-b7c7-ebc01950ff05
+uuid: 27d7b324-ca3a-4335-b9b6-3dc7b5bf899e
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.taxonomy_term.collections.field_icon
-    - image.style.1_1_80x80
     - taxonomy.vocabulary.collections
   module:
-    - image
     - text
 id: taxonomy_term.collections.default
 targetEntityType: taxonomy_term
@@ -21,13 +19,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_icon:
-    weight: 1
-    label: hidden
-    settings:
-      image_style: 1_1_80x80
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-hidden: {  }
+hidden:
+  field_icon: true

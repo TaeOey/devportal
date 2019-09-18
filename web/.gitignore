@@ -24,6 +24,7 @@ sites/simpletest
 # Ignore drupal core (if not versioning drupal sources)
 core
 modules/contrib
+modules/local
 profiles/contrib
 sites/README.txt
 sites/example.sites.php
@@ -46,3 +47,5 @@ README.txt
 robots.txt
 update.php
 web.config
+# Libraries should have been ignored, but flexslider has not been added to composer so adding these additional ignore
+libraries/swagger-ui
