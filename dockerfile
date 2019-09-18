@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y --fix-missing \
     libicu-dev \
     libpq-dev \
     libzip-dev \
+    zip \
     libssl-dev && \
     rm -r /var/lib/apt/lists/*
 
