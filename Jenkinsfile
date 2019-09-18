@@ -40,6 +40,7 @@ pipeline {
                         // composer install (run) - if no composer we need to install it
                         dir("${WORKSPACE}"){
                             sh "composer install -v"
+                            sh "ls -a"
                             }
 
                     }
@@ -53,6 +54,7 @@ pipeline {
                 }
                 steps {
                     dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart") {
+                        sh "pwd"
                         sh "mkdir ./npm"
                         sh "chown -R 1000:1000 ${WORKSPACE}"
                         sh "npm install"
