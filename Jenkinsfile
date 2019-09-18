@@ -93,7 +93,8 @@ pipeline {
             steps {
                     echo "===== Publish package to repository"
                         withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctopusApiKey')]) {
-                            sh "dotnet tool install Octopus.DotNet.Cli --global"
+                            sh "dotnet tool install Octopus.DotNet.Cli --tool-path ${WORKSPACE}/dotnet"
+                            sh "export PATH=\"${WORKSPACE}/dotnet\""
                             sh "dotnet octo push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip  --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"
                         }
             }
