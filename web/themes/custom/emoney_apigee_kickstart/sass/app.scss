@@ -29,27 +29,3 @@
 @import 'pages/user_forms';
 @import 'pages/contact';
 
-/************* Media Queries *************************/
-/* Desktop Only */
-@media (min-width: 992px) {
-  .card-group-2 .container {
-    max-width: 56%;
-  }
-  .path-frontpage .text-image {
-    height: 600px;
-  }
-}
-/* End of Desktop Only */
-/* Mobile Only */
-@media (max-width: 992px) {
-  .hero-text {
-    display: none;
-  }
-  .path-frontpage .paragraph.card-group--default.py-7 {
-    padding-bottom: 0rem !important; /* to override py-7 !important */
-  }
-  .path-frontpage .card-group-2 .card-group__buttons {
-    padding-bottom: 2rem;
-  }
-}
-/* End of Mobile Only */
