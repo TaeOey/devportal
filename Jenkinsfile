@@ -94,6 +94,8 @@ pipeline {
                 dir("${WORKSPACE}"){
                     echo "===== Publish package to repository"
                         withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctopusApiKey')]) {
+                            sh "ls"
+                            sh "dotnet octo --version"
                             sh "dotnet octo push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip  --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"
                         }
                 }
