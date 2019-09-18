@@ -1,6 +1,6 @@
 uuid: cac8b265-8893-467d-a085-2233c092fc0f
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
@@ -287,7 +287,7 @@ display:
       query:
         type: views_query
         options: {  }
-      path: taxonomy/term/%
+      path: taxonomy
       display_extenders: {  }
     cache_metadata:
       contexts:
