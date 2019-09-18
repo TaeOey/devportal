@@ -1,9 +1,11 @@
-#FROM php:7.3.6-fpm
-FROM php:7.3.9-apache
+FROM php:7.3.6-fpm
+#FROM php:7.3.9-apache
+
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 
 RUN apt-get update && apt-get install -y --fix-missing \
     apt-utils \
-    #mysql-client \
+    mysql-client \
     imagemagick \
     graphviz \
     git \
@@ -20,14 +22,14 @@ RUN apt-get update && apt-get install -y --fix-missing \
     libpq-dev \
     libzip-dev \
     zip \
-    #node \
+    nodejs \
     #npm \
     libssl-dev && \
     rm -r /var/lib/apt/lists/*
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
-RUN apt-get update && apt-get install -y --fix-missing \
-    nodejs
+# RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+# RUN apt-get update && apt-get install -y --fix-missing \
+#     nodejs
 
 RUN docker-php-ext-configure gd --with-jpeg-dir=/usr/include/
 RUN docker-php-ext-install \
@@ -49,7 +51,6 @@ RUN docker-php-ext-install \
 #RUN cd /usr/src && \
 #    curl -sS http://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
-
 # Install Composer.
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
@@ -58,18 +59,12 @@ RUN mv composer.phar /usr/local/bin/composer
 RUN composer global require drush/drush:8.0.0-rc3
 RUN ln -nsf /root/.composer/vendor/bin/drush /usr/local/bin/drush
 
-
 # ADD xdebug.ini  /etc/php7.3/conf.d/
 
 # RUN echo "upload_max_filesize = 500M\n" \
 #          "post_max_size = 500M\n" \
 #          > /usr/local/etc/php/conf.d/maxsize.ini
 
-#ADD https://download.octopusdeploy.com/octopus-tools/6.13.1/OctopusTools.6.13.1.debian.8-x64.tar.gz /tmp/
-#RUN tar -xvf /tmp/OctopusTools.6.13.1.debian.8-x64.tar.gz
-#RUN tar -xvf /tmp/octo.tar -C /tmp/octo
-#COPY /tmp/octo /tmp
-
 USER www-data
-WORKDIR /var/www/html
-VOLUME /var/www/html
+WORKDIR /var/www/
+VOLUME /var/www/
