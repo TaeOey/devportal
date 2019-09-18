@@ -41,11 +41,8 @@ pipeline {
                         dir("${WORKSPACE}"){
                             sh "composer install -v"
                             sh "ls -a"
-                            sh "cd vendor"
-                            sh "ls -a"
-                            sh "cd .."
-                            sh "cd web"
-                            sh "ls -a"
+                            sh "ls vendor -a"
+                            sh "ls web -a"
                             }
 
                     }
@@ -60,6 +57,8 @@ pipeline {
                 steps {
                     echo "building npm"
                     sh "ls -a"
+                    sh "ls vendor -a"
+                    sh "ls web -a"
                     dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart") {
                         sh "pwd"
                         sh "mkdir ./npm"
