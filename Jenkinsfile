@@ -74,6 +74,11 @@ pipeline {
                 }
             }
         stage('Publish') {
+            agent {
+                docker {
+                    image 'mcr.microsoft.com/dotnet/core/sdk:2.2'
+                }
+            }
             when {
                 anyOf { 
                     expression { 
@@ -89,7 +94,8 @@ pipeline {
                 dir("/usr/bin"){
                     echo "===== Publish package to repository"
                         withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctopusApiKey')]) {
-                            sh "octo push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip  --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"
+                            sh "dotnet tool install Octopus.DotNet.Cli --global"
+                            sh "dotnet octo push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip  --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"
                         }
                 }
             }
