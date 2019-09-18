@@ -1,0 +1,9 @@
+{% for item in items %}
+    {% if loop.index0 % 2 == 0 %}
+        <div class="row">
+    {% endif %}
+        {{ item.content }}
+    {% if loop.index0 % 2 == 1 or loop.last %}
+        </div>
+    {% endif %}
+{% endfor %}
