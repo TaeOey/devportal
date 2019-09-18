@@ -216,6 +216,7 @@ display:
         arguments: false
         title: false
         empty: false
+        header: false
       display_description: ''
       title: 'Use cases by Taxonomy'
       block_description: 'Use Case by Taxonomy'
@@ -229,6 +230,18 @@ display:
           admin_label: ''
           empty: true
           plugin_id: messages
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: '<h3>Key Use Cases</h3>'
+          plugin_id: text_custom
     cache_metadata:
       max-age: -1
       contexts:

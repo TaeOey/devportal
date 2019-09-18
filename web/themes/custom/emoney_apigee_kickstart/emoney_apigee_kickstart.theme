@@ -177,6 +177,7 @@ function emoney_apigee_kickstart_preprocess_taxonomy_term(&$variables) {
   $vocabulary = $term->bundle();
   if ($vocabulary == 'collections') {
     $tid = $term->id();
+    $variables['api_view'] = views_embed_view('apigee_api_catalog', 'block_1', $tid);
     $variables['usecase_view'] = views_embed_view('use_cases', 'block_1', $tid);
     $variables['moreapi_view'] = views_embed_view('api_collection', 'block_2', $tid);
   }
