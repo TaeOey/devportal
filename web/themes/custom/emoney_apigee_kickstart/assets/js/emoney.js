@@ -43,6 +43,30 @@
             arrow.toggleClass('fa-chevron-up fa-chevron-down');
           });
         });
+
+        /** Remove try-out section from API page */
+        $('#swagger-ui-spec-0').once('myModuleBehavior').each(function () {
+
+          const targetNode = document.getElementById('swagger-ui-spec-0');
+          const config = { attributes: true, childList: true, subtree: true };
+
+          const callback = function(mutationsList, observer) {
+            for(let mutation of mutationsList) {
+              if(mutation.type === 'childList') {
+                const tryOut = document.getElementsByClassName('try-out');
+
+                if(tryOut.length) {
+                  for (let i = 0; i < tryOut.length; i++) {
+                    tryOut[i].remove();
+                  }
+                }
+              }
+            }
+          };
+
+          const observer = new MutationObserver(callback);
+          observer.observe(targetNode, config);
+        });
       }
     };
   })(jQuery, Drupal);

@@ -1,8 +1,9 @@
 .page-register,
 .page-login {
-    .page {
-        &__tasks {
-            display: none;
-        }
+  .page {
+    &__header,
+    &__tasks {
+      display: none;
     }
+  }
 }

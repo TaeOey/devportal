@@ -1,139 +1,12 @@
-uuid: c6d61b39-e27d-4146-b7c7-ebc01950ff05
+uuid: 27d7b324-ca3a-4335-b9b6-3dc7b5bf899e
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.taxonomy_term.collections.field_icon
-    - image.style.1_1_80x80
     - taxonomy.vocabulary.collections
-    - views.view.api_collection
-    - views.view.key_use_cases
-  content:
-    - 'block_content:cta:555d1bf1-87fa-48f1-9f4c-63707cedb79c'
   module:
-    - block_content
-    - image
-    - layout_builder
-    - layout_discovery
     - text
-    - views
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: true
-    sections:
-      -
-        layout_id: layout_onecol
-        layout_settings: {  }
-        components:
-          fded8fb3-adb2-464d-a107-9ff7a837ec8b:
-            uuid: fded8fb3-adb2-464d-a107-9ff7a837ec8b
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:taxonomy_term:collections:description'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
-            additional: {  }
-            weight: 2
-          3e812880-86c6-4842-ba2c-0ec17db372f7:
-            uuid: 3e812880-86c6-4842-ba2c-0ec17db372f7
-            region: content
-            configuration:
-              id: 'field_block:taxonomy_term:collections:field_icon'
-              label: Icon
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: image
-                settings:
-                  image_style: 1_1_80x80
-                  image_link: ''
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
-            weight: 0
-          cb78c325-5bc8-4936-adbb-ce3281cd26ab:
-            uuid: cb78c325-5bc8-4936-adbb-ce3281cd26ab
-            region: content
-            configuration:
-              id: 'field_block:taxonomy_term:collections:name'
-              label: Name
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
-            weight: 1
-        third_party_settings: {  }
-      -
-        layout_id: layout_onecol
-        layout_settings: {  }
-        components:
-          281842bc-4240-4865-9181-966093fa1a5e:
-            uuid: 281842bc-4240-4865-9181-966093fa1a5e
-            region: content
-            configuration:
-              id: 'views_block:key_use_cases-block_1'
-              label: ''
-              provider: views
-              label_display: visible
-              views_label: ''
-              items_per_page: none
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
-        third_party_settings: {  }
-      -
-        layout_id: layout_onecol
-        layout_settings: {  }
-        components:
-          2eea45bf-b1ab-4c8e-a504-3f874c5de4ae:
-            uuid: 2eea45bf-b1ab-4c8e-a504-3f874c5de4ae
-            region: content
-            configuration:
-              id: 'block_content:555d1bf1-87fa-48f1-9f4c-63707cedb79c'
-              label: 'Collections Page CTA'
-              provider: block_content
-              label_display: '0'
-              status: true
-              info: ''
-              view_mode: full
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
-        third_party_settings: {  }
-      -
-        layout_id: layout_onecol
-        layout_settings: {  }
-        components:
-          05c496a8-23c3-4ebf-b850-8c4894283854:
-            uuid: 05c496a8-23c3-4ebf-b850-8c4894283854
-            region: content
-            configuration:
-              id: 'views_block:api_collection-block_2'
-              label: 'More APIs'
-              provider: views
-              label_display: visible
-              views_label: 'More APIs'
-              items_per_page: none
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
-        third_party_settings: {  }
 id: taxonomy_term.collections.default
 targetEntityType: taxonomy_term
 bundle: collections
@@ -146,13 +19,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_icon:
-    weight: 1
-    label: hidden
-    settings:
-      image_style: 1_1_80x80
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-hidden: {  }
+hidden:
+  field_icon: true
