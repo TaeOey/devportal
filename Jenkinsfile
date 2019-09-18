@@ -41,6 +41,8 @@ pipeline {
                         dir("${WORKSPACE}"){
                             sh "composer install -v"
                             sh "ls -a"
+                            sh "cd /vendor"
+                            sh "ls -a"
                             }
 
                     }
