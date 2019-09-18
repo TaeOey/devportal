@@ -71,6 +71,7 @@ pipeline {
                     dir("${WORKSPACE}//.git") {deleteDir()}
 
                     zip zipFile: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip", dir: "${WORKSPACE}"
+                    stash name: "package", includes: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip"
                 }
             }
         stage('Publish') {
@@ -93,7 +94,8 @@ pipeline {
             steps {
                     echo "===== Publish package to repository"
                         withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctopusApiKey')]) {
-                            sh "docker run --rm -v ${WORKSPACE}:/src octopusdeploy/octo push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"
+                            unstash 'package'
+                            sh "docker run --rm -v \$(pwd):/src octopusdeploy/octo push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"
                             /*sh "ls"
                             sh "octo --version"
                             sh "octo push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip  --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"*/
