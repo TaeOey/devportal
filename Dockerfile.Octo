@@ -3,5 +3,4 @@ FROM mcr.microsoft.com/dotnet/core/sdk:2.2
 RUN dotnet tool install Octopus.DotNet.Cli --tool-path /var/cache/.dotnet/tools
 
 ENV PATH="${PATH}:/var/cache/.dotnet/tools"
-
-USER root
+ENV HOME="/tmp"
