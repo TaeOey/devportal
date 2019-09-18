@@ -68,22 +68,9 @@ content:
       placeholder: ''
     region: content
     third_party_settings: {  }
-<<<<<<< HEAD
-  path:
-    type: path
-    weight: 30
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden:
-  contact: true
-  language: true
-  timezone: true
-=======
 hidden:
   contact: true
   language: true
   path: true
   timezone: true
   user_picture: true
->>>>>>> d7f519f8d44c4fed18d426fecebe05d9eb6af3e2
