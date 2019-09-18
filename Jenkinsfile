@@ -65,7 +65,7 @@ pipeline {
                     //sh "pwd"
                     //sh "mkdir ./npm"
                     sh "chown -R 1000:1000 ${WORKSPACE}"
-                    sh "npm install ${WORKSPACE}"
+                    sh "npm install ${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart"
                     sh "npm run css"
                     }
                 //bat "xcopy drush.zip _artifacts" //-- we need to create this I suppose
