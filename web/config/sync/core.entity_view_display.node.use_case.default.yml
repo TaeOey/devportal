@@ -3,14 +3,150 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.use_case.field_apis_u
     - field.field.node.use_case.field_collections
     - field.field.node.use_case.field_content
     - field.field.node.use_case.field_header
     - field.field.node.use_case.field_products
     - node.type.use_case
+    - views.view.view_more_use_cases
   module:
     - entity_reference_revisions
+    - layout_builder
+    - layout_discovery
     - user
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
+          e6bc4f5f-0402-4643-b807-266df912edeb:
+            uuid: e6bc4f5f-0402-4643-b807-266df912edeb
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:use_case:content_moderation_control'
+            additional: {  }
+            weight: 0
+          09ce5dac-5540-488a-b7ba-e4a6b5aa6201:
+            uuid: 09ce5dac-5540-488a-b7ba-e4a6b5aa6201
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:use_case:field_content'
+              formatter:
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+                type: entity_reference_revisions_entity_view
+            additional: {  }
+            weight: 4
+          98b11014-51ab-4eda-962b-519073bca18c:
+            uuid: 98b11014-51ab-4eda-962b-519073bca18c
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:use_case:field_header'
+              formatter:
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+                type: entity_reference_revisions_entity_view
+            additional: {  }
+            weight: 2
+          f227ec51-6bdc-479f-b44a-0e895b93e264:
+            uuid: f227ec51-6bdc-479f-b44a-0e895b93e264
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:use_case:links'
+            additional: {  }
+            weight: 1
+          e151156d-3358-4145-b113-60b378ca4c83:
+            uuid: e151156d-3358-4145-b113-60b378ca4c83
+            region: content
+            configuration:
+              id: 'views_block:view_more_use_cases-block_2'
+              label: 'More Use Cases'
+              provider: views
+              label_display: visible
+              views_label: 'More Use Cases'
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 6
+          c8abe1cd-6543-4c7b-99ff-60f005700710:
+            uuid: c8abe1cd-6543-4c7b-99ff-60f005700710
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:use_case:field_products'
+              formatter:
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 3
+          c2be073f-6e34-4f54-89d8-e3afe7abaa29:
+            uuid: c2be073f-6e34-4f54-89d8-e3afe7abaa29
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:use_case:content_moderation_control'
+            additional: {  }
+            weight: 7
+          4dc31ff1-9072-4388-8a3e-9ed680c38bd8:
+            uuid: 4dc31ff1-9072-4388-8a3e-9ed680c38bd8
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:use_case:links'
+            additional: {  }
+            weight: 8
+          37750dd2-d5fe-4707-91a7-f913d6d9bf85:
+            uuid: 37750dd2-d5fe-4707-91a7-f913d6d9bf85
+            region: content
+            configuration:
+              id: 'field_block:node:use_case:field_apis_u'
+              label: 'APIs Used'
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: hidden
+                type: entity_reference_entity_view
+                settings:
+                  view_mode: full
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 5
+        third_party_settings: {  }
 id: node.use_case.default
 targetEntityType: node
 bundle: use_case
@@ -20,6 +156,14 @@ content:
     weight: -20
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_apis_u:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_collections:
     weight: 104

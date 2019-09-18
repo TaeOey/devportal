@@ -3,12 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.use_case.field_apis_u
     - field.field.node.use_case.field_collections
     - field.field.node.use_case.field_content
     - field.field.node.use_case.field_header
     - field.field.node.use_case.field_products
     - node.type.use_case
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - paragraphs
     - path
 id: node.use_case.default
@@ -16,6 +19,15 @@ targetEntityType: node
 bundle: use_case
 mode: default
 content:
+  field_apis_u:
+    weight: 101
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_collections:
     weight: 4
     settings:
