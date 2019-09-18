@@ -37,7 +37,7 @@ function emoney_main_theme_suggestions_views_view_unformatted_alter(array &$sugg
     $alias = \Drupal::service('path.alias_manager')->getAliasByPath($path);
 
     if (strpos($alias, '/apis') !== false || strpos($alias, '/collections') !== false) {
-        $suggestions[] = 'views_view_unformatted__collection';
+        //$suggestions[] = 'views_view_unformatted__collection';
     }
 }
 
@@ -67,7 +67,7 @@ function emoney_main_form_user_register_form_alter(&$form, \Drupal\Core\Form\For
     $form['first_name']['widget'][0]['value']['#description'] = t('');
     $form['last_name']['widget'][0]['value']['#description'] = t('');
     $form['actions']['submit']['#value'] = t('Register');
-    
+
     $form['register_text'] = create_form_text(t('<h2>Get Started With eMoney Developer</h2><p>Already have an account? <a href="/user/login">Sign In</a></p>'), -99);
 }
 
