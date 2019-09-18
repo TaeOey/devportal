@@ -46,11 +46,11 @@ pipeline {
                             sh "chown -R 1000:1000 ${WORKSPACE}"
                             }
                         dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart") {
-                            sh "mkdir ./npm"
+                            //sh "mkdir ./npm"
                             sh "npm install"
                             sh "npm run css"
                             sh "ls -a"
-                            
+
                             dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart//node_modules") {deleteDir()}
                             dir("${WORKSPACE}//.git") {deleteDir()}
 
