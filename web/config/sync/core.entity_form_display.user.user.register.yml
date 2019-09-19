@@ -6,7 +6,10 @@ dependencies:
     - core.entity_form_mode.user.register
     - field.field.user.user.field_company_name
     - field.field.user.user.field_company_role
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
   module:
+    - image
     - user
 _core:
   default_config_hash: 4YzeSky61YIhFYqnbfTZOAcETGsQ2yVXAt-pC2_OZJo
@@ -41,6 +44,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  user_picture:
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    weight: 3
+    region: content
 hidden:
   contact: true
   field_company_name: true
