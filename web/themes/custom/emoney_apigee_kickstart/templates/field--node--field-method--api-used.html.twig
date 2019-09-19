@@ -1,0 +1,7 @@
+{% for item in items %}
+    {% set strValue = item.content|first %}
+    {% set lowercase = strValue|lower %}
+    <span class="api-method method-{{ lowercase }}">
+        {{ strValue }}
+    </span>
+{% endfor %}

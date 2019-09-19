@@ -1,0 +1,56 @@
+.path-search {
+
+    .page__title {
+        visibility: hidden;
+
+        &:after {
+            visibility: visible;
+            display: block;
+            position: absolute;
+            top: 0px;
+            content: "Search results";
+            font-size: 48px;
+        }
+
+    }
+
+    .search-form {
+        display: none;
+    }
+
+    .py-5 {
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;         
+
+        .search-results {
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 40px;
+    
+            .border-top {
+                display: none;
+            }          
+        }
+
+        .search-result {
+            .search-result__title {
+                font-family: "Lato","Arial",sans-serif;
+                font-size: 24px;
+                font-weight: bold;
+                
+                a {
+                    color: #137AAA;
+                }
+            }
+
+            span {
+                display: none;
+            }
+
+            p {
+                font-size: 16px;
+            }          
+        }
+    }
+}
