@@ -1,5 +1,9 @@
 <?php
 
+use Drupal\Core\Url;
+use \Drupal\Core\Breadcrumb\Breadcrumb;
+use \Drupal\Core\Routing\RouteMatchInterface;
+
 /**
  * Implements hook_theme_suggestions_page_alter()
  */
@@ -112,3 +116,27 @@ function create_form_text($text, $weight) {
 
     return $form_text;
 }
+
+/**
+* Implements hook_system_breadcrumb_alter().
+*/
+function emoney_main_system_breadcrumb_alter(Breadcrumb &$breadcrumb, RouteMatchInterface $route_match, array $context) {
+  $links = $breadcrumb->getLinks();
+
+  $path = \Drupal::request()->getpathInfo();
+  $arg = explode('/',$path);
+
+  if ( is_array($arg) && $arg[1] == 'products' ) {   
+    $links[0]->setText('Products');
+    $theLink = Url::fromUri('internal:/products');
+    $links[0]->setUrl($theLink);
+  }
+
+  if ( is_array($arg) && $arg[1] == 'collections' ) {
+    $links[0]->setText('APIs');
+    $theLink = Url::fromUri('internal:/apis');
+    $links[0]->setUrl($theLink);
+  }
+
+}
+
