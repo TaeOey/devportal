@@ -1,0 +1,32 @@
+.path-user {
+  .page {
+    background-color: $gray_lightness;
+    height: initial;
+
+    .navbar {
+      background-color: $blue_theme;
+      background-image: url('../images/background_getting_started.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+
+      .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      &:after {
+        background-color: $blue_theme;
+        content: "";
+        height: 100%;
+        left: 0;
+        opacity: .8;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+      }
+    }
+  }
+}
