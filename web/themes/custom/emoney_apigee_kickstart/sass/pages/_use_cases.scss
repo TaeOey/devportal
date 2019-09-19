@@ -1,8 +1,5 @@
-@import "./../typography";
-@import "../colors.scss";
-
 .use-cases-node {
-  background-color: #f9f9f9;
+  background-color: $gray_lightness;
   .view-view-use-cases {
     .view-content {
       max-width: 1200px;
@@ -29,10 +26,7 @@
       }
 
       p {
-        color: $grey-dark;
-        font-family: "Arial", sans-serif;
-        font-size: 16px;
-        line-height: 24px;
+        color: $gray-dark;
       }
 
       .text-image__wrapper {
@@ -61,7 +55,7 @@
 
       .views-field-title {
         .field-content {
-          color: $grey-super-dark;
+          color: $gray-dark;
           font-family: $Lato;
           font-size: 24px;
           font-weight: 900;
@@ -81,7 +75,7 @@
         a {
           background-color: transparent;
           border: none;
-          color: $vivid-sky-blue;
+          color: $blue;
           font-size: 16px;
           padding: 10px;
           text-transform: uppercase;
@@ -149,7 +143,7 @@
 
     .buttons--cta {
       a {
-        font-family: "Lato";
+        font-family: $Lato;
         font-size: 16px !important;
       }
     }
