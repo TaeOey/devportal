@@ -7,22 +7,12 @@ APIGEE_DRUPAL_WEB_DOCROOT=/var/www/devportal/web
 APIGEE_DRUPAL_SOURCE_ROOT_RELEASE=/var/www/"#{Octopus.Release.Number}"
 WEB_FILES_ROOT=/var/www/devportal/web/sites/default/files
 WEB_FILES_STORAGE=/var/www/files
-#EMONEY_DEVPORTAL_PROJECT_DIRECTORY=/opt/apigee/data/apigee-drupal-devportal/sites/all
 PACKAGE_ID=`basename $(pwd)`
 CURRENT_DATETIME=`date +%Y%m%d-%H%M%S`
 BACKUP_DIRECTORY=/var/www/backups
 DRUPAL_BACKUP="sites-all.tar.gz"
 ROLLBACK_SCRIPT="Rollback.sh"
 DB_BACKUP="devportal-backup-${CURRENT_DATETIME}.sql.gz"
-# DB_IP="#{DrupalDbHost}"
-# DB_PORT="#{DrupalDbPort}"
-# DB_NAME="#{DrupalDbName}"
-# DB_USER="#{DrupalUser}"
-# DB_PASSWORD="#{DrupalPassword}"
-# DB_DRIVER="#{DrupalDriver}"
-
-#TWO_DP_SETUP="#{TwoDevPortalSetup}"
-#SECOND_DP_IP="#{SecondDevPortalIP}"
 
 #Check if backup directory exists
 if [ ! -d "${BACKUP_DIRECTORY}" ]; then
@@ -80,7 +70,6 @@ APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD=$(readlink ${APIGEE_DRUPAL_SOURCE_ROOT})
 echo "symlink ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE} to ${APIGEE_DRUPAL_SOURCE_ROOT}"
 sudo ln -sfvn ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE} ${APIGEE_DRUPAL_SOURCE_ROOT}
 
-WEB_FILES_STORAGE_OLD=$(readlink ${WEB_FILES_ROOT})
 echo "symlink ${WEB_FILES_STORAGE} to ${WEB_FILES_ROOT}"
 sudo ln -sfvn ${WEB_FILES_STORAGE} ${WEB_FILES_ROOT}
 
@@ -98,4 +87,8 @@ echo "Clear caches"
 sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cr
 
 #Delete old versions
-sudo rm -rf $APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD $WEB_FILES_STORAGE_OLD
+sudo rm -rf $APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD
+
+#Delete old database backups
+DB_BACKUP_PATTERN=`sudo echo $DB_BACKUP | sed -E 's/[[:digit:]]{8}-[[:digit:]]{6}/*/g'`
+sudo ls -t ${BACKUP_DIRECTORY}/${DB_BACKUP_PATTERN} | tail -n +4 | xargs rm --
