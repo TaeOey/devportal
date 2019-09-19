@@ -82,6 +82,7 @@ pipeline {
 
                 dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart//node_modules") {deleteDir()}
                 dir("${WORKSPACE}//.git") {deleteDir()}
+                dir("${WORKSPACE}//.composer") {deleteDir()}
 
                 zip zipFile: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip", dir: "${WORKSPACE}"
                 stash name: "package", includes: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip"
