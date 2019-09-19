@@ -44,6 +44,8 @@ sudo mkdir ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
 sudo rsync -r * ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
 sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate.config ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/web/sites/default/settings.php
 
+echo "ls /vendor/bin to check for drush"
+ls ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/bin
 cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/bin/drush drush
 #unzip -o drush.zip
 chmod 755 drush
