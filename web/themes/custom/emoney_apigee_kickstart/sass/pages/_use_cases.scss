@@ -1,5 +1,5 @@
 @import "./../typography";
-@import "../components/wide-card";
+@import "../colors.scss";
 
 .use-cases-node {
   background-color: #f9f9f9;
@@ -8,6 +8,87 @@
       max-width: 1200px;
       margin-right: auto;
       margin-left: auto;
+    }
+    
+    .card {
+      background-color: $white;
+      border-radius: 4px;
+      box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.02);
+      max-height: 386px;
+      min-height: 386px;
+      margin: 30px 0 10px 0;
+      overflow: hidden;
+      padding: 34px 32px;
+      border: none;
+      position: relative;
+
+      img {
+        max-width: 440px;
+        max-height: 265px;
+        object-fit: fill;
+      }
+
+      p {
+        color: $grey-dark;
+        font-family: "Arial", sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      .text-image__wrapper {
+        .text-image__text {
+          height: 250px;
+          min-height: 250px;
+          overflow: hidden;
+          margin-left: -10px;
+
+          &:after {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, $white 64.02%, $white 100%);
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 180px;
+            left: 0;
+            position: absolute;
+            width: 100%;
+          }
+        }
+
+        .text-image__image {
+          padding-left: 130px;
+        }
+      }
+
+      .views-field-title {
+        .field-content {
+          color: $grey-super-dark;
+          font-family: $Lato;
+          font-size: 24px;
+          font-weight: 900;
+          line-height: 29px;
+          margin: 0 0 24px 0;
+          text-transform: uppercase;
+        }
+      }
+
+      .views-field-nothing {
+        bottom: 0;
+        left: 0;
+        padding: 20px 20px;
+        position: absolute;
+        z-index: 1;
+
+        a {
+          background-color: transparent;
+          border: none;
+          color: $vivid-sky-blue;
+          font-size: 16px;
+          padding: 10px;
+          text-transform: uppercase;
+          font-family: $Lato;
+          font-weight: bold;
+        }
+      }
     }
 
     .pager {
