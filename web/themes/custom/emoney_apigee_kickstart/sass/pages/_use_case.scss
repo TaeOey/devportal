@@ -1,11 +1,10 @@
-$page-use-case-bg-color: #f9f9f9;
 $get-bg: #6bbc5b;
 $post-bg: #1a6887;
 $put-bg: #9b708c;
 $delete-bg: #a83e24;
 
 .page-use-case {
-  background-color: $page-use-case-bg-color;
+  background-color: $gray_lightness;
 
   .use-case--full {
     img {
@@ -118,7 +117,7 @@ $delete-bg: #a83e24;
     }
 
     .title-bar {
-      background-color: $page-use-case-bg-color !important;
+      background-color: $gray_lightness !important;
       padding: 0px !important;
 
       &__icon {
