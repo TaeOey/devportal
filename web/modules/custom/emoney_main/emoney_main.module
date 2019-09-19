@@ -46,6 +46,7 @@ function emoney_main_theme_suggestions_views_view_unformatted_alter(array &$sugg
  */
 function emoney_main_menu_links_discovered_alter(&$links) {
   $links['user.logout']['class'] = 'Drupal\emoney_main\Plugin\Menu\EmoneyLoginLogoutMenuLink';
+  $links['contact.site_page']['title'] = new \Drupal\Core\StringTranslation\TranslatableMarkup('Contact Us');
 }
 
 /**
