@@ -1,4 +1,4 @@
-FROM php:7.3.6-fpm
+FROM php:7.3-fpm-stretch
 #FROM php:7.3.9-apache
 
 RUN curl -sL https://deb.nodesource.com/setup_11.x | bash -
