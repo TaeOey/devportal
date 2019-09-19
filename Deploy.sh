@@ -7,22 +7,12 @@ APIGEE_DRUPAL_WEB_DOCROOT=/var/www/devportal/web
 APIGEE_DRUPAL_SOURCE_ROOT_RELEASE=/var/www/"#{Octopus.Release.Number}"
 WEB_FILES_ROOT=/var/www/devportal/web/sites/default/files
 WEB_FILES_STORAGE=/var/www/files
-#EMONEY_DEVPORTAL_PROJECT_DIRECTORY=/opt/apigee/data/apigee-drupal-devportal/sites/all
 PACKAGE_ID=`basename $(pwd)`
 CURRENT_DATETIME=`date +%Y%m%d-%H%M%S`
 BACKUP_DIRECTORY=/var/www/backups
 DRUPAL_BACKUP="sites-all.tar.gz"
 ROLLBACK_SCRIPT="Rollback.sh"
 DB_BACKUP="devportal-backup-${CURRENT_DATETIME}.sql.gz"
-# DB_IP="#{DrupalDbHost}"
-# DB_PORT="#{DrupalDbPort}"
-# DB_NAME="#{DrupalDbName}"
-# DB_USER="#{DrupalUser}"
-# DB_PASSWORD="#{DrupalPassword}"
-# DB_DRIVER="#{DrupalDriver}"
-
-#TWO_DP_SETUP="#{TwoDevPortalSetup}"
-#SECOND_DP_IP="#{SecondDevPortalIP}"
 
 #Check if backup directory exists
 if [ ! -d "${BACKUP_DIRECTORY}" ]; then
