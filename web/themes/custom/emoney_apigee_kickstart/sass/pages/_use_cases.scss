@@ -39,6 +39,7 @@
           height: 250px;
           min-height: 250px;
           overflow: hidden;
+          margin-left: -10px;
 
           &:after {
             background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 64.02%, #ffffff 100%);
@@ -50,6 +51,10 @@
             position: absolute;
             width: 100%;
           }
+        }
+
+        .text-image__image {
+          padding-left: 130px;
         }
       }
 
@@ -77,7 +82,7 @@
           border: none;
           color: #00aae7;
           font-size: 16px;
-          padding: 0;
+          padding: 10px;
           text-transform: uppercase;
           font-family: "Lato", "Arial", sans-serif;
           font-weight: bold;
@@ -100,7 +105,7 @@
           font-size: 14px;
           font-weight: bold;
           line-height: 16px;
-          padding: 16px 16px;
+          padding: 16px 39px;
           text-align: center;
           text-transform: uppercase;
           width: 165px;
@@ -134,8 +139,16 @@
       margin: 0 0 16px 0;
     }
 
-    &__text {
-      flex-basis: auto;
+    .cta__field-text {
+      h3 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 22px;
+      }
+    }
+
+    .buttons--cta {
+      font-family: 'Lato';
+      font-size: 16px;
     }
 
     &__buttons {

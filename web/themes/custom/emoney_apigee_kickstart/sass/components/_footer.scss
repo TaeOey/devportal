@@ -26,6 +26,30 @@
         }
       }
     }
+
+    .nav-item {
+      &.active {
+        &:after {
+          display: none;
+        }
+
+        .nav-link {
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      .nav-link {
+        &.is-active {
+          font-weight: $bold;
+
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
   }
 
   .copyright {
