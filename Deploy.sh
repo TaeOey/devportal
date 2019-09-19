@@ -14,13 +14,12 @@ BACKUP_DIRECTORY=/var/www/backups
 DRUPAL_BACKUP="sites-all.tar.gz"
 ROLLBACK_SCRIPT="Rollback.sh"
 DB_BACKUP="devportal-backup-${CURRENT_DATETIME}.sql.gz"
-DB_IP="#{DrupalDbHost}"
-DB_PORT="#{DrupalDbPort}"
-DB_NAME="#{DrupalDbName}"
-DB_USER="#{DrupalUser}"
-DB_PASSWORD="#{DrupalPassword}"
-#DB_PREFIX="#{DrupalPrefix}"
-DB_DRIVER="#{DrupalDriver}"
+# DB_IP="#{DrupalDbHost}"
+# DB_PORT="#{DrupalDbPort}"
+# DB_NAME="#{DrupalDbName}"
+# DB_USER="#{DrupalUser}"
+# DB_PASSWORD="#{DrupalPassword}"
+# DB_DRIVER="#{DrupalDriver}"
 
 #TWO_DP_SETUP="#{TwoDevPortalSetup}"
 #SECOND_DP_IP="#{SecondDevPortalIP}"
@@ -31,7 +30,8 @@ if [ ! -d "${BACKUP_DIRECTORY}" ]; then
 fi
 
 #Install drush
-unzip -o drush.zip
+cp /vendor/drush drush
+#unzip -o drush.zip
 chmod 755 drush
 mv drush drush.phar
 ln -s ${CWD}/drush.phar ${CWD}/drush
