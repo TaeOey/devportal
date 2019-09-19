@@ -77,5 +77,20 @@ body {
         color: #00AAE7;
       }
     }
+
+    &-outline {
+      background-color: transparent;
+      border: $blue 1px solid;
+      color: $blue;
+      padding: 15px 24px;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        border: $blue 1px solid;
+        box-shadow: none;
+        color: $blue;
+      }
+    }
   }
 }
