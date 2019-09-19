@@ -2,10 +2,10 @@
 
 pipeline {
     agent {
-        dockerfile {
+        /*dockerfile {
             filename 'dockerfile'
-        }
-        //label 'docker'
+        }*/
+        label 'docker'
     }
     environment {
             _DEPLOY_TO = "DEV-INT"
@@ -28,6 +28,13 @@ pipeline {
                 dumpEnvironmentVariables()
             }
         }
+        stage('Build') {
+            agent {
+                dockerfile {
+                    filename 'dockerfile'
+                }
+            }
+            stages {
         stage ('Build1') {
                 // agent {
                 //     dockerfile{
@@ -78,6 +85,8 @@ pipeline {
 
                 zip zipFile: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip", dir: "${WORKSPACE}"
                 stash name: "package", includes: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip"
+            }
+        }
             }
         }
         stage('Publish') {
