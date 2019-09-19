@@ -30,12 +30,6 @@
             display: none;
         }
 
-        .form-actions {
-            display: flex;
-            flex-flow: row-reverse;
-            justify-content: flex-start;
-        }
-
         .button--primary,
         #edit-cancel {
             font-family: arial;
@@ -54,5 +48,11 @@
             padding: 15px 26px;
             margin-right: 16px;
         }
+    }
+    
+    .form-actions {
+        display: flex;
+        flex-flow: row-reverse;
+        justify-content: flex-start;
     }
 }
