@@ -2,9 +2,6 @@
 
 pipeline {
     agent {
-        /*dockerfile {
-            filename 'dockerfile'
-        }*/
         label 'docker'
     }
     environment {
@@ -36,11 +33,6 @@ pipeline {
             }
             stages {
         stage ('Build1') {
-                // agent {
-                //     dockerfile{
-                //         filename 'dockerfile'
-                //     }
-                // }
                 steps {
                     echo "Building project from ${env.BRANCH_NAME}"
                     echo "Create package ${env._PACKAGE_NAME}.${env._SEM_VERSION}.${env.BUILD_NUMBER}-${env.BRANCH_NAME}"
@@ -50,29 +42,14 @@ pipeline {
                     echo "cd to root of source code"
                     // composer install (run) - if no composer we need to install it
                     dir("${WORKSPACE}"){
-                        sh "composer install -v"
-                        // sh "ls -a"
-                        // sh "ls vendor -a"
-                        // sh "ls web -a"                   
+                        sh "composer install -v"                
                     }
                 }
             }
         stage ('Build2') {
-            // agent {
-            //     docker {
-            //         image 'node'
-            //         reuseNode true
-            //     }
-            // }
             steps {
                 echo "building npm"
-                //sh "ls -a"
-                //sh "ls vendor -a"
-                //sh "ls web -a"
                 dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart") {
-                    //sh "pwd"
-                    //sh "mkdir ./npm"
-                    //sh "chown -R 1000:1000 ${WORKSPACE}"
                     sh "npm install"
                     sh "npm run css"
                     }
