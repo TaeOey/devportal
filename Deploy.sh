@@ -30,7 +30,7 @@ if [ ! -d "${BACKUP_DIRECTORY}" ]; then
 fi
 
 #Install drush
-cp /vendor/drush drush
+cp /vendor/bin/drush drush
 #unzip -o drush.zip
 chmod 755 drush
 mv drush drush.phar
