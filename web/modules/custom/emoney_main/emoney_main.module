@@ -46,6 +46,7 @@ function emoney_main_theme_suggestions_views_view_unformatted_alter(array &$sugg
  */
 function emoney_main_menu_links_discovered_alter(&$links) {
   $links['user.logout']['class'] = 'Drupal\emoney_main\Plugin\Menu\EmoneyLoginLogoutMenuLink';
+  $links['contact.site_page']['title'] = new \Drupal\Core\StringTranslation\TranslatableMarkup('Contact Us');
 }
 
 /**
@@ -64,8 +65,13 @@ function emoney_main_user_presave(\Drupal\user\UserInterface $user) {
  */
 function emoney_main_form_user_register_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
     $form['account']['mail']['#description'] = t('');
+    $form['account']['mail']['#attributes']['placeholder'] = t('Enter email');
     $form['first_name']['widget'][0]['value']['#description'] = t('');
+    $form['first_name']['widget'][0]['value']['#attributes']['placeholder'] = t('Enter first name');
     $form['last_name']['widget'][0]['value']['#description'] = t('');
+    $form['last_name']['widget'][0]['value']['#attributes']['placeholder'] = t('Enter second name');
+    $form['field_company_name']['widget'][0]['value']['#attributes']['placeholder'] = t('Enter where you work');
+    $form['field_company_role']['widget'][0]['value']['#attributes']['placeholder'] = t('Enter job position');
     $form['actions']['submit']['#value'] = t('Register');
 
     $form['register_text'] = create_form_text(t('<h2>Get Started With eMoney Developer</h2><p>Already have an account? <a href="/user/login">Sign In</a></p>'), -99);
@@ -82,6 +88,18 @@ function emoney_main_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormSt
     $form['actions']['submit']['#value'] = t('Sign in');
     $form['actions']['#weight'] = 31;
     $form['register_text'] = create_form_text(t('<p>Dont have an account? <a href="/user/register">Register here</a></p>'), 99);
+}
+
+/**
+ * Implements hook_form_id_alter()
+ */
+function emoney_main_form_contact_message_contact_us_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['name']['#title'] = t('From');
+  $form['name']['#attributes']['placeholder'] = t('Your name');
+  $form['mail']['#title'] = t('Email Address');
+  $form['mail']['#attributes']['placeholder'] = t('Enter email');
+  $form['actions']['submit']['#value'] = t('Send');
+  unset($form['actions']['preview']);  $form['some_element']['#attributes']['placeholder'] = t('Placeholder text');
 }
 
 function create_form_text($text, $weight) {
