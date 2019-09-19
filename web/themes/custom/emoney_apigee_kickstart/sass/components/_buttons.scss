@@ -1,25 +1,24 @@
 body {
   .btn {
-    background-color: $gray_lightness;
+    background-color: #f9f9f9;
     border: none;
     border-radius: 0;
     box-shadow: none;
-    color: $gray_dark;
+    color: #333;
     font-size: 14px;
     font-weight: bold;
-    letter-spacing: initial;
     line-height: 16px;
     padding: 16px 26px;
     text-align: center;
     text-transform: uppercase;
 
     &-primary {
-      background-color: $blue;
-      color: $white;
+      background-color: #00AAE7;
+      color: #fff;
 
       &:hover {
-        background-color: $blue;
-        color: $white;
+        background-color: #00AAE7;
+        color: #fff;
       }
 
       &-outline {
@@ -78,7 +77,6 @@ body {
         color: #00AAE7;
       }
     }
-
 
     &-outline {
       background-color: transparent;
