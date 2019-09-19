@@ -30,13 +30,13 @@ if [ ! -d "${BACKUP_DIRECTORY}" ]; then
 fi
 
 #Install drush
-cp /vendor/bin/drush drush
-#unzip -o drush.zip
-chmod 755 drush
-mv drush drush.phar
-ln -s ${CWD}/drush.phar ${CWD}/drush
-echo "test drush version"
-${CWD}/drush version
+# cp /vendor/bin/drush drush
+# #unzip -o drush.zip
+# chmod 755 drush
+# mv drush drush.phar
+# ln -s ${CWD}/drush.phar ${CWD}/drush
+# echo "test drush version"
+# ${CWD}/drush version
 
 #Backup Drupal data - not necessary??
 # echo "Create drupal directories backup in ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP}"
@@ -54,13 +54,13 @@ sudo mkdir ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
 sudo rsync -r * ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
 sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/web/sites/default/settings.php
 
-# cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/bin/drush drush
-# #unzip -o drush.zip
-# chmod 755 drush
-# mv drush drush.phar
-# ln -s ${CWD}/drush.phar ${CWD}/drush
-# echo "test drush version"
-# ${CWD}/drush version
+cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/bin/drush drush
+#unzip -o drush.zip
+chmod 755 drush
+mv drush drush.phar
+ln -s ${CWD}/drush.phar ${CWD}/drush
+echo "test drush version"
+${CWD}/drush version
 
 sudo chown nginx:nginx -R ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE} -type d -exec chmod 755 {} \;
