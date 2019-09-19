@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.taxonomy_term.field_coming_soon
     - field.storage.taxonomy_term.field_icon
+    - field.storage.taxonomy_term.field_summary
     - taxonomy.vocabulary.products
   module:
     - image
@@ -136,10 +137,10 @@ display:
           entity_type: taxonomy_term
           entity_field: name
           plugin_id: term_name
-        description__value:
-          id: description__value
-          table: taxonomy_term_field_data
-          field: description__value
+        field_summary:
+          id: field_summary
+          table: taxonomy_term__field_summary
+          field: field_summary
           relationship: none
           group_type: group
           admin_label: ''
@@ -197,8 +198,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: taxonomy_term
-          entity_field: description
           plugin_id: field
         view_taxonomy_term:
           id: view_taxonomy_term
@@ -393,7 +392,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<span class=\"badge badge-primary coming-soon-badge\">{{field_coming_soon}}</span>\r\n<div class=\"card\">\r\n  <div class=\"card__title\">\r\n    <div class=\"card__title__icon\">{{ field_icon }}</div>\r\n    <div class=\"card__title__text\"><h2>{{ name }}</h2></div>\r\n  </div>\r\n  <div class=\"views-field views-field-description__value\">{{ description__value }}</div>\r\n  <div class=\"card__footer\">\r\n    {{ view_taxonomy_term }}\r\n  </div>\r\n</div>"
+            text: "<span class=\"badge badge-primary coming-soon-badge\">{{field_coming_soon}}</span>\r\n<div class=\"card\">\r\n  <div class=\"card__title\">\r\n    <div class=\"card__title__icon\">{{ field_icon }}</div>\r\n    <div class=\"card__title__text\"><h2>{{ name }}</h2></div>\r\n  </div>\r\n  <div class=\"views-field views-field-description__value\">{{ field_summary }}</div>\r\n  <div class=\"card__footer\">\r\n    {{ view_taxonomy_term }}\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -469,6 +468,7 @@ display:
       tags:
         - 'config:field.storage.taxonomy_term.field_coming_soon'
         - 'config:field.storage.taxonomy_term.field_icon'
+        - 'config:field.storage.taxonomy_term.field_summary'
         - extensions
   block_1:
     display_plugin: block
@@ -486,4 +486,5 @@ display:
       tags:
         - 'config:field.storage.taxonomy_term.field_coming_soon'
         - 'config:field.storage.taxonomy_term.field_icon'
+        - 'config:field.storage.taxonomy_term.field_summary'
         - extensions

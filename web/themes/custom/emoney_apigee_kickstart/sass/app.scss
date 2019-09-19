@@ -13,6 +13,7 @@
 @import 'components/breadcrumbs';
 @import 'components/card';
 @import 'components/buttons';
+@import 'components/pagination';
 
 
 // Pages
@@ -28,4 +29,5 @@
 @import 'pages/products';
 @import 'pages/user_forms';
 @import 'pages/contact';
-
+@import 'pages/use_case';
+@import 'pages/search_results';

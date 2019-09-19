@@ -1,16 +1,14 @@
-@import "./../typography";
-
 .use-cases-node {
-  background-color: #f9f9f9;
+  background-color: $gray_lightness;
   .view-view-use-cases {
     .view-content {
       max-width: 1200px;
       margin-right: auto;
       margin-left: auto;
     }
-
+    
     .card {
-      background-color: #ffffff;
+      background-color: $white;
       border-radius: 4px;
       box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.02);
       max-height: 386px;
@@ -28,10 +26,7 @@
       }
 
       p {
-        color: #707070;
-        font-family: "Arial", sans-serif;
-        font-size: 16px;
-        line-height: 24px;
+        color: $gray-dark;
       }
 
       .text-image__wrapper {
@@ -42,7 +37,7 @@
           margin-left: -10px;
 
           &:after {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 64.02%, #ffffff 100%);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, $white 64.02%, $white 100%);
             bottom: 0;
             content: "";
             display: block;
@@ -60,8 +55,8 @@
 
       .views-field-title {
         .field-content {
-          color: #333333;
-          font-family: "Lato", "Arial", sans-serif;
+          color: $gray-dark;
+          font-family: $Lato;
           font-size: 24px;
           font-weight: 900;
           line-height: 29px;
@@ -80,11 +75,11 @@
         a {
           background-color: transparent;
           border: none;
-          color: #00aae7;
+          color: $blue;
           font-size: 16px;
           padding: 10px;
           text-transform: uppercase;
-          font-family: "Lato", "Arial", sans-serif;
+          font-family: $Lato;
           font-weight: bold;
         }
       }
@@ -147,8 +142,10 @@
     }
 
     .buttons--cta {
-      font-family: 'Lato';
-      font-size: 16px;
+      a {
+        font-family: $Lato;
+        font-size: 16px !important;
+      }
     }
 
     &__buttons {
