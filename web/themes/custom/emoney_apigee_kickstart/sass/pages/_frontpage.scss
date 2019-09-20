@@ -15,7 +15,10 @@
       background-size: cover;
       position: static;
       min-height: unset;
-
+      &:after {
+        background: transparent;
+        height: auto;
+      }
       .flexslider {
         border-left-width: 0px;
         border-right-width: 0px;
@@ -37,7 +40,6 @@
           .flex-active-slide {
             &:after {
               content: "";
-              height: 600px;
               left: 0;
               opacity: .8;
               position: absolute;

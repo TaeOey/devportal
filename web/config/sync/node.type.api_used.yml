@@ -9,9 +9,9 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: 'API Used'
+name: 'API Resource Endpoint'
 type: api_used
-description: 'Describes API used within the Use Case.'
+description: 'Content type used to capture information about individual resource endpoints inside an API Specification Document'
 help: ''
 new_revision: true
 preview_mode: 1

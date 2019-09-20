@@ -1,155 +1,150 @@
-.use-cases-node {
-  background-color: $gray_lightness;
-  .view-view-use-cases {
-    .view-content {
-      max-width: 1200px;
-      margin-right: auto;
-      margin-left: auto;
-    }
-    
-    .card {
-      background-color: $white;
-      border-radius: 4px;
-      box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.02);
-      max-height: 386px;
-      min-height: 386px;
-      margin: 30px 0 10px 0;
-      overflow: hidden;
-      padding: 34px 32px;
-      border: none;
-      position: relative;
-
-      img {
-        max-width: 440px;
-        max-height: 265px;
-        object-fit: fill;
-      }
-
-      p {
-        color: $gray-dark;
-      }
-
-      .text-image__wrapper {
-        .text-image__text {
-          height: 250px;
-          min-height: 250px;
-          overflow: hidden;
-          margin-left: -10px;
-
-          &:after {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, $white 64.02%, $white 100%);
-            bottom: 0;
-            content: "";
-            display: block;
-            height: 180px;
-            left: 0;
-            position: absolute;
-            width: 100%;
-          }
-        }
-
-        .text-image__image {
-          padding-left: 130px;
-        }
-      }
-
-      .views-field-title {
-        .field-content {
-          color: $gray-dark;
-          font-family: $Lato;
-          font-size: 24px;
-          font-weight: 900;
-          line-height: 29px;
-          margin: 0 0 24px 0;
-          text-transform: uppercase;
-        }
-      }
-
-      .views-field-nothing {
-        bottom: 0;
-        left: 0;
-        padding: 20px 20px;
-        position: absolute;
-        z-index: 1;
-
-        a {
-          background-color: transparent;
-          border: none;
-          color: $blue;
-          font-size: 16px;
-          padding: 10px;
-          text-transform: uppercase;
-          font-family: $Lato;
-          font-weight: bold;
-        }
-      }
-    }
-
+.use-cases {
+  &-node {
     .pager {
-      list-style-type: none;
-      padding-inline-start: 0px;
+      list-style: none;
+      padding: 30px 0 0 0;
 
       &__item {
         text-align: center;
-        min-height: 100px;
-        padding: 20px;
 
         .button {
+          background-color: transparent;
+          border: $blue 1px solid;
           border-radius: 0;
           box-shadow: none;
+          color: $blue;
+          display: inline-block;
           font-size: 14px;
-          font-weight: bold;
+          font-weight: $bold;
           line-height: 16px;
-          padding: 16px 39px;
+          padding: 16px 0;
           text-align: center;
           text-transform: uppercase;
           width: 165px;
-          background-color: transparent;
-          border: #00aae7 1px solid;
-          color: #00aae7;
+        }
+      }
+    }
+
+    .block--cta {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__case {
+    .views-field {
+      &-title {
+        color: $gray_dark;
+        font-family: $Lato;
+        font-size: 24px !important;
+        font-weight: $extraBold !important;
+        line-height: 29px !important;
+        margin: 0 0 24px 0;
+        text-transform: uppercase;
+      }
+
+      &-nothing {
+        a {
+          color: $blue;
+          font-family: $Lato;
+          font-size: 16px;
+          line-height: 19px;
+          text-transform: uppercase;
         }
       }
     }
   }
-  .block--cta {
-    margin-bottom: 0px;
-  }
-
-  .cta {
-    background-color: #b5c534;
-    color: white;
-    text-align: center;
-
-    .btn {
-      background-color: transparent;
-      border: #fff 1px solid;
-      color: #fff;
-      text-transform: uppercase;
-    }
-
-    &__title {
-      font-size: 22px;
-      font-weight: bold;
-      line-height: 24px;
-      margin: 0 0 16px 0;
-    }
-
-    .cta__field-text {
-      h3 {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 22px;
-      }
-    }
-
-    .buttons--cta {
-      a {
-        font-family: $Lato;
-        font-size: 16px !important;
-      }
-    }
-
-    &__buttons {
-      justify-content: center !important;
-    }
-  }
 }
+// .use-cases-node {
+//   background-color: $gray_lightness;
+//   padding-top: 38px;
+
+//   .use-cases {
+//     &__case {
+//       &:first-of-type {
+//         margin-top: 0;
+//       }
+
+//       box-shadow: none;
+//     }
+//   }
+
+//   .view-use-cases {
+//     .view-content {
+//       max-width: 1200px;
+//       margin-right: auto;
+//       margin-left: auto;
+
+//       .card {
+//         background-color: $white;
+//         border-radius: 4px;
+//         box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.02);
+//         max-height: 386px;
+//         min-height: 386px;
+//         margin: 30px 0 10px 0;
+//         overflow: hidden;
+//         padding: 34px 32px;
+//         border: none;
+//         position: relative;
+
+//         img {
+//           max-width: 440px;
+//           max-height: 265px;
+//           object-fit: fill;
+//         }
+
+//         &__text {
+//           color: $gray_dark;
+//           font-size: 24px;
+//           font-weight: $bold;
+//           line-height: 32px;
+//           text-transform: uppercase;
+//         }
+//       }
+//     }
+
+//     h2 {
+//       font-size: 20px;
+//       line-height: 23px;
+//       text-transform: uppercase;
+//       margin: 0 0 16px 0;
+//     }
+//   }
+
+
+
+//   .cta {
+//     background-color: #b5c534;
+//     color: white;
+//     text-align: center;
+
+//     .btn {
+//       background-color: transparent;
+//       border: #fff 1px solid;
+//       color: #fff;
+//       text-transform: uppercase;
+//     }
+
+//     &__title {
+//       font-size: 22px;
+//       font-weight: bold;
+//       line-height: 24px;
+//       margin: 0 0 16px 0;
+//     }
+
+//     .cta__field-text {
+//       h3 {
+//         font-family: Arial, Helvetica, sans-serif;
+//         font-size: 22px;
+//       }
+//     }
+
+//     .buttons--cta {
+//       font-family: 'Lato';
+//       font-size: 16px;
+//     }
+
+//     &__buttons {
+//       justify-content: center !important;
+//     }
+//   }
+// }

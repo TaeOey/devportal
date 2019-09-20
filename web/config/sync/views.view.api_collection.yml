@@ -406,12 +406,13 @@ display:
   block_1:
     display_plugin: block
     id: block_1
-    display_title: Block
+    display_title: 'API Collection'
     position: 1
     display_options:
       display_extenders: {  }
       allow:
         items_per_page: true
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -437,6 +438,8 @@ display:
       defaults:
         pager: false
         sorts: false
+        title: false
+        header: false
       sorts:
         random:
           id: random
@@ -450,6 +453,19 @@ display:
           expose:
             label: ''
           plugin_id: random
+      title: 'More APIs'
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: "<div class=\"container\">\r\n<h2>More APIs</h2>\r\n</div>"
+          plugin_id: text_custom
     cache_metadata:
       max-age: 0
       contexts:
