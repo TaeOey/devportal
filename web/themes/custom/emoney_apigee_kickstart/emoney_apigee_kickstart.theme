@@ -111,7 +111,7 @@ function emoney_apigee_kickstart_preprocess_node(array &$variables) {
  */
 function emoney_apigee_kickstart_preprocess_page_title(array &$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
-  if($node->getType() == 'landing' && $node->get('field_alternative_subtitle')->value) {
+  if($node && $node->getType() == 'landing' && $node->get('field_alternative_subtitle')->value) {
     $variables['subtitle'] = $node->get('field_alternative_subtitle')->value;
   }
 }
