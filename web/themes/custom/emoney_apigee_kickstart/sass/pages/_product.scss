@@ -1,0 +1,38 @@
+.page-product {
+  .description {
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+    .image__field-media-image {
+      padding-left: 100px;
+    }
+  }
+
+  .cta {
+    text-align: center;
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+    &__text {
+      h2 {
+        font-size: 22px;
+      }
+    }
+
+    &__button {
+      a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .apis {
+    display: none;
+  }
+}
