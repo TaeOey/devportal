@@ -23,35 +23,54 @@
  * @see template_preprocess_taxonomy_term()
  */
 #}
-<div{{ attributes }} class="collections">
-  <div class="container">
-    {{ title_prefix }}
-    {% if not page %}
-      <h2><a href="{{ url }}">{{ name }}</a></h2>
-    {% endif %}
-    {{ title_suffix }}
-    <div class="collections-icon">
-      {{ content.field_icon }} <h2> Overview </h2>
-    </div>
-    <div class="collections-description">
-      {{ content.description }}
-      <div class="collections-description__buttons">
-        <a class="btn btn-primary" href="/getting-started">START PROJECT</a>
+{%
+  set classes = [
+    'collections'
+  ]
+%}
+<div class="row justify-content-center">
+  <div{{ attributes.addClass(classes) }}>
+    <div class="collections__overview">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-1">
+            {{ title_prefix }}
+            {% if not page %}
+              <h2><a href="{{ url }}">{{ name }}</a></h2>
+            {% endif %}
+            {{ title_suffix }}
+            <div class="collections__overview__header">
+              {{ content.field_icon }} <h2 class="collections__overview__header__title"> Overview </h2>
+            </div>
+            <div class="collections__overview__description">
+              {{ content.description }}
+              <div class="collections__overview__description__buttons">
+                <a class="btn btn-primary" href="/getting-started">Start project</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="apis">
-    {{ api_view }}
-  </div>
-
-  <div class="collections-use-cases">
-    <div class="container">
-      {{ usecase_view }}
+    <div class="apis">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-1">
+            {{ api_view }}
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="collections-more-apis">
-    {{ moreapi_view }}
+    <div class="collections__use-cases">
+      <div class="container">
+        {{ usecase_view }}
+      </div>
+    </div>
+
+    <div class="collections__more-apis">
+      {{ moreapi_view }}
+    </div>
   </div>
 </div>
