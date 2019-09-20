@@ -782,6 +782,12 @@ $config_directories['sync'] = 'config/sync';
 $config['system.performance']['css']['preprocess'] = 1;
 $config['system.performance']['js']['preprocess'] = 1;
 $config['system.performance']['cache']['page']['max_age'] = 3600;
+
+# Environment Indicator
+$config['environment_indicator.indicator']['name'] = 'TestInt';
+$config['environment_indicator.indicator']['fg_color'] = '#000000';
+$config['environment_indicator.indicator']['bg_color'] = '#0080c0';
+
 /*
  * The following settings should come from Octopus when deploying, so that we can
  * change them in each environment as needed
