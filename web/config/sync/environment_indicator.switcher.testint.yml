@@ -1,0 +1,10 @@
+uuid: cced7ebe-3b9b-4508-9a4a-475e29a50f5e
+langcode: en
+status: true
+dependencies: {  }
+machine: testint
+description: null
+name: Testint
+url: 'https://apigee-devportal-d8.emadev.emoneyadvisor.com'
+fg_color: '#d0d0d0'
+bg_color: '#0080ff'
