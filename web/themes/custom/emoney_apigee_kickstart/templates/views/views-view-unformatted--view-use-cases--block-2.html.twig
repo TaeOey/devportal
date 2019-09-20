@@ -15,6 +15,7 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
+<div class="container">
 {% if title %}
   <h3>{{ title }}</h3>
 {% endif %}
@@ -29,3 +30,4 @@
     {{- row.content -}}
   </div>
 {% endfor %}
+</div>
