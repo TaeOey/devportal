@@ -7,18 +7,10 @@ _core:
 name: flexslider_full
 label: 'Flexslider Full'
 effects:
-  c24cf04e-62f6-4bed-bcf4-9b6703476820:
-    uuid: c24cf04e-62f6-4bed-bcf4-9b6703476820
-    id: image_scale
-    weight: 1
-    data:
-      width: 1900
-      height: null
-      upscale: true
-  98d61ef4-03cf-4d1a-93b0-01c9ce808c5f:
-    uuid: 98d61ef4-03cf-4d1a-93b0-01c9ce808c5f
-    id: image_crop
-    weight: 2
+  7f9e1f04-e923-4e92-ae7f-796535d50e82:
+    uuid: 7f9e1f04-e923-4e92-ae7f-796535d50e82
+    id: image_scale_and_crop
+    weight: 3
     data:
       width: 1900
       height: 600
