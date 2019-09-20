@@ -786,7 +786,7 @@ $config['system.performance']['cache']['page']['max_age'] = 3600;
 # Environment Indicator
 $config['environment_indicator.indicator']['name'] = 'TestInt';
 $config['environment_indicator.indicator']['fg_color'] = '#000000';
-$config['environment_indicator.indicator']['bg_color'] = '#0080ff';
+$config['environment_indicator.indicator']['bg_color'] = '#0080c0';
 
 /*
  * The following settings should come from Octopus when deploying, so that we can
