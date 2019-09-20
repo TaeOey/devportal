@@ -1,0 +1,10 @@
+uuid: bb411905-d57b-4e44-9640-8dda67901cc0
+langcode: en
+status: true
+dependencies: {  }
+machine: local
+description: null
+name: Local
+url: 'http://localhost'
+fg_color: '#d0d0d0'
+bg_color: '#408080'
