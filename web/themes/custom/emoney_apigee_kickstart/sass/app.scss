@@ -13,6 +13,8 @@
 @import 'components/breadcrumbs';
 @import 'components/card';
 @import 'components/buttons';
+@import 'components/use_cases';
+@import 'components/pagination';
 
 
 // Pages
@@ -22,11 +24,12 @@
 @import 'pages/support';
 @import 'pages/errors';
 @import 'pages/collections';
+@import 'pages/collection_overview';
 @import 'pages/register';
 @import "pages/terms_of_use";
 @import 'pages/use_cases';
 @import 'pages/products';
 @import 'pages/user_forms';
 @import 'pages/contact';
+@import 'pages/search_results';
 @import 'pages/product';
-

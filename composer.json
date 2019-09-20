@@ -37,7 +37,8 @@
     "drupal/password_policy": "^3.0@alpha",
     "drupal/diff": "^1.0@RC",
     "drupal/redirect": "^1.4",
-    "drupal/cancel_button": "^1.1"
+    "drupal/cancel_button": "^1.1",
+    "drupal/environment_indicator": "^3.7"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
