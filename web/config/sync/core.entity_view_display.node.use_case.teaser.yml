@@ -37,6 +37,7 @@ content:
     third_party_settings: {  }
 hidden:
   content_moderation_control: true
+  field_apis_u: true
   field_collections: true
   field_products: true
   links: true
