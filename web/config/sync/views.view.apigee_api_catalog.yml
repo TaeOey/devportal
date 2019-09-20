@@ -311,7 +311,7 @@ display:
   block_1:
     display_plugin: block
     id: block_1
-    display_title: Block
+    display_title: 'API Spec Collection'
     position: 2
     display_options:
       display_extenders: {  }
@@ -481,7 +481,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: 'View APIs'
+          content: '<h2>View APIs</h2>'
           plugin_id: text_custom
       style:
         type: default
@@ -496,6 +496,7 @@ display:
           inline: {  }
           separator: ''
           hide_empty: false
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -507,7 +508,7 @@ display:
   block_2:
     display_plugin: block
     id: block_2
-    display_title: Block
+    display_title: 'API Spec Product'
     position: 2
     display_options:
       display_extenders: {  }
@@ -521,7 +522,8 @@ display:
         header: false
         style: false
         row: false
-      block_description: 'API Spec Collection'
+        css_class: false
+      block_description: 'API Spec Product'
       arguments:
         field_products_target_id:
           id: field_products_target_id
@@ -677,7 +679,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: 'View APIs'
+          content: '<h2>View APIs</h2>'
           plugin_id: text_custom
       style:
         type: default
@@ -692,6 +694,8 @@ display:
           inline: {  }
           separator: ''
           hide_empty: false
+      display_description: ''
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
