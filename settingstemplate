@@ -794,14 +794,14 @@ $config['environment_indicator.indicator']['bg_color'] = '#0080c0';
  */
 # Database credentials
 $databases['default']['default'] = array (
-  'database' => '#{DrupalDbName}',
-  'username' => '#{databaseusername}',
-  'password' => '#{DrupalPassword}',
+  'database' => 'emoneydevportal',
+  'username' => 'drupal',
+  'password' => '6JZbjT!bCjEqTq8',
   'prefix' => '',
-  'host' => '#{DrupalDbHost}',
-  'port' => '#{DrupalDbPort}',
-  'namespace' => '#{DrupalNamespace}',
-  'driver' => '#{DrupalDriver}',
+  'host' => 'localhost',
+  'port' => '3306',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
 );
 
 # Public files to allow https
