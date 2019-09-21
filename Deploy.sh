@@ -42,7 +42,8 @@ echo "Creating and Fixing Permission On ${APIGEE_DRUPAL_SOURCE_ROOT}"
 sudo mkdir ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
 
 sudo rsync -r * ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
-sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate.config ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/web/sites/default/settings.php
+echo "copying settings file"
+sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate.config ${APIGEE_DRUPAL_WEB_DOCROOT}/sites/default/settings.php
 
 echo "ls /vendor/bin to check for drush"
 ls ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/bin
