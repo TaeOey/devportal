@@ -46,8 +46,8 @@ sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate.config ${APIGEE_DR
 
 echo "ls /vendor/bin to check for drush"
 ls ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/bin
-cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/bin/drush drush
-#unzip -o drush.zip
+cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/bin/drush drush -va
+unzip -o drush.zip
 chmod 755 drush
 mv drush drush.phar
 ln -s ${CWD}/drush.phar ${CWD}/drush
@@ -63,9 +63,9 @@ sudo chmod 777 ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/drush/drush/drush.lau
 #sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/files -type d -exec chmod 775 {} \;
 
 #Backup Drupal database
-# echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
-# echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
-# sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} sql-dump --gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}
+echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
+echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
+sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} sql-dump --gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}
 
 #Fix symlink
 APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD=$(readlink ${APIGEE_DRUPAL_SOURCE_ROOT})
