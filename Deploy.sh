@@ -1,19 +1,18 @@
 #!/bin/bash
 
 #Declare variables
-CWD=`pwd`
+CWD=$(pwd)
 APIGEE_DRUPAL_SOURCE_ROOT=/var/www/devportal
 APIGEE_DRUPAL_WEB_DOCROOT=/var/www/devportal/web
 APIGEE_DRUPAL_SOURCE_ROOT_RELEASE=/var/www/"#{Octopus.Release.Number}"
 WEB_FILES_ROOT=/var/www/devportal/web/sites/default/files
 WEB_FILES_STORAGE=/var/www/files
 #EMONEY_DEVPORTAL_PROJECT_DIRECTORY=/opt/apigee/data/apigee-drupal-devportal/sites/all
-PACKAGE_ID=`basename $(pwd)`
-CURRENT_DATETIME=`date +%Y%m%d-%H%M%S`
+PACKAGE_ID=$(basename $(pwd))
 BACKUP_DIRECTORY=/var/www/backups
 DRUPAL_BACKUP="sites-all.tar.gz"
 ROLLBACK_SCRIPT="Rollback.sh"
-DB_BACKUP="devportal-backup-${CURRENT_DATETIME}.sql.gz"
+DB_BACKUP="devportal-backup-#{Octopus.Release.Number}.sql.gz"
 DB_IP="#{DrupalDbHost}"
 DB_PORT="#{DrupalDbPort}"
 DB_NAME="#{DrupalDbName}"
@@ -62,11 +61,6 @@ sudo chmod 777 ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/bin/drush.launcher
 sudo chmod 777 ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/drush/drush/drush.launcher
 #sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/files -type d -exec chmod 775 {} \;
 
-#Backup Drupal database
-echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
-echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
-sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} sql-dump --gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}
-
 #Fix symlink
 APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD=$(readlink ${APIGEE_DRUPAL_SOURCE_ROOT})
 echo "symlink ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE} to ${APIGEE_DRUPAL_SOURCE_ROOT}"
@@ -80,9 +74,20 @@ sudo drush cc drush
 echo "Actualize configuration layer"
 sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
 
-#Initialize updates:
-echo "Initializing updates"
-sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} updb -y
+if test -f "${BACKUP_DIRECTORY}/${DB_BACKUP}"; then
+    #Restore database backup if present
+    echo "Restoring database"
+    $(${CWD}/drush sql-connect) <${BACKUP_DIRECTORY}/${DB_BACKUP}
+else
+    #Initialize updates:
+    echo "Initializing updates"
+    sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} updb -y
+
+    #Backup Drupal database
+    echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
+    echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
+    sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} sql-dump --gzip >${BACKUP_DIRECTORY}/${DB_BACKUP}
+fi
 
 #Clear caches:
 echo "Clear caches"
@@ -92,5 +97,5 @@ sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cr
 sudo rm -rf $APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD
 
 #Delete old database backups
-DB_BACKUP_PATTERN=`sudo echo $DB_BACKUP | sed -E 's/[[:digit:]]{8}-[[:digit:]]{6}/*/g'`
-sudo ls -t ${BACKUP_DIRECTORY}/${DB_BACKUP_PATTERN} | tail -n +4 | xargs rm --
+DB_BACKUP_PATTERN=$(sudo echo $DB_BACKUP | sed -E 's/[[:digit:]]{8}-[[:digit:]]{6}/*/g')
+sudo ls -t ${BACKUP_DIRECTORY}/*.sql.gz | tail -n +4 | xargs rm --
