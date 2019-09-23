@@ -19,15 +19,6 @@ if [ ! -d "${BACKUP_DIRECTORY}" ]; then
     sudo mkdir -p ${BACKUP_DIRECTORY}
 fi
 
-#Install drush
-# cp /vendor/bin/drush drush
-# #unzip -o drush.zip
-# chmod 755 drush
-# mv drush drush.phar
-# ln -s ${CWD}/drush.phar ${CWD}/drush
-# echo "test drush version"
-# ${CWD}/drush version
-
 #Backup Drupal data - not necessary??
 # echo "Create drupal directories backup in ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP}"
 # sudo tar czfP  ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP} -C ${APIGEE_DRUPAL_SOURCE_ROOT} ${DRUPAL_DIR_LIST}
