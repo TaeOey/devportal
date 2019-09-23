@@ -1,0 +1,9 @@
+.page-register,
+.page-login {
+  .page {
+    &__header,
+    &__tasks {
+      display: none;
+    }
+  }
+}

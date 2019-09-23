@@ -1,0 +1,16 @@
+.pagination{
+    font-size: 16px;
+    margin-bottom: 0px;
+
+    .page-item{
+        border-color: #ddd;
+        a{
+            font-size: 16px;
+            color: #137AAA;
+        }
+    }
+    .active a{
+        color: $white;
+        background: #428bca !important;
+    }
+}

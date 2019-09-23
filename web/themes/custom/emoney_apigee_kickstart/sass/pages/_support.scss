@@ -1,0 +1,75 @@
+article[about=\/support] {
+  .layout {
+    &__region {
+      .block {
+        margin-bottom: 0;
+
+        .paragraph {
+          &.py-6 {
+            padding-top: 32px !important;
+            padding-bottom: 0 !important;
+
+            &.cta {
+              padding-bottom: 32px !important;
+            }
+          }
+        }
+      }
+
+      .view-faq {
+        margin-bottom: 73px;
+
+        .faq-question {
+          border-bottom: $blue_jeans 1px solid;
+          color: $blue_jeans;
+          cursor: pointer;
+          font-family: Arial;
+          font-size: 24px;
+          font-weight: bold;
+          line-height: 24px;
+          margin: 0;
+          padding: 12px 29px;
+
+          .details__icon {
+            color: $blue_jeans;
+            margin-left: 14px;
+            position: initial;
+          }
+        }
+
+        .faq-answer {
+          display: none;
+          padding: 7px 29px;
+
+          &--open {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .paragraph {
+    &.cta {
+      h3 {
+        color: $white;
+        font-size: 22px;
+        font-weight: $bold;
+        line-height: 24px;
+        margin: 0 0 24px 0;
+      }
+
+      .btn {
+        color: $white;
+        font-family: Lato;
+        font-size: 14px;
+        font-weight: $bold;
+        line-height: 48px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        width: 166px;
+      }
+    }
+  }
+}

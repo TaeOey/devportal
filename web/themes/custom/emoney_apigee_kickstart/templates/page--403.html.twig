@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Template for the 404 error page.
+ */
+#}
+{% include 'page--error-base.html.twig' with {
+  error: {
+      code: '403',
+      message: 'Please sign in or register to view this page.'
+  }
+} %}

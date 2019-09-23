@@ -1,0 +1,58 @@
+.path-contact{
+    .page {
+        background-color: $gray_lightness;
+    
+        .justify-content {
+            margin: auto;
+        }
+
+        .contact-form {
+            font-weight: bold;
+        }
+
+        .js-text-full {
+            height: 130px;
+        }
+
+        .fa-asterisk {
+            display: none;
+        }
+
+        .form-control,
+        #edit-name,
+        #edit-mail {
+            background-color: $white;
+            box-shadow: none;
+        }
+
+        .option,
+        .fa-square {
+            display: none;
+        }
+
+        .button--primary,
+        #edit-cancel {
+            font-family: arial;
+            width: 118px;
+        } 
+
+        #edit-cancel {
+            border: solid 1px #00AAE7;
+            background-color: $white;
+            color: #00AAE7;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 16px;
+            text-transform: uppercase;
+            padding: 15px 26px;
+            margin-right: 16px;
+        }
+    }
+    
+    .form-actions {
+        display: flex;
+        flex-flow: row-reverse;
+        justify-content: flex-start;
+    }
+}

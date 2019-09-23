@@ -1,0 +1,12 @@
+emoney-global-style:
+  version: 1.0
+  css:
+    theme:
+      assets/css/emoney_style_sheet.css : {}
+emoney-global-script:
+  version: 1.0
+  js:
+    assets/js/emoney.js : {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

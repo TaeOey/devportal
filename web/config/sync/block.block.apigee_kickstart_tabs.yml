@@ -1,0 +1,22 @@
+uuid: cd5753ab-7803-42f0-927c-3a566dd2df64
+langcode: en
+status: true
+dependencies:
+  theme:
+    - apigee_kickstart
+_core:
+  default_config_hash: axlgVStpEIt5eiZDldRFgur-7puYccXDfimn4rXh8gA
+id: apigee_kickstart_tabs
+theme: apigee_kickstart
+region: tasks
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

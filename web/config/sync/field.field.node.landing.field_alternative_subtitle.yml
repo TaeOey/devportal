@@ -1,0 +1,19 @@
+uuid: e4bb391a-5835-4e7c-b21e-57d0b75427a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alternative_subtitle
+    - node.type.landing
+id: node.landing.field_alternative_subtitle
+field_name: field_alternative_subtitle
+entity_type: node
+bundle: landing
+label: 'Alternative Subtitle'
+description: "Generally there is no subtitle. The title appears just below the main navigation.\r\nIf a subtitle is desired it will be displayed below the title in a smaller font"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

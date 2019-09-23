@@ -1,0 +1,8 @@
+uuid: 5166006d-9275-4f61-9471-8aba4627e322
+langcode: en
+status: true
+dependencies: {  }
+name: Collections
+vid: collections
+description: 'List of Collections to tag APIs, Use Cases'
+weight: 0

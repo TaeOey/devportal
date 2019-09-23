@@ -1,0 +1,45 @@
+uuid: bd7a6e58-e9d0-4b68-a1e8-a62fc8b7aacb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.callout_group.field_background_style
+    - field.field.paragraph.callout_group.field_buttons
+    - field.field.paragraph.callout_group.field_callouts
+    - field.field.paragraph.callout_group.field_title
+    - paragraphs.paragraphs_type.callout_group
+  module:
+    - paragraphs
+_core:
+  default_config_hash: XKUl2Ah7gbEGO7QePTvSEMlomDbfD6K6_3OFarhGVYY
+id: paragraph.callout_group.default
+targetEntityType: paragraph
+bundle: callout_group
+mode: default
+content:
+  field_callouts:
+    type: paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed_expand_nested
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: callout
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_background_style: true
+  field_buttons: true
+  field_title: true
+  status: true
+  uid: true

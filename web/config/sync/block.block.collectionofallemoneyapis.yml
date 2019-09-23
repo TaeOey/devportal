@@ -1,0 +1,39 @@
+uuid: 73fd3829-f590-4d6d-871e-db1f27364d6d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cta:286eec4d-536b-4709-97b1-ec7fc893a0ba'
+  module:
+    - apigee_kickstart_enhancement
+    - block_content
+    - system
+  theme:
+    - emoney_apigee_kickstart
+id: collectionofallemoneyapis
+theme: emoney_apigee_kickstart
+region: content_below
+weight: 0
+provider: null
+plugin: 'block_content:286eec4d-536b-4709-97b1-ec7fc893a0ba'
+settings:
+  id: 'block_content:286eec4d-536b-4709-97b1-ec7fc893a0ba'
+  label: 'Collection of all emoney apis'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  block_type:
+    id: block_type
+    uuid: 73fd3829-f590-4d6d-871e-db1f27364d6d
+    bundles: {  }
+    is_adjacent: 0
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /faq
+    negate: false
+    context_mapping: {  }

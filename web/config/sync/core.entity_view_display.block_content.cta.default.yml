@@ -1,0 +1,26 @@
+uuid: 3d076d3a-91e4-4051-84df-e8f9c71fa777
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta
+    - field.field.block_content.cta.field_cta
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: sdFL96LWWwHcZgLc0l4scqD9bOrN-uLsv5UJZlsXPx0
+id: block_content.cta.default
+targetEntityType: block_content
+bundle: cta
+mode: default
+content:
+  field_cta:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

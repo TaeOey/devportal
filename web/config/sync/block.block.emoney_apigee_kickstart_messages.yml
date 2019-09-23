@@ -1,0 +1,22 @@
+uuid: 35f8b280-76db-4b41-b2ce-82744fecf468
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - emoney_apigee_kickstart
+_core:
+  default_config_hash: ROw7BmAnWPkbI-V_nQ07Eu4IGyYA3b47SYTbNmPZpQU
+id: emoney_apigee_kickstart_messages
+theme: emoney_apigee_kickstart
+region: content
+weight: 1
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  provider: system
+  label_display: '0'
+visibility: {  }

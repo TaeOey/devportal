@@ -1,0 +1,22 @@
+uuid: 48cbe3db-a7d4-48fd-87e9-9b203b8f9682
+langcode: en
+status: true
+dependencies:
+  theme:
+    - emoney_apigee_kickstart
+_core:
+  default_config_hash: axlgVStpEIt5eiZDldRFgur-7puYccXDfimn4rXh8gA
+id: emoney_apigee_kickstart_tabs
+theme: emoney_apigee_kickstart
+region: tasks
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

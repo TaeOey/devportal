@@ -1,0 +1,21 @@
+uuid: 93e2ac12-6ec2-4063-b8ca-bd9bd8ef5c15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_coming_soon
+    - taxonomy.vocabulary.products
+id: taxonomy_term.products.field_coming_soon
+field_name: field_coming_soon
+entity_type: taxonomy_term
+bundle: products
+label: 'Coming Soon'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

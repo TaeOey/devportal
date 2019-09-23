@@ -1,0 +1,27 @@
+uuid: b59d3a6d-5939-4300-8ecf-c87280c5c482
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - emoney_apigee_kickstart
+_core:
+  default_config_hash: e5o-OgvsySwm3H6ZKpYqCoxvfkhvnNsRYIX7pk1gVzc
+id: emoney_apigee_kickstart_menu_account
+theme: emoney_apigee_kickstart
+region: navbar_right
+weight: 0
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

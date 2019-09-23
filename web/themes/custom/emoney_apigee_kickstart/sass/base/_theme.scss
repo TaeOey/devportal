@@ -1,0 +1,17 @@
+body {
+  color: $gray_dark;
+  font-family: $Arial;
+  font-size: 16px;
+  line-height: 24px;
+
+  .page {
+    &__content {
+      h2 {
+        color: $gray_dark;
+        font-size: 32px;
+        font-weight: $bold;
+        line-height: 40px;
+      }
+    }
+  }
+}

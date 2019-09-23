@@ -1,0 +1,27 @@
+uuid: a97c60b4-c1aa-45b2-9c73-ccfa733094cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - apigee_kickstart
+_core:
+  default_config_hash: NfhJaYkah0ef19KcJZC_AOChMjQP-EBfsrOAM9UvWpc
+id: apigee_kickstart_breadcrumbs_title
+theme: apigee_kickstart
+region: breadcrumbs
+weight: 1
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Breadcrumbs: Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

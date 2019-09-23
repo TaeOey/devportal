@@ -1,0 +1,23 @@
+uuid: 27d7b324-ca3a-4335-b9b6-3dc7b5bf899e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.collections.field_icon
+    - taxonomy.vocabulary.collections
+  module:
+    - text
+id: taxonomy_term.collections.default
+targetEntityType: taxonomy_term
+bundle: collections
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_icon: true

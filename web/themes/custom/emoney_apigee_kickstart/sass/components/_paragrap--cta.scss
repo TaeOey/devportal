@@ -1,0 +1,40 @@
+.paragraph {
+  &.cta {
+    background-color: #b5c534;
+    padding: 30px 0;
+
+    h3,
+    a {
+      color: white;
+      margin: 10px 0;
+    }
+
+    h3 {
+      font-weight: bold;
+    }
+
+    a {
+      &.btn-primary-outline {
+        border-color: white;
+      }
+    }
+
+    .buttons {
+      .btn {
+        background-color: transparent;
+        border: $white 1px solid;
+        border-radius: 0;
+        color: $white;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 16px;
+        padding: 16px 0;
+        width: 165px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+

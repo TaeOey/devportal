@@ -1,0 +1,38 @@
+@import './../vendors/fontawesome/fontawesome.scss';
+@import './../vendors/fontawesome/solid.scss';
+
+.page__breadcrumbs {
+    background: transparent;
+
+    .breadcrumb {
+        background: transparent;
+
+        .breadcrumb-item {
+            padding-top: 24.48px;
+
+            a {
+                font-size: 16px;
+                line-height: 24px;
+                color: #00AAE7;
+    
+                &:after {
+                    color: #00aae7;
+                    content: fa-content($fa-var-chevron-right);
+                    display: inline-block;
+                    font-size: 14px;
+                    font-family: 'Font Awesome 5 Free';
+                    margin: 0 10px 0 10px;
+                  }
+            }
+        }
+
+        .container {
+            padding-top: 4px;
+            padding-left: 0px;
+        }
+
+        .page__title {
+            font-size: 16px;
+        }
+    }
+}

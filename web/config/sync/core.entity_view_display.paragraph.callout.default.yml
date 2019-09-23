@@ -1,0 +1,41 @@
+uuid: b5479c20-6aac-4a04-a717-491697e01d82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.callout.field_buttons
+    - field.field.paragraph.callout.field_icon
+    - field.field.paragraph.callout.field_link
+    - field.field.paragraph.callout.field_text
+    - field.field.paragraph.callout.field_title
+    - paragraphs.paragraphs_type.callout
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: FKAXYMAJp5NWkRdEbXbZD4khmlqvXkogoanGQzOXP98
+id: paragraph.callout.default
+targetEntityType: paragraph
+bundle: callout
+mode: default
+content:
+  field_buttons:
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_icon: true
+  field_link: true
+  field_text: true

@@ -1,0 +1,62 @@
+uuid: a23a05ac-aa19-45a6-8e8d-659e9868f312
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.products.field_coming_soon
+    - field.field.taxonomy_term.products.field_icon
+    - field.field.taxonomy_term.products.field_image
+    - field.field.taxonomy_term.products.field_summary
+    - image.style.1_1_80x80
+    - taxonomy.vocabulary.products
+  module:
+    - image
+    - text
+id: taxonomy_term.products.default
+targetEntityType: taxonomy_term
+bundle: products
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_coming_soon:
+    weight: 2
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_icon:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: 1_1_80x80
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_summary:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

@@ -1,0 +1,18 @@
+uuid: aa9a9d43-3a4e-48dd-a0b4-6db38ab62cbe
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Ad14g-dfF-BfUNsmedzmYK3aNp-fL2DRyFGIIOhnA2w
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'search content'
+  - 'use text format basic_html'
+  - 'view Terms and Conditions'
+  - 'view media'
+  - 'view published apidoc entities'
