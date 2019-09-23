@@ -23,8 +23,8 @@
  * @see template_preprocess_taxonomy_term()
  */
 #}
-<div class="container">
-  <div class="page-product">
+<div class="page-product">
+  <div class="container">
     <div{{ attributes }}>
       {{ title_prefix }}
       {% if not page %}
@@ -38,6 +38,9 @@
           <div class="col-md-6">{{ content.field_image }}</div>
         </div>
       </div>
+      <div class="apis">
+        {{ api_view }}
+      </div>
       <div class="cta">
         <div class="cta__text">
           <h2>Need more information? Contact our API Specialist</h2>
@@ -45,9 +48,6 @@
         <div class="btn btn-primary cta__button">
           <a href="/contact">Contact Us</a>
         </div>
-      </div>
-      <div class="apis">
-        {{ api_view }}
       </div>
     </div>
   </div>
