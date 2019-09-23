@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.use_case.field_header
     - field.field.node.use_case.field_products
     - node.type.use_case
-    - views.view.view_more_use_cases
+    - views.view.view_use_cases
   module:
     - entity_reference_revisions
     - layout_builder
@@ -79,19 +79,6 @@ third_party_settings:
               id: 'extra_field_block:node:use_case:links'
             additional: {  }
             weight: 1
-          e151156d-3358-4145-b113-60b378ca4c83:
-            uuid: e151156d-3358-4145-b113-60b378ca4c83
-            region: content
-            configuration:
-              id: 'views_block:view_more_use_cases-block_2'
-              label: 'More Use Cases'
-              provider: views
-              label_display: visible
-              views_label: 'More Use Cases'
-              items_per_page: none
-              context_mapping: {  }
-            additional: {  }
-            weight: 6
           c8abe1cd-6543-4c7b-99ff-60f005700710:
             uuid: c8abe1cd-6543-4c7b-99ff-60f005700710
             region: content
@@ -146,6 +133,19 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 5
+          e9f481ea-039b-487f-8c58-4b3a785b39bb:
+            uuid: e9f481ea-039b-487f-8c58-4b3a785b39bb
+            region: content
+            configuration:
+              id: 'views_block:view_use_cases-block_3'
+              label: 'More Use Cases'
+              provider: views
+              label_display: visible
+              views_label: 'More Use Cases'
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 9
         third_party_settings: {  }
 id: node.use_case.default
 targetEntityType: node

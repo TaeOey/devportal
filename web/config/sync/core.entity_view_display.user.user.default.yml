@@ -5,7 +5,10 @@ dependencies:
   config:
     - field.field.user.user.field_company_name
     - field.field.user.user.field_company_role
+    - field.field.user.user.user_picture
+    - image.style.1_1_80x80
   module:
+    - image
     - user
 _core:
   default_config_hash: pZKVoGY5rdXv3cNOIUwzIv2zN7uuLwCGyeESPXuHx6Q
@@ -55,6 +58,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: 1_1_80x80
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
   username:
     weight: 2
     region: content

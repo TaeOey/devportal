@@ -1,0 +1,134 @@
+$page-use-case-bg-color: #f9f9f9;
+$get-bg: #6bbc5b;
+$post-bg: #1a6887;
+$put-bg: #9b708c;
+$delete-bg: #a83e24;
+
+.page-use-case {
+  background-color: $page-use-case-bg-color;
+
+  .use-case--full {
+    img {
+      max-width: 440px;
+      max-height: 265px;
+      object-fit: fill;
+    }
+
+    .use-case__field-products {
+      padding: 0px 15px;
+
+      .field__item {
+        max-width: 200px;
+        display: inline;
+
+        a {
+          color: $gray;
+          font-family: Arial;
+          font-size: 14px;
+          border: 1px solid $gray-light;
+          padding: 2px 8px;
+          border-radius: 3px;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .title-bar {
+      background-color: $page-use-case-bg-color !important;
+      padding: 0px !important;
+
+      &__icon {
+        display: none !important;
+      }
+
+      &__title {
+        color: $gray-dark;
+        font-family: $Lato;
+        font-size: 24px;
+        font-weight: $bold;
+        line-height: 29px;
+        margin: 0 0 10px 0;
+        text-transform: uppercase;
+      }
+    }
+
+    .text-image__wrapper {
+      align-items: initial;
+
+      .text-image__text {
+        padding-top: 10px !important;
+      }
+    }
+
+    .block {
+      margin-bottom: 0px;
+    }
+
+    .api-card {
+      min-height: 220px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .text-image {
+      height: 320px;
+    }
+
+    h2 {
+      height: 39px;
+      color: $gray-dark;
+      font-family: $Lato;
+      font-size: 32px;
+      font-weight: bold;
+      line-height: 39px;
+      padding: 30px 30px;
+    }
+
+    .more-use-cases {
+      h2 {
+        text-align: center;
+      }
+    }
+
+    .api-method {
+      border-radius: 3px;
+      border: none;
+      color: $white;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      padding: 3px 20px;
+    }
+
+    .method-get {
+      background-color: $get-bg;
+    }
+
+    .method-post {
+      background-color: $post-bg;
+    }
+
+    .method-put {
+      background-color: $put-bg;
+    }
+
+    .method-delete {
+      background-color: $delete-bg;
+    }
+
+    .api-title {
+      font-weight: $bold;
+      padding: 10px 0px;
+    }
+
+    .api-used__field-api-description {
+      color: $gray-dark;
+      font-family: $Lato;
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+}

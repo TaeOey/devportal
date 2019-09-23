@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Template for the page title block.
+ */
+#}
+<div class="collections-more-apis">
+  {% embed '@radix/block/block.twig' with {
+    html_tag: 'div',
+    utility_classes: []
+  } %}
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  {% endembed %}
+</div>
