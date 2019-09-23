@@ -47,7 +47,7 @@ sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate.config ${APIGEE_DR
 
 echo "ls /vendor/bin to check for drush"
 ls ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/bin
-cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/bin/drush drush -va
+#cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/bin/drush drush -va
 unzip -o drush.zip
 chmod 755 drush
 mv drush drush.phar
