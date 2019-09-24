@@ -78,7 +78,7 @@ sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
 if test -f "${BACKUP_DIRECTORY}/${DB_BACKUP_CURRENT}"; then
     #Restore database backup if present
     echo "Restoring database"
-    $(${CWD}/drush sql-connect --root=${APIGEE_DRUPAL_WEB_DOCROOT}) <${BACKUP_DIRECTORY}/${DB_BACKUP_CURRENT}
+    eval $(${CWD}/drush sql-connect --root=${APIGEE_DRUPAL_WEB_DOCROOT}) <${BACKUP_DIRECTORY}/${DB_BACKUP_CURRENT}
 else
 
     #Backup Drupal database
