@@ -13,7 +13,7 @@ BACKUP_DIRECTORY=/var/www/backups
 DRUPAL_BACKUP="sites-all.tar.gz"
 ROLLBACK_SCRIPT="Rollback.sh"
 DB_BACKUP="devportal-backup-#{Octopus.Release.Previous.Number}.sql.gz"
-DB_BACKUP_CURRENT="devportal-backup-#{Octopus.Release.Number}.sql.gz"
+DB_BACKUP_CURRENT="devportal-backup-#{Octopus.Release.Number}.sql"
 DB_IP="#{DrupalDbHost}"
 DB_PORT="#{DrupalDbPort}"
 DB_NAME="#{DrupalDbName}"
@@ -78,6 +78,7 @@ sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
 if test -f "${BACKUP_DIRECTORY}/${DB_BACKUP_CURRENT}"; then
     #Restore database backup if present
     echo "Restoring database"
+    gunzip ${BACKUP_DIRECTORY}/${DB_BACKUP_CURRENT}.gz
     eval $(${CWD}/drush sql-connect --root=${APIGEE_DRUPAL_WEB_DOCROOT}) <${BACKUP_DIRECTORY}/${DB_BACKUP_CURRENT}
 else
 
@@ -100,4 +101,4 @@ sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cr
 sudo rm -rf $APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD
 
 #Delete old database backups
-sudo ls -t ${BACKUP_DIRECTORY}/*.sql.gz | tail -n +4 | xargs -r rm --
+sudo ls -t ${BACKUP_DIRECTORY}/*.sql*| tail -n +4 | xargs -r rm --
