@@ -12,7 +12,8 @@ PACKAGE_ID=$(basename $(pwd))
 BACKUP_DIRECTORY=/var/www/backups
 DRUPAL_BACKUP="sites-all.tar.gz"
 ROLLBACK_SCRIPT="Rollback.sh"
-DB_BACKUP="devportal-backup-#{Octopus.Release.Number}.sql.gz"
+DB_BACKUP="devportal-backup-#{Octopus.Release.Previous.Number}.sql.gz"
+DB_BACKUP_CURRENT="devportal-backup-#{Octopus.Release.Number}.sql.gz"
 DB_IP="#{DrupalDbHost}"
 DB_PORT="#{DrupalDbPort}"
 DB_NAME="#{DrupalDbName}"
@@ -74,19 +75,21 @@ sudo drush cc drush
 echo "Actualize configuration layer"
 sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
 
-if test -f "${BACKUP_DIRECTORY}/${DB_BACKUP}"; then
+if test -f "${BACKUP_DIRECTORY}/${DB_BACKUP_CURRENT}"; then
     #Restore database backup if present
     echo "Restoring database"
-    $(${CWD}/drush sql-connect --root=${APIGEE_DRUPAL_WEB_DOCROOT}) <${BACKUP_DIRECTORY}/${DB_BACKUP}
+    $(${CWD}/drush sql-connect --root=${APIGEE_DRUPAL_WEB_DOCROOT}) <${BACKUP_DIRECTORY}/${DB_BACKUP_CURRENT}
 else
-    #Initialize updates:
-    echo "Initializing updates"
-    sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} updb -y
 
     #Backup Drupal database
     echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
     echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
     sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} sql-dump --gzip >${BACKUP_DIRECTORY}/${DB_BACKUP}
+
+    #Initialize updates:
+    echo "Initializing updates"
+    sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} updb -y
+
 fi
 
 #Clear caches:
