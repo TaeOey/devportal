@@ -5,14 +5,15 @@
  */
 #}
 {% embed '@radix/block/block.twig' with {
-  html_tag: 'div',
-  utility_classes: [
-    'py-4',
-  ]
+  html_tag: 'div'
 } %}
   {% block content %}
     <div class="container">
-      {{ content }}
+      <div class="row">
+        <div class="col-md-10 offset-md-1 p-0">
+          {{ content }}
+        </div>
+      </div>
     </div>
   {% endblock %}
 {% endembed %}

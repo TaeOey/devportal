@@ -27,30 +27,6 @@ article[about=\/products] {
   .view-products-view {
     padding-top: 20px;
 
-      .view-content {
-        .views-view-grid {
-          .views-row {
-            .col-md-6 {
-              &:last-of-type {
-                .card {
-                  padding: 25px;
-
-                  * {
-                    opacity: .65;
-                  }
-
-                  &__footer {
-                    a {
-                      display: none;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-
     .views-field {
       position: relative;
 
@@ -76,13 +52,19 @@ article[about=\/products] {
       padding: 44px;
       text-align: center;
 
+      &--coming-soon {
+        * {
+          opacity: .65;
+        }
+      }
+
       &__title {
         &__icon {
-          height: 66px;
+          height: 100px;
           margin-bottom: 26px;
 
           img {
-            height: 66px;
+            height: 100px;
             width: auto;
           }
         }
@@ -101,6 +83,7 @@ article[about=\/products] {
       }
 
       &__footer {
+        .learn-more,
         a {
           border: 1px solid #00AAE7;
           color: #00AAE7;
@@ -109,6 +92,7 @@ article[about=\/products] {
           line-height: 18px;
           padding: 16px 36px;
           text-transform: uppercase;
+          margin: 0px;
         }
       }
     }
@@ -243,6 +227,10 @@ article[about=\/products] {
           line-height: 18px;
         }
       }
+    }
+
+    .coming-soon {
+      opacity: .65;
     }
   }
 
