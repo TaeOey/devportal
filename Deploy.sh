@@ -19,6 +19,13 @@ if [ ! -d "${BACKUP_DIRECTORY}" ]; then
     sudo mkdir -p ${BACKUP_DIRECTORY}
 fi
 
+unzip -o drush.zip
+chmod 755 drush
+mv drush drush.phar
+ln -s ${CWD}/drush.phar ${CWD}/drush
+echo "test drush version"
+${CWD}/drush version
+
 #Copy rollback script - not done yet
 #echo "Create rollback script ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}"
 #sudo cp ${ROLLBACK_SCRIPT} ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}
@@ -34,7 +41,7 @@ sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate.config ${APIGEE_DR
 
 echo "test drush version"
 cd ${APIGEE_DRUPAL_WEB_DOCROOT}
-sudo drush version
+sudo ${CWD}/drush version
 
 sudo chown nginx:nginx -R ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE} -type d -exec chmod 755 {} \;
@@ -53,20 +60,16 @@ echo "symlink ${WEB_FILES_STORAGE} to ${WEB_FILES_ROOT}"
 sudo ln -sfvn ${WEB_FILES_STORAGE} ${WEB_FILES_ROOT}
 
 #Actualize configuration layer:
-cd ${APIGEE_DRUPAL_WEB_DOCROOT}
-sudo drush cc drush
+sudo ${CWD}/drush cc drush
 echo "Actualize configuration layer"
-sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
+sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
 
 #Initialize updates:
-echo "Initializing updates"
-cd ${APIGEE_DRUPAL_WEB_DOCROOT}
 sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} updb -y
 
 #Clear caches:
 echo "Clear caches"
-cd ${APIGEE_DRUPAL_WEB_DOCROOT}
-sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cr
+sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cr
 
 #Delete old versions
 sudo rm -rf $APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD
