@@ -75,7 +75,7 @@ sudo drush cc drush
 echo "Actualize configuration layer"
 sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
 
-if test -f "${BACKUP_DIRECTORY}/${DB_BACKUP_CURRENT}"; then
+if test -f "${BACKUP_DIRECTORY}/${DB_BACKUP_CURRENT}.gz"; then
     #Restore database backup if present
     echo "Restoring database"
     gunzip ${BACKUP_DIRECTORY}/${DB_BACKUP_CURRENT}.gz
