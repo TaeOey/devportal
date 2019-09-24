@@ -40,7 +40,7 @@ echo "copying settings file"
 sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate.config ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/web/sites/default/settings.php
 
 echo "test drush version"
-cd ${APIGEE_DRUPAL_WEB_DOCROOT}
+#cd ${APIGEE_DRUPAL_WEB_DOCROOT}
 sudo ${CWD}/drush version
 
 sudo chown nginx:nginx -R ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
