@@ -27,22 +27,6 @@ article[about=\/products] {
   .view-products-view {
     padding-top: 20px;
 
-      .view-content {
-        .views-view-grid {
-          .views-row {
-            .col-md-6 {
-              &:last-of-type {
-                .card {
-                  * {
-                    opacity: .65;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-
     .views-field {
       position: relative;
 
@@ -67,6 +51,12 @@ article[about=\/products] {
       min-height: 376px;
       padding: 44px;
       text-align: center;
+
+      &--coming-soon {
+        * {
+          opacity: .65;
+        }
+      }
 
       &__title {
         &__icon {
@@ -239,7 +229,7 @@ article[about=\/products] {
       }
     }
 
-    .unavailable {
+    .coming-soon {
       opacity: .65;
     }
   }
