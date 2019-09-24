@@ -46,8 +46,8 @@ $delete-bg: #a83e24;
 
       &__title {
         color: $gray-dark;
-        font-family: $Lato;
-        font-size: 24px;
+        font-family: $Arial;
+        font-size: 32px;
         font-weight: $bold;
         line-height: 29px;
         margin: 0 0 10px 0;
@@ -129,6 +129,12 @@ $delete-bg: #a83e24;
       font-family: $Lato;
       font-size: 16px;
       line-height: 25px;
+    }
+
+    .block-more-use-cases {
+      h2 {
+        text-align: center;
+      }
     }
   }
 }
