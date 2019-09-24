@@ -45,9 +45,9 @@ sudo chmod 777 ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/drush/drush/drush.lau
 #sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/files -type d -exec chmod 775 {} \;
 
 #Backup Drupal database
-echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
-echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
-sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} sql-dump --gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}
+# echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
+# echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
+# sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} sql-dump --gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}
 
 #Fix symlink
 APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD=$(readlink ${APIGEE_DRUPAL_SOURCE_ROOT})
@@ -58,21 +58,24 @@ echo "symlink ${WEB_FILES_STORAGE} to ${WEB_FILES_ROOT}"
 sudo ln -sfvn ${WEB_FILES_STORAGE} ${WEB_FILES_ROOT}
 
 #Actualize configuration layer:
+cd ${APIGEE_DRUPAL_WEB_DOCROOT}
 sudo drush cc drush
 echo "Actualize configuration layer"
 sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
 
 #Initialize updates:
 echo "Initializing updates"
+cd ${APIGEE_DRUPAL_WEB_DOCROOT}
 sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} updb -y
 
 #Clear caches:
 echo "Clear caches"
+cd ${APIGEE_DRUPAL_WEB_DOCROOT}
 sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cr
 
 #Delete old versions
 sudo rm -rf $APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD
 
-#Delete old database backups
-DB_BACKUP_PATTERN=`sudo echo $DB_BACKUP | sed -E 's/[[:digit:]]{8}-[[:digit:]]{6}/*/g'`
-sudo ls -t ${BACKUP_DIRECTORY}/${DB_BACKUP_PATTERN} | tail -n +4 | xargs rm --
+# #Delete old database backups
+# DB_BACKUP_PATTERN=`sudo echo $DB_BACKUP | sed -E 's/[[:digit:]]{8}-[[:digit:]]{6}/*/g'`
+# sudo ls -t ${BACKUP_DIRECTORY}/${DB_BACKUP_PATTERN} | tail -n +4 | xargs rm --
