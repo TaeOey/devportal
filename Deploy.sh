@@ -22,9 +22,9 @@ fi
 unzip -o drush.zip
 chmod 755 drush
 mv drush drush.phar
-ln -s ${CWD}/drush.phar ${CWD}/drush
+sudo ln -s ${CWD}/drush.phar ${CWD}/drush
 echo "test drush version"
-${CWD}/drush version
+sudo ${CWD}/drush version
 
 #Copy rollback script - not done yet
 #echo "Create rollback script ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}"
