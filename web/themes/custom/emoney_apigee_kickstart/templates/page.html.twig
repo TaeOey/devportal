@@ -71,6 +71,7 @@
 ]|merge(main_classes|default([])) %}
 
 {% set sidebar_placement = sidebar_placement|default('default') %}
+{% set breadcrumb_column = breadcrumb_column|default(false) %}
 
 <div{{ attributes.addClass(classes) }}>
   {% embed '@apigee-kickstart/navbar/navbar.twig' with {
@@ -114,9 +115,19 @@
   {% if page.breadcrumbs|render %}
     <nav aria-label="breadcrumb" class="page__breadcrumbs">
       <div class="container">
-        <ol class="breadcrumb">
-          {{ page.breadcrumbs }}
-        </ol>
+        {% if breadcrumb_column %}
+          <div class="row">
+            <div{{ attributes.addClass(breadcrumb_column) }}>
+              <ol class="breadcrumb">
+                {{ page.breadcrumbs }}
+              </ol>
+            </div>
+          </div>
+        {% else %}
+          <ol class="breadcrumb">
+            {{ page.breadcrumbs }}
+          </ol>
+        {% endif %}
       </div>
     </nav>
   {% endif %}
