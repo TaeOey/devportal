@@ -44,8 +44,13 @@ function emoney_apigee_kickstart_preprocess_page(array &$variables) {
 /**
  * Implements hook_theme_suggestions_page_alter().
  */
-function emoney_apigee_kickstart_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+use Drupal\taxonomy\Entity\Term;
 
+function emoney_apigee_kickstart_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical' && $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term')) {
+    $term = Term::load($tid);
+    $suggestions[] = 'page__taxonomy__' . $term->getVocabularyId();
+  }
 }
 
 /**

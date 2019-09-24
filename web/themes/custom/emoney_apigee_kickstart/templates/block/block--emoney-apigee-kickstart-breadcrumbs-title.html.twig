@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Template for the page title block.
+ */
+#}
+{% embed '@radix/block/block.twig' with {
+  html_tag: 'li',
+  utility_classes: [
+    'breadcrumb-item'
+  ]
+} %}
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+{% endembed %}

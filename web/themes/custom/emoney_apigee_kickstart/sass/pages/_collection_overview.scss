@@ -20,10 +20,13 @@ $supporting-info: 9;
         font-size: 32px;
         font-weight: $bold;
         line-height: 37px;
+        margin: 0;
       }
 
       img {
+        height: 59px;
         margin: 0 10px 0 0;
+        width: auto;
       }
     }
 
@@ -70,13 +73,16 @@ $supporting-info: 9;
     background-color: $gray_lightness;
     padding: 64px 0;
 
-    h2 {
-      color: $gray_dark;
-      font-size: 24px !important;
-      font-weight: $bold !important;
-      line-height: 32px !important;
-      margin: 0 0 24px 0;
-      text-align: center;
+    .view-header {
+      h2 {
+        color: $gray_dark;
+        font-family: $Lato;
+        font-size: 32px;
+        font-weight: $bold;
+        line-height: 39px;
+        margin: 0 0 32px 0;
+        text-align: center;
+      }
     }
 
     .card {
@@ -173,6 +179,16 @@ $supporting-info: 9;
                 width: 59px;
               }
             }
+          }
+        }
+
+        &__text {
+          h2 {
+            color: $gray_dark;
+            font-size: 24px;
+            font-weight: $bold;
+            line-height: 32px;
+            text-transform: uppercase;
           }
         }
       }
