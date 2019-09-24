@@ -30,7 +30,7 @@ sudo mkdir ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
 
 sudo rsync -r * ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
 echo "copying settings file"
-sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate.config ${APIGEE_DRUPAL_WEB_DOCROOT}/sites/default/settings.php
+sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate.config ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/web/sites/default/settings.php
 
 echo "test drush version"
 cd ${APIGEE_DRUPAL_WEB_DOCROOT}
