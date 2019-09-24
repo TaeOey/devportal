@@ -19,10 +19,6 @@ if [ ! -d "${BACKUP_DIRECTORY}" ]; then
     sudo mkdir -p ${BACKUP_DIRECTORY}
 fi
 
-#Backup Drupal data - not necessary??
-# echo "Create drupal directories backup in ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP}"
-# sudo tar czfP  ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP} -C ${APIGEE_DRUPAL_SOURCE_ROOT} ${DRUPAL_DIR_LIST}
-
 #Copy rollback script - not done yet
 #echo "Create rollback script ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}"
 #sudo cp ${ROLLBACK_SCRIPT} ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}
@@ -36,13 +32,6 @@ sudo rsync -r * ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
 echo "copying settings file"
 sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate.config ${APIGEE_DRUPAL_WEB_DOCROOT}/sites/default/settings.php
 
-echo "ls /vendor/bin to check for drush"
-ls ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/bin
-#cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/bin/drush drush -va
-#unzip -o drush.zip
-#chmod 755 drush
-#mv drush drush.phar
-#ln -s ${CWD}/drush.phar ${CWD}/drush
 echo "test drush version"
 cd ${APIGEE_DRUPAL_WEB_DOCROOT}
 sudo drush version
@@ -71,15 +60,15 @@ sudo ln -sfvn ${WEB_FILES_STORAGE} ${WEB_FILES_ROOT}
 #Actualize configuration layer:
 sudo drush cc drush
 echo "Actualize configuration layer"
-sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
+sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
 
 #Initialize updates:
 echo "Initializing updates"
-sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} updb -y
+sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} updb -y
 
 #Clear caches:
 echo "Clear caches"
-sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cr
+sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cr
 
 #Delete old versions
 sudo rm -rf $APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD
