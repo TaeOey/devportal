@@ -133,11 +133,11 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 5
-          8a883145-4200-4a93-b118-d3ce5a7bf02e:
-            uuid: 8a883145-4200-4a93-b118-d3ce5a7bf02e
+          e9f481ea-039b-487f-8c58-4b3a785b39bb:
+            uuid: e9f481ea-039b-487f-8c58-4b3a785b39bb
             region: content
             configuration:
-              id: 'views_block:view_use_cases-block_2'
+              id: 'views_block:view_use_cases-block_3'
               label: 'More Use Cases'
               provider: views
               label_display: visible

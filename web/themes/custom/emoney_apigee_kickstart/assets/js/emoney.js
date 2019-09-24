@@ -54,10 +54,17 @@
             for(let mutation of mutationsList) {
               if(mutation.type === 'childList') {
                 const tryOut = document.getElementsByClassName('try-out');
+                const schemeContainer = document.getElementsByClassName('scheme-container');
 
                 if(tryOut.length) {
                   for (let i = 0; i < tryOut.length; i++) {
                     tryOut[i].remove();
+                  }
+                }
+
+                if(schemeContainer.length) {
+                  for (let i = 0; i < schemeContainer.length; i++) {
+                    schemeContainer[i].remove();
                   }
                 }
               }
