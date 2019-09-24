@@ -12,6 +12,7 @@ if [ ! -d "${BACKUP_DIRECTORY}" ]; then
     sudo mkdir -p ${BACKUP_DIRECTORY}
 fi
 
+echo "dbbackup script ran"
 #Backup Drupal database
 # echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
 # echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
