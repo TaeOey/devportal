@@ -77,7 +77,7 @@ sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
 if test -f "${BACKUP_DIRECTORY}/${DB_BACKUP}"; then
     #Restore database backup if present
     echo "Restoring database"
-    $(${CWD}/drush sql-connect) <${BACKUP_DIRECTORY}/${DB_BACKUP}
+    $(${CWD}/drush sql-connect --root=${APIGEE_DRUPAL_WEB_DOCROOT}) <${BACKUP_DIRECTORY}/${DB_BACKUP}
 else
     #Initialize updates:
     echo "Initializing updates"
