@@ -17,12 +17,18 @@ DB_DRIVER="#{DrupalDriver}"
 if [ ! -d "${BACKUP_DIRECTORY}" ]; then
     sudo mkdir -p ${BACKUP_DIRECTORY}
 fi
+unzip -o drush.zip
+chmod 755 drush
+mv drush drush.phar
+sudo ln -s ${CWD}/drush.phar ${CWD}/drush
+echo "test drush version"
+sudo ${CWD}/drush version
 
 echo "dbbackup script ran"
 #Backup Drupal database
 echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
 echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
-sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} sql-dump --gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}
+sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} sql-dump --gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}
 
 # #Delete old database backups
 DB_BACKUP_PATTERN=`sudo echo $DB_BACKUP | sed -E 's/[[:digit:]]{8}-[[:digit:]]{6}/*/g'`
