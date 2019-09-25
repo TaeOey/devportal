@@ -24,7 +24,11 @@ sudo ln -s ${CWD}/drush.phar ${CWD}/drush
 echo "test drush version"
 sudo ${CWD}/drush version
 
-echo "dbbackup script ran"
+sudo rsync -r * ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
+echo "copying settings file"
+sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate.config ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/web/sites/default/settings.php
+
+
 #Backup Drupal database
 echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
 echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
@@ -33,3 +37,5 @@ sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} sql-dump --gzip > ${BACKUP
 # #Delete old database backups
 DB_BACKUP_PATTERN=`sudo echo $DB_BACKUP | sed -E 's/[[:digit:]]{8}-[[:digit:]]{6}/*/g'`
 sudo ls -t ${BACKUP_DIRECTORY}/${DB_BACKUP_PATTERN} | tail -n +4 | xargs rm --
+
+echo "dbbackup script ran"
