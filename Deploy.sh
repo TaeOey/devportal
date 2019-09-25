@@ -65,7 +65,7 @@ echo "Actualize configuration layer"
 sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
 
 #Initialize updates:
-sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} updb -y
+sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} updb -y
 
 #Clear caches:
 echo "Clear caches"
