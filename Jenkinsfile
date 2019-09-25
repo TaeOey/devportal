@@ -2,7 +2,10 @@
 
 pipeline {
     agent {
-        label 'docker'
+        node {
+            label 'composer-4_10_0 && php-7_3_9'
+            //customWorkspace "workspace\\apigee-devportal-${env.BRANCH_NAME.replaceAll(~/[\^<>:"\/\\|?*]/, "-").take(20)}"
+        }
     }
     environment {
             _DEPLOY_TO = "DEV-INT"
@@ -11,11 +14,10 @@ pipeline {
             _PACKAGE_NAME = "ApigeeDevPortal8"
             _SEM_VERSION = "0.0.0"
             _ARTIFACTS_DIR = "_artifacts"
-            HOME = '.'
     }
     options { timeout(time: 2, unit: 'HOURS') }
     parameters {
-        booleanParam(name: '_IS_PUBLISH', defaultValue: true, description: "Publish package")
+        booleanParam(name: '_IS_PUBLISH', defaultValue: false, description: "Publish package")
         booleanParam(name: '_IS_DEPLOY', defaultValue: false, description: "Deploy to DEV")
     }
     stages {
@@ -26,45 +28,29 @@ pipeline {
             }
         }
         stage('Build') {
-            agent {
-                dockerfile {
-                    filename 'dockerfile'
-                }
-            }
-            stages {
-        stage ('Build1') {
-                steps {
-                    echo "Building project from ${env.BRANCH_NAME}"
-                    echo "Create package ${env._PACKAGE_NAME}.${env._SEM_VERSION}.${env.BUILD_NUMBER}-${env.BRANCH_NAME}"
-
-                    //bat "mkdir ${env._ARTIFACTS_DIR}"
-                    //  - see ticket for further instructions amdp-13
-                    echo "cd to root of source code"
-                    // composer install (run) - if no composer we need to install it
-                    dir("${WORKSPACE}"){
-                        sh "composer install -v"                
-                    }
-                }
-            }
-        stage ('Build2') {
             steps {
-                echo "building npm"
-                dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart") {
-                    sh "npm install"
-                    sh "npm run css"
+                echo "Building project from ${env.BRANCH_NAME}"
+                echo "Create package ${env._PACKAGE_NAME}.${env._SEM_VERSION}.${env.BUILD_NUMBER}-${env.BRANCH_NAME}"
+
+                //bat "mkdir ${env._ARTIFACTS_DIR}"
+                //  - see ticket for further instructions amdp-13
+                echo "cd to root of source code"
+                // composer install (run) - if no composer we need to install it
+                dir("${WORKSPACE}"){
+                bat "composer install"
+                    }
+                dir("${WORKSPACE}\\web\\themes\\custom\\emoney_apigee_kickstart") {
+                    bat "npm install"
+                    bat "npm run css"
                     }
                 //bat "xcopy drush.zip _artifacts" //-- we need to create this I suppose
                 //bat "xcopy Deploy.sh _artifacts" //-- need to test this as well
                 // bat "xcopy Rollback.sh _artifacts" - this not ready yet
 
-                dir("${WORKSPACE}//web//themes//custom//emoney_apigee_kickstart//node_modules") {deleteDir()}
-                dir("${WORKSPACE}//.git") {deleteDir()}
-                dir("${WORKSPACE}//.composer") {deleteDir()}
+                dir("${WORKSPACE}\\web\\themes\\custom\\emoney_apigee_kickstart\\node_modules") {deleteDir()}
+                dir("${WORKSPACE}\\.git") {deleteDir()}
 
                 zip zipFile: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip", dir: "${WORKSPACE}"
-                stash name: "package", includes: "${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip"
-            }
-        }
             }
         }
         stage('Publish') {
@@ -81,10 +67,9 @@ pipeline {
             }
             steps {
                 echo "===== Publish package to repository"
-                    withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctopusApiKey')]) {
-                        unstash 'package'
-                        sh "docker run --rm -v \$(pwd):/src octopusdeploy/octo push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"
-                    }
+                withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctopusApiKey')]) {
+                    bat "octo push --package ${env._PACKAGE_NAME}.${PACKAGE_VERSION}.zip  --server ${env._OCTOPUS_SERVER} --apiKey ${OctopusApiKey}"
+                }
             }
         }
         
@@ -96,11 +81,11 @@ pipeline {
                 }
             }
             steps {
-                    echo "Deploying to ${env._DEPLOY_TO}"
-                    withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctoApiKey')]) {
-                        sh "docker run --rm -v \$(pwd):/src octopusdeploy/octo create-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --package \"Deploy Devportal\":${PACKAGE_VERSION} --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey}"
-                        sh "docker run --rm -v \$(pwd):/src octopusdeploy/octo deploy-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --deployto \"${env._DEPLOY_TO}\" --channel Default --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey} --deploymenttimeout 00:10:00 --waitfordeployment --variable=UploadContent:false"
-                    }
+                echo "Deploying to ${env._DEPLOY_TO}"
+                withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctoApiKey')]) {
+                    bat "octo create-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --package \"Deploy Devportal\":${PACKAGE_VERSION} --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey}"
+                    bat "octo deploy-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --deployto \"${env._DEPLOY_TO}\" --channel Default --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey} --deploymenttimeout 00:10:00 --waitfordeployment --variable=UploadContent:false"
+                }
             }
         }
     }
@@ -171,7 +156,7 @@ def cleanWorkspace() {
 
 def dumpEnvironmentVariables() {
     echo '============================ Environment Variables ============================='
-    sh 'set > env'
+    bat 'set > env'
     for (def variable : readFile('env').split('\r?\n')) {
         echo variable
     }
