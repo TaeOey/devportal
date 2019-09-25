@@ -43,16 +43,16 @@ ${CWD}/drush version
 # sudo tar czfP  ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP} -C ${APIGEE_DRUPAL_SOURCE_ROOT} ${DRUPAL_DIR_LIST}
 
 #Copy rollback script - not done yet
-#echo "Create rollback script ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}"
-#sudo cp ${ROLLBACK_SCRIPT} ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}
-#sudo cp drush.zip ${BACKUP_DIRECTORY}/drush.zip
+# echo "Create rollback script ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}"
+# sudo cp ${ROLLBACK_SCRIPT} ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}
+# sudo cp drush.zip ${BACKUP_DIRECTORY}/drush.zip
 
 echo "Creating and Fixing Permission On ${APIGEE_DRUPAL_SOURCE_ROOT}"
 
 sudo mkdir ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
 
 sudo rsync -r * ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
-sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/web/sites/default/settings.php
+sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate.config ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/web/sites/default/settings.php
 
 sudo chown nginx:nginx -R ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
 sudo find ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE} -type d -exec chmod 755 {} \;
