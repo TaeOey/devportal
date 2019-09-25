@@ -40,7 +40,8 @@ echo "copying settings file"
 sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate.config ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/web/sites/default/settings.php
 
 #symlink to correct drush folder
-ln -sfvn ${CWD}/vendor/drush/drush ${CWD}/vendor/bin
+rm -rf ${CWD}/vendor/bin
+ln -sfvn ${CWD}/vendor/drush/drush/ ${CWD}/vendor/bin
 
 echo "test drush version"
 #cd ${APIGEE_DRUPAL_WEB_DOCROOT}
