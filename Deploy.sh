@@ -7,7 +7,6 @@ APIGEE_DRUPAL_WEB_DOCROOT=/var/www/devportal/web
 APIGEE_DRUPAL_SOURCE_ROOT_RELEASE=/var/www/"#{Octopus.Release.Number}"
 WEB_FILES_ROOT=/var/www/devportal/web/sites/default/files
 WEB_FILES_STORAGE=/var/www/files
-DRUSH="$APIGEE_DRUPAL_SOURCE_ROOT/vendor/bin/drush"
 #EMONEY_DEVPORTAL_PROJECT_DIRECTORY=/opt/apigee/data/apigee-drupal-devportal/sites/all
 PACKAGE_ID=`basename $(pwd)`
 CURRENT_DATETIME=`date +%Y%m%d-%H%M%S`
@@ -32,25 +31,21 @@ if [ ! -d "${BACKUP_DIRECTORY}" ]; then
 fi
 
 #Install drush
-# unzip -o drush.zip
-# chmod 755 drush
-# mv drush drush.phar
-# ln -s ${CWD}/drush.phar ${CWD}/drush
-# echo "test drush version"
-# echo "${CWD}"
-sudo $DRUSH --root=${APIGEE_DRUPAL_WEB_DOCROOT} st
-# Set site to maintenance mode
-echo "Set site to maintenance mode"
-sudo $DRUSH --root=${APIGEE_DRUPAL_WEB_DOCROOT} sset system.maintenance_mode 1
+unzip -o drush.zip
+chmod 755 drush
+mv drush drush.phar
+ln -s ${CWD}/drush.phar ${CWD}/drush
+echo "test drush version"
+${CWD}/drush version
 
 #Backup Drupal data - not necessary??
 # echo "Create drupal directories backup in ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP}"
 # sudo tar czfP  ${BACKUP_DIRECTORY}/${DRUPAL_BACKUP} -C ${APIGEE_DRUPAL_SOURCE_ROOT} ${DRUPAL_DIR_LIST}
 
 #Copy rollback script - not done yet
-#echo "Create rollback script ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}"
-#sudo cp ${ROLLBACK_SCRIPT} ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}
-#sudo cp drush.zip ${BACKUP_DIRECTORY}/drush.zip
+# echo "Create rollback script ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}"
+# sudo cp ${ROLLBACK_SCRIPT} ${BACKUP_DIRECTORY}/${ROLLBACK_SCRIPT}
+# sudo cp drush.zip ${BACKUP_DIRECTORY}/drush.zip
 
 echo "Creating and Fixing Permission On ${APIGEE_DRUPAL_SOURCE_ROOT}"
 
@@ -81,23 +76,17 @@ echo "symlink ${WEB_FILES_STORAGE} to ${WEB_FILES_ROOT}"
 sudo ln -sfvn ${WEB_FILES_STORAGE} ${WEB_FILES_ROOT}
 
 #Actualize configuration layer:
-echo "Clear drush cache & drupal cache"
-sudo $DRUSH --root=${APIGEE_DRUPAL_WEB_DOCROOT} cc drush
-sudo $DRUSH --root=${APIGEE_DRUPAL_WEB_DOCROOT} cr
+sudo drush cc drush
 echo "Actualize configuration layer"
-sudo $DRUSH --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
+sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
 
 #Initialize updates:
 echo "Initializing updates"
-sudo $DRUSH --root=${APIGEE_DRUPAL_WEB_DOCROOT} updb -y
+sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} updb -y
 
 #Clear caches:
 echo "Clear caches"
-sudo $DRUSH --root=${APIGEE_DRUPAL_WEB_DOCROOT} cr
-
-#Bring site out of maintenance mode
-echo "Disable maintenance mode - site is live"
-sudo $DRUSH --root=${APIGEE_DRUPAL_WEB_DOCROOT} sset system.maintenance_mode 0
+sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cr
 
 #Delete old versions
 sudo rm -rf $APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD
