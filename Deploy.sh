@@ -65,6 +65,7 @@ sudo pwd
 sudo drush version
 echo "drushccdrush"
 sudo drush cc drush
+
 echo "Actualize configuration layer"
 #sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
 sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
