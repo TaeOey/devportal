@@ -79,16 +79,18 @@ sudo ln -sfvn ${WEB_FILES_STORAGE} ${WEB_FILES_ROOT}
 #Actualize configuration layer:
 sudo drush cc drush
 echo "Actualize configuration layer"
-echo "${CWD}"
-sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
+sudo cd ${APIGEE_DRUPAL_WEB_DOCROOT}
+sudo pwd
+sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
 
 #Initialize updates:
 echo "Initializing updates"
-sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} updb -y
+sudo pwd
+sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} updb -y
 
 #Clear caches:
 echo "Clear caches"
-sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cr
+sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cr
 
 #Delete old versions
 sudo rm -rf $APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD
