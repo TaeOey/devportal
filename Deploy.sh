@@ -41,7 +41,8 @@ sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate.config ${APIGEE_DR
 
 #symlink to correct drush folder
 rm -rf ${CWD}/vendor/bin
-ln -sfvn ${CWD}/vendor/drush/drush/ ${CWD}/vendor/bin
+ln -sfvn ${CWD}/vendor/drush/drush ${CWD}/vendor/bin
+ls ${CWD}/vendor/bin
 
 echo "test drush version"
 #cd ${APIGEE_DRUPAL_WEB_DOCROOT}
