@@ -68,9 +68,9 @@ sudo chmod 777 ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/vendor/drush/drush/drush.lau
 #sudo find ${APIGEE_DRUPAL_SOURCE_ROOT}/web/sites/default/files -type d -exec chmod 775 {} \;
 
 #Backup Drupal database
-# echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
-# echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
-# sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} sql-dump --gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}
+echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
+echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
+sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} sql-dump --gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}
 
 #Fix symlink
 APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD=$(readlink ${APIGEE_DRUPAL_SOURCE_ROOT})
