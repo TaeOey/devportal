@@ -36,6 +36,7 @@ chmod 755 drush
 mv drush drush.phar
 ln -s ${CWD}/drush.phar ${CWD}/drush
 echo "test drush version"
+echo "${CWD}"
 ${CWD}/drush version
 
 #Backup Drupal data - not necessary??
@@ -78,6 +79,7 @@ sudo ln -sfvn ${WEB_FILES_STORAGE} ${WEB_FILES_ROOT}
 #Actualize configuration layer:
 sudo drush cc drush
 echo "Actualize configuration layer"
+echo "${CWD}"
 sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
 
 #Initialize updates:
