@@ -64,11 +64,11 @@ sudo ln -sfvn ${WEB_FILES_STORAGE} ${WEB_FILES_ROOT}
 sudo pwd
 sudo drush version
 echo "drushccdrush"
-sudo drush cc drush
+sudo ${CWD}/drush cc drush
 
 echo "Actualize configuration layer"
 #sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
-sudo drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
+sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
 
 #Initialize updates:
 sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} updb -y
