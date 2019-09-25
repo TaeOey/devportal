@@ -46,8 +46,8 @@ $delete-bg: #a83e24;
 
       &__title {
         color: $gray-dark;
-        font-family: $Lato;
-        font-size: 24px;
+        font-family: $Arial;
+        font-size: 32px;
         font-weight: $bold;
         line-height: 29px;
         margin: 0 0 10px 0;
@@ -60,6 +60,18 @@ $delete-bg: #a83e24;
 
       .text-image__text {
         padding-top: 10px !important;
+      }
+    }
+
+    .use-case-content {
+      .text-image__field-image {
+        width: 460px;
+        height: 290px;
+        border-radius: 4px;
+        border: 1px solid $gray_lightness;
+        background-color: $white;
+        box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.05);
+        padding: 10px 10px;
       }
     }
 
@@ -84,13 +96,8 @@ $delete-bg: #a83e24;
       font-size: 32px;
       font-weight: bold;
       line-height: 39px;
+      text-align: center;
       padding: 30px 30px;
-    }
-
-    .more-use-cases {
-      h2 {
-        text-align: center;
-      }
     }
 
     .api-method {
