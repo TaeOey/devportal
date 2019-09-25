@@ -63,6 +63,18 @@ $delete-bg: #a83e24;
       }
     }
 
+    .use-case-content {
+      .text-image__field-image {
+        width: 460px;
+        height: 290px;
+        border-radius: 4px;
+        border: 1px solid #f9f9f9;
+        background-color: #fff;
+        box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.05);
+        padding: 10px 10px;
+      }
+    }
+
     .block {
       margin-bottom: 0px;
     }
@@ -87,10 +99,8 @@ $delete-bg: #a83e24;
       padding: 30px 30px;
     }
 
-    .more-use-cases {
-      h2 {
-        text-align: center;
-      }
+    h2 {
+      text-align: center;
     }
 
     .api-method {
