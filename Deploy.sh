@@ -13,6 +13,12 @@ BACKUP_DIRECTORY=/var/www/backups
 DRUPAL_BACKUP="sites-all.tar.gz"
 ROLLBACK_SCRIPT="Rollback.sh"
 DB_BACKUP="devportal-backup-${CURRENT_DATETIME}.sql.gz"
+DB_IP="#{DrupalDbHost}"
+DB_PORT="#{DrupalDbPort}"
+DB_NAME="#{DrupalDbName}"
+DB_USER="#{DrupalUser}"
+DB_PASSWORD="#{DrupalPassword}"
+DB_DRIVER="#{DrupalDriver}"
 
 #Check if backup directory exists
 if [ ! -d "${BACKUP_DIRECTORY}" ]; then

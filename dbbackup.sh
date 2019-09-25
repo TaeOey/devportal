@@ -2,10 +2,16 @@
 
 #Declare variables
 CWD=`pwd`
+CURRENT_DATETIME=`date +%Y%m%d-%H%M%S`
 BACKUP_DIRECTORY=/var/www/backups
 ROLLBACK_SCRIPT="Rollback.sh"
 DB_BACKUP="devportal-backup-${CURRENT_DATETIME}.sql.gz"
-CURRENT_DATETIME=`date +%Y%m%d-%H%M%S`
+DB_IP="#{DrupalDbHost}"
+DB_PORT="#{DrupalDbPort}"
+DB_NAME="#{DrupalDbName}"
+DB_USER="#{DrupalUser}"
+DB_PASSWORD="#{DrupalPassword}"
+DB_DRIVER="#{DrupalDriver}"
 
 #Check if backup directory exists
 if [ ! -d "${BACKUP_DIRECTORY}" ]; then
