@@ -1,7 +1,6 @@
 .path-contact{
     .page {
         background-color: $gray_lightness;
-    
         .justify-content {
             margin: auto;
         }
@@ -34,7 +33,7 @@
         #edit-cancel {
             font-family: arial;
             width: 118px;
-        } 
+        }
 
         #edit-cancel {
             border: solid 1px #00AAE7;
@@ -55,4 +54,16 @@
         flex-flow: row-reverse;
         justify-content: flex-start;
     }
+}
+// logged in user styles fix
+body.user-logged-in.path-contact .page .contact-form {
+  .form-type-item {
+    font-weight: normal;
+  }
+
+  label {
+    vertical-align: bottom;
+    display: inline;
+    font-weight: bold;
+  }
 }
