@@ -11,7 +11,7 @@ DB_IP="#{DrupalDbHost}"
 DB_PORT="#{DrupalDbPort}"
 DB_NAME="#{DrupalDbName}"
 DB_USER="#{DrupalUser}"
-DB_PASSWORD="#{DrupalPassword}"
+DB_PASSWORD='#{DrupalPassword}'
 DB_DRIVER="#{DrupalDriver}"
 
 #Check if backup directory exists
