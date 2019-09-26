@@ -6,7 +6,7 @@ CURRENT_DATETIME=`date +%Y%m%d-%H%M%S`
 BACKUP_DIRECTORY=/var/www/backups
 REMOTE_BACKUP_DIRECTORY="#{RemoteDBBackup}"
 ROLLBACK_SCRIPT="Rollback.sh"
-DB_BACKUP="devportal-backup-${CURRENT_DATETIME}.sql.gz"
+DB_BACKUP="devportal-backup-${CURRENT_DATETIME}.sql"
 DB_IP="#{DrupalDbHost}"
 DB_PORT="#{DrupalDbPort}"
 DB_NAME="#{DrupalDbName}"
@@ -23,7 +23,7 @@ fi
 #Backup Drupal database
 echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
 echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
-sudo mysqldump --user ${DB_USER} --password ${DB_PASSWORD} ${DB_NAME} | gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}
+sudo mysqldump --user ${DB_USER} --password=${DB_PASSWORD} ${DB_NAME} | gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}
 
 # #Delete old database backups
 echo "Cleaning up old backups"
