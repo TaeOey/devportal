@@ -4,6 +4,7 @@
 CWD=`pwd`
 CURRENT_DATETIME=`date +%Y%m%d-%H%M%S`
 BACKUP_DIRECTORY=/var/www/backups
+REMOTE_BACKUP_DIRECTORY="#{RemoteDBBackup}"
 ROLLBACK_SCRIPT="Rollback.sh"
 DB_BACKUP="devportal-backup-${CURRENT_DATETIME}.sql.gz"
 DB_IP="#{DrupalDbHost}"
@@ -17,25 +18,19 @@ DB_DRIVER="#{DrupalDriver}"
 if [ ! -d "${BACKUP_DIRECTORY}" ]; then
     sudo mkdir -p ${BACKUP_DIRECTORY}
 fi
-unzip -o drush.zip
-chmod 755 drush
-mv drush drush.phar
-sudo ln -s ${CWD}/drush.phar ${CWD}/drush
-echo "test drush version"
-sudo ${CWD}/drush version
-
-sudo rsync -r * ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}
-echo "copying settings file"
-sudo cp ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/settingstemplate.config ${APIGEE_DRUPAL_SOURCE_ROOT_RELEASE}/web/sites/default/settings.php
 
 
 #Backup Drupal database
 echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
 echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
-sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} sql-dump --gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}
+sudo mysqldump --user ${DB_USER} --password "#{DrupalPassword}" ${DB_NAME} | gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}
 
 # #Delete old database backups
 DB_BACKUP_PATTERN=`sudo echo $DB_BACKUP | sed -E 's/[[:digit:]]{8}-[[:digit:]]{6}/*/g'`
 sudo ls -t ${BACKUP_DIRECTORY}/${DB_BACKUP_PATTERN} | tail -n +4 | xargs rm --
+
+if [ ! -d "${REMOTE_BACKUP_DIRECTORY}" ]; then
+    cp ${BACKUP_DIRECTORY}/${DB_BACKUP} ${REMOTE_BACKUP_DIRECTORY}/${DB_BACKUP}
+fi
 
 echo "dbbackup script ran"
