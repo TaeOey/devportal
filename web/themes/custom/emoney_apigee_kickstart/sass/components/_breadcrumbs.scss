@@ -1,39 +1,52 @@
 @import './../vendors/fontawesome/fontawesome.scss';
 @import './../vendors/fontawesome/solid.scss';
 
-.page__breadcrumbs {
-  background-color: transparent;
-  padding: 20px 0 30px 0;
-
-  .breadcrumb {
+.page {
+  &__breadcrumbs {
     background-color: transparent;
+    padding: 20px 0 30px 0;
 
-    .breadcrumb-item {
-      padding: 0;
+    .breadcrumb {
+      background-color: transparent;
 
-      a {
-        font-size: 16px;
-        line-height: 24px;
-        color: $blue;
+      &-item {
+        padding: 0;
 
-        &:after {
+        a {
           color: $blue;
-          content: fa-content($fa-var-chevron-right);
-          display: inline-block;
-          font-size: 14px;
-          font-family: 'Font Awesome 5 Free';
-          margin: 0 10px 0 10px;
+          font-size: 16px;
+          letter-spacing: initial;
+          line-height: 24px;
+
+          &:after {
+            color: $blue;
+            content: fa-content($fa-var-chevron-right);
+            display: inline-block;
+            font-size: 14px;
+            font-family: 'Font Awesome 5 Free';
+            margin: 0 10px 0 10px;
+          }
+        }
+
+        &:before {
+          display: none;
         }
       }
 
-      h1 {
-        font-size: 16px;
-        line-height: 24px;
-      }
-
-      &:before {
-        display: none;
+      .block {
+        &--emoney-apigee-kickstart-breadcrumbs-title {
+          .col-md-10 {
+            flex-grow: 1;
+            margin: 0;
+            max-width: initial;
+          }
+        }
       }
     }
+  }
+
+  &__title {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
