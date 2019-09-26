@@ -1,4 +1,8 @@
+// Mixins
+@import 'mixins/breakpoints';
+
 // Base theme
+@import 'base/breakpoints';
 @import 'base/colors';
 @import 'base/typography';
 @import 'base/theme';

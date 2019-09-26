@@ -1,8 +1,27 @@
-.page-product {
-  .description {
-    color: #333;
-    margin-top: 30px;
-    margin-bottom: 50px;
+.page {
+  &-product {
+    h2 {
+      margin: 0;
+    }
+
+    .description {
+      .row {
+        .col-md-6 {
+          &:first-of-type {
+            align-items: flex-start;
+          }
+        }
+      }
+      .products__description {
+        margin-top: 28px;
+
+        h6,
+        p {
+          font-size: 16px;
+          line-height: 24px;
+          }
+        }
+      }
 
     .image__field-media-image {
       padding-left: 100px;
@@ -17,12 +36,21 @@
     &__text {
       h2 {
         font-size: 22px;
+        font-weight: $bold;
+        line-height: 26px;
+        margin-bottom: 16px;
       }
     }
 
     &__button {
+      font-family: $Lato;
+      font-size: 16px;
+      font-weight: bold;
+      height: 48px;
+      width: 165px;
+
       a {
-        color: white;
+        color: $white;
         text-decoration: none;
 
         &:hover {
