@@ -31,7 +31,9 @@
   }
 
   &__case {
-    width: 1140px;
+    @media (min-width: 1300px) {
+      width: 1140px;
+    }
 
     .views-field {
       &-title {
