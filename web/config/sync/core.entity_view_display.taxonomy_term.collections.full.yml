@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.full
     - field.field.taxonomy_term.collections.field_icon
-    - image.style.1_1_80x80
     - taxonomy.vocabulary.collections
   module:
     - image
@@ -31,7 +30,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: 1_1_80x80
+      image_style: ''
       image_link: ''
     third_party_settings: {  }
     type: image
