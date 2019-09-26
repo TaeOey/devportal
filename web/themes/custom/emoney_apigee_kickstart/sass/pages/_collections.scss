@@ -1,6 +1,5 @@
 .api-node {
   background-color: $gray_lightness;
-  padding-bottom: 67px;
 
   article[about=\/apis] {
     .layout {
@@ -17,8 +16,10 @@
         }
 
         .text__field-text {
-          padding-left: 108px;
-          padding-right: 108px;
+          @include media-breakpoint-up(lg) {
+            padding-left: 108px;
+            padding-right: 108px;
+          }
         }
 
         .view-content {

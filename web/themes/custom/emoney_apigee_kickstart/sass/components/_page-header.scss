@@ -23,20 +23,30 @@
     position: relative;
     z-index: 1;
 
-    .page__title  {
-      color: $white;
-      font-size: 48px;
-      font-weight: $bold;
-      line-height: 56px;
-      margin: 144px 0 16px 0;
-    }
+    .page {
+      &__title,
+      &__headline {
+        color: $white;
+        text-align: center;
 
-    .page__headline {
-      color: $white;
-      font-size: 24px;
-      font-weight: initial;
-      line-height: 32px;
-      margin: 0;
+        @include media-breakpoint-up(sm) {
+          text-align: left;
+        }
+      }
+
+      &__title  {
+        font-size: 48px;
+        font-weight: $bold;
+        line-height: 56px;
+        margin: 144px 0 16px 0;
+      }
+
+      &__headline {
+        font-size: 24px;
+        font-weight: initial;
+        line-height: 32px;
+        margin: 0;
+      }
     }
   }
 }
