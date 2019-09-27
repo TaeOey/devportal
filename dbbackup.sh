@@ -28,7 +28,7 @@ sudo mysqldump --user ${DB_USER} --password=${DB_PASSWORD} ${DB_NAME} | gzip > $
 #Create a database rollback script
 sudo cat << EOF >> ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh
 echo "Restoring database backup ${DB_BACKUP}"
-unzip ${BACKUP_DIRECTORY}/${DB_BACKUP}.gz
+gunzip ${BACKUP_DIRECTORY}/${DB_BACKUP}.gz
 mysql -u ${DB_USER} --password='${DB_PASSWORD}' ${DB_NAME} < ${BACKUP_DIRECTORY}/${DB_BACKUP}
 EOF
 
