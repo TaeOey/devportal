@@ -10,6 +10,10 @@
           &:first-of-type {
             align-items: flex-start;
           }
+
+          &:last-of-type {
+            text-align: right;
+          }
         }
       }
       .products__description {
@@ -24,7 +28,7 @@
       }
 
     .image__field-media-image {
-      padding-left: 100px;
+      padding-left: 50px;
     }
   }
 
