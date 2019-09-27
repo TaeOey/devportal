@@ -23,12 +23,20 @@ article[about=\/support] {
           border-bottom: $blue_jeans 1px solid;
           color: $blue_jeans;
           cursor: pointer;
-          font-family: Arial;
-          font-size: 24px;
-          font-weight: bold;
-          line-height: 24px;
+          display: flex;
+          font-size: 20px;
+          font-weight: $bold;
+          justify-content: space-between;
+          line-height: 28px;
           margin: 0;
-          padding: 12px 29px;
+          padding: 12px;
+
+          @include media-breakpoint-up(xl) {
+            font-size: 24px;
+            justify-content: initial;
+            line-height: 24px;
+            padding: 12px 29px;
+          }
 
           .details__icon {
             color: $blue_jeans;
