@@ -1,18 +1,21 @@
-uuid: dd6f2214-df25-49e0-995f-cd69ba478e42
+uuid: a79ef253-6352-4e73-9ad9-971de7d332c1
 langcode: en
 status: true
 dependencies:
   config:
+    - image.style.4_3_320x240
     - image.style.4_3_991x566
-    - image.style.7_4_700x400
     - image.style.flexslider_full
   theme:
     - apigee_kickstart
-_core:
-  default_config_hash: PhidEGTMfTpWb1jvgWKz64ueSukaoQE5lw2BLTYMTl0
-id: hero
-label: Hero
+id: hero_slide
+label: 'Hero Slide'
 image_style_mappings:
+  -
+    breakpoint_id: default.xl
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: flexslider_full
   -
     breakpoint_id: default.lg
     multiplier: 1x
@@ -21,10 +24,7 @@ image_style_mappings:
   -
     breakpoint_id: default.md
     multiplier: 1x
-    image_mapping_type: sizes
-    image_mapping:
-      sizes: 100vw
-      sizes_image_styles:
-        - 4_3_991x566
+    image_mapping_type: image_style
+    image_mapping: 4_3_991x566
 breakpoint_group: apigee_kickstart
-fallback_image_style: 7_4_700x400
+fallback_image_style: 4_3_320x240
