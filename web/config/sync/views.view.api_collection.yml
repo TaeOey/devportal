@@ -326,7 +326,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"card\">\r\n  <div class=\"card__title\">\r\n    <div class=\"card__title__icon\">{{ field_icon }}</div>\r\n    <div class=\"card__title__text\"><h2>{{ name }}</h2></div>\r\n  </div>\r\n  <div class=\"views-field views-field-description__value\">{{ description__value }}</div>\r\n</div>\r\n<div class=\"card__footer\">\r\n  {{ view_taxonomy_term }}\r\n</div>"
+            text: "<div class=\"card\">\r\n  <div class=\"card__title\">\r\n    <div class=\"card__title__icon\">{{ field_icon }}</div>\r\n    <div class=\"card__title__text\"><h2>{{ name }}</h2></div>\r\n  </div>\r\n  <div class=\"views-field views-field-description__value\">{{ description__value }}</div>\r\n<div class=\"card__footer\">\r\n  {{ view_taxonomy_term }}\r\n</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false

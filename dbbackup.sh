@@ -23,7 +23,17 @@ fi
 #Backup Drupal database
 echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
 echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
-sudo mysqldump --user ${DB_USER} --password=${DB_PASSWORD} ${DB_NAME} | gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}
+sudo mysqldump --user ${DB_USER} --password=${DB_PASSWORD} ${DB_NAME} | gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}.gz
+
+#Create a database rollback script
+sudo cat << EOF >> ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh
+echo "Restoring database backup ${DB_BACKUP}"
+gunzip ${BACKUP_DIRECTORY}/${DB_BACKUP}.gz
+mysql -u ${DB_USER} --password='${DB_PASSWORD}' ${DB_NAME} < ${BACKUP_DIRECTORY}/${DB_BACKUP}
+EOF
+
+chmod +x ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh
+echo "Rollback script created at ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh"
 
 #Delete old database backups
 # echo "Cleaning up old backups"
