@@ -8,3 +8,13 @@
     }
   }
 }
+
+.page-password {
+  .form-required {
+    font-weight: $bold;
+
+    .fa-asterisk {
+      color: black !important;
+    }
+  }
+}
