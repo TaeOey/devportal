@@ -1,14 +1,17 @@
-.path-legal{
+.path-legal {
+  h1,
+  ol,
+  p {
+    max-width: 900px;
+  }
 
-    .row {
-        justify-content: center !important;
-
-        h1 {
-            font-size: 32px;
-        }
+  .row {
+    h1 {
+      font-size: 32px;
     }
+  }
 
-    #sublist{
-        list-style-type: lower-alpha;
-    }
+  #sublist {
+    list-style-type: lower-alpha;
+  }
 }

@@ -9,6 +9,24 @@
   }
 }
 
+.page-login {
+  .form-required {
+    font-weight: $bold;
+
+    .fa-asterisk {
+      color: $black !important;
+    }
+  }
+  
+  .form-submit {
+    font-weight: $bold !important;
+  }
+
+  #edit-login-text {
+    padding-top: 60px;
+  }
+}
+
 .page-password {
   .form-required {
     font-weight: $bold;
