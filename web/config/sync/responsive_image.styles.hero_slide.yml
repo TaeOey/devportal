@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - image.style.13_10_ratio_max_1024_x_789_
     - image.style.4_3_320x240
-    - image.style.4_3_991x566
     - image.style.flexslider_full
   theme:
     - apigee_kickstart
@@ -20,11 +20,11 @@ image_style_mappings:
     breakpoint_id: default.lg
     multiplier: 1x
     image_mapping_type: image_style
-    image_mapping: flexslider_full
+    image_mapping: 13_10_ratio_max_1024_x_789_
   -
     breakpoint_id: default.md
     multiplier: 1x
     image_mapping_type: image_style
-    image_mapping: 4_3_991x566
+    image_mapping: 13_10_ratio_max_1024_x_789_
 breakpoint_group: apigee_kickstart
 fallback_image_style: 4_3_320x240
