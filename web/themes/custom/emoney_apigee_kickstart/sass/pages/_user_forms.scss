@@ -1,4 +1,5 @@
 .page-register,
+.page-password,
 .page-login {
   .page {
     &__header,
@@ -23,5 +24,15 @@
 
   #edit-login-text {
     padding-top: 60px;
+  }
+}
+
+.page-password {
+  .form-required {
+    font-weight: $bold;
+
+    .fa-asterisk {
+      color: $black !important;
+    }
   }
 }
