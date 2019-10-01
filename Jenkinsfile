@@ -89,7 +89,7 @@ pipeline {
             steps {
                     echo "Deploying to ${env._DEPLOY_TO}"
                     withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctoApiKey')]) {
-                        sh "docker run --rm -v \$(pwd):/src octopusdeploy/octo create-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --package \"Deploy Devportal\":${PACKAGE_VERSION} --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey}"
+                        sh "docker run --rm -v \$(pwd):/src octopusdeploy/octo create-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --packageVersion ${PACKAGE_VERSION} --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey}"
                         sh "docker run --rm -v \$(pwd):/src octopusdeploy/octo deploy-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --deployto \"${env._DEPLOY_TO}\" --channel Default --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey} --deploymenttimeout 00:10:00 --waitfordeployment --variable=UploadContent:false"
                     }
             }
