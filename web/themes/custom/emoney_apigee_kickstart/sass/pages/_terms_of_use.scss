@@ -14,4 +14,10 @@
   #sublist {
     list-style-type: lower-alpha;
   }
+
+  @include media-breakpoint-up(xl) {
+    .page__content {
+      padding-left: 100px;
+    }
+  }
 }
