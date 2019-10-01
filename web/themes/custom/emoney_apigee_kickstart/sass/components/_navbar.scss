@@ -100,7 +100,11 @@
           font-size: 16px;
           line-height: 18px;
           padding: 3px 0;
-          width: 139px;
+          max-width: 65px;
+
+          @include media-breakpoint-up(xl) {
+            max-width: 139px;
+          }
         }
 
         .form-search-button {
