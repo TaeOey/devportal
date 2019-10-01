@@ -124,11 +124,11 @@ pipeline {
 }
 
 def isMasterBranch() {
-    return params.BranchName == 'master'
+    return env.BRANCH_NAME == 'master'
 }
 
 def isDevelopBranch() {
-    return params.BranchName == 'develop'
+    return env.BRANCH_NAME == 'develop'
 }
 
 def getPackageLabel() {
