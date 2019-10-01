@@ -41,7 +41,7 @@ third_party_settings:
                 third_party_settings: {  }
                 type: entity_reference_revisions_entity_view
             additional: {  }
-            weight: 0
+            weight: 1
           0bff0f95-69c6-49a8-9302-26b327254692:
             uuid: 0bff0f95-69c6-49a8-9302-26b327254692
             region: content
@@ -58,7 +58,7 @@ third_party_settings:
                 third_party_settings: {  }
                 type: entity_reference_revisions_entity_view
             additional: {  }
-            weight: 1
+            weight: 3
           0a26ecfc-ecb0-4750-86c3-a7adc3689358:
             uuid: 0a26ecfc-ecb0-4750-86c3-a7adc3689358
             region: content
@@ -70,6 +70,24 @@ third_party_settings:
               views_label: 'More Use Cases'
               items_per_page: none
               context_mapping: {  }
+            additional: {  }
+            weight: 4
+          ca0b498e-600b-423f-93fe-0d3ecca50dc7:
+            uuid: ca0b498e-600b-423f-93fe-0d3ecca50dc7
+            region: content
+            configuration:
+              id: 'field_block:node:use_case:field_products'
+              label: Products
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_label
+                settings:
+                  link: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
             additional: {  }
             weight: 2
         third_party_settings: {  }
