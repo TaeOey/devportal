@@ -21,14 +21,14 @@ $delete-bg: #a83e24;
         max-width: 200px;
         display: inline;
 
-        a {
-          color: $gray;
-          font-family: Arial;
-          font-size: 14px;
-          border: 1px solid $gray-light;
-          padding: 2px 8px;
-          border-radius: 3px;
+        color: $gray;
+        font-family: Arial;
+        font-size: 14px;
+        border: 1px solid $gray-light;
+        padding: 2px 8px;
+        border-radius: 3px;
 
+        a {
           &:hover {
             text-decoration: none;
           }
@@ -81,7 +81,7 @@ $delete-bg: #a83e24;
         @media only screen and (min-width: 1200px) {
           margin-left: 100px;
         }
-        
+
         @media (max-width: 992px) {
           padding-left: 50px;
         }
