@@ -5,7 +5,7 @@ pipeline {
         label 'docker'
     }
     environment {
-            _DEPLOY_TO = "DEV-INT"
+            _DEPLOY_TO = getDeployTo()
             _OCTOPUS_SERVER = "https://octopus.ema.emoneyadvisor.com"
             _OCTOPUS_PROJECT = "ApigeeDevPortal8"
             _PACKAGE_NAME = "ApigeeDevPortal8"
@@ -91,10 +91,7 @@ pipeline {
         
         stage('Deploy') {
             when {
-                anyOf {
-                    branch 'develop'
-                    expression { return params._IS_DEPLOY }
-                }
+                expression { return isMasterOrDevelop() || params._IS_DEPLOY }
             }
             steps {
                     echo "Deploying to ${env._DEPLOY_TO}"
@@ -177,4 +174,12 @@ def dumpEnvironmentVariables() {
         echo variable
     }
     echo '========================== End Environment Variables ==========================='
+}
+
+def getDeployTo() {
+    isMasterBranch() ? 'Staging' : 'DEV-INT'
+}
+
+def isMasterOrDevelop() {
+    return isMasterBranch() || isDevelopBranch()
 }
