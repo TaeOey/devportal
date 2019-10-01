@@ -15,7 +15,7 @@
     list-style-type: lower-alpha;
   }
 
-  @media (min-width: 998px) {
+  @include media-breakpoint-up(xl) {
     .page__content {
       padding-left: 100px;
     }
