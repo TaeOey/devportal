@@ -31,10 +31,6 @@
   }
 
   &__case {
-    @media (min-width: 1300px) {
-      width: 1140px;
-    }
-
     .views-field {
       &-title {
         color: $gray_dark;
