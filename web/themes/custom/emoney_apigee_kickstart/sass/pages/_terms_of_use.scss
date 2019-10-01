@@ -14,4 +14,10 @@
   #sublist {
     list-style-type: lower-alpha;
   }
+
+  @media (min-width: 998px) {
+    .page__content {
+      padding-left: 100px;
+    }
+  }
 }
