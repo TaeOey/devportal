@@ -55,6 +55,30 @@
           text-transform: uppercase;
         }
       }
+
+      &-field-products {
+        margin-top: -24px;
+        min-height: 24px;
+
+        .field-content {
+          max-width: 200px;
+          display: inline;
+          color: $white;
+
+          a {
+            color: $gray;
+            font-family: $Arial;
+            font-size: 14px;
+            border: 1px solid $gray-light;
+            padding: 2px 8px;
+            border-radius: 3px;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
     }
   }
 }
