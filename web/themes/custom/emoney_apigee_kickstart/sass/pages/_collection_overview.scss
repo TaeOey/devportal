@@ -49,13 +49,19 @@ $supporting-info: 9;
     }
   }
 
+  &__apis {
+    padding-bottom: 77px;
+  }
+
   &__use-cases {
     background-color: $gray_lightness;
-    margin-top: 101px;
-    padding: 0 0 88px 0;
+    padding: 33px 0 0 0;
+    position: relative;
 
     .view-header{
-      position: relative;
+      position: absolute;
+      top: -52px;
+      width: 100%;
 
       h3 {
         color: $gray_dark;
@@ -64,7 +70,18 @@ $supporting-info: 9;
         left: 0;
         line-height: 37px;
         position: absolute;
-        top: -74px;
+      }
+    }
+
+    .use-cases {
+      &__case {
+        &:first-of-type {
+          margin-top: 0;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -140,9 +157,9 @@ $supporting-info: 9;
         &__icon {
           align-items: center;
           display: flex;
-          height: 65px;
-          margin: 0 0 13px 0;
-          width: 77px;
+          height: 80px;
+          margin: 0 20px 13px 0;
+          width: 65px;
 
           &.tax-id {
             &-#{$plan-data} {

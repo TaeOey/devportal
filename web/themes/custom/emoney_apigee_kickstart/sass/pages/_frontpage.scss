@@ -171,15 +171,17 @@
     }
   }
   .card-deck {
+    margin-right: 0px;
+    margin-left: 0px;
     .card {
       width: 361px;
       height: 202px;
       display: flex;
       flex: unset;
       flex-direction: column;
-      margin-right: 29px;
+      margin-right: 14px;
       margin-bottom: 0;
-      margin-left: 0px;
+      margin-left: 15px;
     }
   }
   .card-group__field-text {

@@ -24,11 +24,6 @@
             box-shadow: none;
         }
 
-        .option,
-        .fa-square {
-            display: none;
-        }
-
         .button--primary,
         #edit-cancel {
             font-family: arial;
@@ -55,10 +50,11 @@
         justify-content: flex-start;
     }
 }
-// logged in user styles fix
+
 body.user-logged-in.path-contact .page .contact-form {
   .form-type-item {
     font-weight: normal;
+    background-color: $gray_lightness !important;
   }
 
   label {

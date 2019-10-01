@@ -2,33 +2,49 @@ article[about=\/support] {
   .layout {
     &__region {
       .block {
+        &:first-of-type {
+          .paragraph {
+            &.py-6 {
+              padding-top: 32px !important;
+              padding-bottom: 0 !important;
+            }
+          }
+        }
+
         margin-bottom: 0;
 
         .paragraph {
           &.py-6 {
-            padding-top: 32px !important;
-            padding-bottom: 0 !important;
 
-            &.cta {
-              padding-bottom: 32px !important;
+
+            h2 {
+              margin-bottom: 10px;
             }
           }
         }
       }
 
       .view-faq {
-        margin-bottom: 73px;
+        margin: 3px 0 73px;
 
         .faq-question {
           border-bottom: $blue_jeans 1px solid;
           color: $blue_jeans;
           cursor: pointer;
-          font-family: Arial;
-          font-size: 24px;
-          font-weight: bold;
-          line-height: 24px;
+          display: flex;
+          font-size: 20px;
+          font-weight: $bold;
+          justify-content: space-between;
+          line-height: 28px;
           margin: 0;
-          padding: 12px 29px;
+          padding: 12px;
+
+          @include media-breakpoint-up(xl) {
+            font-size: 24px;
+            justify-content: initial;
+            line-height: 24px;
+            padding: 12px 29px;
+          }
 
           .details__icon {
             color: $blue_jeans;
@@ -43,6 +59,9 @@ article[about=\/support] {
 
           &--open {
             display: block;
+            margin-bottom: -10px;
+            padding-top: 16px;
+            padding-bottom: 0;
           }
         }
       }
@@ -51,6 +70,10 @@ article[about=\/support] {
 
   .paragraph {
     &.cta {
+      &.py-6 {
+        padding: 32px 0 !important;
+      }
+
       h3 {
         color: $white;
         font-size: 22px;
