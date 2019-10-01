@@ -68,17 +68,10 @@ pipeline {
             }
         }
         stage('Publish') {
-            when {
-                anyOf { 
-                    expression { 
-                        return params._IS_PUBLISH 
-                        }; 
-                    expression { 
-                        return params._IS_DEPLOY 
-                        }
-                    branch 'develop'
-                    branch 'master'
-                }
+            when { 
+                expression { 
+                    return params._IS_PUBLISH || params._IS_DEPLOY || isMasterOrDevelop()
+                };
             }
             steps {
                 echo "===== Publish package to repository"
