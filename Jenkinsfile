@@ -131,7 +131,7 @@ pipeline {
 }
 
 def isMasterBranch() {
-    return params.BranchName == 'master'
+    return params.BranchName == 'jenkinsmaster'
 }
 
 def isDevelopBranch() {
