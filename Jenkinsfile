@@ -42,7 +42,7 @@ pipeline {
                     echo "cd to root of source code"
                     // composer install (run) - if no composer we need to install it
                     dir("${WORKSPACE}"){
-                        sh "composer install -v"                
+                        sh "composer install --no-dev -v"               
                     }
                 }
             }
