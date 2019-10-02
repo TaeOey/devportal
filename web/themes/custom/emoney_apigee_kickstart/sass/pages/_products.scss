@@ -49,6 +49,11 @@ article[about="\/products"] {
 
     .card {
       min-height: 376px;
+
+      @include media-breakpoint-down(md) {
+        min-height: 480px;
+      }
+
       padding: 44px;
       text-align: center;
 
@@ -82,12 +87,22 @@ article[about="\/products"] {
             font-size: 20px;
             line-height: 23px;
             text-transform: uppercase;
+
+            @include media-breakpoint-down(xl) {
+              min-height: 50px;
+            }
           }
         }
       }
 
       .views-field {
         min-height: 100px;
+
+        &-description__value {
+          @include media-breakpoint-down(md) {
+            min-height: 160px;
+          }
+        }
       }
 
       &__footer {
