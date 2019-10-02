@@ -52,6 +52,10 @@ article[about="\/products"] {
       padding: 44px 12px;
       text-align: center;
 
+      @include media-breakpoint-down(md) {
+        min-height: 480px;
+      }
+
       @include media-breakpoint-up(xl) {
         padding: 44px;
       }
@@ -78,12 +82,22 @@ article[about="\/products"] {
             font-size: 20px;
             line-height: 23px;
             text-transform: uppercase;
+
+            @include media-breakpoint-down(xl) {
+              min-height: 50px;
+            }
           }
         }
       }
 
       .views-field {
         min-height: 100px;
+
+        &-description__value {
+          @include media-breakpoint-down(md) {
+            min-height: 160px;
+          }
+        }
       }
 
       &__footer {
