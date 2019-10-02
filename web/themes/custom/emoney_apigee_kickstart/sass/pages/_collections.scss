@@ -2,6 +2,10 @@
   background-color: $gray_lightness;
 
   article[about=\/apis] {
+    div[data-layout-content-preview-placeholder-label="\"Content\" field"] {
+      margin-bottom: 0px;
+    }
+
     .layout {
       .block {
         &:last-of-type {
@@ -12,10 +16,16 @@
           font-size: 34px;
           font-weight: 700;
           line-height: 40px;
-          margin: 0 0 16px 0;
+          margin: 0 0 10px 0;
         }
 
         .text__field-text {
+          padding-top: 20px;
+
+          p {
+            margin-bottom: 1.5rem;
+          }
+          
           @include media-breakpoint-up(lg) {
             padding-left: 108px;
             padding-right: 108px;
@@ -72,9 +82,9 @@
             }
 
             &__footer {
-              bottom: 23px;
+              bottom: 10px;
               left: 15px;
-              padding: 25px 32px;
+              padding: 5px 32px;
               position: absolute;
               z-index: 1;
 
