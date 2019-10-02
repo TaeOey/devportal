@@ -476,6 +476,12 @@
     height: 600px;
   }
 }
+/* Large screen */
+@media (min-width: 1440px) { 
+  .path-frontpage .page .page__header .flexslider .hero-text {
+    left: 15%;   
+  }
+}
 
 /* Mobile Only */
 @media (max-width: 992px) {
