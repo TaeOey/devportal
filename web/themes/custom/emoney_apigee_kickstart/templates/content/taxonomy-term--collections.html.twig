@@ -53,22 +53,34 @@
       </div>
     </div>
 
-    <div class="collections__apis">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 offset-md-1 p-0">
-            {{ api_view }}
+    {% if api_view %}
+      <div class="collections__apis">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 offset-md-1 p-0">
+              {{ api_view }}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    {%  endif %}
 
-    <div class="collections__use-cases">
-      {{ usecase_view }}
-    </div>
+    {% if usecase_view %}
+      <div class="collections__use-cases">
+        {{ usecase_view }}
+      </div>
+    {%  endif %}
 
-    <div class="collections__more-apis">
-      {{ moreapi_view }}
-    </div>
+    {% if block_cta %}
+      <div class="block getting_started__cta">
+        {{ block_cta }}
+      </div>
+    {%  endif %}
+
+    {% if api_view %}
+      <div class="collections__more-apis">
+        {{ moreapi_view }}
+      </div>
+    {%  endif %}
   </div>
 </div>

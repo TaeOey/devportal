@@ -5,6 +5,9 @@
  * Functions to support theming in the emoney_apigee_kickstart theme.
  */
 
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\taxonomy\Entity\Term;
+
 /**
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
@@ -48,8 +51,6 @@ function emoney_apigee_kickstart_preprocess_page(array &$variables) {
 /**
  * Implements hook_theme_suggestions_page_alter().
  */
-use Drupal\taxonomy\Entity\Term;
-
 function emoney_apigee_kickstart_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical' && $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term')) {
     $term = Term::load($tid);
@@ -98,7 +99,7 @@ function emoney_apigee_kickstart_theme_suggestions_field_alter(array &$suggestio
 }
 
 /**
- * Implements hook_theme_suggestions_field_alter().
+ * Implements hook_theme_suggestions_fieldset_alter().
  */
 function emoney_apigee_kickstart_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
   /*$element = $variables['element'];
@@ -192,6 +193,7 @@ function emoney_apigee_kickstart_theme_suggestions_paragraph_alter(&$suggestions
  * Implements hook_preprocess_taxonomy_term
  */
 function emoney_apigee_kickstart_preprocess_taxonomy_term(&$variables) {
+
   $term = $variables['term'];
   $vocabulary = $term->bundle();
   if ($vocabulary == 'collections' || $vocabulary == 'products') {
@@ -200,6 +202,13 @@ function emoney_apigee_kickstart_preprocess_taxonomy_term(&$variables) {
       $variables['api_view'] = views_embed_view('apigee_api_catalog', 'block_1', $tid);
       $variables['usecase_view'] = views_embed_view('use_cases', 'block_1', $tid);
       $variables['moreapi_view'] = views_embed_view('api_collection', 'block_2', $tid);
+      // Add getting started block
+      $block = \Drupal\block_content\Entity\BlockContent::load(4);
+      if ($block) {
+        $variables['block_cta'] = \Drupal::entityTypeManager()
+          ->getViewBuilder('block_content')
+          ->view($block);
+      }
     }
     elseif ($vocabulary == products) {
       $variables['api_view'] = views_embed_view('apigee_api_catalog', 'block_2', $tid);
