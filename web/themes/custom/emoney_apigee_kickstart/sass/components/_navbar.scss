@@ -23,17 +23,25 @@
       color: $white;
       content: "Developer";
       display: block;
-      font-size: 16px;
+      font-size: 15px;
       line-height: 32px;
       margin: 0 0 0 12px;
       max-width: 100%;
       padding: 0 0 0 12px;
+
+      @include media-breakpoint-up(xl) {
+        font-size: 16px;
+      }
     }
 
     img {
-      height: 32px;
+      height: 25px;
       max-width: 100%;
       margin: 0 !important;
+
+      @include media-breakpoint-up(xl) {
+        height: 32px;
+      }
     }
   }
 
@@ -56,9 +64,16 @@
       .nav-link {
         color: $white;
         font-family: $Arial;
-        font-size: 16px;
-        line-height: 18px;
-        padding: .5rem 11px;
+        font-size: 15px;
+        line-height: 17px;
+        padding: .5rem 10px;
+
+        @include media-breakpoint-up(xl) {
+          font-size: 16px;
+          line-height: 18px;
+          padding-left: 11px;
+          padding-right: 11px;
+        }
 
         &.is-active {
           font-weight: $bold;
