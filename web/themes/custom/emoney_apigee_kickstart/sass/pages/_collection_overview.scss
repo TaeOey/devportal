@@ -1,9 +1,3 @@
-$plan-data: 5;
-$firm-admin: 6;
-$document-management: 7;
-$client-facts: 8;
-$supporting-info: 9;
-
 .collections {
   flex: 1;
 
@@ -55,7 +49,7 @@ $supporting-info: 9;
 
   &__use-cases {
     background-color: $gray_lightness;
-    padding: 33px 0 0 0;
+    padding: 33px 0 88px 0;
     position: relative;
 
     .view-header{
@@ -81,6 +75,29 @@ $supporting-info: 9;
 
         &:last-of-type {
           margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    .cta {
+      background-color: $blue_jeans;
+
+      &.py-6 {
+        padding-top: 38px !important;
+        padding-bottom: 30px !important;
+      }
+
+      &__title {
+        color: $white;
+        font-size: 22px;
+        font-weight: $bold;
+        line-height: 32px;
+        margin: 0;
+
+        &.mb-4 {
+          margin-bottom: 0 !important;
         }
       }
     }
@@ -160,43 +177,6 @@ $supporting-info: 9;
           height: 80px;
           margin: 0 20px 13px 0;
           width: 65px;
-
-          &.tax-id {
-            &-#{$plan-data} {
-              img {
-                height: 62px;
-                width: 53px;
-              }
-            }
-
-            &-#{$firm-admin} {
-              img {
-                height: 52px;
-                width: 59px;
-              }
-            }
-
-            &-#{$document-management} {
-              img {
-                height: 60px;
-                width: 49px;
-              }
-            }
-
-            &-#{$client-facts} {
-              img {
-                height: 49px;
-                width: 58px;
-              }
-            }
-
-            &-#{$supporting-info} {
-              img {
-                height: 57px;
-                width: 59px;
-              }
-            }
-          }
         }
 
         &__text {
