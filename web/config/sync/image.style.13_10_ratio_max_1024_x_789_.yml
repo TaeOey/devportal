@@ -1,0 +1,15 @@
+uuid: ef694095-7a1f-4d2a-a479-2e02476adc91
+langcode: en
+status: true
+dependencies: {  }
+name: 13_10_ratio_max_1024_x_789_
+label: '13:10 Ratio - max 1024 x 789  '
+effects:
+  95d91875-4522-4177-9e8f-372449db51aa:
+    uuid: 95d91875-4522-4177-9e8f-372449db51aa
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 778
+      height: 600
+      anchor: left-center

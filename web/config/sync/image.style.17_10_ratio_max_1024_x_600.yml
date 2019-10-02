@@ -1,0 +1,15 @@
+uuid: ef094eb7-344c-498c-9e3b-9634ed7693cc
+langcode: en
+status: true
+dependencies: {  }
+name: 17_10_ratio_max_1024_x_600
+label: '17:10 Ratio - Max 1024 x 600'
+effects:
+  78f04e0e-940b-4dac-93bf-f91d5d3308a8:
+    uuid: 78f04e0e-940b-4dac-93bf-f91d5d3308a8
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1024
+      height: 600
+      anchor: center-center

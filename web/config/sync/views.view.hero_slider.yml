@@ -8,12 +8,14 @@ dependencies:
     - field.storage.node.field_link
     - image.style.flexslider_full
     - node.type.hero_slide
+    - responsive_image.styles.hero_slide
   module:
     - flexslider_fields
     - flexslider_views
     - image
     - link
     - node
+    - responsive_image
     - text
     - user
 id: hero_slider
@@ -518,9 +520,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: responsive_image
           settings:
-            image_style: flexslider_full
+            responsive_image_style: hero_slide
             image_link: ''
           group_column: ''
           group_columns: {  }
