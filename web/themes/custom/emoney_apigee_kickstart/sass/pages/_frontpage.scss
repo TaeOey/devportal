@@ -3,7 +3,7 @@
 .path-frontpage {
   .page {
     .navbar {
-      // background-color: transparent;
+      background-color: transparent;
     }
     .main {
       .block { margin-bottom: 0rem;}
@@ -474,6 +474,12 @@
   }
   .path-frontpage .text-image {
     height: 600px;
+  }
+}
+/* Large screen */
+@media (min-width: 1440px) {
+  .path-frontpage .page .page__header .flexslider .hero-text {
+    left: 15%;
   }
 }
 
