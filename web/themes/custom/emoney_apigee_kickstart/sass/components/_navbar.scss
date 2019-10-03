@@ -3,7 +3,7 @@
 }
 
 .navbar {
-  background: transparent;
+  background-color: transparent;
   border-bottom: 0;
   left: 0;
   margin: 0;
@@ -13,11 +13,15 @@
   width: 100%;
 
   @include media-breakpoint-up(lg) {
+    background: transparent;
     padding-left: 0;
     padding-right: 0;
   }
 
-  .navbar-brand {
+  &-brand {
+    position: relative;
+    z-index: 1;
+
     &:after {
       border-left: $white 2px solid;
       color: $white;
@@ -45,8 +49,47 @@
     }
   }
 
-  .navbar-collapse {
+  &-collapse {
     justify-content: flex-end;
+
+    &.show {
+      padding: 25px 0;
+
+      @include media-breakpoint-up(lg) {
+        background-color: transparent;
+      }
+
+      .block {
+        &:first-of-type {
+          border-top: $gray_lightness 1px solid;
+          padding-top: 25px;
+          position: relative;
+          z-index: 1;
+        }
+      }
+
+      .nav-item,
+      form {
+        position: relative;
+        z-index: 1;
+      }
+
+      &:after {
+        background-color: $blue_theme;
+        content: " ";
+        display: block;
+        width: 100%;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include media-breakpoint-up(lg) {
+          display: none;
+        }
+      }
+    }
 
     .nav-item {
       &.active {
@@ -64,9 +107,14 @@
       .nav-link {
         color: $white;
         font-family: $Arial;
-        font-size: 15px;
-        line-height: 17px;
+        font-size: 20px;
+        line-height: 24px;
         padding: .5rem 10px;
+
+        @include media-breakpoint-up(lg) {
+          font-size: 15px;
+          line-height: 17px;
+        }
 
         @include media-breakpoint-up(xl) {
           font-size: 16px;
@@ -101,10 +149,17 @@
 
     .search-block-form {
       margin: 0 0 0 11px;
-      max-width: 165px;
 
-      .form-inline {
-        .form-search {
+      @include media-breakpoint-up(xl) {
+        max-width: 165px;
+      }
+
+      .form {
+        &-group {
+          display: flex;
+        }
+
+        &-search {
           background-color: transparent;
           border: none;
           border-bottom: $white 1px solid;
@@ -115,23 +170,35 @@
           font-size: 16px;
           line-height: 18px;
           padding: 3px 0;
-          max-width: 65px;
+
+          @include media-breakpoint-up(lg) {
+            max-width: 65px;
+          }
 
           @include media-breakpoint-up(xl) {
             max-width: 139px;
           }
-        }
 
-        .form-search-button {
-          background: transparent;
-          border: none;
-          box-shadow: none;
-          color: $white;
-          border-bottom: $white 1px solid;
-          height: 25px;
-          outline: none;
+          &-button {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            color: $white;
+            border-bottom: $white 1px solid;
+            height: 25px;
+            outline: none;
+          }
         }
       }
     }
+  }
+
+  &-toggler {
+    background-color: transparent;
+    border: 0;
+    color: $white;
+    padding: 0;
+    position: relative;
+    z-index: 1;
   }
 }
