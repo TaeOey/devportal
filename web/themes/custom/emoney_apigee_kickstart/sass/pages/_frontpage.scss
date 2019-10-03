@@ -368,7 +368,7 @@
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .path-frontpage {
     .card-deck {
-      .card { 
+      .card {
         width: 221px;
         height: 184px;
         flex: 3;
@@ -428,7 +428,7 @@
         width: 293px;
         height: 202px;
         flex: 3;
-      }  
+      }
     }
     .card-group-2 {
       .card-deck {
@@ -440,7 +440,7 @@
       }
     }
     .paragraph.card-group--default.py-7:not(.card-group-2) {
-      /*padding-bottom: 0px !important;*/ /* to overrride padding-bottom: 27px !important;*/ 
+      /*padding-bottom: 0px !important;*/ /* to overrride padding-bottom: 27px !important;*/
     }
     .card-group-2 .card-group__buttons {
       /*padding-top: 16px !important;*/
@@ -477,9 +477,9 @@
   }
 }
 /* Large screen */
-@media (min-width: 1440px) { 
+@media (min-width: 1440px) {
   .path-frontpage .page .page__header .flexslider .hero-text {
-    left: 15%;   
+    left: 15%;
   }
 }
 
