@@ -49,20 +49,15 @@ article[about="\/products"] {
 
     .card {
       min-height: 376px;
+      padding: 44px 12px;
+      text-align: center;
 
       @include media-breakpoint-down(md) {
         min-height: 480px;
       }
 
-      padding: 44px;
-      text-align: center;
-
-      @media (max-width: 768px) {
-        margin-bottom: 30px;
-      }
-
-      @media (min-width: 769px) {
-        max-width: 350px;
+      @include media-breakpoint-up(xl) {
+        padding: 44px;
       }
 
       &--coming-soon {
@@ -151,7 +146,11 @@ article[about="\/products"] {
 
   .table {
     margin: auto;
-    max-width: 1140px;
+    max-width: 960px;
+
+    @include media-breakpoint-up(xl) {
+      max-width: 1140px;
+    }
 
     &:not(:first-of-type) {
       thead {
