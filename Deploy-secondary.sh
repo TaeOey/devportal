@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#Declare variables
+APIGEE_DRUPAL_SOURCE_ROOT_RELEASE=/var/www/"#{Octopus.Release.Number}"
+APIGEE_DRUPAL_SOURCE_ROOT=/var/www/devportal
+PRIMARY_HOST="#{PrimaryHost}"
+
+Echo "Copying data from $PRIMARY_HOST"
+mount $PRIMARY_HOST:$APIGEE_DRUPAL_SOURCE_ROOT_RELEASE $APIGEE_DRUPAL_SOURCE_ROOT_RELEASE
+rsync -rv --links --delete $APIGEE_DRUPAL_SOURCE_ROOT_RELEASE $APIGEE_DRUPAL_SOURCE_ROOT
+umount -l $APIGEE_DRUPAL_SOURCE_ROOT_RELEASE
