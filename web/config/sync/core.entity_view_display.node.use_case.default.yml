@@ -41,7 +41,7 @@ third_party_settings:
                 third_party_settings: {  }
                 type: entity_reference_revisions_entity_view
             additional: {  }
-            weight: 1
+            weight: 4
           0bff0f95-69c6-49a8-9302-26b327254692:
             uuid: 0bff0f95-69c6-49a8-9302-26b327254692
             region: content
@@ -58,20 +58,7 @@ third_party_settings:
                 third_party_settings: {  }
                 type: entity_reference_revisions_entity_view
             additional: {  }
-            weight: 3
-          0a26ecfc-ecb0-4750-86c3-a7adc3689358:
-            uuid: 0a26ecfc-ecb0-4750-86c3-a7adc3689358
-            region: content
-            configuration:
-              id: 'views_block:use_cases-block_3'
-              label: 'More Use Cases'
-              provider: views
-              label_display: visible
-              views_label: 'More Use Cases'
-              items_per_page: none
-              context_mapping: {  }
-            additional: {  }
-            weight: 4
+            weight: 6
           ca0b498e-600b-423f-93fe-0d3ecca50dc7:
             uuid: ca0b498e-600b-423f-93fe-0d3ecca50dc7
             region: content
@@ -89,7 +76,38 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: 2
+            weight: 5
+          64bcf04f-33e4-4c07-a1a2-1d929b74c3d1:
+            uuid: 64bcf04f-33e4-4c07-a1a2-1d929b74c3d1
+            region: content
+            configuration:
+              id: 'field_block:node:use_case:field_apis_u'
+              label: 'APIs Used'
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: above
+                type: entity_reference_entity_view
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 8
+          0a26ecfc-ecb0-4750-86c3-a7adc3689358:
+            uuid: 0a26ecfc-ecb0-4750-86c3-a7adc3689358
+            region: content
+            configuration:
+              id: 'views_block:use_cases-block_3'
+              label: 'More Use Cases'
+              provider: views
+              label_display: visible
+              views_label: 'More Use Cases'
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 9
         third_party_settings: {  }
 id: node.use_case.default
 targetEntityType: node

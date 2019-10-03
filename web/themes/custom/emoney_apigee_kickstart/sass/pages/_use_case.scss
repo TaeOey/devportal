@@ -94,8 +94,11 @@ $delete-bg: #a83e24;
 
     .api-card {
       min-height: 220px;
-      margin-left: 20px;
-      margin-right: 20px;
+      margin: 30px 20px;
+
+      .layout {
+        padding: 20px 10px;
+      }
     }
 
     .text-image {
@@ -109,7 +112,6 @@ $delete-bg: #a83e24;
       font-size: 32px;
       font-weight: bold;
       line-height: 39px;
-      text-align: center;
       padding: 30px 30px;
     }
 
@@ -149,6 +151,12 @@ $delete-bg: #a83e24;
       font-family: $Lato;
       font-size: 16px;
       line-height: 25px;
+    }
+
+    .block-more-use-cases {
+      h2 {
+        text-align: center;
+      }
     }
   }
 }
