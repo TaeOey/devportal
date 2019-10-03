@@ -5,7 +5,7 @@ pipeline {
         label 'docker'
     }
     environment {
-            _DEPLOY_TO = "DEV-INT"
+            _DEPLOY_TO = getDeployTo()
             _OCTOPUS_SERVER = "https://octopus.ema.emoneyadvisor.com"
             _OCTOPUS_PROJECT = "ApigeeDevPortal8"
             _PACKAGE_NAME = "ApigeeDevPortal8"
@@ -15,7 +15,7 @@ pipeline {
     }
     options { timeout(time: 2, unit: 'HOURS') }
     parameters {
-        booleanParam(name: '_IS_PUBLISH', defaultValue: true, description: "Publish package")
+        booleanParam(name: '_IS_PUBLISH', defaultValue: false, description: "Publish package")
         booleanParam(name: '_IS_DEPLOY', defaultValue: false, description: "Deploy to DEV")
     }
     stages {
@@ -42,7 +42,7 @@ pipeline {
                     echo "cd to root of source code"
                     // composer install (run) - if no composer we need to install it
                     dir("${WORKSPACE}"){
-                        sh "composer install -v"                
+                        sh "composer install --no-dev -v"               
                     }
                 }
             }
@@ -68,16 +68,10 @@ pipeline {
             }
         }
         stage('Publish') {
-            when {
-                anyOf { 
-                    expression { 
-                        return params._IS_PUBLISH 
-                        }; 
-                    expression { 
-                        return params._IS_DEPLOY 
-                        }
-                    branch 'develop'
-                }
+            when { 
+                expression { 
+                    return params._IS_PUBLISH || params._IS_DEPLOY || isMasterOrDevelop()
+                };
             }
             steps {
                 echo "===== Publish package to repository"
@@ -90,15 +84,12 @@ pipeline {
         
         stage('Deploy') {
             when {
-                anyOf {
-                    branch 'develop'
-                    expression { return params._IS_DEPLOY }
-                }
+                expression { return isMasterOrDevelop() || params._IS_DEPLOY }
             }
             steps {
                     echo "Deploying to ${env._DEPLOY_TO}"
                     withCredentials([string(credentialsId: 'octopus-api-key', variable: 'OctoApiKey')]) {
-                        sh "docker run --rm -v \$(pwd):/src octopusdeploy/octo create-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --package \"Deploy Devportal\":${PACKAGE_VERSION} --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey}"
+                        sh "docker run --rm -v \$(pwd):/src octopusdeploy/octo create-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --packageVersion ${PACKAGE_VERSION} --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey}"
                         sh "docker run --rm -v \$(pwd):/src octopusdeploy/octo deploy-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --deployto \"${env._DEPLOY_TO}\" --channel Default --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey} --deploymenttimeout 00:10:00 --waitfordeployment --variable=UploadContent:false"
                     }
             }
@@ -133,11 +124,11 @@ pipeline {
 }
 
 def isMasterBranch() {
-    return params.BranchName == 'master'
+    return env.BRANCH_NAME == 'master'
 }
 
 def isDevelopBranch() {
-    return params.BranchName == 'develop'
+    return env.BRANCH_NAME == 'develop'
 }
 
 def getPackageLabel() {
@@ -176,4 +167,12 @@ def dumpEnvironmentVariables() {
         echo variable
     }
     echo '========================== End Environment Variables ==========================='
+}
+
+def getDeployTo() {
+    isMasterBranch() ? 'Staging' : 'DEV-INT'
+}
+
+def isMasterOrDevelop() {
+    return isMasterBranch() || isDevelopBranch()
 }
