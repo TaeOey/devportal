@@ -25,7 +25,7 @@
           p {
             margin-bottom: 1.5rem;
           }
-          
+
           @include media-breakpoint-up(lg) {
             padding-left: 108px;
             padding-right: 108px;
@@ -144,24 +144,31 @@
         }
 
         .cta {
-          background-color: #1a6887;
-          color: white;
+          background-color: $blue_jeans;
+          flex: 1;
+          padding: 40px !important;
           text-align: center;
+          color: $white;
 
           .btn {
             background-color: transparent;
-            border: #fff 1px solid;
-            color: #fff;
+            font-family: $Arial;
+            font-size: 16px;
+            margin: 0;
+            line-height: 48px;
+            padding: 0;
+            width: 165px;
+            border: $white 1px solid;
+            color: $white;
             text-transform: uppercase;
-            font-family: Arial;
           }
 
           &__title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             line-height: 24px;
-            margin: 0 0 16px 0;
-            color: #fff;
+            margin-bottom: 16px !important;
+            color: $white;
           }
 
           &__text {
