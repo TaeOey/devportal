@@ -89,4 +89,6 @@ echo "Clear caches"
 sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cr
 
 #Delete old versions
-sudo rm -rf $APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD
+if [ "$APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD" != "$APIGEE_DRUPAL_SOURCE_ROOT_RELEASE" ]; then
+    sudo rm -rf $APIGEE_DRUPAL_SOURCE_ROOT_RELEASE_OLD
+fi

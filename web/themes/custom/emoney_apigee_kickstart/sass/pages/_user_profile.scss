@@ -1,0 +1,13 @@
+.path-user {
+  &.user-logged-in {
+    .navbar {
+      top: 0;
+    }
+  }
+
+  .page {
+    &__header {
+      display: none;
+    }
+  }
+}
