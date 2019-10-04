@@ -96,10 +96,10 @@ function emoney_apigee_kickstart_theme_suggestions_block_alter(array &$suggestio
   $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
   if($term) {
     $vocabulary = $term->bundle();
-  }
-  if ($vocabulary == 'collections' || $vocabulary == 'products') {
-    if($elements['#id'] == 'emoney_apigee_kickstart_title') {
-      $suggestions[] = 'block__page_title_block__' . $vocabulary;
+    if ($vocabulary && ($vocabulary == 'collections' || $vocabulary == 'products')) {
+      if($elements['#id'] == 'emoney_apigee_kickstart_title') {
+        $suggestions[] = 'block__page_title_block__' . $vocabulary;
+      }
     }
   }
 }
@@ -213,7 +213,7 @@ function emoney_apigee_kickstart_preprocess_taxonomy_term(&$variables) {
   $vocabulary = $term->bundle();
   if ($vocabulary == 'collections' || $vocabulary == 'products') {
     $tid = $term->id();
-    if ($vocabulary == collections) {
+    if ($vocabulary == 'collections') {
       $variables['api_view'] = views_embed_view('apigee_api_catalog', 'block_1', $tid);
       $variables['usecase_view'] = views_embed_view('use_cases', 'block_1', $tid);
       $variables['moreapi_view'] = views_embed_view('api_collection', 'block_2', $tid);
@@ -225,7 +225,7 @@ function emoney_apigee_kickstart_preprocess_taxonomy_term(&$variables) {
           ->view($block);
       }
     }
-    elseif ($vocabulary == products) {
+    elseif ($vocabulary == 'products') {
       $variables['api_view'] = views_embed_view('apigee_api_catalog', 'block_2', $tid);
       // Add contact us block
       $block = \Drupal\block_content\Entity\BlockContent::load(6);
