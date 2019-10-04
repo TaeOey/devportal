@@ -96,10 +96,10 @@ function emoney_apigee_kickstart_theme_suggestions_block_alter(array &$suggestio
   $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
   if($term) {
     $vocabulary = $term->bundle();
-  }
-  if ($vocabulary && ($vocabulary == 'collections' || $vocabulary == 'products')) {
-    if($elements['#id'] == 'emoney_apigee_kickstart_title') {
-      $suggestions[] = 'block__page_title_block__' . $vocabulary;
+    if ($vocabulary && ($vocabulary == 'collections' || $vocabulary == 'products')) {
+      if($elements['#id'] == 'emoney_apigee_kickstart_title') {
+        $suggestions[] = 'block__page_title_block__' . $vocabulary;
+      }
     }
   }
 }
