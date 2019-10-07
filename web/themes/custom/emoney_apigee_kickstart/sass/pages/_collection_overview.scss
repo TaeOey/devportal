@@ -231,6 +231,11 @@ $supporting-info: 9;
           }
         }
       }
+
+      .views-field-description__value {
+        flex-direction: column;
+        display: flex;
+      }
     }
   }
 }
