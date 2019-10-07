@@ -43,6 +43,20 @@
           {{ api_view }}
         </div>
       {% endif %}
+      {% if block_features %}
+        {% if block_compare %}
+          <div class="row">
+            <div class="col-md-6">
+              <div class="block block--basic">
+                {{ block_compare }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        <div>
+          {{ block_features }}
+        </div>
+      {% endif %}
     </div>
   </div>
 </div>
