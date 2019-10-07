@@ -203,6 +203,12 @@
       padding: 0;
       position: relative;
       z-index: 1;
+
+      &:focus {
+        outline: none;
+        border: $white 1px solid;
+        box-shadow: 1px 1px 5px $white;
+      }
     }
   }
 }
