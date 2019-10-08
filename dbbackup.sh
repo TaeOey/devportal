@@ -28,12 +28,12 @@ fi
 #Backup Drupal database
 echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
 echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
-sudo mysqldump --user ${DB_USER} --password=${DB_PASSWORD} ${DB_NAME} | gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}.gz
+sudo mysqldump --user ${DB_USER} --password=${DB_PASSWORD} ${DB_NAME} | sudo gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}.gz
 
 #Unmount remote backup directory if present
 if [[ $REMOTE_BACKUP_DIRECTORY != \#\{*\} ]]; 
 then
-    sudo umount -l $REMOTE_BACKUP_DIRECTORY $BACKUP_DIRECTORY
+    sudo umount -l $BACKUP_DIRECTORY
 fi
 
 #Create a database rollback script
@@ -47,7 +47,7 @@ EOF
 if [[ $REMOTE_BACKUP_DIRECTORY != \#\{*\} ]]; 
 then
     echo "mount $REMOTE_BACKUP_DIRECTORY $BACKUP_DIRECTORY" | cat - ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh > temp && mv temp ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh
-    echo "umount -l $REMOTE_BACKUP_DIRECTORY $BACKUP_DIRECTORY" >> ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh
+    echo "umount -l $BACKUP_DIRECTORY" >> ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh
 fi
 
 
