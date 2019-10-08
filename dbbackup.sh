@@ -22,6 +22,7 @@ fi
 #Mount remote backup directory if present
 if [[ $REMOTE_BACKUP_DIRECTORY != \#\{*\} ]]; 
 then
+    echo "Mounting remote share"
     sudo mount $REMOTE_BACKUP_DIRECTORY $BACKUP_DIRECTORY
 fi
 
@@ -33,6 +34,7 @@ sudo sh -c "mysqldump --user ${DB_USER} --password='${DB_PASSWORD}' ${DB_NAME} |
 #Unmount remote backup directory if present
 if [[ $REMOTE_BACKUP_DIRECTORY != \#\{*\} ]]; 
 then
+    echo "Unmounting remote share"
     sudo umount -l $BACKUP_DIRECTORY
 fi
 
