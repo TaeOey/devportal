@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - image.style.17_10_ratio_max_1024_x_600
+    - image.style.20_31_ratio_max_375_x_581
     - image.style.4_3_320x240
     - image.style.flexslider_full
   theme:
@@ -26,5 +27,10 @@ image_style_mappings:
     multiplier: 1x
     image_mapping_type: image_style
     image_mapping: 17_10_ratio_max_1024_x_600
+  -
+    breakpoint_id: default.xs
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: 20_31_ratio_max_375_x_581
 breakpoint_group: apigee_kickstart
 fallback_image_style: 4_3_320x240

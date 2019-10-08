@@ -1,0 +1,15 @@
+uuid: e0b6c05f-6e7f-41d4-827a-10d2b31f74db
+langcode: en
+status: true
+dependencies: {  }
+name: 20_31_ratio_max_375_x_581
+label: '2:3 Ratio - Max 375 x 562'
+effects:
+  d26f0f48-0e68-406f-a2f3-cf774177ed66:
+    uuid: d26f0f48-0e68-406f-a2f3-cf774177ed66
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 375
+      height: 562
+      anchor: center-center

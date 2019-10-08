@@ -337,7 +337,6 @@
           line-height: 24px;
           margin: 0 0 0 0;
 
-
           .btn-primary {
             background-color: transparent;
             border: $white 1px solid;
@@ -368,7 +367,7 @@
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .path-frontpage {
     .card-deck {
-      .card {
+      .card { 
         width: 221px;
         height: 184px;
         flex: 3;
@@ -428,7 +427,7 @@
         width: 293px;
         height: 202px;
         flex: 3;
-      }
+      }  
     }
     .card-group-2 {
       .card-deck {
@@ -440,7 +439,7 @@
       }
     }
     .paragraph.card-group--default.py-7:not(.card-group-2) {
-      /*padding-bottom: 0px !important;*/ /* to overrride padding-bottom: 27px !important;*/
+      /*padding-bottom: 0px !important;*/ /* to overrride padding-bottom: 27px !important;*/ 
     }
     .card-group-2 .card-group__buttons {
       /*padding-top: 16px !important;*/
@@ -477,22 +476,76 @@
   }
 }
 /* Large screen */
-@media (min-width: 1440px) {
+@media (min-width: 1440px) { 
   .path-frontpage .page .page__header .flexslider .hero-text {
-    left: 15%;
+    left: 15%;   
   }
 }
 
 /* Mobile Only */
-@media (max-width: 992px) {
-  .hero-text {
-    /*display: none;*/
+@media (max-width: 575px) {
+  .path-frontpage {
+    .page .page__header .flexslider .slides .flex-active-slide .hero-text {
+      width: 87%;
+      top: 21%; 
+    }
+    .page .page__header .flexslider .hero-text .views-field-title {
+      font-size: 38px;
+      line-height: 48px;
+      margin-bottom: 16px;
+    }
+    .page .page__header .flexslider .hero-text .views-field-body {
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 32px;
+    }
+    .flex-direction-nav .flex-nav-prev a:before,
+    .flex-direction-nav .flex-nav-next a:before {
+      font-size: 24px;
+    }
+    .emoney-card {
+      width: 95%; 
+    }
+    .card-deck {
+      .card { 
+        width: 290px;
+        height: 184px;
+        margin-bottom: 16px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .card-group-2 {
+      .card-deck {
+        .card {
+          width: 290px;
+          height: 184px;
+          flex: unset;
+        }
+      }
+    }
+    .paragraph.text-image {       
+      img {
+        height: 183px;
+      }
+      .container-fluid.px-0 {
+        padding-top: 0px;
+        padding-bottom: 2.5rem;
+      }
+    }
+    .paragraph.callout-group {
+      height: 415px;
+      .container .col-md-6 .callout {
+        padding-top: 1.5rem;
+        padding-bottom: 3rem;
+      }
+    }
   }
-  .path-frontpage .paragraph.card-group--default.py-7 {
-    /*padding-bottom: 0rem !important;*/ /* to override py-7 !important */
+  .path-frontpage .page .paragraph.card-group--default.py-7:not(.card-group-2) {
+    padding-bottom: 0px !important;
   }
-  .path-frontpage .card-group-2 .card-group__buttons {
-    /*padding-bottom: 2rem;*/
+  .path-frontpage .page .py-7.card-group-2 {
+    padding-bottom: 1.8rem !important;
   }
 }
 /* End of Mobile Only */
