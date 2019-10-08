@@ -10,7 +10,7 @@ id: node.use_case.field_products
 field_name: field_products
 entity_type: node
 bundle: use_case
-label: Products
+label: 'Included in the following product(s): '
 description: ''
 required: false
 translatable: false
