@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Template for the page title block.
+ */
+#}
+{% embed '@radix/block/block.twig' with {
+  html_tag: 'div'
+} %}
+  {% block content %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-md-1 p-0">
+          <h1{{ title_attributes.addClass('page__title') }}>Products</h1>
+          <div{{ title_attributes.addClass('page__headline') }}>See how our partners create innovative products using our APIs.</div>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}

@@ -49,20 +49,15 @@ article[about="\/products"] {
 
     .card {
       min-height: 376px;
+      padding: 44px 12px;
+      text-align: center;
 
       @include media-breakpoint-down(md) {
         min-height: 480px;
       }
 
-      padding: 44px;
-      text-align: center;
-
-      @media (max-width: 768px) {
-        margin-bottom: 30px;
-      }
-
-      @media (min-width: 769px) {
-        max-width: 350px;
+      @include media-breakpoint-up(xl) {
+        padding: 44px;
       }
 
       &--coming-soon {
@@ -121,6 +116,42 @@ article[about="\/products"] {
     }
   }
 
+  .paragraph {
+    &.cta {
+      background-color: $gray_lightness;
+      margin: 122px 0 0 0;
+
+      &.py-6 {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+      }
+
+      .cta__title {
+        &.mb-4 {
+          margin-bottom: 16px !important;
+        }
+
+        color: $gray_dark;
+        font-size: 22px;
+        font-weight: $bold;
+        line-height: 26px;
+      }
+
+      .btn {
+        background-color: #00aae7;
+        font-family: $Lato;
+        font-size: 16px;
+        margin: 0;
+        line-height: 48px;
+        padding: 0;
+        width: 165px;
+      }
+    }
+  }
+}
+
+article[about="\/products"],
+.page-product {
   .block {
     margin-bottom: 0;
 
@@ -151,7 +182,11 @@ article[about="\/products"] {
 
   .table {
     margin: auto;
-    max-width: 1140px;
+    max-width: 960px;
+
+    @include media-breakpoint-up(xl) {
+      max-width: 1140px;
+    }
 
     &:not(:first-of-type) {
       thead {
@@ -254,39 +289,6 @@ article[about="\/products"] {
 
     .coming-soon {
       opacity: 0.65;
-    }
-  }
-
-  .paragraph {
-    &.cta {
-      background-color: $gray_lightness;
-      margin: 122px 0 0 0;
-
-      &.py-6 {
-        padding-top: 40px !important;
-        padding-bottom: 40px !important;
-      }
-
-      .cta__title {
-        &.mb-4 {
-          margin-bottom: 16px !important;
-        }
-
-        color: $gray_dark;
-        font-size: 22px;
-        font-weight: $bold;
-        line-height: 26px;
-      }
-
-      .btn {
-        background-color: #00aae7;
-        font-family: $Lato;
-        font-size: 16px;
-        margin: 0;
-        line-height: 48px;
-        padding: 0;
-        width: 165px;
-      }
     }
   }
 }

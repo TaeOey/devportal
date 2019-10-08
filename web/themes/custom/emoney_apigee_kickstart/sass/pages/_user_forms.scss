@@ -10,6 +10,8 @@
 }
 
 .page-login {
+  flex: 1;
+
   .form-required {
     font-weight: $bold;
 
@@ -17,7 +19,7 @@
       color: $black !important;
     }
   }
-  
+
   .form-submit {
     font-weight: $bold !important;
   }

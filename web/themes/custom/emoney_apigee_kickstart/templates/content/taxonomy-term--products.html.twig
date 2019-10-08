@@ -38,17 +38,31 @@
           <div class="col-md-6">{{ content.field_image }}</div>
         </div>
       </div>
-      <div class="apis">
-        {{ api_view }}
-      </div>
-      <div class="cta">
-        <div class="cta__text">
-          <h2>Need more information? Contact our API Specialist</h2>
+      {% if api_view %}
+        <div class="apis">
+          {{ api_view }}
         </div>
-        <div class="btn btn-primary cta__button">
-          <a href="/contact">Contact Us</a>
+      {% endif %}
+      {% if block_features %}
+        {% if block_compare %}
+          <div class="row">
+            <div class="col-md-6">
+              <div class="block block--basic">
+                {{ block_compare }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        <div>
+          {{ block_features }}
         </div>
-      </div>
+      {% endif %}
     </div>
   </div>
 </div>
+
+{% if block_cta %}
+  <div class="block contact_us__cta row">
+    {{ block_cta }}
+  </div>
+{%  endif %}
