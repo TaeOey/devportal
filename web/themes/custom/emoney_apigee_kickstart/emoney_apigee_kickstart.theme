@@ -227,13 +227,20 @@ function emoney_apigee_kickstart_preprocess_taxonomy_term(&$variables) {
     }
     elseif ($vocabulary == 'products') {
       $variables['api_view'] = views_embed_view('apigee_api_catalog', 'block_2', $tid);
-      // Add contact us block
-      $block = \Drupal\block_content\Entity\BlockContent::load(6);
-      if ($block) {
-        $variables['block_cta'] = \Drupal::entityTypeManager()
-          ->getViewBuilder('block_content')
-          ->view($block);
-      }
+
+      // Add blocks
+      build_custom_block($variables, 'block_cta', 6);
+      build_custom_block($variables, 'block_compare', 5);
+      build_custom_block($variables, 'block_features', 7);
     }
+  }
+}
+
+function build_custom_block(&$variables, $target_name, $block_id) {
+  $block = \Drupal\block_content\Entity\BlockContent::load($block_id);
+  if ($block) {
+    $variables[$target_name] = \Drupal::entityTypeManager()
+      ->getViewBuilder('block_content')
+      ->view($block);
   }
 }

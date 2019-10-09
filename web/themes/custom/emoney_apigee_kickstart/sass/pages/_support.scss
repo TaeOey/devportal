@@ -1,6 +1,18 @@
 article[about=\/support] {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
   .layout {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
     &__region {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
       .block {
         &:first-of-type {
           .paragraph {
@@ -21,6 +33,10 @@ article[about=\/support] {
               margin-bottom: 10px;
             }
           }
+        }
+
+        &--cta {
+          margin-top: auto;
         }
       }
 
