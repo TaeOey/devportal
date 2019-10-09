@@ -31,6 +31,7 @@ echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
 echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
 sudo sh -c "mysqldump --user ${DB_USER} --password='${DB_PASSWORD}' ${DB_NAME} | gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}.gz"
 
+set -x
 #Unmount remote backup directory if present
 if [[ $REMOTE_BACKUP_DIRECTORY != \#\{*\} ]]; 
 then
@@ -55,6 +56,7 @@ fi
 
 chmod +x ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh
 echo "Rollback script created at ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh"
+set +x
 
 #Delete old database backups
 # echo "Cleaning up old backups"
