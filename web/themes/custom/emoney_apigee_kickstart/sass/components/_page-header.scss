@@ -23,29 +23,35 @@
     position: relative;
     z-index: 1;
 
-    .page {
-      &__title,
-      &__headline {
-        color: $white;
-        text-align: center;
+    .col-md-10 {
+      @include media-breakpoint-up(sm) {
+        padding: 0 !important;
+      }
 
-        @include media-breakpoint-up(sm) {
-          text-align: left;
+      .page {
+        &__title,
+        &__headline {
+          color: $white;
+          text-align: center;
+
+          @include media-breakpoint-up(sm) {
+            text-align: left;
+          }
         }
-      }
 
-      &__title  {
-        font-size: 48px;
-        font-weight: $bold;
-        line-height: 56px;
-        margin: 144px 0 16px 0;
-      }
+        &__title  {
+          font-size: 48px;
+          font-weight: $bold;
+          line-height: 56px;
+          margin: 144px 0 16px 0;
+        }
 
-      &__headline {
-        font-size: 24px;
-        font-weight: initial;
-        line-height: 32px;
-        margin: 0;
+        &__headline {
+          font-size: 24px;
+          font-weight: initial;
+          line-height: 32px;
+          margin: 0;
+        }
       }
     }
   }
