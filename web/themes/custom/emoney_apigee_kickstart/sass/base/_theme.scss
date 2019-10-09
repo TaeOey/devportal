@@ -6,11 +6,30 @@ body {
 
   .page {
     &__content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
       h2 {
         color: $gray_dark;
         font-size: 32px;
         font-weight: $bold;
         line-height: 40px;
+      }
+    }
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+
+    .page-layout-sidebar-bottom {
+      display: flex;
+      flex: 1;
+
+      &__top {
+        display: flex;
+        flex: 1;
       }
     }
   }
