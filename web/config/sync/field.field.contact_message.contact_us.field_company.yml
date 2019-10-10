@@ -1,0 +1,19 @@
+uuid: e6315b20-ff3c-46c6-b169-bdc3d0e5e75e
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.contact_us
+    - field.storage.contact_message.field_company
+id: contact_message.contact_us.field_company
+field_name: field_company
+entity_type: contact_message
+bundle: contact_us
+label: Company
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
