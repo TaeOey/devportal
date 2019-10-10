@@ -229,14 +229,17 @@ function emoney_apigee_kickstart_preprocess_taxonomy_term(&$variables) {
       $variables['api_view'] = views_embed_view('apigee_api_catalog', 'block_2', $tid);
 
       // Add blocks
-      build_custom_block($variables, 'block_cta', 6);
-      build_custom_block($variables, 'block_compare', 5);
-      build_custom_block($variables, 'block_features', 7);
+      _emoney_apigee_kickstart_build_custom_block($variables, 'block_cta', 6);
+      _emoney_apigee_kickstart_build_custom_block($variables, 'block_compare', 5);
+      _emoney_apigee_kickstart_build_custom_block($variables, 'block_features', 7);
     }
   }
 }
+/*
+ * Helper function to build and render block
+ */
 
-function build_custom_block(&$variables, $target_name, $block_id) {
+function _emoney_apigee_kickstart_build_custom_block(&$variables, $target_name, $block_id) {
   $block = \Drupal\block_content\Entity\BlockContent::load($block_id);
   if ($block) {
     $variables[$target_name] = \Drupal::entityTypeManager()
