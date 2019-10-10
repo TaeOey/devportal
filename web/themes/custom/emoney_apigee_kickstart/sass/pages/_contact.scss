@@ -1,54 +1,57 @@
-.path-contact{
-    .page {
-        background-color: $gray_lightness;
-        .justify-content {
-            margin: auto;
-        }
+.path-contact {
+  .page {
+    background-color: $gray_lightness;
 
-        .contact-form {
-            font-weight: bold;
-        }
-
-        .js-text-full {
-            height: 130px;
-        }
-
-        .fa-asterisk {
-            display: none;
-        }
-
-        .form-control,
-        #edit-name,
-        #edit-mail {
-            background-color: $white;
-            box-shadow: none;
-        }
-
-        .button--primary,
-        #edit-cancel {
-            font-family: arial;
-            width: 118px;
-        }
-
-        #edit-cancel {
-            border: solid 1px #00AAE7;
-            background-color: $white;
-            color: #00AAE7;
-            display: inline-block;
-            font-size: 14px;
-            font-weight: bold;
-            line-height: 16px;
-            text-transform: uppercase;
-            padding: 15px 26px;
-            margin-right: 16px;
-        }
+    .justify-content {
+      margin: auto;
     }
-    
+
+    form.contact-form {
+      font-weight: bold;
+
+      textarea {
+        height: 130px;
+        margin-bottom: 1rem;
+      }
+
+      .form-text.description,
+      .fa-asterisk {
+        display: none;
+      }
+
+      .form-control,
+      #edit-name,
+      #edit-mail {
+        background-color: $white;
+        box-shadow: none;
+      }
+
+      .button--primary,
+      #edit-cancel {
+        font-family: arial;
+        width: 118px;
+      }
+
+      #edit-cancel {
+        border: solid 1px #00AAE7;
+        background-color: $white;
+        color: #00AAE7;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 16px;
+        text-transform: uppercase;
+        padding: 15px 26px;
+        margin-right: 16px;
+      }
+    }
+
     .form-actions {
-        display: flex;
-        flex-flow: row-reverse;
-        justify-content: flex-start;
+      display: flex;
+      flex-flow: row-reverse;
+      justify-content: flex-start;
     }
+  }
 }
 
 body.user-logged-in.path-contact .page .contact-form {
