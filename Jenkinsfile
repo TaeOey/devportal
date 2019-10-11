@@ -82,7 +82,7 @@ pipeline {
             }
         }
         
-        stage('Deploy') {
+        /*stage('Deploy') {
             when {
                 expression { return isMasterOrDevelop() || params._IS_DEPLOY }
             }
@@ -93,7 +93,7 @@ pipeline {
                         sh "docker run --rm -v \$(pwd):/src octopusdeploy/octo deploy-release --project \"${env._OCTOPUS_PROJECT}\" --version ${PACKAGE_VERSION} --deployto \"${env._DEPLOY_TO}\" --channel Default --server ${env._OCTOPUS_SERVER} --apiKey ${env.OctoApiKey} --deploymenttimeout 00:10:00 --waitfordeployment --variable=UploadContent:false"
                     }
             }
-        }
+        }*/
     }
 
     post {
@@ -124,7 +124,8 @@ pipeline {
 }
 
 def isMasterBranch() {
-    return env.BRANCH_NAME == 'master'
+    //return env.BRANCH_NAME == 'master'
+    return true
 }
 
 def isDevelopBranch() {
