@@ -133,7 +133,7 @@ def isDevelopBranch() {
 
 def getPackageLabel() {
     if (isMasterBranch()) {
-        return ""
+        return "${(isRelease ? '-release' : '')}"
     }
     return "-${env.BRANCH_NAME.replaceAll(~/[^0-9A-Za-z-]/, '-')}"
 }
@@ -175,4 +175,8 @@ def getDeployTo() {
 
 def isMasterOrDevelop() {
     return isMasterBranch() || isDevelopBranch()
+}
+
+def isRelease() {
+    return sh (script: 'git tag -l --points-at HEAD', returnStdout: true).contains('release')
 }
