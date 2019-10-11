@@ -364,7 +364,10 @@
 
 /************* Media Queries *************************/
 /* iPad Portrait */
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media only screen 
+and (min-width: 768px) 
+and (max-width: 1024px) 
+and (orientation: portrait) {
   .path-frontpage {
     .card-deck {
       .card { 
@@ -420,7 +423,10 @@
 }
 
 /* iPad Landscape */
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media only screen 
+and (min-width: 768px) 
+and (max-width: 1024px) 
+and (orientation: landscape) {
   .path-frontpage {
     .card-deck {
       .card {
@@ -483,6 +489,7 @@
 }
 
 /* Mobile Only */
+/* iPhone Portrait */
 @media (max-width: 575px) {
   .path-frontpage {
     .page .page__header .flexslider .slides .flex-active-slide .hero-text {
@@ -548,4 +555,76 @@
     padding-bottom: 1.8rem !important;
   }
 }
+/* iPhone Landscape */
+@media only screen 
+and (min-width: 576px) 
+and (max-width: 815px)
+and (orientation: landscape) {
+  .path-frontpage {
+    .card-deck {
+      .card { 
+        width: 221px;
+        height: 184px;
+        flex: 3;
+        .card-image {
+          img {
+            padding-top: 38px;
+          }
+        }
+        .card-title {
+          h3 {
+            margin-top: 12px;
+          }
+        }
+        .card-body {
+          display: none;
+        }
+      }
+    }
+    .card-group-2 {
+      .card-deck {
+        .card {
+          width: 221px;
+          height: 184px;
+          flex: unset;
+        }
+      }
+    }
+    .paragraph.text-image {
+      .container-fluid.px-0 {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+      img {
+        height: 271px;
+      }
+      .text-image__text {
+        grid-column: 2/3;
+      }
+      .text-image__image {
+        align-self: auto;
+        grid-column: 3/span 4;
+      }
+    }
+    .paragraph.callout-group {
+      .callout__title {
+        margin-top: 0px;
+      }
+    }
+  }
+}
+
+/* iPhone 6/7/8 Landscape */
+@media only screen
+and (min-width: 576px)
+and (max-width: 737px)
+and (orientation: landscape) {
+  .path-frontpage {
+    .paragraph.card-group--default .container {
+      max-width: 100%;
+    }
+  }
+}
+
+
 /* End of Mobile Only */
