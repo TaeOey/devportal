@@ -134,7 +134,7 @@ def isDevelopBranch() {
 
 def getPackageLabel() {
     if (isMasterBranch()) {
-        return "${(isRelease ? '-release' : '')}"
+        return "${(isRelease() ? '-release' : '')}"
     }
     return "-${env.BRANCH_NAME.replaceAll(~/[^0-9A-Za-z-]/, '-')}"
 }
