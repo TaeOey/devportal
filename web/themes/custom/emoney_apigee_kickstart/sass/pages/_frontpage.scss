@@ -555,10 +555,12 @@ and (orientation: landscape) {
     padding-bottom: 1.8rem !important;
   }
 }
-/* iPhone Landscape */
+/* Only iPhone X Landscape */
 @media only screen 
-and (min-width: 576px) 
-and (max-width: 815px)
+/*and (min-width: 576px) 
+and (max-width: 815px)*/
+and (min-width: 375px)
+and (max-width: 812px)
 and (orientation: landscape) {
   .path-frontpage {
     .card-deck {
