@@ -1,5 +1,11 @@
 .use-cases {
   &-node {
+    .views-field {
+      font-size: 14px;
+      color: #96999A;
+      margin-bottom: 8px;
+    }
+
     .pager {
       list-style: none;
       padding: 30px 0 0 0;
