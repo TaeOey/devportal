@@ -177,7 +177,8 @@
       width: 361px;
       height: 202px;
       display: flex;
-      flex: unset;
+      /*flex: unset;* not working in IE11 */
+      flex: 0 0 auto;
       flex-direction: column;
       margin-right: 14px;
       margin-bottom: 0;
