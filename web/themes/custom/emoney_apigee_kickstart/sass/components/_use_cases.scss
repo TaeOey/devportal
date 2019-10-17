@@ -91,12 +91,16 @@
             &__image {
               align-self: unset;
               grid-column: none;
-              justify-content: center;
+              justify-content: flex-end;
               padding: 10px 0;
 
-              img {
-                height: 100% !important;
-                width: auto;
+              .image__field-media-image {
+                text-align: right;
+
+                img {
+                  height: 100% !important;
+                  width: auto;
+                }
               }
             }
 
