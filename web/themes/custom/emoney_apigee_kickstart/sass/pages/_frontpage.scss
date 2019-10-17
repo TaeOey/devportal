@@ -1,5 +1,3 @@
-// @import '../colors.scss';
-
 .path-frontpage {
   .page {
     .navbar {
@@ -13,8 +11,10 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      position: static;
       min-height: unset;
+      position: static;
+      z-index: 1;
+
       &:after {
         background: transparent;
         height: auto;
@@ -364,13 +364,13 @@
 
 /************* Media Queries *************************/
 /* iPad Portrait */
-@media only screen 
-and (min-width: 768px) 
-and (max-width: 1024px) 
+@media only screen
+and (min-width: 768px)
+and (max-width: 1024px)
 and (orientation: portrait) {
   .path-frontpage {
     .card-deck {
-      .card { 
+      .card {
         width: 221px;
         height: 184px;
         flex: 3;
@@ -423,9 +423,9 @@ and (orientation: portrait) {
 }
 
 /* iPad Landscape */
-@media only screen 
-and (min-width: 768px) 
-and (max-width: 1024px) 
+@media only screen
+and (min-width: 768px)
+and (max-width: 1024px)
 and (orientation: landscape) {
   .path-frontpage {
     .card-deck {
@@ -433,7 +433,7 @@ and (orientation: landscape) {
         width: 293px;
         height: 202px;
         flex: 3;
-      }  
+      }
     }
     .card-group-2 {
       .card-deck {
@@ -445,7 +445,7 @@ and (orientation: landscape) {
       }
     }
     .paragraph.card-group--default.py-7:not(.card-group-2) {
-      /*padding-bottom: 0px !important;*/ /* to overrride padding-bottom: 27px !important;*/ 
+      /*padding-bottom: 0px !important;*/ /* to overrride padding-bottom: 27px !important;*/
     }
     .card-group-2 .card-group__buttons {
       /*padding-top: 16px !important;*/
@@ -482,9 +482,9 @@ and (orientation: landscape) {
   }
 }
 /* Large screen */
-@media (min-width: 1440px) { 
+@media (min-width: 1440px) {
   .path-frontpage .page .page__header .flexslider .hero-text {
-    left: 15%;   
+    left: 15%;
   }
 }
 
@@ -494,7 +494,7 @@ and (orientation: landscape) {
   .path-frontpage {
     .page .page__header .flexslider .slides .flex-active-slide .hero-text {
       width: 87%;
-      top: 21%; 
+      top: 21%;
     }
     .page .page__header .flexslider .hero-text .views-field-title {
       font-size: 38px;
@@ -511,10 +511,10 @@ and (orientation: landscape) {
       font-size: 24px;
     }
     .emoney-card {
-      width: 95%; 
+      width: 95%;
     }
     .card-deck {
-      .card { 
+      .card {
         width: 290px;
         height: 184px;
         margin-bottom: 16px;
@@ -531,7 +531,7 @@ and (orientation: landscape) {
         }
       }
     }
-    .paragraph.text-image {       
+    .paragraph.text-image {
       img {
         height: 183px;
       }
@@ -556,15 +556,15 @@ and (orientation: landscape) {
   }
 }
 /* Only iPhone X Landscape */
-@media only screen 
-/*and (min-width: 576px) 
+@media only screen
+/*and (min-width: 576px)
 and (max-width: 815px)*/
 and (min-width: 375px)
 and (max-width: 812px)
 and (orientation: landscape) {
   .path-frontpage {
     .card-deck {
-      .card { 
+      .card {
         width: 221px;
         height: 184px;
         flex: 3;
