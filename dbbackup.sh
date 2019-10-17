@@ -19,11 +19,24 @@ if [ ! -d "${BACKUP_DIRECTORY}" ]; then
     sudo mkdir -p ${BACKUP_DIRECTORY}
 fi
 
+#Mount remote backup directory if present
+if [[ $REMOTE_BACKUP_DIRECTORY != \#\{*\} ]]; 
+then
+    echo "Mounting remote share"
+    sudo mount $REMOTE_BACKUP_DIRECTORY $BACKUP_DIRECTORY
+fi
 
 #Backup Drupal database
 echo "Create database backup in ${BACKUP_DIRECTORY}/${DB_BACKUP}"
 echo "${DB_IP}:${DB_PORT}:${DB_NAME}:${DB_USER}"
-sudo mysqldump --user ${DB_USER} --password=${DB_PASSWORD} ${DB_NAME} | gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}.gz
+sudo sh -c "mysqldump --user ${DB_USER} --password='${DB_PASSWORD}' ${DB_NAME} | gzip > ${BACKUP_DIRECTORY}/${DB_BACKUP}.gz"
+
+#Unmount remote backup directory if present
+if [[ $REMOTE_BACKUP_DIRECTORY != \#\{*\} ]]; 
+then
+    echo "Unmounting remote share"
+    sudo umount -l $BACKUP_DIRECTORY
+fi
 
 #Create a database rollback script
 sudo cat << EOF >> ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh
@@ -31,6 +44,14 @@ echo "Restoring database backup ${DB_BACKUP}"
 gunzip ${BACKUP_DIRECTORY}/${DB_BACKUP}.gz
 mysql -u ${DB_USER} --password='${DB_PASSWORD}' ${DB_NAME} < ${BACKUP_DIRECTORY}/${DB_BACKUP}
 EOF
+
+#Update rollback script if remote is present
+if [[ $REMOTE_BACKUP_DIRECTORY != \#\{*\} ]]; 
+then
+    echo "mount $REMOTE_BACKUP_DIRECTORY $BACKUP_DIRECTORY" | cat - ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh > temp && mv temp ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh
+    echo "umount -l $BACKUP_DIRECTORY" >> ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh
+fi
+
 
 chmod +x ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh
 echo "Rollback script created at ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh"
@@ -45,5 +66,7 @@ echo "Rollback script created at ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh"
 #     echo "Sending backup to remote backup directory"
 #     cp ${BACKUP_DIRECTORY}/${DB_BACKUP} ${REMOTE_BACKUP_DIRECTORY}/${DB_BACKUP}
 # fi
+
+
 
 echo "dbbackup script ran"
