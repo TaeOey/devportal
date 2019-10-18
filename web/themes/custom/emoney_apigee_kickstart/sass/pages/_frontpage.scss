@@ -631,3 +631,9 @@ and (orientation: landscape) {
 
 
 /* End of Mobile Only */
+
+/* IE11 Specific */
+@media all and (-ms-high-contrast: none), (-ms-high-contract: active)
+{ 
+  .path-frontpage .text-image__text.py-6 { background-color: red; }
+}
