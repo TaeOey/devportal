@@ -15,6 +15,7 @@
       background-size: cover;
       position: static;
       min-height: auto;
+      z-index: 1;
       &:after {
         background: transparent;
         height: auto;
