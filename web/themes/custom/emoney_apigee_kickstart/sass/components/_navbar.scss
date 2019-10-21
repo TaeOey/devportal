@@ -171,8 +171,7 @@
             color: $white;
             font-family: $Arial;
             font-size: 16px;
-            line-height: 18px;
-            padding: 3px 0;
+            height: 25px;
 
             @include media-breakpoint-up(lg) {
               max-width: 65px;
