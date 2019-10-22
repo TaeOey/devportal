@@ -11,9 +11,23 @@
           if (card_count == 2) {
             $(this).addClass('card-group-2');
           }
-
         });
 
+        /* Match the card width when the page is loaded */
+        $(document).ready(function() {
+          var card_width = $('.path-frontpage .paragraph.card-group--default:not(".card-group-2") .card').width();
+            $('.path-frontpage .paragraph.card-group--default.card-group-2 .card-deck .card').each(function(){
+              $(this).css('width', card_width);
+            });
+         });
+
+        /* Resize the cards in the second row to match with the frist row in homepage*/ 
+        $(window).resize(function() {
+          var card_width = $('.path-frontpage .paragraph.card-group--default:not(".card-group-2") .card').width();
+          $('.path-frontpage .paragraph.card-group--default.card-group-2 .card-deck .card').each(function(){
+            $(this).css('width', card_width);
+          });
+        });   
 
         /** Add toggle feature to accordion paragraph */
         $('.paragraph.accordion', context).once('myModuleBehavior').each(function () {
@@ -30,7 +44,6 @@
             arrow.toggleClass(arrowUp + ' ' + arrowDown)
           });
         });
-
 
         /** Add toggle feature to Support page */
         $('.faq-question', context).once('myModuleBehavior').each(function () {
