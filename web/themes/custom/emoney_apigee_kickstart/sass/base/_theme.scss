@@ -4,6 +4,10 @@ body {
   font-size: 16px;
   line-height: 24px;
 
+  .dialog-off-canvas-main-canvas {
+    height: auto;
+  }
+
   .page {
     &__content {
       display: flex;
