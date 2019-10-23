@@ -41,6 +41,8 @@
       }
 
       .nav-link {
+        color: $white;
+
         &.is-active {
           font-weight: $bold;
 
@@ -60,8 +62,8 @@
     line-height: 9px;
     font-size: 12px;
 
-    .justify-content-md-end {
-      display: unset !important;
+    .d-md-flex {
+      display: block !important;
     }
   }
 }

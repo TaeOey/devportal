@@ -15,6 +15,7 @@
       background-size: cover;
       position: static;
       min-height: auto;
+      z-index: 1;
       &:after {
         background: transparent;
         height: auto;
@@ -174,11 +175,10 @@
     margin-right: 0px;
     margin-left: 0px;
     .card {
-      width: 361px;
+      width: 356px;
       height: 202px;
       display: flex;
-      /*flex: unset;* not working in IE11 */
-      flex: 0 0 auto;
+      flex: unset;
       flex-direction: column;
       margin-right: 14px;
       margin-bottom: 0;
@@ -364,6 +364,7 @@
 }
 
 /************* Media Queries *************************/
+/***** iPad *****/
 /* iPad Portrait */
 @media only screen 
 and (min-width: 768px) 
@@ -472,8 +473,33 @@ and (orientation: landscape) {
     }
   }
 }
+/***** End of iPad *****/
 
-/* Desktop Only */
+/***** Desktop Only *****/
+@media (min-width: 576px) {
+  .path-frontpage {
+    .container {
+      max-width: none;
+  }
+ }
+}
+
+@media (min-width: 576px) and (max-width: 687px){ 
+  .path-frontpage .card-deck .card {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 17px;
+  }
+  .path-frontpage .paragraph.card-group--default.py-7:not(.card-group-2) {
+    padding-bottom: 0px !important;
+  }
+  
+}
+@media (max-width: 767px) {
+  .path-frontpage .callout-group .container {
+    height: unset;
+  }
+}
 @media (min-width: 992px) {
   .path-frontpage .paragraph.card-group--default:not(.card-group-2) .container {
     max-width: 1200px;
@@ -482,14 +508,44 @@ and (orientation: landscape) {
     height: 600px;
   }
 }
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .path-frontpage {
+    .card-deck {
+      .card {
+        width: 293px;
+        height: 202px;
+        flex: unset;
+        &.paragraph.card--default:not(.card-group-2):first-child {
+          margin-left: auto;
+        }
+        &.paragraph.card--default:not(.card-group-2):last-child {
+          margin-right: auto;
+        }
+      }  
+    }
+    .card-group-2 {
+      .card-deck {
+        .card {
+          width: 293px;
+          //width: 30%;
+          height: 202px;
+          flex: unset;
+        }
+      }
+    }
+  }
+}
+
 /* Large screen */
 @media (min-width: 1440px) { 
   .path-frontpage .page .page__header .flexslider .hero-text {
     left: 15%;   
   }
 }
+/***** End of Desktop *****/
 
-/* Mobile Only */
+/***** Mobile Only *****/
 /* iPhone Portrait */
 @media (max-width: 575px) {
   .path-frontpage {
@@ -542,7 +598,7 @@ and (orientation: landscape) {
       }
     }
     .paragraph.callout-group {
-      height: 415px;
+      height: unset; // 415px
       .container .col-md-6 .callout {
         padding-top: 1.5rem;
         padding-bottom: 3rem;
@@ -556,6 +612,7 @@ and (orientation: landscape) {
     padding-bottom: 1.8rem !important;
   }
 }
+
 /* Only iPhone X Landscape */
 @media only screen 
 /*and (min-width: 576px) 
@@ -628,12 +685,4 @@ and (orientation: landscape) {
     }
   }
 }
-
-
-/* End of Mobile Only */
-
-/* IE11 Specific */
-@media all and (-ms-high-contrast: none), (-ms-high-contract: active)
-{ 
-  .path-frontpage .text-image__text.py-6 { background-color: red; }
-}
+/***** End of Mobile Only *****/
