@@ -178,7 +178,7 @@
       width: 356px;
       height: 202px;
       display: flex;
-      flex: unset;
+      flex: none; //change from unset to none for IE11
       flex-direction: column;
       margin-right: 14px;
       margin-bottom: 0;
@@ -396,7 +396,7 @@ and (orientation: portrait) {
         .card {
           width: 221px;
           height: 184px;
-          flex: unset;
+          flex: none; //change for IE11
         }
       }
     }
@@ -442,7 +442,7 @@ and (orientation: landscape) {
         .card {
           width: 293px;
           height: 202px;
-          flex: unset;
+          flex: none; // change the value for IE11
         }
       }
     }
@@ -530,7 +530,7 @@ and (orientation: landscape) {
           width: 293px;
           //width: 30%;
           height: 202px;
-          flex: unset;
+          flex: none; //change the value for IE11
         }
       }
     }
@@ -584,7 +584,7 @@ and (orientation: landscape) {
         .card {
           width: 290px;
           height: 184px;
-          flex: unset;
+          flex: none; //change the value for IE11
         }
       }
     }
@@ -646,7 +646,7 @@ and (orientation: landscape) {
         .card {
           width: 221px;
           height: 184px;
-          flex: unset;
+          flex: none; // change the value for IE11
         }
       }
     }
@@ -686,3 +686,22 @@ and (orientation: landscape) {
   }
 }
 /***** End of Mobile Only *****/
+
+/***** IE11 Specific *****/
+@media all and (-ms-high-contrast: none), (-ms-high-contract: active)
+{ 
+  .path-frontpage {
+    .text-image__wrapper {
+      display: flex;
+      .text-image__text.py-6 {
+        flex:0 0 50%; 
+        max-width: 50%;
+        padding-left: 5rem;
+      }
+      .text-image__image {
+        flex:0 0 50%; 
+        max-width: 50%;
+      }
+    }
+  }
+}
