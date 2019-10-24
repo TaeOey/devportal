@@ -64,20 +64,25 @@
           const config = { attributes: true, childList: true, subtree: true };
 
           const callback = function(mutationsList, observer) {
-            for(let mutation of mutationsList) {
-              if(mutation.type === 'childList') {
-                const tryOut = document.getElementsByClassName('try-out');
-                const schemeContainer = document.getElementsByClassName('scheme-container');
 
-                if(tryOut.length) {
-                  for (let i = 0; i < tryOut.length; i++) {
-                    tryOut[i].remove();
+            for (var mutation in mutationsList) {
+              if (mutationsList.hasOwnProperty(mutation)) {
+                const element = mutationsList[mutation];
+
+                if(element.type === 'childList') {
+                  const tryOut = document.getElementsByClassName('try-out');
+                  const schemeContainer = document.getElementsByClassName('scheme-container');
+
+                  if(tryOut.length) {
+                    for (let i = 0; i < tryOut.length; i++) {
+                      $(tryOut[i]).remove();
+                    }
                   }
-                }
 
-                if(schemeContainer.length) {
-                  for (let i = 0; i < schemeContainer.length; i++) {
-                    schemeContainer[i].remove();
+                  if(schemeContainer.length) {
+                    for (let i = 0; i < schemeContainer.length; i++) {
+                      $(schemeContainer[i]).remove();
+                    }
                   }
                 }
               }
