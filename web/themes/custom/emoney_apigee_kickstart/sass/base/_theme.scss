@@ -7,12 +7,21 @@ body {
   .dialog-off-canvas-main-canvas {
     flex-grow: 1;
   }
+  
+  *:focus {
+    outline: $white auto 1px;
+    box-shadow: 0 0 5px 0 $gray_lightness;
+    
+    @include media-breakpoint-up(md) {
+      box-shadow: none;
+    }
+  }
 
   .page {
     &__content {
       display: flex;
       flex-direction: column;
-      flex: 1;
+      flex-grow: 1;
 
       h2 {
         color: $gray_dark;

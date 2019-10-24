@@ -1,3 +1,5 @@
+.page-register,
+.page-login,
 .path-user {
   .navbar {
     .container {
@@ -11,7 +13,7 @@
     &__content {
       .user-form {
         #edit-register-text {
-          max-width: initial;
+          max-width: 100%;
         }
       }
     }
@@ -38,6 +40,10 @@
           opacity: .8;
         }
       }
+    }
+
+    .user-register-form {
+      max-width: 100% !important;
     }
   }
 }
