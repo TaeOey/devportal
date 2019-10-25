@@ -5,13 +5,13 @@ body {
   line-height: 24px;
 
   .dialog-off-canvas-main-canvas {
-    flex-grow: 1;
+    height: auto;
   }
-  
+
   *:focus {
     outline: $white auto 1px;
     box-shadow: 0 0 5px 0 $gray_lightness;
-    
+
     @include media-breakpoint-up(md) {
       box-shadow: none;
     }
