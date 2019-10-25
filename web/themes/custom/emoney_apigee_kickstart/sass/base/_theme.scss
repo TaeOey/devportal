@@ -5,7 +5,11 @@ body {
   line-height: 24px;
 
   .dialog-off-canvas-main-canvas {
-    height: auto;
+    flex-grow: 1;
+
+    .page {
+      display: block;
+    }
   }
 
   *:focus {
@@ -19,7 +23,6 @@ body {
 
   .page {
     &__content {
-      display: flex;
       flex-direction: column;
       flex-grow: 1;
 
@@ -34,12 +37,10 @@ body {
 
   .main {
     .page-layout-sidebar-bottom {
-      display: flex;
-      flex: 1;
+      flex-grow: 1;
 
       &__top {
-        display: flex;
-        flex: 1;
+        flex-grow: 1;
       }
     }
   }

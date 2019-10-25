@@ -1,19 +1,12 @@
 article[about=\/support] {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
 
   .layout {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
+    flex-grow: 1;
 
     &__region {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-
       .block {
+        margin-bottom: 0;
+
         &:first-of-type {
           .paragraph {
             &.py-6 {
@@ -23,7 +16,14 @@ article[about=\/support] {
           }
         }
 
-        margin-bottom: 0;
+        &:nth-of-type(2) {
+          flex-grow: 1;
+          overflow: hidden;
+
+          .views-element-container {
+            flex-grow: 1;
+          }
+        }
 
         .paragraph {
           &.py-6 {
