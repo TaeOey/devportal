@@ -7,11 +7,11 @@ body {
   .dialog-off-canvas-main-canvas {
     height: auto;
   }
-  
+
   *:focus {
     outline: $white auto 1px;
     box-shadow: 0 0 5px 0 $gray_lightness;
-    
+
     @include media-breakpoint-up(md) {
       box-shadow: none;
     }
