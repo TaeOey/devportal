@@ -691,6 +691,9 @@ and (orientation: landscape) {
 @media all and (-ms-high-contrast: none), (-ms-high-contract: active)
 { 
   .path-frontpage {
+    .page .page__header {
+      background-image: none;
+    }
     .text-image__wrapper {
       display: flex;
       .text-image__text.py-6 {

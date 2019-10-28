@@ -27,7 +27,6 @@ body {
 
   .page {
     &__content {
-      display: flex;
       flex-direction: column;
       flex-grow: 1;
 
@@ -42,12 +41,10 @@ body {
 
   .main {
     .page-layout-sidebar-bottom {
-      display: flex;
-      flex: 1;
+      flex-grow: 1;
 
       &__top {
-        display: flex;
-        flex: 1;
+        flex-grow: 1;
       }
     }
   }
