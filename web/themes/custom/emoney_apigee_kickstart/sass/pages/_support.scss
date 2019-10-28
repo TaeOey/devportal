@@ -1,113 +1,124 @@
-article[about=\/support] {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
+.path-support {
+  .dialog-off-canvas-main-canvas {
+    > .page {
+      display: block;
+      height: auto;
+      min-height: 100%;
+      padding-bottom: 130px;
 
-  .layout {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
+      article[about=\/support] {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
 
-    &__region {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
+        .layout {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
 
-      .block {
-        &:first-of-type {
-          .paragraph {
-            &.py-6 {
-              padding-top: 32px !important;
-              padding-bottom: 0 !important;
+          &__region {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+
+            .block {
+              &:first-of-type {
+                .paragraph {
+                  &.py-6 {
+                    padding-top: 32px !important;
+                    padding-bottom: 0 !important;
+                  }
+                }
+              }
+
+              margin-bottom: 0;
+
+              .paragraph {
+                &.py-6 {
+
+
+                  h2 {
+                    margin-bottom: 10px;
+                  }
+                }
+              }
+
+              &--cta {
+                margin-top: auto;
+              }
+            }
+
+            .view-faq {
+              margin: 3px 0 73px;
+
+              .faq-question {
+                border-bottom: $blue_jeans 1px solid;
+                color: $blue_jeans;
+                cursor: pointer;
+                display: flex;
+                font-size: 20px;
+                font-weight: $bold;
+                justify-content: space-between;
+                line-height: 28px;
+                margin: 0;
+                padding: 12px;
+
+                @include media-breakpoint-up(xl) {
+                  font-size: 24px;
+                  justify-content: initial;
+                  line-height: 24px;
+                  padding: 12px 29px;
+                }
+
+                .details__icon {
+                  color: $blue_jeans;
+                  margin-left: 14px;
+                  position: initial;
+                }
+              }
+
+              .faq-answer {
+                display: none;
+                padding: 7px 29px;
+
+                &--open {
+                  display: block;
+                  margin-bottom: -10px;
+                  padding-top: 16px;
+                  padding-bottom: 0;
+                }
+              }
             }
           }
         }
-
-        margin-bottom: 0;
 
         .paragraph {
-          &.py-6 {
+          &.cta {
+            &.py-6 {
+              padding: 32px 0 !important;
+            }
 
+            h3 {
+              color: $white;
+              font-size: 22px;
+              font-weight: $bold;
+              line-height: 24px;
+              margin: 0 0 24px 0;
+            }
 
-            h2 {
-              margin-bottom: 10px;
+            .btn {
+              color: $white;
+              font-family: Lato;
+              font-size: 14px;
+              font-weight: $bold;
+              line-height: 48px;
+              margin: 0;
+              padding: 0;
+              text-align: center;
+              width: 166px;
             }
           }
         }
-
-        &--cta {
-          margin-top: auto;
-        }
-      }
-
-      .view-faq {
-        margin: 3px 0 73px;
-
-        .faq-question {
-          border-bottom: $blue_jeans 1px solid;
-          color: $blue_jeans;
-          cursor: pointer;
-          display: flex;
-          font-size: 20px;
-          font-weight: $bold;
-          justify-content: space-between;
-          line-height: 28px;
-          margin: 0;
-          padding: 12px;
-
-          @include media-breakpoint-up(xl) {
-            font-size: 24px;
-            justify-content: initial;
-            line-height: 24px;
-            padding: 12px 29px;
-          }
-
-          .details__icon {
-            color: $blue_jeans;
-            margin-left: 14px;
-            position: initial;
-          }
-        }
-
-        .faq-answer {
-          display: none;
-          padding: 7px 29px;
-
-          &--open {
-            display: block;
-            margin-bottom: -10px;
-            padding-top: 16px;
-            padding-bottom: 0;
-          }
-        }
-      }
-    }
-  }
-
-  .paragraph {
-    &.cta {
-      &.py-6 {
-        padding: 32px 0 !important;
-      }
-
-      h3 {
-        color: $white;
-        font-size: 22px;
-        font-weight: $bold;
-        line-height: 24px;
-        margin: 0 0 24px 0;
-      }
-
-      .btn {
-        color: $white;
-        font-family: Lato;
-        font-size: 14px;
-        font-weight: $bold;
-        line-height: 48px;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        width: 166px;
       }
     }
   }

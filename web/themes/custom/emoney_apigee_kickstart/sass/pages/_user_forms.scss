@@ -7,7 +7,7 @@
   }
 
   .page-login {
-    flex: 1;
+    flex-grow: 1;
 
     .form-required {
       font-weight: $bold;
