@@ -122,7 +122,8 @@ form {
     }
   }
 
-  &.user-login-form {
+  &.user-login-form,
+  &.user-pass {
     .form-actions {
       flex-flow: initial;
       justify-content: center;
