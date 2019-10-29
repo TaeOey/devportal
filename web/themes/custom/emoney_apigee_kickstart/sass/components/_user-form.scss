@@ -3,7 +3,7 @@ form {
   &.contact-form,
   &.user-login-form,
   &.user-pass {
-    margin-top: 64px;
+    margin: 64px auto;
     max-width: initial !important;
 
 
@@ -16,10 +16,10 @@ form {
       color: $gray_dark;
       font-weight: $bold;
       line-height: 24px;
+    }
 
-      a {
-        color: $blue_light;
-      }
+    a {
+      color: $blue;
     }
 
     .form {
@@ -118,6 +118,21 @@ form {
         &__indicator {
           color: $gray_dark !important;
         }
+      }
+    }
+  }
+
+  &.user-login-form,
+  &.user-pass {
+    .form-actions {
+      flex-flow: initial;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    #edit-forgot-text {
+      label {
+        display: none;
       }
     }
   }
