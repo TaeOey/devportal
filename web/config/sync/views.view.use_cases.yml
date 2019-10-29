@@ -452,7 +452,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{% if field_products %}\r\n<span>Included in the following product(s): </span> <span class=\"views-field views-field-field-products\"><span class=\"field-content\"> {{ field_products }} </span></span>\r\n{% endif %}"
+            text: "{% if field_products %}\r\n<span>Included in: </span> <span class=\"views-field views-field-field-products\"><span class=\"field-content\"> {{ field_products }} </span></span>\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -841,7 +841,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{% if field_products %}\r\n<span>Included in the following product(s): </span> <span class=\"views-field views-field-field-products\"><span class=\"field-content\"> {{ field_products }} </span></span>\r\n{% endif %}"
+            text: "{% if field_products %}\r\n<span>Included in: </span> <span class=\"views-field views-field-field-products\"><span class=\"field-content\"> {{ field_products }} </span></span>\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -1232,7 +1232,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{% if field_products %}\r\n<span>Included in the following product(s): </span> <span class=\"views-field views-field-field-products\"><span class=\"field-content\"> {{ field_products }} </span></span>\r\n{% endif %}"
+            text: "{% if field_products %}\r\n<span>Included in: </span> <span class=\"views-field views-field-field-products\"><span class=\"field-content\"> {{ field_products }} </span></span>\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
