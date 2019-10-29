@@ -477,7 +477,7 @@ and (orientation: landscape) {
 
 /***** Desktop Only *****/
 @media (min-width: 576px) {
-  .path-frontpage {
+  .path-frontpage .main {
     .container {
       max-width: none;
   }
