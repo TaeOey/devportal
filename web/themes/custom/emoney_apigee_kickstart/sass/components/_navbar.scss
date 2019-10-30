@@ -127,6 +127,10 @@
             padding-right: 11px;
           }
 
+          &:focus {
+            outline: none;
+          }
+
           &.is-active {
             font-weight: $bold;
 
