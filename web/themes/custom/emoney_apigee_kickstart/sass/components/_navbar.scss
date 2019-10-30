@@ -142,7 +142,7 @@
       }
 
       .mr-auto {
-        margin: initial !important;
+        margin: 0 !important;
       }
 
       .block--emoney-apigee-kickstart-menu-account {
@@ -164,7 +164,7 @@
 
         .form {
           &-group {
-            display: flex;
+            flex-flow: row;
           }
 
           &-search {
