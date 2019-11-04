@@ -1,0 +1,47 @@
+uuid: a1e0af35-d1d3-4135-96e4-029fe285bdbe
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:a069bab3-1b14-4d37-8c63-76fe4257591d'
+  module:
+    - apigee_kickstart_enhancement
+    - block_content
+    - system
+    - user
+  theme:
+    - emoney_apigee_kickstart
+id: signinregister
+theme: emoney_apigee_kickstart
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:a069bab3-1b14-4d37-8c63-76fe4257591d'
+settings:
+  id: 'block_content:a069bab3-1b14-4d37-8c63-76fe4257591d'
+  label: 'Sign In Register'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  block_type:
+    id: block_type
+    uuid: a1e0af35-d1d3-4135-96e4-029fe285bdbe
+    bundles: {  }
+    is_adjacent: 0
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/products/core\r\n/products/primary-planning\r\n/products/expanded-planning\r\n/collections/plan-data\r\n/collections/firm-admin\r\n/collections/document-management\r\n/collections/client-facts\r\n/collections/supporting-info"
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
