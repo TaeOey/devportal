@@ -53,11 +53,13 @@
       </div>
     </div>
 
-    {% if block_sr %}
-      <div class="block sign_in_reg row">
-        {{ block_sr }}
-      </div>
-    {%  endif %}
+    {% if not logged_in %}
+      {% if block_sr %}
+        <div class="block sign_in_reg row">
+          {{ block_sr }}
+        </div>
+      {%  endif %}
+    {% endif %}
     
     {% if api_view %}
       <div class="collections__apis">

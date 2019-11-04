@@ -38,11 +38,13 @@
           <div class="col-md-6">{{ content.field_image }}</div>
         </div>
       </div>
-      
-      {% if block_sr %}
-        <div class="block sign_in_reg row tae">
-          {{ block_sr }}
-        </div>
+
+      {% if not logged_in %}
+        {% if block_sr %}
+          <div class="block sign_in_reg row">
+            {{ block_sr }}
+          </div>
+        {%  endif %}
       {%  endif %}
       
       {% if api_view %}
