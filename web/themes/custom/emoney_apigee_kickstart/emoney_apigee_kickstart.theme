@@ -214,13 +214,6 @@ function emoney_apigee_kickstart_preprocess_taxonomy_term(&$variables) {
   $vocabulary = $term->bundle();
   if ($vocabulary == 'collections' || $vocabulary == 'products') {
     $tid = $term->id();
-    // Add Sign in Registration block
-      $block = \Drupal\block_content\Entity\BlockContent::load(8);
-      if ($block) {
-        $variables['block_sr'] = \Drupal::entityTypeManager()
-          ->getViewBuilder('block_content')
-          ->view($block);
-      }
     if ($vocabulary == 'collections') {
       $variables['api_view'] = views_embed_view('apigee_api_catalog', 'block_1', $tid);
       $variables['usecase_view'] = views_embed_view('use_cases', 'block_1', $tid);
@@ -232,6 +225,7 @@ function emoney_apigee_kickstart_preprocess_taxonomy_term(&$variables) {
           ->getViewBuilder('block_content')
           ->view($block);
       }
+      _emoney_apigee_kickstart_build_custom_block($variables, 'block_sr', 8);
     }
     elseif ($vocabulary == 'products') {
       $variables['api_view'] = views_embed_view('apigee_api_catalog', 'block_2', $tid);
@@ -240,6 +234,7 @@ function emoney_apigee_kickstart_preprocess_taxonomy_term(&$variables) {
       _emoney_apigee_kickstart_build_custom_block($variables, 'block_cta', 6);
       _emoney_apigee_kickstart_build_custom_block($variables, 'block_compare', 5);
       _emoney_apigee_kickstart_build_custom_block($variables, 'block_features', 7);
+      _emoney_apigee_kickstart_build_custom_block($variables, 'block_sr', 8);
     }
   }
 }
