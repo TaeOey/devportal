@@ -21,13 +21,13 @@
             });
          });
 
-        /* Resize the cards in the second row to match with the frist row in homepage*/ 
+        /* Resize the cards in the second row to match with the frist row in homepage*/
         $(window).resize(function() {
           var card_width = $('.path-frontpage .paragraph.card-group--default:not(".card-group-2") .card').width();
           $('.path-frontpage .paragraph.card-group--default.card-group-2 .card-deck .card').each(function(){
             $(this).css('width', card_width);
           });
-        });   
+        });
 
         /** Add toggle feature to accordion paragraph */
         $('.paragraph.accordion', context).once('myModuleBehavior').each(function () {
@@ -91,6 +91,17 @@
 
           const observer = new MutationObserver(callback);
           observer.observe(targetNode, config);
+        });
+
+        /** Implemenet feature to scroll to up */
+        $('button.go-to-up').once('myModuleBehavior').each(function () {
+          const goToUpButton = $(this);
+
+          goToUpButton.click(function(){
+            $('html, body').animate({
+              scrollTop: 0
+            }, 800);
+          });
         });
       }
     };
