@@ -5,7 +5,6 @@
     box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.02);
     display: flex;
     flex-flow: column;
-    // height: 384px;
     margin: 30px 0 10px 0;
     overflow: hidden;
     padding: 34px 32px;
@@ -51,60 +50,65 @@
       }
 
       &-field-content {
-        display: flex;
-        flex: 1;
+        flex-grow: 1;
 
         @include media-breakpoint-up(lg) {
           max-height: 211px;
         }
 
         .field-content {
-          display: flex;
-
           .text-image {
             display: flex;
+            height: auto;
 
             &__wrapper {
+              align-items: flex-start;
               display: flex;
               flex-direction: column-reverse;
               grid-template-columns: initial;
 
               @include media-breakpoint-up(lg) {
                 flex-direction: row;
-                max-height: 220px;
+                height: 220px;
               }
             }
 
             &__text,
             &__image {
-              flex: 1;
-              display: flex;
+              flex-grow: 1;
+              display: block;
               padding: 0 !important;
               position: relative;
 
-              @include media-breakpoint-up(lg) {
-                height: 100%;
-              }
-            }
+              * {
+                height: auto;
 
-            &__image {
-              align-self: unset;
-              grid-column: none;
-              justify-content: flex-end;
-              padding: 10px 0;
-
-              .image__field-media-image {
-                text-align: right;
-
-                img {
-                  height: 100% !important;
-                  width: auto;
+                @include media-breakpoint-up(lg) {
+                  height: 100%;
                 }
               }
             }
 
-            .container-fluid {
-              display: flex;
+            &__text {
+              padding-top: 20px !important;
+              padding-right: 20px !important;
+
+              @include media-breakpoint-up(lg) {
+                padding-top: 10px !important;
+              }
+            }
+
+            &__image {
+              @include media-breakpoint-up(lg) {
+                flex: 0 0 460px;
+                text-align: right;
+              }
+
+              img {
+                max-height: 100%;
+                max-width: 100%;
+                width: auto;
+              }
             }
           }
         }
@@ -122,7 +126,7 @@
 
       &-nothing-1 {
         font-size: 14px;
-        color: #96999a;
+        color: $gray_soft;
         margin-bottom: 8px;
       }
     }
