@@ -1,7 +1,7 @@
 .api-node {
   background-color: $gray_lightness;
 
-  article[about=\/collections] {
+  article[about=\/apis] {
     div[data-layout-content-preview-placeholder-label="\"Content\" field"] {
       margin-bottom: 0px;
     }
@@ -106,10 +106,10 @@
                 }
               }
 
-              .views-field-description__value {
-                flex-direction: column;
-                display: flex;
-              }
+              // .views-field-description__value {
+              //   flex-direction: column;
+              //   display: flex;
+              // }
             }
           }
 
