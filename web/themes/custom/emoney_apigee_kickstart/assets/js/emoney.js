@@ -93,14 +93,27 @@
           observer.observe(targetNode, config);
         });
 
-        /** Implemenet feature to scroll to up */
+        /** Implement feature to scroll to up */
         $('button.go-to-up').once('myModuleBehavior').each(function () {
           const goToUpButton = $(this);
+
+          $(window).scroll(function() {
+            const viewPort = $(window).height();
+            const scrollTop = $(document).scrollTop();
+
+            if(scrollTop > viewPort) {
+              goToUpButton.addClass('go-to-up--visible');
+            } else {
+              goToUpButton.removeClass('go-to-up--visible');
+            };
+          });
 
           goToUpButton.click(function(){
             $('html, body').animate({
               scrollTop: 0
-            }, 800);
+            }, 800, function() {
+              goToUpButton.blur();
+            });
           });
         });
       }

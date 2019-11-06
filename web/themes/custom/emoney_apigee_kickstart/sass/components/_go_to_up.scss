@@ -1,0 +1,25 @@
+button.go-to-up {
+  background-color: $white;
+  border: none;
+  border-radius: 56px;
+  bottom: 94px;
+  box-shadow: 0 0 8px 3px rgba(0,0,0,0.08);
+  color: $blue;
+  font-size: 24px;
+  height: 56px;
+  opacity: 0;
+  outline: none;
+  position: fixed;
+  right: 42px;
+  transition: all .3s ease-out;
+  width: 56px;
+
+  &--visible {
+    bottom: 104px;
+    opacity: 1;
+
+    &:focus {
+      box-shadow: 0 0 8px 3px rgba(0, 170, 231, 0.4);
+    }
+  }
+}
