@@ -48,6 +48,10 @@
       .nav-link {
         color: $white;
 
+        &:focus {
+          outline: none;
+        }
+
         &.is-active {
           font-weight: $bold;
 
