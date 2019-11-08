@@ -12,6 +12,8 @@
 
     .views-field {
       &-title {
+        margin-bottom: 9px;
+
         .field-content {
           color: $gray_dark;
           display: inline-block;
@@ -19,13 +21,12 @@
           font-size: 24px !important;
           font-weight: $extraBold !important;
           line-height: 29px !important;
-          margin: 0 0 12px 0;
           text-transform: uppercase;
         }
       }
 
       &-field-products {
-        margin-bottom: 12px;
+        margin-bottom: 8px;
 
         .field-content {
           max-width: 200px;
@@ -98,7 +99,7 @@
               position: relative;
 
               @include media-breakpoint-up(lg) {
-                padding-top: 10px !important;
+                padding-top: 0 !important;
               }
 
               &:after {
