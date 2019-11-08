@@ -49,6 +49,16 @@ $supporting-info: 9;
     }
   }
 
+  &__sign-in-reg {
+    text-align: center;
+    color: black;
+    margin-top: -3rem;
+    margin-bottom: 5rem;
+    height: 11rem;
+    .field {
+      padding-top: 2rem;
+    }
+  }
   &__apis {
     padding-bottom: 77px;
   }

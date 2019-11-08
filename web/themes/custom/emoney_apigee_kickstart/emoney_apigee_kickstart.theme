@@ -23,6 +23,7 @@ function emoney_apigee_kickstart_preprocess_html(array &$variables) {
   $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
   $path_alias = ltrim($path_alias, '/');
   $variables['attributes']['class'][] = 'path-' . \Drupal\Component\Utility\Html::cleanCssIdentifier($path_alias);
+
 }
 
 /**
@@ -224,6 +225,7 @@ function emoney_apigee_kickstart_preprocess_taxonomy_term(&$variables) {
           ->getViewBuilder('block_content')
           ->view($block);
       }
+      _emoney_apigee_kickstart_build_custom_block($variables, 'block_sr', 8);
     }
     elseif ($vocabulary == 'products') {
       $variables['api_view'] = views_embed_view('apigee_api_catalog', 'block_2', $tid);
@@ -232,6 +234,7 @@ function emoney_apigee_kickstart_preprocess_taxonomy_term(&$variables) {
       _emoney_apigee_kickstart_build_custom_block($variables, 'block_cta', 6);
       _emoney_apigee_kickstart_build_custom_block($variables, 'block_compare', 5);
       _emoney_apigee_kickstart_build_custom_block($variables, 'block_features', 7);
+      _emoney_apigee_kickstart_build_custom_block($variables, 'block_sr', 8);
     }
   }
 }
