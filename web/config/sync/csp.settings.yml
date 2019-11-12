@@ -1,0 +1,19 @@
+_core:
+  default_config_hash: Qa0Wwo59NSFGS3lPsFxj55zyk3uJXxPqLJuQ4soNCaQ
+report-only:
+  enable: false
+enforce:
+  enable: true
+  directives:
+    script-src:
+      flags:
+        - unsafe-inline
+      base: self
+    style-src:
+      sources:
+        - 'https://use.fontawesome.com'
+      flags:
+        - unsafe-inline
+      base: self
+  reporting:
+    plugin: none
