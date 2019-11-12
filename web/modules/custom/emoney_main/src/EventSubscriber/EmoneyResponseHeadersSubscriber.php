@@ -15,10 +15,10 @@ class EmoneyResponseHeadersSubscriber implements EventSubscriberInterface {
     $response->headers->remove('x-drupal-cache-tags');
     $response->headers->remove('x-drupal-cache-contexts');
     $response->headers->remove('x-drupal-dynamic-cache');
-    $response->headers->set('Content-Security-Policy', 'script-src "self"');
+    /* Header 'Content-Security-Policy' - handled by 'csp' module - see configuration menu */
     $response->headers->set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
     $response->headers->set('Referrer-Policy', 'strict-origin');
-    $response->headers->set('Feature-Policy', 'vibrate "self"; speaker "self"; camera "self"; payment "none"; push "none"');
+    $response->headers->set('Feature-Policy', 'vibrate \'self\'; speaker \'self\'; camera \'self\'; payment \'none\'; push \'none\'');
   }
 
   public static function getSubscribedEvents() {
