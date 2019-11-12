@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d96ce7606f7afec1ecd691fa5a6b2beb",
+    "content-hash": "a546c45d599426e80d3f6c755dfe6b07",
     "packages": [
         {
             "name": "apigee/apigee-client-php",
@@ -2560,7 +2560,9 @@
                     "replace": false,
                     "merge-extra": false
                 },
-                "patches_applied": []
+                "patches_applied": {
+                    "https://www.drupal.org/project/drupal/issues/2943172": "https://www.drupal.org/files/issues/2018-07-05/2943172-kernel-test-base-3.patch"
+                }
             },
             "autoload": {
                 "psr-4": {
@@ -2584,6 +2586,62 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "time": "2019-09-04T10:26:35+00:00"
+        },
+        {
+            "name": "drupal/csp",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/csp.git",
+                "reference": "8.x-1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/csp-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "76630d56d5aebdc6a1f7c30c9f6405a7eee7705c"
+            },
+            "require": {
+                "drupal/core": "^8.5",
+                "ext-json": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.4",
+                    "datestamp": "1549957081",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "gapple",
+                    "homepage": "https://www.drupal.org/user/490940"
+                },
+                {
+                    "name": "rfsbsb",
+                    "homepage": "https://www.drupal.org/user/4382"
+                }
+            ],
+            "description": "Provide Content-Security-Policy headers",
+            "homepage": "https://www.drupal.org/project/csp",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/csp",
+                "issues": "https://www.drupal.org/project/issues/csp"
+            }
         },
         {
             "name": "drupal/ctools",
