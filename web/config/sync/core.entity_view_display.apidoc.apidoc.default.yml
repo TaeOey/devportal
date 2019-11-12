@@ -9,6 +9,7 @@ dependencies:
   module:
     - apigee_api_catalog
     - swagger_ui_formatter
+    - text
 _core:
   default_config_hash: MEYSBnXfsABrrEKZRvVQdIfzFET0rvUoL9tLCMY0EOQ
 id: apidoc.apidoc.default
@@ -16,8 +17,15 @@ targetEntityType: apidoc
 bundle: apidoc
 mode: default
 content:
-  field_collections:
+  description:
+    type: text_default
     weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_collections:
+    weight: 1
     label: above
     settings:
       link: true
@@ -25,7 +33,7 @@ content:
     type: entity_reference_label
     region: content
   field_products:
-    weight: 1
+    weight: 2
     label: above
     settings:
       link: true
@@ -35,7 +43,7 @@ content:
   spec:
     label: hidden
     type: swagger_ui_file
-    weight: 2
+    weight: 3
     region: content
     settings:
       validator: default
@@ -53,6 +61,5 @@ content:
         patch: patch
     third_party_settings: {  }
 hidden:
-  description: true
   field_image: true
   name: true
