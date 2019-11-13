@@ -8,7 +8,10 @@
       margin-bottom: 40px;
 
       @include media-breakpoint-up(md) {
-        padding-left: 200px;
+        flex: 0 0 66.6666666667%;
+        margin-left: 25%;
+        max-width: 66.6666666667%;
+        padding: 0;
       }
 
       h3 {
@@ -313,6 +316,8 @@
         }
 
         .model-container {
+          overflow: hidden;
+
           .model-box {
             .model-title {
               color: $graphite;
