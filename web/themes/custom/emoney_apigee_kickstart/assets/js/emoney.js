@@ -116,6 +116,24 @@
             });
           });
         });
+
+        /** Add Stick Navigation */
+        $('nav.navbar').once('myModuleBehavior').each(function () {
+          const navBar = $(this);
+          const brandImg = navBar.find('.navbar-brand img');
+
+          $(window).scroll(function() {
+            const scrollTop = $(document).scrollTop();
+
+            if(scrollTop >= navBar.height()) {
+              brandImg.attr('src', '/sites/default/files/logo_blue.png');
+              navBar.addClass('stick');
+            } else {
+              navBar.removeClass('stick');
+              brandImg.attr('src', '/sites/default/files/logo.png');
+            };
+          });
+        });
       }
     };
   })(jQuery, Drupal);

@@ -7,8 +7,9 @@
     left: 0;
     margin: 0;
     padding: 40px 20px;
-    position: absolute;
+    position: fixed;
     top: 0;
+    transition: all .3s ease-out;
     width: 100%;
     z-index: 5;
 
@@ -212,6 +213,57 @@
         outline: none;
         border: $white 1px solid;
         box-shadow: 1px 1px 5px $white;
+      }
+    }
+
+    &.stick {
+      background-color: $white;
+      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
+
+      .navbar {
+        &-brand {
+          &:after {
+            border-color: $blue_theme;
+            color: $blue_theme;
+          }
+        }
+
+        &-collapse {
+          &.show {
+            &:after {
+              background-color: $white;
+            }
+          }
+        }
+
+        &-toggler {
+          color: $blue_theme;
+
+          &:focus {
+            border-color: $blue_theme;
+            box-shadow: 1px 1px 5px $blue_theme;
+          }
+        }
+      }
+
+      .nav {
+        &-link {
+          color: $blue_theme;
+        }
+      }
+
+      .search-block-form {
+        .form {
+          &-search {
+            border-color: $blue_theme;
+            color: $blue_theme;
+
+            &-button {
+              border-color: $blue_theme;
+              color: $blue_theme;
+            }
+          }
+        }
       }
     }
   }
