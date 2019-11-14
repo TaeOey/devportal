@@ -140,8 +140,8 @@ function emoney_main_system_breadcrumb_alter(Breadcrumb &$breadcrumb, RouteMatch
   }
 
   if ( is_array($arg) && $arg[1] == 'collections' ) {
-    $links[0]->setText('APIs');
-    $theLink = Url::fromUri('internal:/apis');
+    $links[0]->setText('Collections');
+    $theLink = Url::fromUri('internal:/collections');
     $links[0]->setUrl($theLink);
   }
 

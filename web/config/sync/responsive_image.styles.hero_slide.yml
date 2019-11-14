@@ -28,6 +28,11 @@ image_style_mappings:
     image_mapping_type: image_style
     image_mapping: 17_10_ratio_max_1024_x_600
   -
+    breakpoint_id: default.sm
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: 17_10_ratio_max_1024_x_600
+  -
     breakpoint_id: default.xs
     multiplier: 1x
     image_mapping_type: image_style

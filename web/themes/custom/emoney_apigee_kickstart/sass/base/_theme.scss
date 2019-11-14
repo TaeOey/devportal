@@ -4,11 +4,35 @@ body {
   font-size: 16px;
   line-height: 24px;
 
+  a {
+    color: $blue;
+  }
+
+  .dialog-off-canvas-main-canvas {
+    display: block;
+    height: 100%;
+
+    > .page {
+      display: block;
+      height: auto;
+      min-height: 100%;
+      padding-bottom: 130px;
+    }
+  }
+
+  *:focus {
+    outline: $white auto 1px;
+    box-shadow: 0 0 5px 0 $gray_lightness;
+
+    @include media-breakpoint-up(md) {
+      box-shadow: none;
+    }
+  }
+
   .page {
     &__content {
-      display: flex;
       flex-direction: column;
-      flex: 1;
+      flex-grow: 1;
 
       h2 {
         color: $gray_dark;
@@ -21,12 +45,10 @@ body {
 
   .main {
     .page-layout-sidebar-bottom {
-      display: flex;
-      flex: 1;
+      flex-grow: 1;
 
       &__top {
-        display: flex;
-        flex: 1;
+        flex-grow: 1;
       }
     }
   }

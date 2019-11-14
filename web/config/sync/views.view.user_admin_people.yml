@@ -2,6 +2,9 @@ uuid: 23afd295-e3b3-4628-9f03-fbcae24a83e4
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.storage.user.field_company_name
+    - field.storage.user.field_company_role
   module:
     - user
 _core:
@@ -199,7 +202,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Username
+          label: Name
           exclude: false
           alter:
             alter_text: false
@@ -240,10 +243,149 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          plugin_id: field
+          click_sort_column: value
           type: user_name
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
           entity_type: user
           entity_field: name
+        field_company_name:
+          id: field_company_name
+          table: user__field_company_name
+          field: field_company_name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Company Name'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_company_role:
+          id: field_company_role
+          table: user__field_company_role
+          field: field_company_role
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Company Role'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         status:
           id: status
           table: users_field_data
@@ -620,6 +762,49 @@ display:
             name: name
             mail: mail
           plugin_id: combine
+        field_company_name_value:
+          id: field_company_name_value
+          table: user__field_company_name
+          field: field_company_name_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_company_name_value_op
+            label: 'Company Name Contains'
+            description: ''
+            use_operator: false
+            operator: field_company_name_value_op
+            identifier: field_company_name_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              external_developer: '0'
+              internal_developer: '0'
+              super_user: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: string
         status:
           id: status
           table: users_field_data
@@ -879,7 +1064,10 @@ display:
         - url.query_args
         - user.permissions
       max-age: 0
-      tags: {  }
+      tags:
+        - 'config:field.storage.user.field_company_name'
+        - 'config:field.storage.user.field_company_role'
+        - extensions
   page_1:
     display_plugin: page
     id: page_1
@@ -912,4 +1100,7 @@ display:
         - url.query_args
         - user.permissions
       max-age: 0
-      tags: {  }
+      tags:
+        - 'config:field.storage.user.field_company_name'
+        - 'config:field.storage.user.field_company_role'
+        - extensions

@@ -3,10 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - image.style.4_3_1280x960
-    - image.style.4_3_320x240
-    - image.style.4_3_640x480
-    - image.style.4_3_991x566
+    - image.style.7_4_1460x834
+    - image.style.7_4_1982x1133
+    - image.style.7_4_2920x1669
+    - image.style.7_4_350x200
+    - image.style.7_4_640x366
+    - image.style.7_4_700x400
+    - image.style.7_4_730x417
+    - image.style.7_4_991x566
 _core:
   default_config_hash: GsPKExsFTjuUhpjk-0h84-1ojzml_Pt5dAMaiEJYo-w
 id: text_image
@@ -19,9 +23,13 @@ image_style_mappings:
     image_mapping:
       sizes: '(min-width:992px) 50vw, 100vw'
       sizes_image_styles:
-        - 4_3_1280x960
-        - 4_3_320x240
-        - 4_3_640x480
-        - 4_3_991x566
+        - 7_4_1460x834
+        - 7_4_1982x1133
+        - 7_4_2920x1669
+        - 7_4_350x200
+        - 7_4_640x366
+        - 7_4_700x400
+        - 7_4_730x417
+        - 7_4_991x566
 breakpoint_group: responsive_image
-fallback_image_style: 4_3_320x240
+fallback_image_style: 7_4_350x200

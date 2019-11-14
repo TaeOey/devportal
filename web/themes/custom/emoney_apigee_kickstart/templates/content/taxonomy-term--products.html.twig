@@ -38,6 +38,15 @@
           <div class="col-md-6">{{ content.field_image }}</div>
         </div>
       </div>
+
+      {% if not logged_in %}
+        {% if block_sr %}
+          <div class="sign-in-reg">
+            {{ block_sr }}
+          </div>
+        {%  endif %}
+      {%  endif %}
+
       {% if api_view %}
         <div class="apis">
           {{ api_view }}

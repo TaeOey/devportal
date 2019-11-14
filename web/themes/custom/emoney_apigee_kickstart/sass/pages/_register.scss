@@ -1,4 +1,20 @@
-.path-user {
+.path-user-register,
+.path-user-login,
+.path-user-password {
+  background-color: $gray_lightness;
+
+  .page-register,
+  .page-login {
+    height: 100%;
+
+    > .page {
+      display: block;
+      height: auto;
+      min-height: 100%;
+      padding-bottom: 130px;
+    }
+  }
+
   .navbar {
     .container {
       position: relative;
@@ -6,7 +22,13 @@
     }
   }
   .page {
-    background-color: $gray_lightness;
+    &__content {
+      .user-form {
+        #edit-register-text {
+          max-width: 100%;
+        }
+      }
+    }
 
     .navbar {
       background-color: $blue_theme;
@@ -30,6 +52,10 @@
           opacity: .8;
         }
       }
+    }
+
+    .user-register-form {
+      max-width: 100% !important;
     }
   }
 }

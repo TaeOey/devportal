@@ -11,9 +11,23 @@
           if (card_count == 2) {
             $(this).addClass('card-group-2');
           }
-
         });
 
+        /* Match the card width when the page is loaded */
+        $(document).ready(function() {
+          var card_width = $('.path-frontpage .paragraph.card-group--default:not(".card-group-2") .card').width();
+            $('.path-frontpage .paragraph.card-group--default.card-group-2 .card-deck .card').each(function(){
+              $(this).css('width', card_width);
+            });
+         });
+
+        /* Resize the cards in the second row to match with the frist row in homepage*/
+        $(window).resize(function() {
+          var card_width = $('.path-frontpage .paragraph.card-group--default:not(".card-group-2") .card').width();
+          $('.path-frontpage .paragraph.card-group--default.card-group-2 .card-deck .card').each(function(){
+            $(this).css('width', card_width);
+          });
+        });
 
         /** Add toggle feature to accordion paragraph */
         $('.paragraph.accordion', context).once('myModuleBehavior').each(function () {
@@ -30,7 +44,6 @@
             arrow.toggleClass(arrowUp + ' ' + arrowDown)
           });
         });
-
 
         /** Add toggle feature to Support page */
         $('.faq-question', context).once('myModuleBehavior').each(function () {
@@ -51,20 +64,25 @@
           const config = { attributes: true, childList: true, subtree: true };
 
           const callback = function(mutationsList, observer) {
-            for(let mutation of mutationsList) {
-              if(mutation.type === 'childList') {
-                const tryOut = document.getElementsByClassName('try-out');
-                const schemeContainer = document.getElementsByClassName('scheme-container');
 
-                if(tryOut.length) {
-                  for (let i = 0; i < tryOut.length; i++) {
-                    tryOut[i].remove();
+            for (var mutation in mutationsList) {
+              if (mutationsList.hasOwnProperty(mutation)) {
+                const element = mutationsList[mutation];
+
+                if(element.type === 'childList') {
+                  const tryOut = document.getElementsByClassName('try-out');
+                  const schemeContainer = document.getElementsByClassName('scheme-container');
+
+                  if(tryOut.length) {
+                    for (let i = 0; i < tryOut.length; i++) {
+                      $(tryOut[i]).remove();
+                    }
                   }
-                }
 
-                if(schemeContainer.length) {
-                  for (let i = 0; i < schemeContainer.length; i++) {
-                    schemeContainer[i].remove();
+                  if(schemeContainer.length) {
+                    for (let i = 0; i < schemeContainer.length; i++) {
+                      $(schemeContainer[i]).remove();
+                    }
                   }
                 }
               }
@@ -73,6 +91,30 @@
 
           const observer = new MutationObserver(callback);
           observer.observe(targetNode, config);
+        });
+
+        /** Implement feature to scroll to up */
+        $('button.go-to-up').once('myModuleBehavior').each(function () {
+          const goToUpButton = $(this);
+
+          $(window).scroll(function() {
+            const viewPort = $(window).height();
+            const scrollTop = $(document).scrollTop();
+
+            if(scrollTop > viewPort) {
+              goToUpButton.addClass('go-to-up--visible');
+            } else {
+              goToUpButton.removeClass('go-to-up--visible');
+            };
+          });
+
+          goToUpButton.click(function(){
+            $('html, body').animate({
+              scrollTop: 0
+            }, 800, function() {
+              goToUpButton.blur();
+            });
+          });
         });
       }
     };

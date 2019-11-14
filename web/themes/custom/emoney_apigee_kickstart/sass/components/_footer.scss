@@ -1,4 +1,9 @@
 .page__footer {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+
   .footer {
     background-color: $gray_dark;
     font-family: $Lato;
@@ -41,6 +46,12 @@
       }
 
       .nav-link {
+        color: $white;
+
+        &:focus {
+          outline: none;
+        }
+
         &.is-active {
           font-weight: $bold;
 
@@ -60,8 +71,8 @@
     line-height: 9px;
     font-size: 12px;
 
-    .justify-content-md-end {
-      display: unset !important;
+    .d-md-flex {
+      display: block !important;
     }
   }
 }

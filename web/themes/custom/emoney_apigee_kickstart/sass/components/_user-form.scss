@@ -1,108 +1,138 @@
-.user-form {
-  margin-top: 64px;
-  max-width: initial !important;
+form {
+  &.user-form,
+  &.contact-form,
+  &.user-login-form,
+  &.user-pass {
+    margin: 64px auto;
+    max-width: initial !important;
 
-  label {
-    color: $gray_dark;
-    font-weight: $bold;
-    line-height: 24px;
+
+    h2,
+    .reset-password-text {
+      text-align: center;
+    }
+
+    label {
+      color: $gray_dark;
+      font-weight: $bold;
+      line-height: 24px;
+    }
 
     a {
-      color: $blue_light;
+      color: $blue;
+    }
+
+    .form {
+      &-item {
+        margin-bottom: 16px;
+
+        &-register {
+          &-text {
+            margin-bottom: 32px;
+            text-align: center;
+
+            h2 {
+              color: $gray_dark;
+              font-size: 34px;
+              font-weight: $bold;
+              line-height: 40px;
+              margin-bottom: 24px;
+            }
+
+            p {
+              margin: auto;
+              max-width: 360px;
+              text-align: left;
+            }
+          }
+        }
+      }
+
+      &-wrapper,
+      &-check,
+      &-group {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 360px;
+      }
+
+      &-control {
+        border: 1px solid $gray_light;
+        border-radius: 3px;
+        background-color: $white;
+        box-shadow: inset 0 1px 1px 1px rgba(0,0,0,0.08);
+      }
+
+      &-check {
+        margin-top: 24px;
+
+        &-label {
+          color: $gray_dark;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+
+          strong {
+            font-weight: normal;
+          }
+        }
+
+        svg {
+          color: $gray_light;
+        }
+      }
+
+      &-actions {
+        display: flex;
+        flex-flow: row-reverse;
+        justify-content: space-between;
+        margin-top: 56px;
+
+        .btn,
+        #edit-cancel {
+          font-weight: $bold !important;
+          line-height: 16px !important;
+          width: 165px;
+        }
+
+        /* override to match buttons components */
+        .btn {
+          border-radius: 0 !important;
+          font-family: $Arial;
+          letter-spacing: 0 !important;
+          padding: 16px 26px !important;
+        }
+
+        #edit-cancel {
+          border: $blue_light 1px solid;
+          color: $blue_light;
+          display: inline-block;
+          font-size: 14px;
+          padding: 15px 10px;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+
+      &-required {
+        &__indicator {
+          color: $gray_dark !important;
+        }
+      }
     }
   }
 
-  .form {
-    &-item {
-      &-register {
-        &-text {
-          margin-bottom: 32px;
-          text-align: center;
-
-          h2 {
-            color: $gray_dark;
-            font-size: 34px;
-            font-weight: $bold;
-            line-height: 40px;
-            margin-bottom: 24px;
-          }
-
-          p {
-            margin: auto;
-            max-width: 360px;
-            text-align: left;
-          }
-        }
-      }
+  &.user-login-form,
+  &.user-pass {
+    .form-actions {
+      flex-flow: initial;
+      justify-content: center;
+      margin: 0 auto;
     }
 
-    &-wrapper,
-    &-check {
-      margin: auto;
-      max-width: 360px;
-    }
-
-    &-control {
-      border: 1px solid $gray_light;
-      border-radius: 3px;
-      background-color: $white;
-      box-shadow: inset 0 1px 1px 1px rgba(0,0,0,0.08);
-    }
-
-    &-check {
-      margin-top: 24px;
-
-      &-label {
-        color: $gray_dark;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 24px;
-
-        strong {
-          font-weight: normal;
-        }
-      }
-
-      svg {
-        color: $gray_light;
-      }
-    }
-
-    &-actions {
-      display: flex;
-      flex-flow: row-reverse;
-      justify-content: space-between;
-      margin-top: 56px;
-
-      .btn,
-      #edit-cancel {
-        font-weight: $bold !important;
-        line-height: 16px !important;
-        width: 165px;
-      }
-
-      /* override to match buttons components */
-      .btn {
-        border-radius: 0 !important;
-        font-family: $Arial;
-        letter-spacing: 0 !important;
-        padding: 16px 26px !important;
-      }
-
-      #edit-cancel {
-        border: $blue_light 1px solid;
-        color: $blue_light;
-        display: inline-block;
-        font-size: 14px;
-        padding: 15px 10px;
-        text-align: center;
-        text-transform: uppercase;
-      }
-    }
-
-    &-required {
-      &__indicator {
-        color: $gray_dark !important;
+    #edit-forgot-text {
+      label {
+        display: none;
       }
     }
   }

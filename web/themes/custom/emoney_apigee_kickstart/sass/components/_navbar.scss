@@ -10,6 +10,7 @@
     position: absolute;
     top: 0;
     width: 100%;
+    z-index: 5;
 
     @include media-breakpoint-up(lg) {
       background: transparent;
@@ -126,6 +127,10 @@
             padding-right: 11px;
           }
 
+          &:focus {
+            outline: none;
+          }
+
           &.is-active {
             font-weight: $bold;
 
@@ -137,7 +142,7 @@
       }
 
       .mr-auto {
-        margin: initial !important;
+        margin: 0 !important;
       }
 
       .block--emoney-apigee-kickstart-menu-account {
@@ -159,7 +164,7 @@
 
         .form {
           &-group {
-            display: flex;
+            flex-flow: row;
           }
 
           &-search {
@@ -171,8 +176,7 @@
             color: $white;
             font-family: $Arial;
             font-size: 16px;
-            line-height: 18px;
-            padding: 3px 0;
+            height: 25px;
 
             @include media-breakpoint-up(lg) {
               max-width: 65px;

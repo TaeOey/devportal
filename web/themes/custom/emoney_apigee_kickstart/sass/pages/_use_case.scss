@@ -1,158 +1,218 @@
-$page-use-case-bg-color: #f9f9f9;
 $get-bg: #6bbc5b;
 $post-bg: #1a6887;
 $put-bg: #9b708c;
 $delete-bg: #a83e24;
 
 .page-use-case {
-  background-color: $page-use-case-bg-color;
+  height: 100%;
 
-  .use-case--full {
-    img {
-      max-width: 440px;
-      max-height: 265px;
-      object-fit: fill;
-    }
+  > .page {
+    background-color: $gray_lightness;
+    display: block;
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 130px;
+  }
 
-    .use-case__field-products {
-      padding: 0px 15px;
+  .use-case {
+    &--full {
+      &__header {
+        &__title {
+          @include media-breakpoint-up(lg) {
+            padding: 0;
+          }
+        }
 
-      .field__item {
-        max-width: 200px;
-        display: inline;
+        &__products {
+          display: flex;
+          margin-bottom: 8px;
 
-        color: $gray;
-        font-family: Arial;
-        font-size: 14px;
-        border: 1px solid $gray-light;
-        padding: 2px 8px;
-        border-radius: 3px;
+          @include media-breakpoint-up(lg) {
+            margin-right: -15px;
+            margin-left: -15px;
+          }
 
-        a {
-          &:hover {
-            text-decoration: none;
+          .col-lg-10 {
+            display: flex;
+
+            @include media-breakpoint-up(lg) {
+              padding: 0;
+            }
+
+            span {
+              color: $gray_soft;
+              font-size: 14px;
+            }
           }
         }
       }
-    }
 
-    .title-bar {
-      background-color: $page-use-case-bg-color !important;
-      padding: 0px !important;
-
-      &__icon {
-        display: none !important;
+      img {
+        max-width: 440px;
+        max-height: 265px;
+        object-fit: fill;
       }
 
-      &__title {
-        color: $gray-dark;
-        font-family: $Arial;
-        font-size: 32px;
-        font-weight: $bold;
-        line-height: 29px;
-        margin: 0 0 10px 0;
-        text-transform: uppercase;
-      }
-    }
+      .use-case__field-products {
+        padding: 0px 15px;
 
-    .text-image__wrapper {
-      align-items: initial;
+        .field__item {
+          max-width: 200px;
+          display: inline;
 
-      .text-image__text {
-        padding-top: 10px !important;
-        padding-right: 0px;
-      }
-    }
+          color: $gray;
+          font-family: Arial;
+          font-size: 14px;
+          border: 1px solid $gray-light;
+          padding: 2px 8px;
+          border-radius: 3px;
 
-    .use-case-content {
-      @media (max-width: 992px) {
-        margin-bottom: 150px;
+          a {
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
       }
 
-      .text-image__field-image {
-        width: 460px;
-        height: 290px;
-        border-radius: 4px;
-        border: 1px solid $gray_lightness;
-        background-color: $white;
-        box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.05);
-        padding: 10px 10px;
+      .title-bar {
+        background-color: $gray_lightness !important;
+        padding: 0px !important;
 
-        @media only screen and (min-width: 1200px) {
-          margin-left: 100px;
+        &__icon {
+          display: none !important;
         }
 
+        &__title {
+          color: $gray-dark;
+          font-family: $Arial;
+          font-size: 32px;
+          font-weight: $bold;
+          line-height: 37px;
+          margin: 0 0 10px 0;
+          text-transform: uppercase;
+        }
+      }
+
+      .use-case-content {
         @media (max-width: 992px) {
-          padding-left: 50px;
+          margin-bottom: 150px;
+        }
+
+        .text-image {
+          &__wrapper {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column-reverse;
+
+            @include media-breakpoint-up(md) {
+              padding-left: 15px;
+              padding-right: 15px;
+            }
+
+            @include media-breakpoint-up(lg) {
+              flex-direction: row;
+            }
+          }
+
+          &__text {
+            padding: 0 !important;
+
+            @include media-breakpoint-up(lg) {
+              margin-left: 5.5%;
+              padding-right: 30px !important;
+            }
+
+            @include media-breakpoint-up(xl) {
+              margin-left: 6%;
+            }
+          }
+
+          &__field-image {
+            height: 290px;
+            border-radius: 4px;
+            border: 1px solid $gray_lightness;
+            background-color: $white;
+            box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.05);
+            margin: 0 0 15px 0;
+            padding: 10px 10px;
+            text-align: center;
+
+            img {
+              max-width: 100%;
+            }
+          }
+
+          &__image {
+            @include media-breakpoint-up(lg) {
+              flex: 0 0 460px;
+            }
+          }
         }
       }
-    }
 
-    .block {
-      margin-bottom: 0px;
-    }
+      .block {
+        margin-bottom: 0px;
+      }
 
-    .api-card {
-      min-height: 220px;
-      margin-left: 20px;
-      margin-right: 20px;
-    }
+      .api-card {
+        min-height: 220px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
 
-    .text-image {
-      height: 320px;
-    }
+      .text-image {
+        height: 320px;
+      }
 
-    h2 {
-      height: 39px;
-      color: $gray-dark;
-      font-family: $Lato;
-      font-size: 32px;
-      font-weight: bold;
-      line-height: 39px;
-      text-align: center;
-      padding: 30px 30px;
-    }
+      h2 {
+        height: 39px;
+        color: $gray-dark;
+        font-family: $Lato;
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 39px;
+        text-align: center;
+        padding: 30px 30px;
+      }
 
-    .api-method {
-      border-radius: 3px;
-      border: none;
-      color: $white;
-      font-size: 14px;
-      line-height: 16px;
-      text-align: center;
-      padding: 3px 20px;
-    }
+      .api-method {
+        border-radius: 3px;
+        border: none;
+        color: $white;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        padding: 3px 20px;
+      }
 
-    .method-get {
-      background-color: $get-bg;
-    }
+      .method-get {
+        background-color: $get-bg;
+      }
 
-    .method-post {
-      background-color: $post-bg;
-    }
+      .method-post {
+        background-color: $post-bg;
+      }
 
-    .method-put {
-      background-color: $put-bg;
-    }
+      .method-put {
+        background-color: $put-bg;
+      }
 
-    .method-delete {
-      background-color: $delete-bg;
-    }
+      .method-delete {
+        background-color: $delete-bg;
+      }
 
-    .api-title {
-      font-weight: $bold;
-      padding: 10px 0px;
-    }
+      .api-title {
+        font-weight: $bold;
+        padding: 10px 0px;
+      }
 
-    .api-used__field-api-description {
-      color: $gray-dark;
-      font-family: $Lato;
-      font-size: 16px;
-      line-height: 25px;
-    }
-
-    .products-container {
-      display: flex;
+      .api-used__field-api-description {
+        color: $gray-dark;
+        font-family: $Lato;
+        font-size: 16px;
+        line-height: 25px;
+      }
     }
   }
 }

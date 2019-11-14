@@ -1,40 +1,26 @@
-.page-register,
-.page-password,
-.page-login {
+.path-user-login,
+.path-user-register,
+.path-user-password {
   .page {
     &__header,
     &__tasks {
       display: none;
     }
   }
-}
 
-.page-login {
-  flex: 1;
+  .page-login {
+    flex-grow: 1;
 
-  .form-required {
-    font-weight: $bold;
+    .form-required {
+      font-weight: $bold;
 
-    .fa-asterisk {
-      color: $black !important;
+      .fa-asterisk {
+        color: $black !important;
+      }
     }
-  }
 
-  .form-submit {
-    font-weight: $bold !important;
-  }
-
-  #edit-login-text {
-    padding-top: 60px;
-  }
-}
-
-.page-password {
-  .form-required {
-    font-weight: $bold;
-
-    .fa-asterisk {
-      color: $black !important;
+    .form-submit {
+      font-weight: $bold !important;
     }
   }
 }

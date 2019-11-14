@@ -2,6 +2,10 @@
   .page {
     background-color: $gray_lightness;
 
+    &__header {
+      min-height: 278px;
+    }
+
     .justify-content {
       margin: auto;
     }
@@ -17,13 +21,6 @@
       .form-text.description,
       .fa-asterisk {
         display: none;
-      }
-
-      .form-control,
-      #edit-name,
-      #edit-mail {
-        background-color: $white;
-        box-shadow: none;
       }
 
       .button--primary,

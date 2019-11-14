@@ -25,6 +25,24 @@ third_party_settings:
         layout_id: layout_onecol
         layout_settings: {  }
         components:
+          23d46629-a6af-416d-aff8-0a529590c180:
+            uuid: 23d46629-a6af-416d-aff8-0a529590c180
+            region: content
+            configuration:
+              id: local_tasks_block
+              label: Tabs
+              provider: core
+              label_display: '0'
+              primary: true
+              secondary: true
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
           b56e4c67-3702-4d90-b614-c8f4d6f2e5da:
             uuid: b56e4c67-3702-4d90-b614-c8f4d6f2e5da
             region: content

@@ -3,6 +3,20 @@
     display: flex;
     margin-bottom: 16px;
 
+    &.apidoc__description{
+      display: block;
+      margin-bottom: 40px;
+
+      @include media-breakpoint-up(md) {
+        padding-left: 200px;
+      }
+
+      h3 {
+        font-size: 32px;
+        font-weight: $bold;
+      }
+    }
+
     &__label,
     &__items {
       color: $gray_dark;
@@ -318,6 +332,8 @@
   }
 
   #swagger-ui-spec-0 {
+    width: 100%;
+
     > .swagger-ui {
       > .wrapper {
           display: none;
