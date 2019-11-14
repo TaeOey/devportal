@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a546c45d599426e80d3f6c755dfe6b07",
+    "content-hash": "a8346beb74d059a9a84a002726bb6888",
     "packages": [
         {
             "name": "apigee/apigee-client-php",
@@ -2561,6 +2561,7 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
+                    "2582797 - Login link has no destination": "https://www.drupal.org/files/issues/2019-03-13/login-destination-2582797-110_0.patch",
                     "https://www.drupal.org/project/drupal/issues/2943172": "https://www.drupal.org/files/issues/2018-07-05/2943172-kernel-test-base-3.patch"
                 }
             },
