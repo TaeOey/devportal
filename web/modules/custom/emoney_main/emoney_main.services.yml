@@ -1,5 +1,9 @@
 services:
-  emoney_response_headers_subscriber:
+  emoney_main.response_headers_subscriber:
     class: Drupal\emoney_main\EventSubscriber\EmoneyResponseHeadersSubscriber
+    tags:
+      - { name: event_subscriber }
+  emoney_main.request_redirect_subscriber:
+    class: Drupal\emoney_main\EventSubscriber\EmoneyRequestRedirectSubscriber
     tags:
       - { name: event_subscriber }

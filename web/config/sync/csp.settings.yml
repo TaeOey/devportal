@@ -8,6 +8,7 @@ enforce:
     script-src:
       flags:
         - unsafe-inline
+        - unsafe-eval
       base: self
     style-src:
       sources:
