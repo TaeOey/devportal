@@ -121,17 +121,31 @@
         $('nav.navbar').once('myModuleBehavior').each(function () {
           const navBar = $(this);
           const brandImg = navBar.find('.navbar-brand img');
+          const lg = 992;
 
           $(window).scroll(function() {
             const scrollTop = $(document).scrollTop();
+            const widthViewPort = $(window).width();
 
             if(scrollTop >= navBar.height()) {
-              brandImg.attr('src', '/sites/default/files/logo_blue.png');
+              widthViewPort > lg && brandImg.attr('src', '/sites/default/files/logo_blue.png');
               navBar.addClass('stick');
             } else {
+              widthViewPort > lg && brandImg.attr('src', '/sites/default/files/logo.png');
               navBar.removeClass('stick');
-              brandImg.attr('src', '/sites/default/files/logo.png');
             };
+          });
+
+          $(window).resize(function() {
+            const widthViewPort = $(window).width();
+
+            if(navBar.hasClass('stick')) {
+              if(widthViewPort > lg) {
+                brandImg.attr('src', '/sites/default/files/logo_blue.png');
+              } else {
+                brandImg.attr('src', '/sites/default/files/logo.png');
+              }
+            }
           });
         });
       }
