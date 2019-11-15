@@ -57,18 +57,20 @@ chmod +x ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh
 echo "Rollback script created at ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh"
 
 #Create a backup cleanup job
-sudo cat << EOF > /etc/cron.daily/dbbackupcleanup
+sudo bash -c 'cat << EOF > /etc/cron.daily/dbbackupcleanup
 ls -t ${BACKUP_DIRECTORY} | tail -n +4 | xargs rm --
 EOF
 
 if [[ $REMOTE_BACKUP_DIRECTORY != \#\{*\} ]]; 
 then
-    sudo cat << EOF >> /etc/cron.daily/dbbackupcleanup
+    cat << EOF >> /etc/cron.daily/dbbackupcleanup
     mount ${REMOTE_BACKUP_DIRECTORY} ${BACKUP_DIRECTORY}
     ls -t ${BACKUP_DIRECTORY} | tail -n +4 | xargs rm --
     umount -l $BACKUP_DIRECTORY
 EOF
 fi
+'
+
 
 sudo chmod +x  /etc/cron.daily/dbbackupcleanup
 
