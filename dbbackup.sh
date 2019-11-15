@@ -56,10 +56,19 @@ fi
 chmod +x ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh
 echo "Rollback script created at ${BACKUP_DIRECTORY}/Rollback-${DB_BACKUP}.sh"
 
-#Delete old database backups
-# echo "Cleaning up old backups"
-# DB_BACKUP_PATTERN=`sudo echo $DB_BACKUP | sed -E 's/[[:digit:]]{8}-[[:digit:]]{6}/*/g'`
-# sudo ls -t ${BACKUP_DIRECTORY}/${DB_BACKUP_PATTERN} | tail -n +4 | xargs rm --
+#Create a backup cleanup job
+sudo cat << EOF > /etc/cron.hourly/dbbackupcleanup
+ls -t ${BACKUP_DIRECTORY} | tail -n +4 | xargs rm --
+EOF
+
+if [[ $REMOTE_BACKUP_DIRECTORY != \#\{*\} ]]; 
+then
+    sudo cat << EOF >> /etc/cron.hourly/dbbackupcleanup
+    mount ${REMOTE_BACKUP_DIRECTORY} ${BACKUP_DIRECTORY}
+    ls -t ${BACKUP_DIRECTORY} | tail -n +4 | xargs rm --
+    umount -l $BACKUP_DIRECTORY
+EOF
+fi
 
 # echo "Checking for remote backup directory"
 # if [ ! -d "${REMOTE_BACKUP_DIRECTORY}" ]; then
