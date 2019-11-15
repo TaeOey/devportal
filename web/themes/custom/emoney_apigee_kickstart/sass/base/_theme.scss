@@ -4,6 +4,20 @@ body {
   font-size: 16px;
   line-height: 24px;
 
+  &.user-logged-in {
+    &.toolbar-horizontal {
+      &.toolbar-tray-open {
+        .navbar {
+          top: 79px;
+        }
+      }
+    }
+
+    .navbar {
+      top: 39px;
+    }
+  }
+
   a {
     color: $blue;
   }
