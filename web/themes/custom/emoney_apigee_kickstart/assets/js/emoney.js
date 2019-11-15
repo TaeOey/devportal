@@ -19,6 +19,16 @@
             $('.path-frontpage .paragraph.card-group--default.card-group-2 .card-deck .card').each(function(){
               $(this).css('width', card_width);
             });
+
+          /* Add query string to login link to send user back to previous page */
+          var current_page = location.pathname,
+            login_page = '/user/login';
+
+          if (login_page != current_page) {
+            $(context).find("a[href='" + login_page + "']").once('login-processed-link').each(function () {
+              $(this).attr('href', $(this).attr('href') + '?destination=' + current_page);
+            });
+          }
          });
 
         /* Resize the cards in the second row to match with the frist row in homepage*/

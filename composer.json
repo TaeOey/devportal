@@ -85,12 +85,12 @@
       "npm-asset"
     ],
     "patches": {
-      "drupal/core": {
-        "2582797 - Login link has no destination": "https://www.drupal.org/files/issues/2019-03-13/login-destination-2582797-110_0.patch"
-      },
       "drupal/password_policy": {
         "2867320 - Password policy history module wrong behavior": "https://www.drupal.org/files/issues/2867320-4-password-recycle.patch"
       }
+    },
+    "patchLevel": {
+      "drupal/core": "-p2"
     },
     "enable-patching": true
   }
