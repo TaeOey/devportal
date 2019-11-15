@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a546c45d599426e80d3f6c755dfe6b07",
+    "content-hash": "de6dc103843b8313ee11139ab56d4f6a",
     "packages": [
         {
             "name": "apigee/apigee-client-php",
@@ -187,12 +187,12 @@
             "version": "v3.23.10",
             "source": {
                 "type": "git",
-                "url": "https://github.com/swagger-api/swagger-ui.git",
+                "url": "git@github.com:wordnik/swagger-ui.git",
                 "reference": "c8ad396301ca55075234009e8384ca968b950aab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/c8ad396301ca55075234009e8384ca968b950aab",
+                "url": "https://api.github.com/repos/wordnik/swagger-ui/zipball/c8ad396301ca55075234009e8384ca968b950aab",
                 "reference": "c8ad396301ca55075234009e8384ca968b950aab"
             },
             "type": "bower-asset"
