@@ -89,6 +89,9 @@
         "2867320 - Password policy history module wrong behavior": "https://www.drupal.org/files/issues/2867320-4-password-recycle.patch"
       }
     },
+    "patchLevel": {
+      "drupal/core": "-p2"
+    },
     "enable-patching": true
   }
 }
