@@ -70,6 +70,8 @@ then
 EOF
 fi
 
+sudo chmod +x  /etc/cron.daily/dbbackupcleanup
+
 # echo "Checking for remote backup directory"
 # if [ ! -d "${REMOTE_BACKUP_DIRECTORY}" ]; then
 #     echo "Sending backup to remote backup directory"
