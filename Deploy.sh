@@ -78,8 +78,7 @@ sudo ${CWD}/drush cc drush
 
 # Set Apigee edge connection
 echo "Setting Apg connections"
-sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cset key.key.apigee_edge_connection_default key_provider_settings.key_value
-'{"auth_type":"basic","organization":"#{DrupalApigeeOrganization}","username":"#{DrupalApigeeUsername}","password":"#{DrupalApigeePassword}","endpoint":"#{DrupalApigeeEndpoint}"}' -y
+sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cset key.key.apigee_edge_connection_default key_provider_settings.key_value '{"auth_type":"basic","organization":"#{DrupalApigeeOrganization}","username":"#{DrupalApigeeUsername}","password":"#{DrupalApigeePassword}","endpoint":"#{DrupalApigeeEndpoint}"}' -y
 
 echo "Actualize configuration layer"
 sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
