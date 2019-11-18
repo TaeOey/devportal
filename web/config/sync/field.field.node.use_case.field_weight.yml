@@ -1,0 +1,25 @@
+uuid: ae3ad0c7-0f5f-4365-bfe6-37c4b35d5256
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.use_case
+id: node.use_case.field_weight
+field_name: field_weight
+entity_type: node
+bundle: use_case
+label: Weight
+description: "This field will be used to sort the display of use cases in the /use-cases page.\r\nThe lower weights move to the top, higher weights move to the bottom"
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
