@@ -73,8 +73,12 @@ sudo ln -sfvn ${WEB_FILES_STORAGE} ${WEB_FILES_ROOT}
 #sudo ${CWD}/drush cc drush
 sudo pwd
 sudo drush version
-echo "drushccdrush"
+echo "drush cc drush"
 sudo ${CWD}/drush cc drush
+
+# Set Apigee edge connection
+sudo ${CWD}/drush cset key.key.apigee_edge_connection_default key_provider_settings.key_value
+'{"auth_type":"basic","organization":"#{DrupalApigeeOrganization}","username":"#{DrupalApigeeUsername}","password":"#{DrupalApigeePassword}","endpoint":"#{DrupalApigeeEndpoint}"}'
 
 echo "Actualize configuration layer"
 #sudo ${CWD}/drush --root=${APIGEE_DRUPAL_WEB_DOCROOT} cim -y
