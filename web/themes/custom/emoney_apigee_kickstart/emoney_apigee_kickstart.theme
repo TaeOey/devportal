@@ -40,6 +40,11 @@ function emoney_apigee_kickstart_page_attachments_alter(array &$page) {
     ],
   ];
   $page['#attached']['html_head'][] = [$ie_edge, 'ie_edge'];*/
+  foreach ($page['#attached']['html_head'] as $key => $attachment) {
+    if ($attachment[1] == 'system_meta_generator') {
+      unset($page['#attached']['html_head'][$key]);
+    }
+  }
 }
 
 /**
