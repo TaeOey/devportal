@@ -255,3 +255,11 @@ function _emoney_apigee_kickstart_build_custom_block(&$variables, $target_name, 
       ->view($block);
   }
 }
+/*
+ * hook_link_alter
+ */
+function hook_link_alter(&$variables) {
+  if ($variables['url']->isExternal()) {
+    $variables['options']['attributes'] = ['target' => '_blank'];
+  }
+}
