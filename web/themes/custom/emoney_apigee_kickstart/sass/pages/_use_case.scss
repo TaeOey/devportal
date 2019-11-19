@@ -95,15 +95,12 @@ $delete-bg: #a83e24;
       }
 
       .use-case-content {
-        @media (max-width: 992px) {
-          margin-bottom: 150px;
-        }
-
         .text-image {
           &__wrapper {
             align-items: flex-start;
             display: flex;
             flex-direction: column-reverse;
+            max-height: inherit !important;
 
             @include media-breakpoint-up(md) {
               padding-left: 15px;
@@ -162,18 +159,18 @@ $delete-bg: #a83e24;
       }
 
       .text-image {
-        height: 320px;
+        height: inherit !important;
+        min-height: 320px;
       }
 
       h2 {
-        height: 39px;
         color: $gray-dark;
         font-family: $Lato;
         font-size: 32px;
-        font-weight: bold;
+        font-weight: $bold;
         line-height: 39px;
+        margin: 15px 0 0 0;
         text-align: center;
-        padding: 30px 30px;
       }
 
       .api-method {
