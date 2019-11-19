@@ -25,6 +25,8 @@
 
 
 // Pages
+@import 'pages/api';
+@import 'pages/apidoc';
 @import 'pages/frontpage';
 @import 'pages/getting_started';
 @import 'pages/api';
@@ -33,6 +35,7 @@
 @import 'pages/collections';
 @import 'pages/collection_overview';
 @import 'pages/register';
+@import 'pages/reset_password';
 @import "pages/terms_of_use";
 @import 'pages/use_cases';
 @import 'pages/use_case';

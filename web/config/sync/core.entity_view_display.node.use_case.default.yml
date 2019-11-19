@@ -3,11 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.use_case.field_apis_u
     - field.field.node.use_case.field_collections
     - field.field.node.use_case.field_content
     - field.field.node.use_case.field_header
     - field.field.node.use_case.field_products
+    - field.field.node.use_case.field_weight
     - node.type.use_case
     - views.view.use_cases
   module:
@@ -132,9 +132,17 @@ content:
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
     region: content
+  field_weight:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
 hidden:
   content_moderation_control: true
-  field_apis_u: true
   field_collections: true
   field_products: true
   links: true
