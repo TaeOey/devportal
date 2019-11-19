@@ -41,6 +41,7 @@
               background-color: $white;
               border-radius: 4px;
               box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.02);
+              display: block;
               margin: 0 0 23px 0;
               overflow: hidden;
               padding: 30px;
@@ -105,11 +106,6 @@
                   }
                 }
               }
-
-              // .views-field-description__value {
-              //   flex-direction: column;
-              //   display: flex;
-              // }
             }
           }
 
