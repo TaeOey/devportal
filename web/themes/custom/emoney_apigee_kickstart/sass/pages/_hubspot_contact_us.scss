@@ -1,0 +1,36 @@
+.path-contact {
+  .page {
+    background-color: $gray_lightness;
+
+    &__header {
+      min-height: 278px;
+    }
+
+    .justify-content {
+      margin: auto;
+    }
+  }
+}
+
+article[about=\/contact-us] {
+
+  form.hs-form {
+    font-weight: bold;
+
+    textarea {
+      height: 130px;
+      margin-bottom: 1rem;
+    }
+
+    .hs-submit {
+      font-family: arial;
+      width: 118px;
+    }
+
+    .form-actions {
+      display: flex;
+      flex-flow: row-reverse;
+      justify-content: flex-start;
+    }
+  }
+}
