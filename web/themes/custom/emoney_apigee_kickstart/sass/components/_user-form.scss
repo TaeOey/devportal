@@ -2,7 +2,8 @@ form {
   &.user-form,
   &.contact-form,
   &.user-login-form,
-  &.user-pass {
+  &.user-pass,
+  &.hs-form {
     margin: 64px auto;
     max-width: initial !important;
 
