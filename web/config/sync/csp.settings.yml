@@ -6,6 +6,10 @@ enforce:
   enable: true
   directives:
     script-src:
+      sources:
+        - 'http://js.hsforms.net'
+        - 'https://js.hsforms.net'
+        - 'https://forms.hsforms.com'
       flags:
         - unsafe-inline
         - unsafe-eval
