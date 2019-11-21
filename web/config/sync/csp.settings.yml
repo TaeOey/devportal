@@ -13,12 +13,15 @@ enforce:
       flags:
         - unsafe-inline
         - unsafe-eval
-      base: self
+        - unsafe-hashes
+      base: any
     style-src:
       sources:
         - 'https://use.fontawesome.com'
       flags:
         - unsafe-inline
+        - unsafe-eval
+        - unsafe-hashes
       base: self
   reporting:
     plugin: none
