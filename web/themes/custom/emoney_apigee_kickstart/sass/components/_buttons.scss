@@ -1,7 +1,7 @@
 body {
   .btn {
     background-color: $gray_lightness;
-    border: none;
+    border: transparent 1px solid;
     border-radius: 0;
     box-shadow: none;
     color: #333;
@@ -10,17 +10,32 @@ body {
     font-weight: $bold;
     line-height: 16px;
     letter-spacing: 0;
+    outline: none;
     padding: 16px 26px;
     text-align: center;
     text-transform: uppercase;
+    transition: $transition-base;
 
     &-primary {
-      background-color: #00AAE7;
-      color: #fff;
+      background-color: $blue;
+      color: $white;
 
       &:hover {
-        background-color: #00AAE7;
-        color: #fff;
+        background-color: $blue_jeans_dark;
+      }
+
+      &:focus {
+        box-sizing: border-box;
+        border: 1px solid $blue_soft;
+        background-color: $blue;
+        box-shadow: $focus_shadow;
+      }
+
+      &:active {
+        box-sizing: border-box;
+        border: 1px solid $blue_soft !important;
+        background-color: $blue_jeans_dark !important;
+        box-shadow: $focus_shadow !important;
       }
 
       &-outline {

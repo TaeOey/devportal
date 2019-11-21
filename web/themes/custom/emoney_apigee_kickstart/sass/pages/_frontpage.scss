@@ -1,5 +1,3 @@
-// @import '../colors.scss';
-
 .path-frontpage {
   .page {
     .navbar {
@@ -83,21 +81,42 @@
             line-height: 56px;
           }
 
-          .views-field-field-link a {
-            background-color: #00AAE7; //to do: $blue-shine
-            border: none;
-            border-radius: 0;
-            box-shadow: none;
-            color: $white;
-            font-size: 14px;
-            font-weight: bold;
-            line-height: 16px;
-            padding: 16px 0;
-            text-align: center;
-            text-transform: uppercase;
-            width: 165px;
-            padding-left: 40px;
-            padding-right: 40px;
+          .views-field-field-link {
+              a {
+                background-color: $blue;
+                border: transparent 1px solid;
+                border-radius: 0;
+                box-shadow: none;
+                color: $white;
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 16px;
+                outline: none;
+                padding: 16px 40px;
+                text-align: center;
+                text-decoration: none;
+                text-transform: uppercase;
+                transition: $transition-base;
+                width: 165px;
+
+                &:hover {
+                  background-color: $blue_jeans_dark;
+                }
+
+                &:focus {
+                  box-sizing: border-box;
+                  border: 1px solid $blue_soft;
+                  background-color: $blue;
+                  box-shadow: $focus_shadow;
+                }
+
+                &:active {
+                  box-sizing: border-box;
+                  border: 1px solid $blue_soft !important;
+                  background-color: $blue_jeans_dark !important;
+                  box-shadow: $focus_shadow !important;
+                }
+              }
           }
         }
       }
@@ -174,15 +193,22 @@
   .card-deck {
     margin-right: 0px;
     margin-left: 0px;
+
     .card {
       width: 356px;
-      height: 202px;
+      min-height: 202px;
       display: flex;
       flex: none; //change from unset to none for IE11
       flex-direction: column;
       margin-right: 14px;
       margin-bottom: 0;
       margin-left: 15px;
+
+      a {
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
   }
   .card-group__field-text {
@@ -210,15 +236,6 @@
   .card-group__field-text {
     p {
       padding-bottom: 0.2rem;
-    }
-  }
-  .card-group__buttons {
-    a.btn.btn-primary {
-      background-color: #00AAE7;
-      border-color: #00AAE7;
-      font-family: Arial;
-      font-size: 14px;
-      font-weight: bold;
     }
   }
 
@@ -296,16 +313,30 @@
       .buttons--text-image {
         .btn-primary {
           background-color: transparent;
-          border: #00AAE7 1px solid;
-          color: #00AAE7;
+          border: $blue 1px solid;
+          color: $blue;
           width: 165px;
-          height: 49px;
-          font-size: 14px;
-          font-weight: bold;
-          line-height: 16px;
-          padding: 16px 0;
-          text-align: center;
-          text-transform: uppercase;
+
+          &:hover {
+            border: 1px solid $blue_jeans_dark;
+            color: $blue_jeans_dark;
+            text-decoration: none;
+          }
+
+          &:focus {
+            box-sizing: border-box;
+            border: 1px solid $blue;
+            box-shadow: $focus_shadow;
+            color: $blue_jeans_dark;
+          }
+
+          &:active {
+            background-color: transparent !important;
+            box-sizing: border-box;
+            border: 1px solid $blue_jeans_dark;
+            box-shadow: $focus_shadow;
+            color: $blue_jeans_dark;
+          }
         }
       }
     }
@@ -342,14 +373,16 @@
 
           .btn-primary {
             background-color: transparent;
-            border: $white 1px solid;
-            color: $white;
-            font-size: 14px;
-            font-weight: $bold;
-            letter-spacing: initial;
-            line-height: 16px;
-            padding: 16px 0;
+            border-color: $white;
             width: 165px;
+
+            &:hover {
+              background-color: rgba($black, .1);
+            }
+
+            &:focus {
+              background-color: transparent !important;
+            }
           }
         }
         .callout__title {
@@ -376,7 +409,7 @@ and (orientation: portrait) {
     .card-deck {
       .card {
         width: 221px;
-        height: 184px;
+        min-height: 184px;
         flex: 3;
         .card-image {
           img {
@@ -397,7 +430,7 @@ and (orientation: portrait) {
       .card-deck {
         .card {
           width: 221px;
-          height: 184px;
+          min-height: 184px;
           flex: none; //change for IE11
         }
       }
@@ -435,7 +468,7 @@ and (orientation: landscape) {
     .card-deck {
       .card {
         width: 293px;
-        height: 202px;
+        min-height: 202px;
         flex: 3;
       }
     }
@@ -443,7 +476,7 @@ and (orientation: landscape) {
       .card-deck {
         .card {
           width: 293px;
-          height: 202px;
+          min-height: 202px;
           flex: none; // change the value for IE11
         }
       }
@@ -516,7 +549,7 @@ and (orientation: landscape) {
     .card-deck {
       .card {
         width: 293px;
-        height: 202px;
+        min-height: 202px;
         flex: unset;
         &.paragraph.card--default:not(.card-group-2):first-child {
           margin-left: auto;
@@ -530,8 +563,7 @@ and (orientation: landscape) {
       .card-deck {
         .card {
           width: 293px;
-          //width: 30%;
-          height: 202px;
+          min-height: 202px;
           flex: none; //change the value for IE11
         }
       }
@@ -585,7 +617,7 @@ and (orientation: landscape) {
       .card-deck {
         .card {
           width: 290px;
-          height: 184px;
+          min-height: 184px;
           flex: none; //change the value for IE11
         }
       }
@@ -647,7 +679,7 @@ and (orientation: landscape) {
       .card-deck {
         .card {
           width: 221px;
-          height: 184px;
+          min-height: 184px;
           flex: none; // change the value for IE11
         }
       }

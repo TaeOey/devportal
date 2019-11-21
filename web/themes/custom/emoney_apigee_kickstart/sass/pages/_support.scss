@@ -107,15 +107,29 @@
             }
 
             .btn {
-              color: $white;
-              font-family: Lato;
-              font-size: 14px;
-              font-weight: $bold;
-              line-height: 48px;
-              margin: 0;
-              padding: 0;
-              text-align: center;
-              width: 166px;
+              &-primary {
+                background-color: transparent;
+                border-color: $white;
+                font-family: Lato;
+                line-height: 48px;
+                margin: 0;
+                padding: 0;
+                transition: $transition-base;
+                width: 166px;
+
+                &:hover {
+                  background-color: rgba($black, .1);
+                }
+
+                &:focus {
+                  box-shadow: $focus_shadow;
+                }
+
+                &:active {
+                  background-color: rgba($black, .1) !important;
+                  box-shadow: $focus_shadow;
+                }
+              }
             }
           }
         }

@@ -19,10 +19,6 @@ form {
       line-height: 24px;
     }
 
-    a {
-      color: $blue;
-    }
-
     .form {
       &-item {
         margin-bottom: 16px;
@@ -93,6 +89,7 @@ form {
         #edit-cancel {
           font-weight: $bold !important;
           line-height: 16px !important;
+          transition: $transition-base;
           width: 165px;
         }
 
@@ -105,13 +102,29 @@ form {
         }
 
         #edit-cancel {
-          border: $blue_light 1px solid;
-          color: $blue_light;
+          border: $blue 1px solid;
+          color: $blue;
           display: inline-block;
           font-size: 14px;
           padding: 15px 10px;
           text-align: center;
           text-transform: uppercase;
+
+          &:hover {
+            border-color: $blue_jeans_dark;
+            color: $blue_jeans_dark;
+            text-decoration: none;
+          }
+
+          &:focus {
+            box-shadow: $focus_shadow;
+          }
+
+          &:active {
+            box-shadow: $focus_shadow !important;
+            border-color: $blue_jeans_dark;
+            color: $blue_jeans_dark;
+          }
         }
       }
 
