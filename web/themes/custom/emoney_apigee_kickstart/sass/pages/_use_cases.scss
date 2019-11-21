@@ -32,6 +32,28 @@
 
     .block--cta {
       margin-bottom: 0px;
+
+      .cta {
+        .buttons {
+          &__item {
+            .btn {
+              &-primary {
+                background-color: transparent;
+                border: $white 1px solid;
+                margin: 0;
+
+                &:hover {
+                  box-shadow: $focus_shadow;
+                }
+
+                &:active {
+                  background-color: transparent !important;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

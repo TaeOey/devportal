@@ -127,7 +127,7 @@ $supporting-info: 9;
           position: relative;
 
           &:after {
-            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, $white 64.02%, $white 100%);
+            background: linear-gradient(180deg, rgba($white,0) 0%, $white 64.02%, $white 100%);
             bottom: 0;
             content: "";
             display: block;
@@ -138,7 +138,7 @@ $supporting-info: 9;
           }
 
           p {
-            color: $gray_medium;
+            color: $gray;
             font-size: 16px;
             line-height: 24px;
           }
@@ -149,7 +149,7 @@ $supporting-info: 9;
             padding-left: 24px;
 
             li {
-              color: $gray_medium;
+              color: $gray;
               font-size: 16px;
               line-height: 30px;
               margin: 0 0 12px 0;
@@ -241,7 +241,8 @@ $supporting-info: 9;
 
               &:hover {
                 box-shadow: none;
-                text-decoration: none;
+                color: $blue_jeans_dark;
+                text-decoration: underline;
               }
             }
           }

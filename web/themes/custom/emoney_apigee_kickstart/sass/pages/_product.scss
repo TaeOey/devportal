@@ -83,36 +83,4 @@
       padding-left: 50px;
     }
   }
-
-  .cta {
-    text-align: center;
-    padding-top: 64px;
-    padding-bottom: 64px;
-
-    &__text {
-      h2 {
-        font-size: 22px;
-        font-weight: $bold;
-        line-height: 26px;
-        margin-bottom: 16px;
-      }
-    }
-
-    &__button {
-      font-family: $Lato;
-      font-size: 16px;
-      font-weight: bold;
-      height: 48px;
-      width: 165px;
-
-      a {
-        color: $white;
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: none;
-        }
-      }
-    }
-  }
 }
