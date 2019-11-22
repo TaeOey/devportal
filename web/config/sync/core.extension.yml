@@ -1,5 +1,4 @@
 module:
-  address: 0
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
@@ -48,6 +47,7 @@ module:
   google_analytics: 0
   help: 0
   history: 0
+  hubspot_forms: 0
   image: 0
   key: 0
   layout_builder: 0

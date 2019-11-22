@@ -1,3 +1,8 @@
+// base variables
+$transition-base:   all .3s ease-out !default;
+$focus_shadow:      inset 0 0 5px 0 rgba($black, .2), 0 0 4px 1px rgba($blue_soft, .6) !default;
+
+// base theme
 body {
   color: $gray_dark;
   font-family: $Arial;
@@ -8,7 +13,8 @@ body {
     color: $blue;
 
     &:hover {
-      color: $blue;
+      color: $blue_jeans_dark;
+      text-decoration: underline;
     }
   }
 
@@ -24,12 +30,11 @@ body {
     }
   }
 
-  *:focus {
-    outline: $white auto 1px;
-    box-shadow: 0 0 5px 0 $gray_lightness;
+  &:focus {
+    outline: none;
 
-    @include media-breakpoint-up(md) {
-      box-shadow: none;
+    @include media-breakpoint-up(lg) {
+      outline: $blue auto 1px;
     }
   }
 

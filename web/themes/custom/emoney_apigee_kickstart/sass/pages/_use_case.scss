@@ -12,6 +12,16 @@ $delete-bg: #a83e24;
     height: auto;
     min-height: 100%;
     padding-bottom: 130px;
+
+    .page {
+      &__header {
+        .page {
+          &__headline {
+            margin-top: 16px;
+          }
+        }
+      }
+    }
   }
 
   .use-case {
@@ -40,7 +50,7 @@ $delete-bg: #a83e24;
             }
 
             span {
-              color: $gray_soft;
+              color: $gray;
               font-size: 14px;
             }
           }
@@ -66,12 +76,6 @@ $delete-bg: #a83e24;
           border: 1px solid $gray-light;
           padding: 2px 8px;
           border-radius: 3px;
-
-          a {
-            &:hover {
-              text-decoration: none;
-            }
-          }
         }
       }
 

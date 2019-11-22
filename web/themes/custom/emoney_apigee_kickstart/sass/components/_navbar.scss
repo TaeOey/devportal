@@ -129,6 +129,10 @@
 
           &:focus {
             outline: none;
+
+            @include media-breakpoint-up(lg) {
+              outline: $blue auto 1px;
+            }
           }
 
           &.is-active {

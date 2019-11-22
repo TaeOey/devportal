@@ -21,11 +21,8 @@
     "cweagans/composer-patches": "^1.6.5",
     "drupal-composer/drupal-scaffold": "^2.5",
     "apigee/apigee_devportal_kickstart": "^1.0.0",
-    "drupal/apigee_m10n": "^1.0.0",
-    "drupal/commerce": "^2.13",
     "php": "^7.1",
     "drush/drush": "~8",
-    "drupal/devel": "^2.1",
     "drupal/legal": "^1.0@RC",
     "drupal/email_registration": "^1.0@RC",
     "drupal/flexslider": "^2.0@beta",
@@ -41,7 +38,8 @@
     "drupal/environment_indicator": "^3.7",
     "drupal/metatag": "^1.10",
     "drupal/google_analytics": "^3.0",
-    "drupal/csp": "^1.4"
+    "drupal/csp": "^1.4",
+    "drupal/hubspot_forms": "^1.6"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
@@ -93,5 +91,8 @@
       "drupal/core": "-p2"
     },
     "enable-patching": true
+  },
+  "require-dev": {
+    "drupal/devel": "^2.1"
   }
 }
