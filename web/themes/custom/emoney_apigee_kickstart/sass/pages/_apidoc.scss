@@ -1,15 +1,49 @@
 .path-api {
+  .dialog-off-canvas-main-canvas {
+    > .page {
+      background-color: $gray_lightness;
+
+      main {
+        &.main {
+          .page-layout-sidebar-bottom {
+            &__top {
+              > .container {
+                &.py-5 {
+                  margin-right: 0;
+                  margin-left: 0;
+                  max-width: none;
+                  padding: 0;
+
+                  > .row {
+                    margin-right: 0;
+                    margin-left: 0;
+
+                    .apidoc {
+                      &__spec {
+                        &__wrapper {
+                          background-color: $white;
+                          margin: 0 -15px;
+                          padding: 70px 0;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   .field {
     display: flex;
     margin-bottom: 16px;
 
     &.apidoc__description{
       display: block;
-      margin-bottom: 40px;
-
-      @include media-breakpoint-up(md) {
-        margin-left: 7%;
-      }
+      margin-bottom: 51px;
 
       h3 {
         font-size: 32px;
