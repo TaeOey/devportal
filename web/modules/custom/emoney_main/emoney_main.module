@@ -144,6 +144,13 @@ function emoney_main_system_breadcrumb_alter(Breadcrumb &$breadcrumb, RouteMatch
     $theLink = Url::fromUri('internal:/collections');
     $links[0]->setUrl($theLink);
   }
-
+}
+/*
+ * hook_link_alter
+ */
+function emoney_main_link_alter(&$variables) {
+  if ($variables['url']->isExternal()) {
+    $variables['options']['attributes']['target'] = '_blank';
+  }
 }
 
