@@ -93,6 +93,10 @@
                 height: 38px;
                 padding: 0.25rem 1rem;
                 width: 100%;
+
+                &.error {
+                  border-color: $red;
+                }
               }
             }
             .hs-error-msgs {
@@ -103,9 +107,11 @@
               text-align: left;
 
               .hs-error-msg {
+                color: $red;
                 font-size: 14px;
-                font-weight: initial;
-                padding: 6px 0 0 0;
+                font-weight: $bold;
+                line-height: 17px;
+                margin: 8px 0 0 0;
               }
             }
           }
@@ -123,25 +129,16 @@
 
             .hs_firstname,
             .hs_lastname {
-              display: inline-block;
+              display: block;
               float: none;
+              margin-right: auto;
+              margin-left: auto;
               text-align: left;
-              width: 180px;
+              width: 360px;
             }
 
             .hs_firstname {
-              padding-bottom: 16px;
-
-              @include media-breakpoint-up(400px) {
-                padding-right: 5px;
-                padding-bottom: 0;
-              }
-            }
-
-            .hs_lastname {
-              @include media-breakpoint-up(400px) {
-                padding-left: 5px;
-              }
+              margin-bottom: 16px;
             }
           }
 
