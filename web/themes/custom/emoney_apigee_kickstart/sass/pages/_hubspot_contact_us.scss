@@ -54,9 +54,23 @@
         &.stacked {
           margin: 8px auto;
           max-width: 90% !important;
+          padding: 64px 0 0 0;
 
           @include media-breakpoint-up(lg) {
-            max-width: 33.3333333333% !important;
+            max-width: 66.6666666667% !important;
+          }
+
+          .hs-richtext {
+            font-family: Arial;
+            font-size: 16px;
+            line-height: 24px;
+            margin: 0 0 32px 0;
+
+            h3 {
+              font-size: 32px;
+              font-weight: $bold;
+              line-height: 40px;
+            }
           }
 
           .form-columns-1,
@@ -81,9 +95,40 @@
                 width: 100%;
               }
             }
+            .hs-error-msgs {
+              display: block;
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              text-align: left;
+
+              .hs-error-msg {
+                font-size: 14px;
+                font-weight: initial;
+                padding: 6px 0 0 0;
+              }
+            }
+          }
+
+          .form-columns-1,
+          .hs-submit,
+          .hs_error_rollup {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 360px;
           }
 
           .form-columns-2 {
+            text-align: center;
+
+            .hs_firstname,
+            .hs_lastname {
+              display: inline-block;
+              float: none;
+              text-align: left;
+              width: 180px;
+            }
+
             .hs_firstname {
               padding-bottom: 16px;
 
@@ -100,7 +145,23 @@
             }
           }
 
+          .hs_error_rollup {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 360px;
+
+            .hs-error-msgs {
+              display: block;
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              text-align: left;
+            }
+          }
+
           .hs-submit {
+            margin-top: 56px;
+
             .actions {
               text-align: right;
 
