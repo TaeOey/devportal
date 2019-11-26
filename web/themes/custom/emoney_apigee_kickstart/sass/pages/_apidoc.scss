@@ -1,8 +1,16 @@
+.path-api-all-apis {
+  &.path-api {
+    .dialog-off-canvas-main-canvas {
+      > .page {
+        background-color: $gray_lightness;
+      }
+    }
+  }
+}
+
 .path-api {
   .dialog-off-canvas-main-canvas {
     > .page {
-      background-color: $gray_lightness;
-
       main {
         &.main {
           .page-layout-sidebar-bottom {
