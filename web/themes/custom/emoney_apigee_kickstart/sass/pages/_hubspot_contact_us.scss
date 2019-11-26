@@ -28,9 +28,19 @@
             }
 
             .submitted-message {
-              font-size: 20px;
-              margin: 30px 0;
-              text-align: center;
+              padding: 60px 0 0 0;
+
+              p {
+                &:first-of-type {
+                  font-size: 32px;
+                  font-weight: $bold;
+                  line-height: 40px;
+                }
+
+                strong {
+                  font-weight: $bold;
+                }
+              }
             }
           }
         }
@@ -91,8 +101,14 @@
                 background-color: $white;
                 box-shadow: inset 0 1px 1px 1px rgba($black, .08);
                 height: 38px;
+                outline: transparent auto 1px;
                 padding: 0.25rem 1rem;
+                transition: $transition-base;
                 width: 100%;
+
+                &:focus {
+                  outline: $blue auto 1px;
+                }
 
                 &.error {
                   border-color: $red;
