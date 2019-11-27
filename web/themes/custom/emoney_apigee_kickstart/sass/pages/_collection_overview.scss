@@ -5,32 +5,62 @@ $client-facts: 8;
 $supporting-info: 9;
 
 body[class*="path-api-"] {
-  .dialog-off-canvas-main-canvas {
-    .page {
-      &__content {
-        .apidoc {
-          // copy bootstrap container settings
-          &__field-collections {
-            width: 100%;
-            padding-right: 15px;
-            padding-left: 15px;
-            margin-right: auto;
-            margin-left: auto;
+  &:not(.path-api-all-apis) {
+    .dialog-off-canvas-main-canvas {
+      .page {
+        &__content {
+          .apidoc {
+            // copy bootstrap container settings
+            > div {
+              width: 100%;
+              padding-right: 15px;
+              padding-left: 15px;
+              margin-right: auto;
+              margin-left: auto;
 
-            @media (min-width: 576px) {
-              max-width:540px;
+              @media (min-width: 576px) {
+                max-width:540px;
+              }
+
+              @media (min-width: 768px) {
+                max-width:720px;
+              }
+
+              @media (min-width: 992px) {
+                max-width:960px;
+              }
+
+              @media (min-width: 1200px) {
+                max-width:1140px;
+              }
             }
 
-            @media (min-width: 768px) {
-              max-width:720px;
-            }
+            &__spec {
+              &__wrapper {
+                padding-top: 0 !important;
 
-            @media (min-width: 992px) {
-              max-width:960px;
-            }
-
-            @media (min-width: 1200px) {
-              max-width:1140px;
+                .apidoc {
+                  &__spec {
+                    .swagger {
+                      &-ui {
+                        .information {
+                          &-container {
+                            .info {
+                              .main {
+                                .base-url {
+                                  font-size: 14px;
+                                  line-height: 16px;
+                                  padding: 8px 0 0 0;
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
