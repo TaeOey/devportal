@@ -3,6 +3,28 @@
     .dialog-off-canvas-main-canvas {
       > .page {
         background-color: $gray_lightness;
+
+        .apidoc {
+          &__spec {
+            .swagger {
+              &-ui {
+                .information {
+                  &-container {
+                    .info {
+                      .main {
+                        .base-url {
+                          font-size: 14px;
+                          line-height: 16px;
+                          padding: 8px 0 0 0;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
